@@ -1757,6 +1757,9 @@ extern const u8 gMenuInfoElements_Gfx[];
 // item menu graphics
 extern const u32 gBagScreen_Gfx[];
 extern const u32 gBagScreen_GfxTileMap[];
+extern const u32 gBagScroll_Gfx[];
+extern const u32 gBagScroll_GfxTileMap[];
+extern const u16 gBagScrollBgPalette[];
 extern const u16 gBagScreenFemale_Pal[];
 extern const u16 gBagScreenMale_Pal[];
 extern const u8 gBagMenuHMIcon_Gfx[];
