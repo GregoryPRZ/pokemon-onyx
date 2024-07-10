@@ -191,7 +191,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].data[4] = gSaveBlock2Ptr->optionsSound;
     gTasks[taskId].data[5] = gSaveBlock2Ptr->optionsButtonMode;
     gTasks[taskId].data[6] = gSaveBlock2Ptr->optionsWindowFrameType;
-    gTasks[taskId].data[7] = VarGet(VAR_MUSIC);
+    gTasks[taskId].data[7] = gSaveBlock2Ptr->optionsMusic;
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -502,7 +502,6 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
         case MENUITEM_MUSIC:
             previousOption = gTasks[taskId].data[7];
             gTasks[taskId].data[7] = Music_ProcessInput(gTasks[taskId].data[7]);
-
             if (previousOption != gTasks[taskId].data[7])
                 Music_DrawChoices(gTasks[taskId].data[7]);
             break;
@@ -529,7 +528,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
-    VarSet(VAR_MUSIC, gTasks[taskId].data[7]);
+    gSaveBlock2Ptr->optionsMusic = gTasks[taskId].data[7];
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -688,7 +687,7 @@ static u8 Music_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
     {
-        if (selection <= 1)
+        if (selection < 3)
             selection++;
         else
             selection = 0;
@@ -697,11 +696,10 @@ static u8 Music_ProcessInput(u8 selection)
     }
     if (JOY_NEW(DPAD_LEFT))
     {
-        if (selection != 0)
-            selection--;
-        else
+        if (selection == 0)
             selection = 2;
-
+        else
+            selection--;
         sArrowPressed = TRUE;
     }
     return selection;
@@ -709,36 +707,20 @@ static u8 Music_ProcessInput(u8 selection)
 
 static void Music_DrawChoices(u8 selection)
 {
-    u8 styles[3];
-    /* FALSE = Have the middle text be exactly in between where the first text ends and second text begins.
-       TRUE = Have the mid text be in the middle of the frame, ignoring the first and last text size. 
-    Setting it to FALSE is how vanilla code does it for the TEST SPEED, but the layout looks off-center if there's
-    multiple three-item options in one page and the length of characters for the first and last choices
-    of one of the options mismatch.*/
-    bool8 centerMid = TRUE;
+    u8 styles[3] = {0}; // Assuming 3 music options
     s32 widthHoenn, widthSinnoh, widthJohto, xMid;
-
-    styles[0] = 0;
-    styles[1] = 0;
-    styles[2] = 0;
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_MusicHoenn, 104, YPOS_MUSIC, styles[0]);
+    DrawOptionMenuChoice(gText_MusicHoenn, 104, YPOS_MUSIC, styles[OPTIONS_MUSIC_HOENN]);
 
+    widthHoenn = GetStringWidth(FONT_NORMAL, gText_MusicHoenn, 0);
+    widthJohto = GetStringWidth(FONT_NORMAL, gText_MusicJohto, 0);
     widthSinnoh = GetStringWidth(FONT_NORMAL, gText_MusicSinnoh, 0);
-    if (centerMid){
-        xMid = (94 - widthSinnoh) / 2 + 104;
-    }
-    else{
-        widthHoenn = GetStringWidth(FONT_NORMAL, gText_MusicHoenn, 0);
-        widthJohto = GetStringWidth(FONT_NORMAL, gText_MusicJohto, 0);
-        widthSinnoh -= 94;
-        xMid = (widthHoenn - widthSinnoh - widthJohto) / 2 + 104;
-    }
 
-    DrawOptionMenuChoice(gText_MusicSinnoh, xMid, YPOS_MUSIC, styles[1]);
-
-    DrawOptionMenuChoice(gText_MusicJohto, GetStringRightAlignXOffset(FONT_NORMAL, gText_MusicJohto, 198), YPOS_MUSIC, styles[2]);
+    widthJohto -= 94;
+    xMid = (widthHoenn - widthJohto - widthSinnoh) / 2 + 104;
+    DrawOptionMenuChoice(gText_MusicJohto, xMid, YPOS_MUSIC, styles[OPTIONS_MUSIC_JOHTO]);
+    DrawOptionMenuChoice(gText_MusicSinnoh, GetStringRightAlignXOffset(FONT_NORMAL, gText_MusicSinnoh, 198), YPOS_MUSIC, styles[OPTIONS_MUSIC_SINNOH]);
 }
 
 static u8 FrameType_ProcessInput(u8 selection)

@@ -588,13 +588,32 @@ static void RestoreBGMVolumeAfterPokemonCry(void)
 
 void PlayBGM(u16 songNum)
 {
+    u16 song;
+    song = RegionalMusicHandler(songNum);	
     if (gDisableMusic)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(song);
 }
 
+u16 RegionalMusicHandler(u16 songNum)
+{
+	switch(songNum)
+	{
+	case MUS_TITLE:
+		if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_HOENN)
+			return MUS_TITLE;
+		else if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_JOHTO)
+			return MUS_HG_TITLE;
+		else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
+			return MUS_DP_TITLE;
+		else 
+			return songNum;
+	break;
+    }
+    return songNum;
+}
 void PlaySE(u16 songNum)
 {
     m4aSongNumStart(songNum);
