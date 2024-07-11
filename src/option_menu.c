@@ -497,13 +497,14 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
     {
         u8 previousOption;
 
-        switch (gTasks[taskId].data[0])
+        switch (gTasks[taskId].tMenuSelection)
         {
         case MENUITEM_MUSIC:
-            previousOption = gTasks[taskId].data[7];
-            gTasks[taskId].data[7] = Music_ProcessInput(gTasks[taskId].data[7]);
-            if (previousOption != gTasks[taskId].data[7])
-                Music_DrawChoices(gTasks[taskId].data[7]);
+            previousOption = gTasks[taskId].tMusic;
+            gTasks[taskId].tMusic = Music_ProcessInput(gTasks[taskId].tMusic);
+
+            if (previousOption != gTasks[taskId].tMusic)
+                Music_DrawChoices(gTasks[taskId].tMusic);
             break;
         default:
             return;
@@ -528,7 +529,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
-    gSaveBlock2Ptr->optionsMusic = gTasks[taskId].data[7];
+    gSaveBlock2Ptr->optionsMusic = gTasks[taskId].tMusic;
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -685,42 +686,25 @@ static void Sound_DrawChoices(u8 selection)
 
 static u8 Music_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
-        if (selection < 3)
-            selection++;
-        else
-            selection = 0;
+        selection ^= 1;
+        sArrowPressed = TRUE;
+    }
 
-        sArrowPressed = TRUE;
-    }
-    if (JOY_NEW(DPAD_LEFT))
-    {
-        if (selection == 0)
-            selection = 2;
-        else
-            selection--;
-        sArrowPressed = TRUE;
-    }
     return selection;
 }
 
 static void Music_DrawChoices(u8 selection)
 {
-    u8 styles[3] = {0}; // Assuming 3 music options
-    s32 widthHoenn, widthSinnoh, widthJohto, xMid;
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_MusicHoenn, 104, YPOS_MUSIC, styles[OPTIONS_MUSIC_HOENN]);
-
-    widthHoenn = GetStringWidth(FONT_NORMAL, gText_MusicHoenn, 0);
-    widthJohto = GetStringWidth(FONT_NORMAL, gText_MusicJohto, 0);
-    widthSinnoh = GetStringWidth(FONT_NORMAL, gText_MusicSinnoh, 0);
-
-    widthJohto -= 94;
-    xMid = (widthHoenn - widthJohto - widthSinnoh) / 2 + 104;
-    DrawOptionMenuChoice(gText_MusicJohto, xMid, YPOS_MUSIC, styles[OPTIONS_MUSIC_JOHTO]);
-    DrawOptionMenuChoice(gText_MusicSinnoh, GetStringRightAlignXOffset(FONT_NORMAL, gText_MusicSinnoh, 198), YPOS_MUSIC, styles[OPTIONS_MUSIC_SINNOH]);
+    DrawOptionMenuChoice(gText_MusicHoenn, 104, YPOS_MUSIC, styles[0]);
+    DrawOptionMenuChoice(gText_MusicSinnoh, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleSet, 174), YPOS_MUSIC, styles[1]);
 }
 
 static u8 FrameType_ProcessInput(u8 selection)

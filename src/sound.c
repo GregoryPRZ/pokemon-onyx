@@ -14,6 +14,8 @@ struct Fanfare
     u16 duration;
 };
 
+typedef u16 (*MusicHandler)(u16);
+
 EWRAM_DATA struct MusicPlayerInfo* gMPlay_PokemonCry = NULL;
 EWRAM_DATA u8 gPokemonCryBGMDuckingCounter = 0;
 
@@ -233,8 +235,8 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
 {
     u16 songNum;
     m4aMPlayStop(&gMPlayInfo_BGM);
-    songNum = sFanfares[fanfareNum].songNum;
-    sFanfareCounter = sFanfares[fanfareNum].duration;
+    songNum = RegionalMusicHandler(sFanfares[fanfareNum].songNum);
+    sFanfareCounter = RegionalMusicHandler(sFanfares[fanfareNum].duration);
     m4aSongNumStart(songNum);
 }
 
@@ -597,26 +599,251 @@ void PlayBGM(u16 songNum)
     m4aSongNumStart(song);
 }
 
-u16 RegionalMusicHandler(u16 songNum)
-{
-	switch(songNum)
-	{
-	case MUS_TITLE:
-		if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_HOENN)
-			return MUS_TITLE;
-		else if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_JOHTO)
-			return MUS_HG_TITLE;
-		else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
-			return MUS_DP_TITLE;
-		else 
-			return songNum;
-	break;
-    }
+u16 HoennMusicHandler(u16 songNum) {
     return songNum;
 }
+
+u16 SinnohMusicHandler(u16 songNum) {
+    switch(songNum) {
+        case MUS_TITLE:
+            return MUS_DP_TITLE;
+        case MUS_EVOLUTION:
+            return MUS_DP_EVOLUTION;
+        case MUS_EVOLVED:
+            return MUS_DP_EVOLVED;
+        case MUS_LEVEL_UP:
+            return MUS_DP_LEVEL_UP;
+        case MUS_OBTAIN_ITEM:
+            return MUS_DP_OBTAIN_ITEM;
+        case MUS_OBTAIN_TMHM:
+            return MUS_DP_OBTAIN_TMHM;
+        case MUS_OBTAIN_BERRY:
+            return MUS_DP_OBTAIN_BERRY;
+        case MUS_OBTAIN_BADGE:
+            return MUS_DP_OBTAIN_BADGE;
+        case MUS_HEAL:
+            return MUS_DP_HEAL;
+        case MUS_CAUGHT:
+            return MUS_DP_CAUGHT_INTRO;
+        case MUS_MOVE_DELETED:
+            return MUS_DP_MOVE_DELETED;
+        case MUS_HALL_OF_FAME:
+            return MUS_DP_HALL_OF_FAME;
+        case MUS_OBTAIN_B_POINTS:
+            return MUS_PL_OBTAIN_B_POINTS;
+        case MUS_CREDITS:
+            return MUS_DP_CREDITS;
+        case MUS_VS_WILD:
+            return MUS_DP_VS_WILD;
+        case MUS_VS_TRAINER:
+            return MUS_DP_VS_TRAINER;
+        case MUS_VS_GYM_LEADER:
+            return MUS_DP_VS_GYM_LEADER;
+        case MUS_VS_ELITE_FOUR:
+            return MUS_DP_VS_ELITE_FOUR;
+        case MUS_VS_CHAMPION:
+            return MUS_DP_VS_CHAMPION;
+        case MUS_VS_FRONTIER_BRAIN:
+            return MUS_PL_VS_FRONTIER_BRAIN;
+        case MUS_VS_AQUA_MAGMA:
+            return MUS_DP_VS_GALACTIC;
+        case MUS_VS_AQUA_MAGMA_LEADER:
+            return MUS_DP_VS_GALACTIC_BOSS;
+        case MUS_VS_RIVAL:
+            return MUS_DP_VS_RIVAL;
+        case MUS_VS_KYOGRE_GROUDON:
+            return MUS_DP_VS_DIALGA_PALKIA;
+        case MUS_VS_RAYQUAZA:
+            return MUS_DP_VS_ARCEUS;
+        case MUS_VS_REGI:
+            return MUS_DP_VS_UXIE_MESPRIT_AZELF;
+        case MUS_RG_VS_DEOXYS:
+            return MUS_PL_VS_GIRATINA;
+        case MUS_VS_MEW:
+            return MUS_DP_VS_LEGEND;
+        case MUS_VICTORY_WILD:
+            return MUS_DP_VICTORY_WILD;
+        case MUS_VICTORY_TRAINER:
+            return MUS_DP_VICTORY_TRAINER;
+        case MUS_VICTORY_GYM_LEADER:
+            return MUS_DP_VICTORY_GYM_LEADER;
+        case MUS_VICTORY_AQUA_MAGMA:
+            return MUS_DP_VICTORY_GALACTIC;
+        case MUS_VICTORY_LEAGUE:
+            return MUS_DP_VICTORY_CHAMPION;
+        case MUS_LITTLEROOT:
+            return MUS_DP_TWINLEAF_DAY;
+        case MUS_OLDALE:
+            return MUS_DP_SANDGEM_DAY;
+        case MUS_PETALBURG:
+            return MUS_DP_FLOAROMA_DAY;
+        case MUS_RUSTBORO:
+            return MUS_DP_JUBILIFE_DAY;
+        case MUS_DEWFORD:
+            return MUS_DP_VALOR_LAKEFRONT_DAY;
+        case MUS_SLATEPORT:
+            return MUS_DP_SUNYSHORE_DAY;
+        case MUS_SOOTOPOLIS:
+            return MUS_DP_CANALAVE_DAY;
+        case MUS_FORTREE:
+            return MUS_DP_ETERNA_DAY;
+        case MUS_VERDANTURF:
+            return MUS_DP_CANALAVE_DAY;
+        case MUS_FALLARBOR:
+            return MUS_DP_SOLACEON_DAY;
+        case MUS_EVER_GRANDE:
+            return MUS_DP_POKEMON_LEAGUE_DAY;
+        case MUS_LILYCOVE:
+            return MUS_PL_LILYCOVE_BOSSA_NOVA;
+        case MUS_B_FRONTIER:
+            return MUS_DP_FIGHT_AREA_DAY;
+        case MUS_POKE_CENTER:
+            return MUS_DP_POKE_CENTER_DAY;
+        case MUS_POKE_MART:
+            return MUS_DP_POKE_MART;
+        case MUS_ROUTE101:
+            return MUS_DP_ROUTE201_DAY;
+        case MUS_ROUTE104:
+            return MUS_DP_ROUTE203_DAY;
+        case MUS_ROUTE110:
+            return MUS_DP_ROUTE206_DAY;
+        case MUS_ROUTE111:
+            return MUS_DP_ROUTE228_DAY;
+        case MUS_ROUTE113:
+            return MUS_DP_ROUTE210_DAY;
+        case MUS_ROUTE118:
+            return MUS_DP_ROUTE225_DAY;
+        case MUS_ROUTE119:
+            return MUS_DP_ROUTE225_DAY;
+        case MUS_ROUTE120:
+            return MUS_DP_ROUTE209_DAY;
+        case MUS_ROUTE122:
+            return MUS_DP_ROUTE205_DAY;
+        case MUS_VICTORY_ROAD:
+            return MUS_DP_INSIDE_POKEMON_LEAGUE;
+        case MUS_PETALBURG_WOODS:
+            return MUS_DP_ETERNA_FOREST;
+        case MUS_CAVE_OF_ORIGIN:
+            return MUS_DP_VICTORY_ROAD;
+        case MUS_MT_CHIMNEY:
+            return MUS_DP_SPEAR_PILLAR;
+        case MUS_MT_PYRE_EXTERIOR:
+            return MUS_DP_MT_CORONET;
+        case MUS_MT_PYRE:
+            return MUS_DP_OLD_CHATEAU;
+        case MUS_SAFARI_ZONE:
+            return MUS_DP_GREAT_MARSH;
+        case MUS_ABANDONED_SHIP:
+            return MUS_DP_OREBURGH_MINE;
+        case MUS_SEALED_CHAMBER:
+            return MUS_DP_LAKE_CAVERNS;
+        case MUS_OCEANIC_MUSEUM:
+            return MUS_DP_GALACTIC_ETERNA_BUILDING;
+        case MUS_GAME_CORNER:
+            return MUS_DP_GAME_CORNER;
+        case MUS_LILYCOVE_MUSEUM:
+            return MUS_DP_VEILSTONE_DAY;
+        case MUS_SCHOOL:
+            return MUS_DP_HEARTHOME_DAY;
+        case MUS_SURF:
+            return MUS_DP_SURF;
+        case MUS_CYCLING:
+            return MUS_DP_CYCLING;
+        case MUS_GYM:
+            return MUS_DP_GYM;
+        case MUS_BIRCH_LAB:
+            return MUS_DP_ROWAN_LAB;
+        case MUS_B_ARENA:
+            return MUS_PL_B_ARCADE;
+        case MUS_B_PALACE:
+            return MUS_PL_B_CASTLE;
+        case MUS_B_FACTORY:
+            return MUS_PL_B_FACTORY;
+        case MUS_B_TOWER:
+            return MUS_DP_B_TOWER;
+        case MUS_B_DOME:
+            return MUS_PL_B_HALL;
+        case MUS_AQUA_MAGMA_HIDEOUT:
+            return MUS_DP_GALACTIC_HQ;
+        case MUS_HALL_OF_FAME_ROOM:
+            return MUS_DP_HALL_OF_FAME_ROOM;
+        case MUS_HELP:
+            return MUS_DP_LAKE_EVENT;
+        case MUS_ENCOUNTER_AQUA:
+            return MUS_DP_ENCOUNTER_GALACTIC;
+        case MUS_ENCOUNTER_BRENDAN:
+            return MUS_DP_LUCAS;
+        case MUS_ENCOUNTER_MAY:
+            return MUS_DP_DAWN;
+        case MUS_ENCOUNTER_CHAMPION:
+            return MUS_DP_ENCOUNTER_CHAMPION;
+        case MUS_ENCOUNTER_COOL:
+            return MUS_DP_ENCOUNTER_ACE_TRAINER;
+        case MUS_ENCOUNTER_GIRL:
+            return MUS_DP_ENCOUNTER_GIRL;
+        case MUS_ENCOUNTER_FEMALE:
+            return MUS_DP_ENCOUNTER_LADY;
+        case MUS_ENCOUNTER_TWINS:
+            return MUS_DP_ENCOUNTER_TWINS;
+        case MUS_ENCOUNTER_ELITE_FOUR:
+            return MUS_DP_ENCOUNTER_ELITE_FOUR;
+        case MUS_ENCOUNTER_HIKER:
+            return MUS_DP_ENCOUNTER_HIKER;
+        case MUS_ENCOUNTER_INTENSE:
+            return MUS_DP_ENCOUNTER_INTENSE;
+        case MUS_ENCOUNTER_MALE:
+            return MUS_DP_ENCOUNTER_BOY;
+        case MUS_ENCOUNTER_MAGMA:
+            return MUS_DP_ENCOUNTER_GALACTIC;
+        case MUS_ENCOUNTER_RICH:
+            return MUS_DP_ENCOUNTER_RICH;
+        case MUS_ENCOUNTER_SUSPICIOUS:
+            return MUS_DP_ENCOUNTER_SUSPICIOUS;
+        case MUS_ENCOUNTER_SWIMMER:
+            return MUS_DP_ENCOUNTER_CYCLIST;
+        case MUS_ENCOUNTER_INTERVIEWER:
+            return MUS_PL_TV_BROADCAST;
+        case MUS_RG_ENCOUNTER_DEOXYS:
+            return MUS_PL_GIRATINA_APPEARS_1;
+        case MUS_AWAKEN_LEGEND:
+            return MUS_PL_GIRATINA_APPEARS_2;
+        case MUS_RAYQUAZA_APPEARS:
+            return MUS_DP_LEGEND_APPEARS;
+        case MUS_WEATHER_GROUDON:
+            return MUS_DP_CATASTROPHE;
+        case MUS_WEATHER_KYOGRE:
+            return MUS_DP_CATASTROPHE;
+        default:
+            return songNum;
+    }
+}
+
+u16 DefaultMusicHandler(u16 songNum) {
+    // Logic par défaut
+    return songNum;
+}
+
+u16 RegionalMusicHandler(u16 songNum) {
+    MusicHandler handler;
+
+    switch (gSaveBlock2Ptr->optionsMusic) {
+        case OPTIONS_MUSIC_HOENN:
+            handler = HoennMusicHandler;
+            break;
+        case OPTIONS_MUSIC_SINNOH:
+            handler = SinnohMusicHandler;
+            break;
+        default:
+            handler = DefaultMusicHandler;
+            break;
+    }
+
+    return handler(songNum);
+}
+
 void PlaySE(u16 songNum)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(RegionalMusicHandler(songNum));
 }
 
 void PlaySE12WithPanning(u16 songNum, s8 pan)

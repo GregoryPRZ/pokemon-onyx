@@ -663,8 +663,6 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJWIN_ON);
 		if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_HOENN)
 			m4aSongNumStart(MUS_TITLE);
-		else if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_JOHTO)
-			m4aSongNumStart(MUS_HG_TITLE);
 		else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
 			m4aSongNumStart(MUS_DP_TITLE);
 		else 
