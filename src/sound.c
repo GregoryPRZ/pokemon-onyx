@@ -623,8 +623,10 @@ u16 SinnohMusicHandler(u16 songNum) {
             return MUS_DP_OBTAIN_BADGE;
         case MUS_HEAL:
             return MUS_DP_HEAL;
-        case MUS_CAUGHT:
+        case MUS_RG_CAUGHT_INTRO:
             return MUS_DP_CAUGHT_INTRO;
+        case MUS_CAUGHT:
+            return MUS_DP_VICTORY_WILD;
         case MUS_MOVE_DELETED:
             return MUS_DP_MOVE_DELETED;
         case MUS_HALL_OF_FAME:
