@@ -140,6 +140,11 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+static const u8 sEonFluteDesc[]       =_("A flute that can\n"
+	                                    "summon LATIAS\n"
+	                                    "wherever you are.");
+
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -12626,4 +12631,16 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    [ITEM_EON_FLUTE] =
+    {
+        .name = _("EON FLUTE"),
+        .price = 0,
+        .description = sEonFluteDesc,
+		.importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 2,
+        .fieldUseFunc = ItemUseOutOfBattle_EonFlute,
+    },
+
 };

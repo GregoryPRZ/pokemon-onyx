@@ -23,6 +23,9 @@ enum {
 extern const u8 *gRamScriptRetAddr;
 
 static u8 sGlobalScriptContextStatus;
+static struct ScriptContext sScriptContext;
+static struct ScriptContext sScriptContext2;
+static bool8 sScriptContext2Enabled;
 static struct ScriptContext sGlobalScriptContext;
 static struct ScriptContext sImmediateScriptContext;
 static bool8 sLockFieldControls;
@@ -259,6 +262,48 @@ void ScriptContext_SetupScript(const u8 *ptr)
 void ScriptContext_Stop(void)
 {
     sGlobalScriptContextStatus = CONTEXT_WAITING;
+}
+
+void ScriptContext2_Enable(void)
+{
+    sScriptContext2Enabled = TRUE;
+}
+
+void ScriptContext2_Disable(void)
+{
+    sScriptContext2Enabled = FALSE;
+}
+
+bool8 ScriptContext2_IsEnabled(void)
+{
+    return sScriptContext2Enabled;
+}
+
+bool8 ScriptContext2_RunScript(void)
+{
+    if (sGlobalScriptContextStatus == 2)
+        return FALSE;
+
+    if (sGlobalScriptContextStatus == 1)
+        return FALSE;
+
+    ScriptContext2_Enable();
+
+    if (!RunScriptCommand(&sScriptContext))
+    {
+        sGlobalScriptContextStatus = 2;
+        ScriptContext2_Disable();
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+void ScriptContext2_RunNewScript(const u8 *ptr)
+{
+    InitScriptContext(&sScriptContext2, gScriptCmdTable, gScriptCmdTableEnd);
+    SetupBytecodeScript(&sScriptContext2, ptr);
+    while (RunScriptCommand(&sScriptContext2) == TRUE);
 }
 
 // Puts the script into running mode.
