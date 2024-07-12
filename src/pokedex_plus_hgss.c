@@ -344,7 +344,8 @@ static const u16* const sDexPalettes[HGSS_COLOR_COUNT][HGSS_PAL_TYPE_COUNT] =
 
 #define HGSS_COLOR_MODE HGSS_DARKEST
 #define SCROLLING_MON_X 146
-#define HGSS_DECAPPED FALSE
+#define HGSS_DECAPPED TRUE
+#define HGSS_DARK_MODE TRUE
 #define HGSS_HIDE_UNSEEN_EVOLUTION_NAMES FALSE
 
 // For scrolling search parameter
