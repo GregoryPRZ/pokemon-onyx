@@ -207,7 +207,10 @@ void CB2_InitSoar(void)
 			sPlayerYaw = 0;
 			sPlayerPitch = 0;
 
-			FadeOutAndFadeInNewMapMusic(MUS_SAILING, 2, 2);
+			if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_HOENN)
+				FadeOutAndFadeInNewMapMusic(MUS_SAILING, 2, 2);
+			else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
+				FadeOutAndFadeInNewMapMusic(MUS_DP_AMITY_SQUARE, 2, 2);
 
 			// some of these may not be necessary, but I'm just being safe
 			ScanlineEffect_Stop();
@@ -224,7 +227,6 @@ void CB2_InitSoar(void)
 
 void ItemUseOnFieldCB_EonFlute(u8 taskId)
 {
-	PlaySE(SE_M_GRASSWHISTLE);
 	ScriptContext2_Enable();
 	FreezeObjectEvents();
 	SetMainCallback2(CB2_InitSoar);
