@@ -466,6 +466,7 @@ static void UpdateEonSpriteRotation(struct Sprite *sprite)
 
 static void StartBarrelRoll(void)
 {
+	PlaySE(SE_M_FLY);
 	struct Sprite *sprite = &gSprites[sEonSpriteId];
 
 	if (sprite->spBarrelRollDir == 0)
@@ -675,7 +676,6 @@ static void CB2_FadeOut(void)
 		REG_IE &= ~(INTR_FLAG_HBLANK);
 		REG_IME = 1;
 		REG_DISPSTAT &= ~(DISPSTAT_HBLANK_INTR);
-
 		SetHBlankCallback(NULL);
 		SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
 	}
