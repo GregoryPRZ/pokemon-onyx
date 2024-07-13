@@ -686,7 +686,7 @@ u16 SinnohMusicHandler(u16 songNum) {
         case MUS_SLATEPORT:
             return MUS_DP_SUNYSHORE_DAY;
         case MUS_SOOTOPOLIS:
-            return MUS_DP_CANALAVE_DAY;
+            return MUS_DP_SNOWPOINT_DAY;
         case MUS_FORTREE:
             return MUS_DP_ETERNA_DAY;
         case MUS_VERDANTURF:
