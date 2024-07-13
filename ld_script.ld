@@ -361,6 +361,7 @@ SECTIONS {
         src/expansion_intro.o(.text);
         src/sound_check_menu.o(.text);
     	src/soar.o(.text);
+        src/day_night.o(.text);
     } > ROM =0
 
     script_data :
@@ -730,6 +731,7 @@ SECTIONS {
         src/expansion_intro.o(.rodata);
         src/sound_check_menu.o(.rodata); 
     	src/soar.o(.rodata);
+        src/day_night.o(.rodata);
     } > ROM =0
 
     song_data :
