@@ -362,6 +362,7 @@ SECTIONS {
         src/sound_check_menu.o(.text);
     	src/soar.o(.text);
         src/day_night.o(.text);
+		src/ui_stat_editor.o(.text);
     } > ROM =0
 
     script_data :
@@ -732,6 +733,7 @@ SECTIONS {
         src/sound_check_menu.o(.rodata); 
     	src/soar.o(.rodata);
         src/day_night.o(.rodata);
+		src/ui_stat_editor.o(.rodata);
     } > ROM =0
 
     song_data :
