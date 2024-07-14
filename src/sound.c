@@ -7,9 +7,6 @@
 #include "pokemon.h"
 #include "constants/songs.h"
 #include "task.h"
-#include "rtc.h"
-#include "constants/day_night.h"
-#include "day_night.h"
 
 struct Fanfare
 {
@@ -607,7 +604,6 @@ u16 HoennMusicHandler(u16 songNum) {
 }
 
 u16 SinnohMusicHandler(u16 songNum) {
-    u8 currentTime = GetCurrentTimeOfDay();
     switch(songNum) {
         case MUS_TITLE:
             return MUS_DP_TITLE;
@@ -678,114 +674,53 @@ u16 SinnohMusicHandler(u16 songNum) {
         case MUS_VICTORY_LEAGUE:
             return MUS_DP_VICTORY_CHAMPION;
         case MUS_LITTLEROOT:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_TWINLEAF_NIGHT;   
-            else
-                return MUS_DP_TWINLEAF_DAY;   
+            return MUS_DP_TWINLEAF_DAY;
         case MUS_OLDALE:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_SANDGEM_NIGHT;   
-            else
-                return MUS_DP_SANDGEM_DAY;   
+            return MUS_DP_SANDGEM_DAY;
         case MUS_PETALBURG:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_FLOAROMA_NIGHT;   
-            else
-                return MUS_DP_FLOAROMA_DAY;   
+            return MUS_DP_FLOAROMA_DAY;
         case MUS_RUSTBORO:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_JUBILIFE_NIGHT;   
-            else
-                return MUS_DP_JUBILIFE_DAY;
+            return MUS_DP_JUBILIFE_DAY;
         case MUS_DEWFORD:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_VALOR_LAKEFRONT_NIGHT;   
-            else
-                return MUS_DP_VALOR_LAKEFRONT_DAY;   
+            return MUS_DP_VALOR_LAKEFRONT_DAY;
         case MUS_SLATEPORT:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_SUNYSHORE_NIGHT;   
-            else
-                return MUS_DP_SUNYSHORE_DAY;   
+            return MUS_DP_SUNYSHORE_DAY;
         case MUS_SOOTOPOLIS:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_SNOWPOINT_NIGHT;   
-            else
-                return MUS_DP_SNOWPOINT_DAY;   
+            return MUS_DP_SNOWPOINT_DAY;
         case MUS_FORTREE:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ETERNA_NIGHT;   
-            else
-                return MUS_DP_ETERNA_DAY;   
+            return MUS_DP_ETERNA_DAY;
         case MUS_VERDANTURF:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_CANALAVE_NIGHT;   
-            else
-                return MUS_DP_CANALAVE_DAY;   
+            return MUS_DP_CANALAVE_DAY;
         case MUS_FALLARBOR:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_SOLACEON_NIGHT;   
-            else
-                return MUS_DP_SOLACEON_DAY;  
+            return MUS_DP_SOLACEON_DAY;
         case MUS_EVER_GRANDE:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_POKEMON_LEAGUE_NIGHT;   
-            else
-                return MUS_DP_POKEMON_LEAGUE_DAY;  
+            return MUS_DP_POKEMON_LEAGUE_DAY;
+        case MUS_LILYCOVE:
+            return MUS_PL_LILYCOVE_BOSSA_NOVA;
         case MUS_B_FRONTIER:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_FIGHT_AREA_NIGHT;   
-            else
-                return MUS_PL_FIGHT_AREA_DAY;  
+            return MUS_DP_FIGHT_AREA_DAY;
         case MUS_POKE_CENTER:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_POKE_CENTER_NIGHT;   
-            else
-                return MUS_DP_POKE_CENTER_DAY;  
+            return MUS_DP_POKE_CENTER_DAY;
         case MUS_POKE_MART:
             return MUS_DP_POKE_MART;
         case MUS_ROUTE101:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE201_NIGHT;   
-            else
-                return MUS_DP_ROUTE201_DAY;  
+            return MUS_DP_ROUTE201_DAY;
         case MUS_ROUTE104:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE203_NIGHT;   
-            else
-                return MUS_DP_ROUTE203_DAY;  
+            return MUS_DP_ROUTE203_DAY;
         case MUS_ROUTE110:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE206_NIGHT;   
-            else
-                return MUS_DP_ROUTE206_DAY;  
+            return MUS_DP_ROUTE206_DAY;
         case MUS_ROUTE111:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE228_NIGHT;   
-            else
-                return MUS_DP_ROUTE228_DAY;  
+            return MUS_DP_ROUTE228_DAY;
         case MUS_ROUTE113:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE210_NIGHT;   
-            else
-                return MUS_DP_ROUTE210_DAY;  
+            return MUS_DP_ROUTE210_DAY;
         case MUS_ROUTE118:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE225_NIGHT;   
-            else
-                return MUS_DP_ROUTE225_DAY;  
+            return MUS_DP_ROUTE225_DAY;
         case MUS_ROUTE119:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE225_NIGHT;   
-            else
-                return MUS_DP_ROUTE225_DAY;  
+            return MUS_DP_ROUTE225_DAY;
         case MUS_ROUTE120:
-            if (currentTime == TIME_NIGHT)
-                return MUS_DP_ROUTE209_NIGHT;   
-            else
-                return MUS_DP_ROUTE209_DAY;  
+            return MUS_DP_ROUTE209_DAY;
         case MUS_ROUTE122:
-            return MUS_DP_ROWAN;
+            return MUS_DP_ROUTE205_DAY;
         case MUS_VICTORY_ROAD:
             return MUS_DP_INSIDE_POKEMON_LEAGUE;
         case MUS_PETALBURG_WOODS:
@@ -894,6 +829,7 @@ u16 DefaultMusicHandler(u16 songNum) {
 
 u16 RegionalMusicHandler(u16 songNum) {
     MusicHandler handler;
+
     switch (gSaveBlock2Ptr->optionsMusic) {
         case OPTIONS_MUSIC_HOENN:
             handler = HoennMusicHandler;
