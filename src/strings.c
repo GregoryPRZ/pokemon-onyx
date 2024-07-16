@@ -1876,3 +1876,9 @@ const u8 gText_Fertilize[] = _("FERTILIZE");
 const u8 gText_PlantBerry[] = _("PLANT BERRY");
 const u8 gText_StatEditor[] = _("EDIT STATS");
 const u8 gText_Nickname[] = _("NICKNAME");
+
+// Start Pokevial Branch
+const u8 gText_PokevialHasDoses[] =_("The {STR_VAR_1} has {STR_VAR_2} doses remaining.\nUse the {STR_VAR_1}?");
+const u8 gText_PokevialIsEmpty[] =_("The {STR_VAR_1} is empty!\nRefill it by healing at a {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
+const u8 gText_YourPkmnWereRestored[] =_("Your POKéMON were restored to full health.{PAUSE_UNTIL_PRESS}");
+//End Pokevial Branch
