@@ -12649,7 +12649,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKEVIAL] =
     {
-        .name = _("POKéVIAL"),
+        .name = _("PokéVial"),
         .price = 0,
         .description = sPokevialDesc,
         .importance = 1,
