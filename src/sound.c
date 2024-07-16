@@ -838,6 +838,8 @@ u16 SinnohMusicHandler(u16 songNum) {
             return MUS_DP_HALL_OF_FAME_ROOM;
         case MUS_HELP:
             return MUS_DP_LAKE_EVENT;
+        case MUS_FOLLOW_ME:
+            return MUS_DP_FOLLOW_ME;
         case MUS_ENCOUNTER_AQUA:
             return MUS_DP_ENCOUNTER_GALACTIC;
         case MUS_ENCOUNTER_BRENDAN:
