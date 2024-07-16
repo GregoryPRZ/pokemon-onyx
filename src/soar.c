@@ -41,6 +41,8 @@
 // 32x32 map with 2 bytes per entry (0x800 bytes)
 #define BG0_TILEMAP_OFFSET 0xB800
 
+static u16 sPreviousMapMusic;
+
 static void CB2_LoadSoarGraphics(void);
 static void SoarVBlankCallback(void);
 static void SoarHBlankCallback(void);
@@ -177,6 +179,7 @@ void CB2_InitSoar(void)
 	switch (gMain.state)
 	{
 	case 0:
+        sPreviousMapMusic = GetCurrentMapMusic();
 		StringExpandPlaceholders(gStringVar4, sEonFluteUseMessage);
 
 		DrawDialogueFrame(0, 0);
@@ -508,6 +511,11 @@ static void ExitSoar(void)
 {
 	PlaySE(SE_EXIT);
 	BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, 0);
+    StopMapMusic();
+    if (sPreviousMapMusic != MUS_NONE)
+    {
+        FadeOutAndFadeInNewMapMusic(sPreviousMapMusic, 2, 2);
+    }
 	SetMainCallback2(CB2_FadeOut);
 }
 

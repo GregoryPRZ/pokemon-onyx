@@ -207,9 +207,11 @@ void FadeOutAndPlayNewMapMusic(u16 songNum, u8 speed)
 
 void FadeOutAndFadeInNewMapMusic(u16 songNum, u8 fadeOutSpeed, u8 fadeInSpeed)
 {
+    u16 regionalSongNum = RegionalMusicHandler(songNum);
+
     FadeOutMapMusic(fadeOutSpeed);
     sCurrentMapMusic = 0;
-    sNextMapMusic = songNum;
+    sNextMapMusic = regionalSongNum;
     sMapMusicState = 7;
     sMapMusicFadeInSpeed = fadeInSpeed;
 }
