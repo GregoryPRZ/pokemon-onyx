@@ -159,6 +159,21 @@ void Special_ViewWallClock(void)
     LockPlayerFieldControls();
 }
 
+void GetDayOrNight(void)
+{
+	u8 nightorday;
+	RtcCalcLocalTime();
+	if (gLocalTime.hours >= 6 && gLocalTime.hours <=19)
+	{
+		nightorday = 0; //Day
+	}
+	else
+	{
+		nightorday = 1; //Night
+	}
+	gSpecialVar_Result = nightorday;
+}
+
 void ResetCyclingRoadChallengeData(void)
 {
     gBikeCyclingChallenge = FALSE;
