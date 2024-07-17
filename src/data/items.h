@@ -11820,8 +11820,9 @@ const struct Item gItemsInfo[] =
             "and treasure these\n"
             "curious coins."),
         .pocket = POCKET_POWER_UP,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
     },
 
     [ITEM_LEADERS_CREST] =
@@ -11833,8 +11834,9 @@ const struct Item gItemsInfo[] =
             "blade of some sort.\n"
             "Held by Bisharp."),
         .pocket = POCKET_POWER_UP,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
     },
 
     [ITEM_MALICIOUS_ARMOR] =
