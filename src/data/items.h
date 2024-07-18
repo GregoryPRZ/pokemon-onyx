@@ -2539,12 +2539,13 @@ const struct Item gItemsInfo[] =
     [ITEM_ODD_KEYSTONE] =
     {
         .name = _("Odd Keystone"),
-        .price = 2100,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = COMPOUND_STRING(
             "Voices can be heard\n"
             "from this odd stone\n"
             "occasionally."),
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEGA_STONES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
