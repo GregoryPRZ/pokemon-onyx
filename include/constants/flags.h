@@ -1537,7 +1537,7 @@
 #define FLAG_VISITED_ROUTE133                       (SYSTEM_FLAGS + 0xA5) 
 #define FLAG_VISITED_ROUTE134                       (SYSTEM_FLAGS + 0xA6) 
 #define FLAG_VISITED_MT_CHIMNEY                     (SYSTEM_FLAGS + 0xA7)
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
+#define FLAG_EXP_SHARE                              (SYSTEM_FLAGS + 0xA8) // Unused Flag
 #define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
 #define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
 #define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
