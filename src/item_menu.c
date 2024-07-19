@@ -1483,12 +1483,12 @@ static u8 GetSwitchBagPocketDirection(void)
     LRKeys = GetLRKeysPressed();
     if (JOY_NEW(DPAD_LEFT) || LRKeys == MENU_L_PRESSED)
     {
-        PlaySE(SE_RG_BAG_POCKET);
+        PlaySE(SE_M_BUBBLE2);
         return SWITCH_POCKET_LEFT;
     }
     if (JOY_NEW(DPAD_RIGHT) || LRKeys == MENU_R_PRESSED)
     {
-        PlaySE(SE_RG_BAG_POCKET);
+        PlaySE(SE_M_BUBBLE2);
         return SWITCH_POCKET_RIGHT;
     }
     return SWITCH_POCKET_NONE;
