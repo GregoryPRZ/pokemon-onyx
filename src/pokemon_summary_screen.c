@@ -1723,7 +1723,7 @@ static void Task_HandleInput(u8 taskId)
                 else if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES
                          || sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES)
                 {
-                    PlaySE(SE_SELECT);
+                    PlaySE(SE_PIN);
                     SwitchToMoveSelection(taskId);
                 }
             }
@@ -1917,7 +1917,7 @@ static void ChangeSummaryPokemon(u8 taskId, s8 delta)
 
         if (monId != -1)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_PIN);
             if (sMonSummaryScreen->summary.ailment != AILMENT_NONE)
             {
                 SetSpriteInvisibility(SPRITE_ARR_ID_STATUS, TRUE);
@@ -2097,7 +2097,7 @@ static void ChangePage(u8 taskId, s8 delta)
     else if (delta == 1 && sMonSummaryScreen->currPageIndex == sMonSummaryScreen->maxPageIndex)
         return;
 
-    PlaySE(SE_SELECT);
+    PlaySE(SE_M_BUBBLE2);
     ClearPageWindowTilemaps(sMonSummaryScreen->currPageIndex);
     sMonSummaryScreen->currPageIndex += delta;
     data[0] = 0;
