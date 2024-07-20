@@ -6104,11 +6104,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     [SPECIES_MELMETAL_GIGANTAMAX] =
     {
         .baseHP        = 135,
-        .baseAttack    = 143,
-        .baseDefense   = 143,
-        .baseSpeed     = 34,
+        .baseAttack    = 183,
+        .baseDefense   = 163,
+        .baseSpeed     = 54,
         .baseSpAttack  = 80,
-        .baseSpDefense = 65,
+        .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_STEEL),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
@@ -6118,7 +6118,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_IRON_FIST, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_IRON_FIST, ABILITY_IRON_FIST, ABILITY_IRON_FIST},
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Melmetal"),
         .cryId = CRY_MELMETAL,
@@ -6150,7 +6150,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconPalIndex = 0,
         FOOTPRINT(Melmetal)
         .isMythical = TRUE,
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sMelmetalLevelUpLearnset,
         .teachableLearnset = sMelmetalTeachableLearnset,
         .formSpeciesIdTable = sMelmetalFormSpeciesIdTable,
