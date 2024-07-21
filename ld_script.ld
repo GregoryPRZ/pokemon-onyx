@@ -364,6 +364,7 @@ SECTIONS {
         src/day_night.o(.text);
 		src/ui_stat_editor.o(.text);
         src/ui_main_menu.o(.text);
+        src/ui_startmenu_full.o(.text);
     } > ROM =0
 
     script_data :
@@ -736,6 +737,7 @@ SECTIONS {
         src/day_night.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
         src/ui_main_menu.o(.rodata);
+        src/ui_startmenu_full.o(.rodata);
     } > ROM =0
 
     song_data :
