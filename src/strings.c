@@ -1517,6 +1517,9 @@ const u8 gText_Frame[] = _("FRAME");
 const u8 gText_OptionMenuCancel[] = _("CANCEL");
 const u8 gText_ButtonMode[] = _("BUTTON MODE");
 const u8 gText_Music[] = _("MUSIC");
+const u8 gText_Stat_Editor[] = _("STAT EDITOR");
+const u8 gText_Perfect_Ivs[] = _("PERFECT IVS");
+const u8 gText_Evs_Yield[] = _("EVS YIELD");
 const u8 gText_TextSpeedSlow[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SLOW");
 const u8 gText_TextSpeedMid[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}MID");
 const u8 gText_TextSpeedFast[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}FAST");
@@ -1534,6 +1537,12 @@ const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
 const u8 gText_MusicHoenn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}HOENN");
 const u8 gText_MusicSinnoh[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SINNOH");
 const u8 gText_MusicJohto[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}JOHTO");
+const u8 gText_StatEditorOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+const u8 gText_StatEditorOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
+const u8 gText_PerfectIvsOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+const u8 gText_PerfectIvsOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
+const u8 gText_EvsYieldOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
+const u8 gText_EvsYieldOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
 const u8 gText_NumPlayerLink[] = _("{STR_VAR_1}P LINK");
 const u8 gText_BronzeCard[] = _("BRONZE");
 const u8 gText_CopperCard[] = _("COPPER");
@@ -1872,7 +1881,7 @@ const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTI
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 const u8 gText_Fertilize[] = _("FERTILIZE");
 const u8 gText_PlantBerry[] = _("PLANT BERRY");
-const u8 gText_StatEditor[] = _("EDIT STATS");
+const u8 gText_StatEditor[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}EDIT STATS");
 const u8 gText_Nickname[] = _("NICKNAME");
 
 // Start Pokevial Branch

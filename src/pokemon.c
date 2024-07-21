@@ -1508,6 +1508,15 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
+	if(FlagGet(FLAG_PERFECT_IVS)){
+		hpIV 		= 31;
+		attackIV 	= 31;
+		defenseIV 	= 31;
+		spAttackIV 	= 31;
+		spDefenseIV = 31;
+		speedIV 	= 31;
+	}
+
     if (species == SPECIES_SHEDINJA)
     {
         newMaxHP = 1;
@@ -2287,21 +2296,39 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct1->pp4;
             break;
         case MON_DATA_HP_EV:
+            if(FlagGet(FLAG_EVS_YIELD))
+		    retVal = 0;
+            else
             retVal = substruct2->hpEV;
             break;
         case MON_DATA_ATK_EV:
+            if(FlagGet(FLAG_EVS_YIELD))
+		    retVal = 0;
+            else
             retVal = substruct2->attackEV;
             break;
         case MON_DATA_DEF_EV:
+            if(FlagGet(FLAG_EVS_YIELD))
+		    retVal = 0;
+            else
             retVal = substruct2->defenseEV;
             break;
         case MON_DATA_SPEED_EV:
+            if(FlagGet(FLAG_EVS_YIELD))
+		    retVal = 0;
+            else
             retVal = substruct2->speedEV;
             break;
         case MON_DATA_SPATK_EV:
+            if(FlagGet(FLAG_EVS_YIELD))
+		    retVal = 0;
+            else
             retVal = substruct2->spAttackEV;
             break;
         case MON_DATA_SPDEF_EV:
+            if(FlagGet(FLAG_EVS_YIELD))
+		    retVal = 0;
+            else
             retVal = substruct2->spDefenseEV;
             break;
         case MON_DATA_COOL:
@@ -2341,21 +2368,39 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct3->otGender;
             break;
         case MON_DATA_HP_IV:
+        if(FlagGet(FLAG_PERFECT_IVS))
+		    retVal = 31;
+            else
             retVal = substruct3->hpIV;
             break;
         case MON_DATA_ATK_IV:
+        if(FlagGet(FLAG_PERFECT_IVS))
+		    retVal = 31;
+            else
             retVal = substruct3->attackIV;
             break;
         case MON_DATA_DEF_IV:
+        if(FlagGet(FLAG_PERFECT_IVS))
+		    retVal = 31;
+            else
             retVal = substruct3->defenseIV;
             break;
         case MON_DATA_SPEED_IV:
+        if(FlagGet(FLAG_PERFECT_IVS))
+		    retVal = 31;
+            else
             retVal = substruct3->speedIV;
             break;
         case MON_DATA_SPATK_IV:
+        if(FlagGet(FLAG_PERFECT_IVS))
+		    retVal = 31;
+            else
             retVal = substruct3->spAttackIV;
             break;
         case MON_DATA_SPDEF_IV:
+        if(FlagGet(FLAG_PERFECT_IVS))
+		    retVal = 31;
+            else
             retVal = substruct3->spDefenseIV;
             break;
         case MON_DATA_IS_EGG:
@@ -3376,12 +3421,22 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->ppBonuses = GetMonData(src, MON_DATA_PP_BONUSES, NULL);
     dst->friendship = GetMonData(src, MON_DATA_FRIENDSHIP, NULL);
     dst->experience = GetMonData(src, MON_DATA_EXP, NULL);
+    if(FlagGet(FLAG_PERFECT_IVS))
+	{
+	dst->hpIV = 31;
+    dst->attackIV = 31;
+    dst->defenseIV = 31;
+    dst->speedIV = 31;
+    dst->spAttackIV = 31;
+    dst->spDefenseIV = 31;
+    }else{
     dst->hpIV = GetMonData(src, MON_DATA_HP_IV, NULL);
     dst->attackIV = GetMonData(src, MON_DATA_ATK_IV, NULL);
     dst->defenseIV = GetMonData(src, MON_DATA_DEF_IV, NULL);
     dst->speedIV = GetMonData(src, MON_DATA_SPEED_IV, NULL);
     dst->spAttackIV = GetMonData(src, MON_DATA_SPATK_IV, NULL);
     dst->spDefenseIV = GetMonData(src, MON_DATA_SPDEF_IV, NULL);
+    }
     dst->personality = GetMonData(src, MON_DATA_PERSONALITY, NULL);
     dst->status1 = GetMonData(src, MON_DATA_STATUS, NULL);
     dst->level = GetMonData(src, MON_DATA_LEVEL, NULL);

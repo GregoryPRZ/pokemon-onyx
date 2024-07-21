@@ -1472,6 +1472,7 @@ static void Task_StartMenuFullMain(u8 taskId)
     }
     if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT)) // these change the position of the selector, the actual x/y of the sprite is handled in its callback CursorCallback
     {
+        PlaySE(SE_RG_BAG_CURSOR);
         if(sStartMenuDataPtr->selector_x == 0)
             sStartMenuDataPtr->selector_x = 1;
         else
@@ -1479,6 +1480,7 @@ static void Task_StartMenuFullMain(u8 taskId)
     }
     if (JOY_NEW(DPAD_UP))
     {
+        PlaySE(SE_RG_BAG_CURSOR);
         if (sStartMenuDataPtr->selector_y == 0)
             sStartMenuDataPtr->selector_y = 2;
         else
@@ -1486,6 +1488,7 @@ static void Task_StartMenuFullMain(u8 taskId)
     }
     if (JOY_NEW(DPAD_DOWN))
     {
+        PlaySE(SE_RG_BAG_CURSOR);
         if (sStartMenuDataPtr->selector_y == 2)
             sStartMenuDataPtr->selector_y = 0;
         else
