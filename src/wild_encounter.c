@@ -1125,6 +1125,7 @@ bool8 StandardWildEncounter_Debug(void)
     DoStandardWildBattle_Debug();
     return TRUE;
 }
+
 u8 ChooseHiddenMonIndex(void)
 {
     #ifdef ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL
