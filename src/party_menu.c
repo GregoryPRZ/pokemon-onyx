@@ -270,7 +270,6 @@ static void PartyPaletteBufferCopy(u8);
 static void DisplayPartyPokemonDataForMultiBattle(u8);
 static void LoadPartyBoxPalette(struct PartyMenuBox *, u8);
 static void DrawEmptySlot(u8 windowId);
-static void DrawEmptySlot_Equal(u8 windowId); //Custom party menu
 static void DisplayPartyPokemonDataForRelearner(u8);
 static void DisplayPartyPokemonDataForContest(u8);
 static void DisplayPartyPokemonDataForChooseHalf(u8);
@@ -8012,7 +8011,7 @@ static bool8 IsMonNotFullyHealed(void)
 void HealMonFromSlotId(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u32 i = 0, j = 0, ppBonuses = 0;
+    u32 j = 0, ppBonuses = 0;
     u8 arg[4] = {0,0,0,0};
 
     // restore HP.

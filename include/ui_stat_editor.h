@@ -3,8 +3,6 @@
 
 #include "main.h"
 
-#define gAbilityNames(i) (gAbilitiesInfo[i].name)
-
 void Task_OpenStatEditorFromStartMenu(u8 taskId);
 void StatEditor_Init(MainCallback callback);
 
