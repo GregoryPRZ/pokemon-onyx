@@ -1,8 +1,6 @@
 #include "global.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
-#include "battle_pike.h"
-#include "battle_pyramid_bag.h"
 #include "battle_setup.h"
 #include "berry.h"
 #include "bg.h"
@@ -72,7 +70,6 @@
 #include "constants/weather.h"
 #include "item.h"
 #include "constants/items.h"
-#include "ui_startmenu_full.h"
 
 struct CableClubPlayer
 {
@@ -3271,17 +3268,4 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->invisible = ((sprite->data[7] & 4) >> 2);
         sprite->data[7]++;
     }
-}
-
-void CB2_ReturnToFullScreenStartMenu(void)
-{
-    FieldClearVBlankHBlankCallbacks();
-
-    if (GetSafariZoneFlag() || InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
-    {
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
-        return;
-    }
-
-	StartMenuFull_Init(CB2_ReturnToField);
 }

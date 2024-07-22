@@ -156,5 +156,4 @@
 	.include "src/day_night.o"
 	.include "src/ui_stat_editor.o"
 	.include "src/ui_main_menu.o"
-	.include "src/ui_startmenu_full.o"
 	.include "src/dexnav.o"

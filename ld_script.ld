@@ -364,7 +364,6 @@ SECTIONS {
         src/day_night.o(.text);
 		src/ui_stat_editor.o(.text);
         src/ui_main_menu.o(.text);
-        src/ui_startmenu_full.o(.text);
         src/dexnav.o(.text);
     } > ROM =0
 
@@ -738,7 +737,6 @@ SECTIONS {
         src/day_night.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
         src/ui_main_menu.o(.rodata);
-        src/ui_startmenu_full.o(.rodata);
         src/dexnav.o(.rodata);
     } > ROM =0
 
