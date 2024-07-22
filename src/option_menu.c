@@ -30,8 +30,6 @@
 #define tWindowFrameType data[6]
 #define tMusic data[7]
 #define tStats data[8]
-#define tIvs data[9]
-#define tEvs data[10]
 
 // Menu items Pg1
 enum
@@ -51,8 +49,6 @@ enum
 {
     MENUITEM_MUSIC,
     MENUITEM_STAT,
-    MENUITEM_PERFECT_IVS,
-    MENUITEM_EVS_YIELD,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -75,9 +71,6 @@ enum
 //Pg2
 #define YPOS_MUSIC        (MENUITEM_MUSIC * 16)
 #define YPOS_STAT         (MENUITEM_STAT * 16)
-#define YPOS_IV         (MENUITEM_PERFECT_IVS * 16)
-#define YPOS_EV         (MENUITEM_EVS_YIELD * 16)
-
 #define PAGE_COUNT  2
 
 static void Task_OptionMenuFadeIn(u8 taskId);
@@ -95,10 +88,6 @@ static u8 BattleStyle_ProcessInput(u8 selection);
 static void BattleStyle_DrawChoices(u8 selection);
 static u8   StatEditor_ProcessInput(u8 selection);
 static void StatEditor_DrawChoices(u8 selection);
-static u8   PerfectIvs_ProcessInput(u8 selection);
-static void PerfectIvs_DrawChoices(u8 selection);
-static u8   EvsYield_ProcessInput(u8 selection);
-static void EvsYield_DrawChoices(u8 selection);
 static u8   Music_ProcessInput(u8 selection);
 static void Music_DrawChoices(u8 selection);
 static u8 Sound_ProcessInput(u8 selection);
@@ -133,8 +122,6 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_MUSIC]        = gText_Music,
     [MENUITEM_STAT]        = gText_Stat_Editor,
-    [MENUITEM_PERFECT_IVS]        = gText_Perfect_Ivs,
-    [MENUITEM_EVS_YIELD]        = gText_Evs_Yield,
     [MENUITEM_CANCEL_PG2]   = gText_OptionMenuCancel,
 };
 
@@ -213,8 +200,6 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].data[6] = gSaveBlock2Ptr->optionsWindowFrameType;
     gTasks[taskId].data[7] = gSaveBlock2Ptr->optionsMusic;
     gTasks[taskId].data[8] = FlagGet(FLAG_STAT_EDIT_ACTIVATED);
-    gTasks[taskId].data[9] = FlagGet(FLAG_PERFECT_IVS);
-    gTasks[taskId].data[10] = FlagGet(FLAG_EVS_YIELD);
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -233,10 +218,8 @@ static void DrawOptionsPg1(u8 taskId)
 static void DrawOptionsPg2(u8 taskId)
 {
     ReadAllCurrentSettings(taskId);
-    StatEditor_DrawChoices(gTasks[taskId].data[8]);
-    PerfectIvs_DrawChoices(gTasks[taskId].data[9]);
-    EvsYield_DrawChoices(gTasks[taskId].data[10]);
     Music_DrawChoices(gTasks[taskId].data[7]);
+    StatEditor_DrawChoices(gTasks[taskId].data[8]);
     HighlightOptionMenuItem(gTasks[taskId].data[0]);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -549,20 +532,6 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             if (previousOption != gTasks[taskId].data[8])
                 StatEditor_DrawChoices(gTasks[taskId].data[8]);
             break;
-        case MENUITEM_PERFECT_IVS:
-            previousOption = gTasks[taskId].data[9];
-            gTasks[taskId].data[9] = PerfectIvs_ProcessInput(gTasks[taskId].data[9]);
-
-            if (previousOption != gTasks[taskId].data[9])
-                PerfectIvs_DrawChoices(gTasks[taskId].data[9]);
-            break;
-        case MENUITEM_EVS_YIELD:
-            previousOption = gTasks[taskId].data[10];
-            gTasks[taskId].data[10] = EvsYield_ProcessInput(gTasks[taskId].data[10]);
-
-            if (previousOption != gTasks[taskId].data[10])
-                EvsYield_DrawChoices(gTasks[taskId].data[10]);
-            break;
         default:
             return;
         }
@@ -588,8 +557,6 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsMusic = gTasks[taskId].tMusic;
     gTasks[taskId].data[8] == 0 ? FlagClear(FLAG_STAT_EDIT_ACTIVATED) : FlagSet(FLAG_STAT_EDIT_ACTIVATED);
-    gTasks[taskId].data[9] == 0 ? FlagClear(FLAG_PERFECT_IVS) : FlagSet(FLAG_PERFECT_IVS);
-    gTasks[taskId].data[10] == 0 ? FlagClear(FLAG_EVS_YIELD) : FlagSet(FLAG_EVS_YIELD);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -786,48 +753,6 @@ static void StatEditor_DrawChoices(u8 selection)
     styles[selection] = 1;
     DrawOptionMenuChoice(gText_StatEditorOff, 104, YPOS_STAT, styles[0]);
     DrawOptionMenuChoice(gText_StatEditorOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_StatEditorOn, 174), YPOS_STAT, styles[1]);
-}
-
-static u8 PerfectIvs_ProcessInput(u8 selection)
-{
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
-    {
-        selection ^= 1;
-        sArrowPressed = TRUE;
-    }
-
-    return selection;
-}
-
-static void PerfectIvs_DrawChoices(u8 selection)
-{
-    u8 styles[2];
-    styles[0] = 0;
-    styles[1] = 0;
-    styles[selection] = 1;
-    DrawOptionMenuChoice(gText_PerfectIvsOff, 104, YPOS_IV, styles[0]);
-    DrawOptionMenuChoice(gText_PerfectIvsOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_PerfectIvsOn, 174), YPOS_IV, styles[1]);
-}
-
-static u8 EvsYield_ProcessInput(u8 selection)
-{
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
-    {
-        selection ^= 1;
-        sArrowPressed = TRUE;
-    }
-
-    return selection;
-}
-
-static void EvsYield_DrawChoices(u8 selection)
-{
-    u8 styles[2];
-    styles[0] = 0;
-    styles[1] = 0;
-    styles[selection] = 1;
-    DrawOptionMenuChoice(gText_EvsYieldOn, 104, YPOS_EV, styles[0]);
-    DrawOptionMenuChoice(gText_EvsYieldOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_EvsYieldOff, 174), YPOS_EV, styles[1]);
 }
 
 static u8 FrameType_ProcessInput(u8 selection)
