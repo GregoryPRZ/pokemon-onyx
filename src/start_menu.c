@@ -44,6 +44,8 @@
 #include "trainer_card.h"
 #include "window.h"
 #include "union_room.h"
+#include "dexnav.h"
+#include "wild_encounter.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -69,6 +71,7 @@ enum
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
     MENU_ACTION_STAT_EDITOR,
+    MENU_ACTION_DEXNAV
 };
 
 // Save status
@@ -111,6 +114,7 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuStatEditorCallback(void);
+static bool8 StartMenuDexNavCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -205,7 +209,8 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
     [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_DEBUG]           = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
-    [MENU_ACTION_STAT_EDITOR]     = {gText_StatEditor,  {.u8_void = StartMenuStatEditorCallback}}
+    [MENU_ACTION_STAT_EDITOR]     = {gText_StatEditor,  {.u8_void = StartMenuStatEditorCallback}},
+    [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}}
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -330,22 +335,19 @@ static void AddStartMenuAction(u8 action)
 }
 
 static void BuildNormalStartMenu(void)
-{
+{    
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
         AddStartMenuAction(MENU_ACTION_POKEDEX);
-    }
+        FlagSet(FLAG_SYS_DEXNAV_GET);
+        AddStartMenuAction(MENU_ACTION_DEXNAV);
+    
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
-    {
         AddStartMenuAction(MENU_ACTION_POKEMON);
-    }
 
     AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-    {
         AddStartMenuAction(MENU_ACTION_POKENAV);
-    }
     
     //AddStartMenuAction(MENU_ACTION_STAT_EDITOR);
 
@@ -658,7 +660,10 @@ static bool8 HandleStartMenuInput(void)
             if (GetNationalPokedexCount(FLAG_GET_SEEN) == 0)
                 return FALSE;
         }
-
+        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
+          && MapHasNoEncounterData())
+            return FALSE;
+        
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
         if (gMenuCallback != StartMenuSaveCallback
@@ -683,7 +688,7 @@ static bool8 HandleStartMenuInput(void)
     return FALSE;
 }
 
-static bool8 StartMenuPokedexCallback(void)
+bool8 StartMenuPokedexCallback(void)
 {
     if (!gPaletteFade.active)
     {
@@ -1551,5 +1556,11 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 static bool8 StartMenuStatEditorCallback(void)
 {
     CreateTask(Task_OpenStatEditorFromStartMenu, 0);
+    return TRUE;
+}
+
+static bool8 StartMenuDexNavCallback(void)
+{
+    CreateTask(Task_OpenDexNavFromStartMenu, 0);
     return TRUE;
 }

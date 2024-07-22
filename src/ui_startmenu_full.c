@@ -1557,6 +1557,11 @@ static void Task_StartMenuFullMain(u8 taskId)
         gTasks[taskId].func = Task_HandleSaveConfirmation;
     }
 
+    if(JOY_NEW(SELECT_BUTTON)) // If start button pressed go to Save Confirmation Control Task
+    {
+        gTasks[taskId].func = StartMenuDexNavCallback;
+    }
+
 #if (FLAG_CLOCK_MODE != 0)
     if (JOY_NEW(SELECT_BUTTON)) // switch between clock modes
     {
