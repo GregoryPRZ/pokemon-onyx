@@ -1879,9 +1879,9 @@ static bool8 Fishing_GotBite(struct Task *task)
 static bool8 Fishing_WaitForA(struct Task *task)
 {
     const s16 reelTimeouts[3] = {
-        [OLD_ROD]   = 36,
-        [GOOD_ROD]  = 33,
-        [SUPER_ROD] = 30
+        [OLD_ROD]   = 9999,
+        [GOOD_ROD]  = 9999,
+        [SUPER_ROD] = 9999,
     };
 
     AlignFishingAnimationFrames();
