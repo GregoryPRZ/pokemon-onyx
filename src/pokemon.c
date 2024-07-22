@@ -873,22 +873,27 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                   | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
                   | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
                   
-        for (i = 0; i < shinyRolls; i++)
+        if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
+            isShiny = FALSE;
+        else if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
         {
-            if (Random() < SHINY_ODDS)
-                FlagSet(FLAG_SHINY_CREATION);   // use a flag bc of CreateDexNavWildMon
+            isShiny = TRUE;
         }
-
-        if (FlagGet(FLAG_SHINY_CREATION))
+        else
         {
-            u8 nature = personality % NUM_NATURES;  // keep current nature
-            do {
+            u32 totalRerolls = 0;
+            if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+                totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
+            if (LURE_STEP_COUNT != 0)
+                totalRerolls += 1;
+
+            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
+            {
                 personality = Random32();
-                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
-            } while (nature != GetNatureFromPersonality(personality));
-            
-            // clear the flag after use
-            FlagClear(FLAG_SHINY_CREATION);
+                totalRerolls--;
+            }
+
+            isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
         }
     }
     
