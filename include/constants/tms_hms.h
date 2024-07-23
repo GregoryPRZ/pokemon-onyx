@@ -51,7 +51,37 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(ROOST) \
+    F(FOCUS_BLAST) \
+    F(ENERGY_BALL) \
+    F(FALSE_SWIPE) \
+    F(VOLT_SWITCH) \
+    F(PSYSHOCK) \
+    F(DRAIN_PUNCH) \
+    F(DRAGON_PULSE) \
+    F(ROCK_SLIDE) \
+    F(STEALTH_ROCK) \
+    F(X_SCISSOR) \
+    F(U_TURN) \
+    F(DARK_PULSE) \
+    F(PAYBACK) \
+    F(THUNDER_WAVE) \
+    F(CHARGE_BEAM) \
+    F(GYRO_BALL) \
+    F(FLASH_CANNON) \
+    F(VENOSHOCK) \
+    F(POISON_JAB) \
+    F(SHADOW_CLAW) \
+    F(STONE_EDGE) \
+    F(ACROBATICS) \
+    F(WILD_CHARGE) \
+    F(BULLDOZE) \
+    F(DRAINING_KISS) \
+    F(SCALD) \
+    F(FLAME_CHARGE) \
+    F(DAZZLING_GLEAM) \
+    F(MYSTICAL_FIRE)
 
 #define FOREACH_HM(F) \
     F(CUT) \
