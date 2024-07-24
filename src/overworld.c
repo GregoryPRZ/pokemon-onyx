@@ -68,8 +68,6 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
-#include "item.h"
-#include "constants/items.h"
 
 struct CableClubPlayer
 {
@@ -1013,8 +1011,6 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 8 is fully black
 void SetDefaultFlashLevel(void)
 {
-    if (CheckBagHasItem(ITEM_HM_FLASH ,1))
-        FlagSet(FLAG_SYS_USE_FLASH);
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
