@@ -4,6 +4,8 @@ Common_EventScript_PkmnCenterNurse::
 	setvar VAR_0x8004, 0
 	specialvar VAR_RESULT, CountPlayerTrainerStars
 	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
+	checkitem ITEM_POKEVIAL
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Nurse_GivePokevial
 	msgbox gText_WouldYouLikeToRestYourPkmn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
 	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
@@ -114,6 +116,12 @@ EventScript_PkmnCenterNurse_AskForUsual::
 EventScript_PkmnCenterNurse_GoldCardHealPkmn::
 	setvar VAR_0x8004, 1
 	goto EventScript_PkmnCenterNurse_HealPkmn
+	end
+
+EventScript_Nurse_GivePokevial::
+	msgbox gText_NurseGivePokevial, MSGBOX_DEFAULT
+	giveitem ITEM_POKEVIAL
+	release
 	end
 
 Movement_PkmnCenterNurse_Bow:

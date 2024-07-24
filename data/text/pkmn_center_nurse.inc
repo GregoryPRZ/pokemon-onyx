@@ -5,6 +5,19 @@ gText_WouldYouLikeToRestYourPkmn::
 	.string "to full health.\p"
 	.string "Would you like to rest your POKéMON?$"
 
+
+gText_NurseGivePokevial::
+	.string "Hello, and welcome to\n"
+	.string "the POKéMON CENTER.\p"
+	.string "Every POKéMON trainer\n"
+	.string "should have this item.\p"
+	.string "It lets you heal your\n" 
+	.string "POKéMON once!\p"
+	.string "You'll have to refill it everytime\n" 
+	.string "at a POKéMON center by healing your\l"
+	.string "POKéMON.$"
+
+
 gText_IllTakeYourPkmn::
 	.string "Okay, I'll take your POKéMON\n"
 	.string "for a few seconds.$"
