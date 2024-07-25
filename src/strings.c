@@ -1885,3 +1885,6 @@ const u8 gText_PokevialHasDoses[] =_("The {STR_VAR_1} has {STR_VAR_2} doses rema
 const u8 gText_PokevialIsEmpty[] =_("The {STR_VAR_1} is empty!\nRefill it by healing at a {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 const u8 gText_YourPkmnWereRestored[] =_("Your POKéMON were restored to full health.{PAUSE_UNTIL_PRESS}");
 //End Pokevial Branch
+
+// Move Relearning in Party Menu
+const u8 gText_Moves_Menu[] = _("{COLOR BLUE}{SHADOW LIGHT_BLUE}MOVES");
