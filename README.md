@@ -9,7 +9,7 @@ Adds a clock that tracks the in-game time to the start menu, as seen below. Ther
 If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
 You can phrase it as the following:
 ```
-Based off RHH's pokeemerald-expansion v1.8.0 https://github.com/rh-hideout/pokeemerald-expansion/
+Based off RHH's pokeemerald-expansion v1.8.5 https://github.com/rh-hideout/pokeemerald-expansion/
 ```
 
 ## What features are included?
