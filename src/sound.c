@@ -866,10 +866,6 @@ u16 SinnohMusicHandler(u16 songNum) {
             return MUS_DP_VS_GALACTIC;
         case MUS_VS_AQUA_MAGMA_LEADER:
             return MUS_DP_VS_GALACTIC_BOSS;
-        case TRAINER_CLASS_AQUA_ADMIN:
-            return MUS_DP_VS_GALACTIC_COMMANDER;
-        case TRAINER_CLASS_MAGMA_ADMIN:
-            return MUS_DP_VS_GALACTIC_COMMANDER;
         case MUS_VS_RIVAL:
             return MUS_DP_VS_RIVAL;
         case MUS_VS_KYOGRE_GROUDON:
