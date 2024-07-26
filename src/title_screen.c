@@ -665,6 +665,8 @@ void CB2_InitTitleScreen(void)
 			m4aSongNumStart(MUS_TITLE);
 		else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
 			m4aSongNumStart(MUS_DP_TITLE);
+    	else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_JOHTO)
+			m4aSongNumStart(MUS_HG_TITLE);
 		else 
 			m4aSongNumStart(MUS_TITLE);
         gMain.state = 5;

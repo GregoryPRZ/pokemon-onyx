@@ -608,6 +608,215 @@ u16 HoennMusicHandler(u16 songNum) {
     return songNum;
 }
 
+u16 JohtoMusicHandler(u16 songNum) {
+    switch(songNum) {
+        case MUS_TITLE:
+            return MUS_HG_TITLE;
+        case MUS_EVOLUTION:
+            return MUS_HG_EVOLUTION;
+        case MUS_EVOLVED:
+            return MUS_HG_EVOLVED;
+        case MUS_LEVEL_UP:
+            return MUS_HG_LEVEL_UP;
+        case MUS_OBTAIN_ITEM:
+            return MUS_HG_OBTAIN_ITEM;
+        case MUS_OBTAIN_TMHM:
+            return MUS_HG_OBTAIN_TMHM;
+        case MUS_OBTAIN_BERRY:
+            return MUS_HG_OBTAIN_BERRY;
+        case MUS_OBTAIN_BADGE:
+            return MUS_HG_OBTAIN_BADGE;
+        case MUS_HEAL:
+            return MUS_HG_HEAL;
+        case MUS_RG_CAUGHT_INTRO:
+            return MUS_HG_EVOLVED;
+        case MUS_CAUGHT:
+            return MUS_HG_CAUGHT;
+        case MUS_MOVE_DELETED:
+            return MUS_HG_MOVE_DELETED;
+        case MUS_HALL_OF_FAME:
+            return MUS_HG_E_DENDOURIRI;
+        case MUS_OBTAIN_B_POINTS:
+            return MUS_HG_OBTAIN_B_POINTS;
+        case MUS_CREDITS:
+            return MUS_HG_CREDITS;
+        case MUS_VS_WILD:
+            return MUS_HG_VS_WILD;
+        case MUS_VS_TRAINER:
+            return MUS_HG_VS_TRAINER;
+        case MUS_VS_GYM_LEADER:
+            return MUS_HG_VS_GYM_LEADER;
+        case MUS_VS_ELITE_FOUR:
+            return MUS_HG_VS_GYM_LEADER_KANTO;
+        case MUS_VS_CHAMPION:
+            return MUS_HG_VS_CHAMPION;
+        case MUS_VS_FRONTIER_BRAIN:
+            return MUS_HG_VS_FRONTIER_BRAIN;
+        case MUS_VS_AQUA_MAGMA:
+            return MUS_HG_VS_ROCKET;
+        case MUS_VS_AQUA_MAGMA_LEADER:
+            return MUS_HG_VS_CHAMPION;
+        case MUS_VS_RIVAL:
+            return MUS_HG_VS_TRAINER_KANTO;
+        case MUS_VS_KYOGRE_GROUDON:
+            return MUS_HG_VS_KYOGRE_GROUDON;
+        case MUS_VS_RAYQUAZA:
+            return MUS_HG_VS_KYOGRE_GROUDON;
+        case MUS_VS_REGI:
+            return MUS_PL_VS_REGI;
+        case MUS_RG_VS_DEOXYS:
+            return MUS_HG_VS_KYOGRE_GROUDON;
+        case MUS_VS_MEW:
+            return MUS_HG_VS_WILD_KANTO;
+        case MUS_VICTORY_WILD:
+            return MUS_HG_VICTORY_WILD;
+        case MUS_VICTORY_TRAINER:
+            return MUS_HG_VICTORY_TRAINER;
+        case MUS_VICTORY_GYM_LEADER:
+            return MUS_HG_VICTORY_GYM_LEADER;
+        case MUS_VICTORY_AQUA_MAGMA:
+            return MUS_HG_VICTORY_TRAINER;
+        case MUS_VICTORY_LEAGUE:
+            return MUS_HG_VICTORY_GYM_LEADER;
+        case MUS_LITTLEROOT:
+            return MUS_HG_NEW_BARK;   
+        case MUS_OLDALE:    
+            return MUS_HG_CHERRYGROVE;   
+        case MUS_PETALBURG:
+            return MUS_HG_VIOLET;   
+        case MUS_RUSTBORO:
+            return MUS_HG_GOLDENROD;
+        case MUS_DEWFORD:
+            return MUS_HG_CIANWOOD;   
+        case MUS_SLATEPORT:
+            return MUS_HG_VERMILION;   
+        case MUS_SOOTOPOLIS:
+            return MUS_HG_CINNABAR;   
+        case MUS_FORTREE:
+            return MUS_HG_AZALEA;   
+        case MUS_VERDANTURF:
+            return MUS_HG_PALLET;   
+        case MUS_FALLARBOR:
+            return MUS_HG_ECRUTEAK;  
+        case MUS_EVER_GRANDE:
+            return MUS_HG_POKEMON_LEAGUE; 
+        case MUS_LILYCOVE:
+            return MUS_HG_PEWTER;
+        case MUS_B_FRONTIER:
+            return MUS_HG_B_TOWER;  
+        case MUS_POKE_CENTER:
+            return MUS_HG_POKE_CENTER;  
+        case MUS_POKE_MART:
+            return MUS_HG_POKE_MART;
+        case MUS_ROUTE101:
+            return MUS_HG_ROUTE29; 
+        case MUS_ROUTE104:
+            return MUS_HG_ROUTE30;  
+        case MUS_ROUTE110:
+                return MUS_HG_ROUTE34;  
+        case MUS_ROUTE111:
+                return MUS_HG_ROUTE38;  
+        case MUS_ROUTE113:
+                return MUS_HG_ROUTE26;  
+        case MUS_ROUTE118:
+                return MUS_HG_ROUTE3; 
+        case MUS_ROUTE119:
+                return MUS_HG_ROUTE3;  
+        case MUS_ROUTE120:
+                return MUS_HG_ROUTE11;  
+        case MUS_ROUTE122:
+            return MUS_HG_ROUTE24;
+        case MUS_VICTORY_ROAD:
+            return MUS_HG_VICTORY_ROAD;
+        case MUS_PETALBURG_WOODS:
+            return MUS_HG_UNION_CAVE;
+        case MUS_CAVE_OF_ORIGIN:
+            return MUS_HG_ICE_PATH;
+        case MUS_MT_CHIMNEY:
+            return MUS_HG_LIGHTHOUSE;
+        case MUS_MT_PYRE_EXTERIOR:
+            return MUS_HG_SINJOU_RUINS;
+        case MUS_MT_PYRE:
+            return MUS_HG_RUINS_OF_ALPH;
+        case MUS_SAFARI_ZONE:
+            return MUS_HG_SAFARI_ZONE_GATE;
+        case MUS_ABANDONED_SHIP:
+            return MUS_HG_ROCK_TUNNEL;
+        case MUS_SEALED_CHAMBER:
+            return MUS_HG_DRAGONS_DEN;
+        case MUS_GAME_CORNER:
+            return MUS_HG_GAME_CORNER;
+        case MUS_SURF:
+            return MUS_HG_SURF;
+        case MUS_CYCLING:
+            return MUS_HG_CYCLING;
+        case MUS_GYM:
+            return MUS_HG_GYM;
+        case MUS_BIRCH_LAB:
+            return MUS_HG_ELM_LAB;
+        case MUS_B_ARENA:
+            return MUS_HG_B_ARCADE;
+        case MUS_B_PALACE:
+            return MUS_HG_B_CASTLE;
+        case MUS_B_FACTORY:
+            return MUS_HG_B_FACTORY;
+        case MUS_B_TOWER:
+            return MUS_HG_B_TOWER;
+        case MUS_B_DOME:
+            return MUS_HG_B_HALL;
+        case MUS_AQUA_MAGMA_HIDEOUT:
+            return MUS_HG_TEAM_ROCKET_HQ;
+        case MUS_HALL_OF_FAME_ROOM:
+            return MUS_HG_CREDITS;
+        case MUS_FOLLOW_ME:
+            return MUS_HG_FOLLOW_ME_1;
+        case MUS_ENCOUNTER_AQUA:
+            return MUS_HG_ENCOUNTER_ROCKET;
+        case MUS_ENCOUNTER_BRENDAN:
+            return MUS_HG_ETHAN;
+        case MUS_ENCOUNTER_MAY:
+            return MUS_HG_LYRA;
+        case MUS_ENCOUNTER_COOL:
+            return MUS_HG_CLAIR;
+        case MUS_ENCOUNTER_GIRL:
+            return MUS_HG_ENCOUNTER_GIRL_2;
+        case MUS_ENCOUNTER_FEMALE:
+            return MUS_HG_ENCOUNTER_GIRL_1;
+        case MUS_ENCOUNTER_TWINS:
+            return MUS_HG_ENCOUNTER_GIRL_1;
+        case MUS_ENCOUNTER_HIKER:
+            return MUS_HG_ENCOUNTER_SUSPICIOUS_2;
+        case MUS_ENCOUNTER_INTENSE:
+            return MUS_HG_ENCOUNTER_BOY_2;
+        case MUS_ENCOUNTER_MALE:
+            return MUS_HG_ENCOUNTER_BOY_1;
+        case MUS_ENCOUNTER_MAGMA:
+            return MUS_HG_ENCOUNTER_ROCKET;
+        case MUS_ENCOUNTER_RICH:
+            return MUS_HG_ENCOUNTER_SUSPICIOUS_1;
+        case MUS_ENCOUNTER_SUSPICIOUS:
+            return MUS_HG_ENCOUNTER_SUSPICIOUS_1;
+        case MUS_ENCOUNTER_SWIMMER:
+            return MUS_HG_EUSINE;
+        case MUS_ENCOUNTER_INTERVIEWER:
+            return MUS_HG_POKEATHLON_RESULTS;
+        case MUS_RG_ENCOUNTER_DEOXYS:
+            return MUS_HG_LUGIA_APPEARS;
+        case MUS_AWAKEN_LEGEND:
+            return MUS_HG_VS_KYOGRE_GROUDON;
+        case MUS_RAYQUAZA_APPEARS:
+            return MUS_HG_HO_OH_APPEARS;
+        case MUS_WEATHER_GROUDON:
+            return MUS_HG_DRAGONS_DEN;
+        case MUS_WEATHER_KYOGRE:
+            return MUS_HG_DRAGONS_DEN;
+        case MUS_SAILING:
+            return MUS_HG_SS_AQUA;
+        default:
+            return songNum;
+    }
+}
+
 u16 SinnohMusicHandler(u16 songNum) {
     u8 currentTime = GetCurrentTimeOfDay();
     switch(songNum) {
@@ -657,6 +866,10 @@ u16 SinnohMusicHandler(u16 songNum) {
             return MUS_DP_VS_GALACTIC;
         case MUS_VS_AQUA_MAGMA_LEADER:
             return MUS_DP_VS_GALACTIC_BOSS;
+        case TRAINER_CLASS_AQUA_ADMIN:
+            return MUS_DP_VS_GALACTIC_COMMANDER;
+        case TRAINER_CLASS_MAGMA_ADMIN:
+            return MUS_DP_VS_GALACTIC_COMMANDER;
         case MUS_VS_RIVAL:
             return MUS_DP_VS_RIVAL;
         case MUS_VS_KYOGRE_GROUDON:
@@ -797,7 +1010,7 @@ u16 SinnohMusicHandler(u16 songNum) {
         case MUS_CAVE_OF_ORIGIN:
             return MUS_DP_VICTORY_ROAD;
         case MUS_MT_CHIMNEY:
-            return MUS_DP_SPEAR_PILLAR;
+            return MUS_DP_STARK_MOUNTAIN;
         case MUS_MT_PYRE_EXTERIOR:
             return MUS_DP_MT_CORONET;
         case MUS_MT_PYRE:
@@ -907,6 +1120,9 @@ u16 RegionalMusicHandler(u16 songNum) {
             break;
         case OPTIONS_MUSIC_SINNOH:
             handler = SinnohMusicHandler;
+            break;
+        case OPTIONS_MUSIC_JOHTO:
+            handler = JohtoMusicHandler;
             break;
         default:
             handler = DefaultMusicHandler;
