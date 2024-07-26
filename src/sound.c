@@ -1113,6 +1113,7 @@ u16 DefaultMusicHandler(u16 songNum) {
 
 u16 RegionalMusicHandler(u16 songNum) {
     MusicHandler handler;
+
     switch (gSaveBlock2Ptr->optionsMusic) {
         case OPTIONS_MUSIC_HOENN:
             handler = HoennMusicHandler;
