@@ -2891,7 +2891,7 @@ static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette
     u8 paletteNum = IndexOfSpritePaletteTag(spritePalette->tag);
     if (paletteNum != 0xFF) // don't load twice; return
         return paletteNum;
-    paletteNum = LoadSpritePalette(spritePalette);
+    return LoadSpritePaletteDayNight(spritePalette);
     return paletteNum;
 }
 
