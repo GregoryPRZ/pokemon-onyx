@@ -17,6 +17,7 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "day_night.h"
+#include "wild_encounter.h"
 
 struct ConnectionFlags
 {

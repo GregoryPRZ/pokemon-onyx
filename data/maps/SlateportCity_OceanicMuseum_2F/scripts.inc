@@ -162,7 +162,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	waitfanfare
 # 82 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	special HealPlayerParty
-# 83 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	callnative UpdateFollowingPokemon
 	removeobject LOCALID_CAPT_STERN
 # 84 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	setflag FLAG_HIDE_ROUTE_110_TEAM_AQUA
