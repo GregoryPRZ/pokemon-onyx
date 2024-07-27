@@ -194,7 +194,7 @@ BattleFrontier_BattleTowerLobby_EventScript_LookForwardToChallenge::
 	closemessage
 # 98 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	setvar VAR_TEMP_CHALLENGE_STATUS, 255
-	callnative UpdateFollowingPokemon
+# 99 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	release
 # 100 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	end
@@ -232,7 +232,7 @@ BattleFrontier_BattleTowerLobby_EventScript_LostThanksForPlaying::
 	closemessage
 # 117 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	setvar VAR_TEMP_CHALLENGE_STATUS, 255
-	callnative UpdateFollowingPokemon
+# 118 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	release
 # 119 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	end
@@ -404,7 +404,7 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	msgbox BattleFrontier_BattleTowerLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
 # 203 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-	callnative RemoveFollowingPokemon
+# 204 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	call BattleFrontier_EventScript_GetLvlMode
 # 205 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
@@ -530,7 +530,7 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterDoublesChallenge::
 	msgbox BattleFrontier_BattleTowerLobby_Text_PleaseSelectFourMons, MSGBOX_DEFAULT
 # 266 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-	callnative RemoveFollowingPokemon
+# 267 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	call BattleFrontier_EventScript_GetLvlMode
 # 268 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
@@ -658,7 +658,7 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterMultisChallenge::
 	msgbox BattleFrontier_BattleTowerLobby_Text_PleaseSelectTwoMons, MSGBOX_DEFAULT
 # 330 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-	callnative RemoveFollowingPokemon
+# 331 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	call BattleFrontier_EventScript_GetLvlMode
 # 332 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
@@ -784,7 +784,7 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterLinkMultisChallenge::
 	msgbox BattleFrontier_BattleTowerLobby_Text_PleaseSelectTwoMons2, MSGBOX_DEFAULT
 # 393 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-	callnative RemoveFollowingPokemon
+# 394 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	call BattleFrontier_EventScript_GetLvlMode
 # 395 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
@@ -1168,7 +1168,7 @@ BattleFrontier_BattleTowerLobby_EventScript_CancelChallengeSaveFailed::
 BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge::
 # 585 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	special LoadPlayerParty
-	callnative UpdateFollowingPokemon
+# 586 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge::
 # 587 "data/maps/BattleFrontier_BattleTowerLobby/scripts.pory"
 	special CloseLink

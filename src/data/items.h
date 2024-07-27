@@ -14180,6 +14180,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = 2,
         .fieldUseFunc = ItemUseOutOfBattle_EonFlute,
+        .iconPic = gItemIcon_EonFlute,
+        .iconPalette = gItemIconPalette_EonFlute,
     },
 
     [ITEM_POKEVIAL] =

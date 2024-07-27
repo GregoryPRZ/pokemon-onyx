@@ -636,6 +636,7 @@ static void PrintMonStats()
     u8 i;
     u16 currentStat;
     u16 nature;
+    u32 ability;
     u8 text[2];
     u16 level = GetMonData(ReturnPartyMon(), MON_DATA_LEVEL);
     u16 personality = GetMonData(ReturnPartyMon(), MON_DATA_PERSONALITY);
@@ -728,7 +729,8 @@ static void PrintMonStats()
     StringCopy(gStringVar2, gNaturesInfo[nature].name);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 50, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
-    StringCopy(gStringVar2, gAbilitiesInfo[gSpeciesInfo[sStatEditorDataPtr->speciesID].abilities[GetMonData(ReturnPartyMon(), MON_DATA_ABILITY_NUM)]].name);
+    ability = GetMonAbility(ReturnPartyMon());
+    StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
     AddTextPrinterParameterized4(WINDOW_3, FONT_SMALL_NARROW, 4, 34, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar2);
 
     PutWindowTilemap(WINDOW_3);

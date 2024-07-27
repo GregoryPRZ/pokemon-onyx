@@ -122,7 +122,7 @@ BattleFrontier_BattleFactoryLobby_EventScript_GiveBattlePoints::
 	frontier_checkairshow
 # 62 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	special LoadPlayerParty
-	callnative UpdateFollowingPokemon
+# 63 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	factory_save 0
 # 64 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	playse SE_SAVE
@@ -146,7 +146,7 @@ BattleFrontier_BattleFactoryLobby_EventScript_LostChallenge::
 	frontier_checkairshow
 # 74 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	special LoadPlayerParty
-	callnative UpdateFollowingPokemon
+# 75 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	factory_set FACTORY_DATA_WIN_STREAK_ACTIVE, FALSE
 # 76 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	factory_save 0
@@ -396,7 +396,7 @@ BattleFrontier_BattleFactoryLobby_EventScript_CancelChallengeSaveFailed::
 BattleFrontier_BattleFactoryLobby_EventScript_LoadPartyAndCancelChallenge::
 # 199 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	special LoadPlayerParty
-	callnative UpdateFollowingPokemon
+# 200 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 BattleFrontier_BattleFactoryLobby_EventScript_CancelChallenge::
 # 201 "data/maps/BattleFrontier_BattleFactoryLobby/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryLobby_Text_LookForwardToNextVisit, MSGBOX_DEFAULT
