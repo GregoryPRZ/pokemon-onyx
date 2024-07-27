@@ -164,7 +164,6 @@ struct MapHeader
     /* 0x1B */ u8 battleType;
 };
 
-
 struct ObjectEvent
 {
     /*0x00*/ u32 active:1;

@@ -144,6 +144,10 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+static const u8 sEonFluteDesc[]       = _("A flute that can\n"
+	                                      "summon LATIAS\n"
+	                                      "wherever you are.");
+
 static const u8 sPokevialDesc[]       = _("Restores all\n"
                                           "POKéMON to full\n"
                                           "health.");
@@ -14165,6 +14169,17 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+
+    [ITEM_EON_FLUTE] =
+    {
+        .name = _("Eon Flute"),
+        .price = 0,
+        .description = sEonFluteDesc,
+		.importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 2,
+        .fieldUseFunc = ItemUseOutOfBattle_EonFlute,
     },
 
     [ITEM_POKEVIAL] =
