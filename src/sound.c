@@ -1096,8 +1096,6 @@ u16 SinnohMusicHandler(u16 songNum) {
             return MUS_DP_CATASTROPHE;
         case MUS_WEATHER_KYOGRE:
             return MUS_DP_CATASTROPHE;
-        case MUS_SAILING:
-            return MUS_HG_SS_AQUA;
         default:
             return songNum;
     }

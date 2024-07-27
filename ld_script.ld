@@ -361,7 +361,6 @@ SECTIONS {
         src/pokemon_sprite_visualizer.o(.text);
         src/expansion_intro.o(.text);
         src/sound_check_menu.o(.text);
-    	src/soar.o(.text);
         src/day_night.o(.text);
 		src/ui_stat_editor.o(.text);
         src/ui_main_menu.o(.text);
@@ -735,7 +734,6 @@ SECTIONS {
         src/pokemon_sprite_visualizer.o(.rodata);
         src/expansion_intro.o(.rodata);
         src/sound_check_menu.o(.rodata); 
-    	src/soar.o(.rodata);
         src/day_night.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
         src/ui_main_menu.o(.rodata);
