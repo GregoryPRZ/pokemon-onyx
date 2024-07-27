@@ -2744,7 +2744,7 @@ static u8 UpdateSpritePalette(const struct SpritePalette *spritePalette, struct 
     sprite->inUse = FALSE;
     FieldEffectFreePaletteIfUnused(sprite->oam.paletteNum);
     sprite->inUse = TRUE;
-    return sprite->oam.paletteNum = LoadSpritePalette(spritePalette);
+    return sprite->oam.paletteNum = LoadSpritePaletteDayNight(spritePalette);
 }
 
 // Find and update based on template's paletteTag
