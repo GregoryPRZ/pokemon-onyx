@@ -21,7 +21,6 @@
 #include "text_window.h"
 #include "trig.h"
 #include "window.h"
-#include "config/battle.h"
 #include "constants/map_types.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -187,7 +186,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 55,
-        .width = 8,    //for z move names
+        .width = 16,    //for z move names
         .height = 2,
         .paletteNum = 5,
         .baseBlock = 0x0300,
@@ -199,16 +198,16 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .width = 8,
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x0310,
+        .baseBlock = 0x0318,
     },
     [B_WIN_MOVE_NAME_3] = {
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 57,
-        .width = 8,
+        .width = 16,    //for z effect descriptions
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x0320,
+        .baseBlock = 0x0328,
     },
     [B_WIN_MOVE_NAME_4] = {
         .bg = 0,
@@ -217,18 +216,13 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .width = 8,
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x0330,
+        .baseBlock = 0x0340,
     },
     [B_WIN_PP] = {
         .bg = 0,
-        #if B_PSS_SPLIT_ICONS == TRUE 
-            .tilemapLeft = 23,
-            .width = 2,
-        #else
-            .tilemapLeft = 21,
-            .width = 4,
-        #endif
+        .tilemapLeft = 21,
         .tilemapTop = 55,
+        .width = 4,
         .height = 2,
         .paletteNum = 5,
         .baseBlock = 0x0290,
@@ -236,19 +230,11 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     [B_WIN_DUMMY] = {
         .bg = 0,
         .tilemapLeft = 21,
-        #if B_PSS_SPLIT_ICONS == TRUE
-            .tilemapTop = 55,
-            .width = 2,
-            .height = 2,
-            .paletteNum = 10,
-            .baseBlock = 0x0294,
-        #else
-            .tilemapTop = 57,
-            .width = 0,
-            .height = 0,
-            .paletteNum = 5,
-            .baseBlock = 0x0298,
-        #endif
+        .tilemapTop = 57,
+        .width = 0,
+        .height = 0,
+        .paletteNum = 5,
+        .baseBlock = 0x0298,
     },
     [B_WIN_PP_REMAINING] = {
         .bg = 0,
@@ -385,6 +371,15 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .paletteNum = 0,
         .baseBlock = 0x00b0,
     },
+    [B_WIN_MOVE_DESCRIPTION] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 47,
+        .width = 18,
+        .height = 6,
+        .paletteNum = 5,
+        .baseBlock = 0x0350,
+    },
     DUMMY_WIN_TEMPLATE
 };
 
@@ -455,14 +450,9 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     },
     [B_WIN_PP] = {
         .bg = 0,
-        #if B_PSS_SPLIT_ICONS == TRUE 
-            .tilemapLeft = 23,
-            .width = 2,
-        #else
-            .tilemapLeft = 21,
-            .width = 4,
-        #endif
+        .tilemapLeft = 21,
         .tilemapTop = 55,
+        .width = 4,
         .height = 2,
         .paletteNum = 5,
         .baseBlock = 0x0290,
@@ -470,19 +460,11 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     [B_WIN_DUMMY] = {
         .bg = 0,
         .tilemapLeft = 21,
-        #if B_PSS_SPLIT_ICONS == TRUE
-            .tilemapTop = 55,
-            .width = 2,
-            .height = 2,
-            .paletteNum = 10,
-            .baseBlock = 0x0294,
-        #else
-            .tilemapTop = 57,
-            .width = 0,
-            .height = 0,
-            .paletteNum = 5,
-            .baseBlock = 0x0298,
-        #endif
+        .tilemapTop = 57,
+        .width = 0,
+        .height = 0,
+        .paletteNum = 5,
+        .baseBlock = 0x0298,
     },
     [B_WIN_PP_REMAINING] = {
         .bg = 0,
@@ -609,6 +591,15 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .height = 4,
         .paletteNum = 7,
         .baseBlock = 0x0090,
+    },
+    [B_WIN_MOVE_DESCRIPTION] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 47,
+        .width = 18,
+        .height = 6,
+        .paletteNum = 5,
+        .baseBlock = 0x0350,
     },
     DUMMY_WIN_TEMPLATE
 };
