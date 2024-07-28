@@ -2292,19 +2292,11 @@ MatchCall_Text_Drake::
 	.string "the POKéMON LEAGUE!\p"
 	.string "Don't you agree, {PLAYER}?$"
 
-MatchCall_Text_Wallace::
-	.string "WALLACE: Hello, {PLAYER}{KUN}.\n"
-	.string "Have you met STEVEN?\p"
-	.string "He is…\n"
-	.string "Actually incredibly skilled.\p"
-	.string "However, he's an odd soul who\n"
-	.string "rarely battles.\p"
-	.string "Instead, he would rather look for\n"
-	.string "rare stones.\p"
-	.string "I'm sure he's digging in a cave or\n"
-	.string "a craggy mountain somewhere.\p"
-	.string "But what is a rare stone exactly?\n"
-	.string "All I can think of is a METEORITE…$"
+MatchCall_Text_StevenChampion::
+	.string "STEVEN: Hi, {PLAYER}{KUN}.\n"
+	.string "I wait patiently for our\l"
+	.string "battle at the POKéMON LEAGUE!\p"
+	.string "Until then, keep up the good work!$"
 
 MatchCall_Text_MayRayquazaCall:
 	.string "… … … … … …\n"

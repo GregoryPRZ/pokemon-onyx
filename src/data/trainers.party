@@ -6354,64 +6354,79 @@ Electrike
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_WALLACE ===
-Name: WALLACE
+=== TRAINER_STEVEN_1 ===
+Name: STEVEN
 Class: Champion
-Pic: Champion Wallace
+Pic: Steven
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Omniscient / Smart Switching
 Mugshot: Yellow
 
-Wailord
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
+Zacian-Crowned @ Rusted Sword  
+Ability: Intrepid Sword
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Master Ball
+Jolly Nature  
+- Behemoth Blade  
+- Play Rough  
+- Swords Dance  
+- Close Combat  
 
-Tentacruel
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Hydro Pump
-- Sludge Bomb
-- Ice Beam
+Deoxys-Speed @ Focus Sash  
+Ability: Pressure  
+EVs: 248 HP / 8 SpA / 252 Spe  
+Ball: Master Ball
+Timid Nature  
+IVs: 0 Atk  
+- Psycho Boost  
+- Stealth Rock  
+- Recover  
+- Toxic  
 
-Ludicolo
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
+Iron Valiant @ Booster Energy  
+Ability: Quark Drive  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Master Ball
+Timid Nature  
+IVs: 0 Atk  
+- Moonblast  
+- Aura Sphere  
+- Thunderbolt  
+- Protect  
 
-Whiscash
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
+Regigigas @ Leftovers  
+Ability: Huge Power  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Master Ball
+Jolly Nature  
+- Return  
+- Drain Punch  
+- Zen Headbutt  
+- Ice Punch  
 
-Gyarados
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
+Metagross @ Metagrossite  
+Ability: Tough Claws  
+Shiny: Yes  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Master Ball
+Jolly Nature  
+- Meteor Mash  
+- Zen Headbutt  
+- Ice Punch  
+- Bullet Punch  
 
-Milotic @ Sitrus Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Recover
-- Surf
-- Ice Beam
-- Toxic
+Latios (M) @ Choice Scarf  
+Ability: Levitate  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Master Ball
+Timid Nature  
+IVs: 0 Atk  
+- Draco Meteor  
+- Psychic  
+- Ice Beam  
+- Thunderbolt 
 
 === TRAINER_ANDREW ===
 Name: ANDREW

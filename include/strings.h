@@ -2516,7 +2516,7 @@ extern const u8 MatchCall_Text_Sidney[];
 extern const u8 MatchCall_Text_Phoebe[];
 extern const u8 MatchCall_Text_Glacia[];
 extern const u8 MatchCall_Text_Drake[];
-extern const u8 MatchCall_Text_Wallace[];
+extern const u8 MatchCall_Text_StevenChampion[];
 extern const u8 gText_MrStoneMatchCallDesc[];
 extern const u8 gText_MrStoneMatchCallName[];
 extern const u8 gText_StevenMatchCallDesc[];
