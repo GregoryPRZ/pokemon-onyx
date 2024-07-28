@@ -46,7 +46,7 @@ Optional fields for Pokemon:
           (Order does not matter)
     - EVs (252 HP / 128 Spe / 48 Def, defaults to all 0, is not capped at 512 total)
           (Order does not matter)
-    - Ball (Poke Ball or ITEM_POKE_BALL, defaults to Poke Ball
+    - Ball (Poke Ball or ITEM_POKE_BALL, defaults to Poke Ball)
     - Happiness (Number between 1 and 255)
     - Nature (Rash or NATURE_RASH, defaults to Hardy)
     - Shiny (Yes/No, defaults to No)
@@ -4862,41 +4862,74 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+Mugshot: Yellow
+Starting Status: STARTING_STATUS_ELECTRIC_TERRAIN
 
-Voltorb
-Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rollout
-- Spark
-- Self Destruct
-- Shock Wave
+Manectric @ Manectite  
+Ability: Lightning Rod  
+Level: 32  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk / 30 Def
+- Thunderbolt  
+- Flamethrower  
+- Volt Switch  
+- Hidden Power  
 
-Electrike
-Level: 20
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
+Electrode-Hisui @ Life Orb  
+Ability: Static  
+Level: 32  
+EVs: 4 Atk / 252 SpA / 252 Spe  
+Hasty Nature  
+- Giga Drain  
+- Thunderbolt  
+- Volt Switch  
+- Explosion  
 
-Magneton
-Level: 22
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
-- Shock Wave
-- Thunder Wave
-- Sonic Boom
+Lanturn @ Leftovers  
+Ability: Water Absorb  
+Level: 32  
+EVs: 252 HP / 252 Def / 4 SpA  
+Bold Nature  
+IVs: 0 Atk  
+- Scald  
+- Toxic  
+- Ice Beam  
+- Recover  
 
-Manectric @ Sitrus Berry
-Level: 24
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Quick Attack
-- Thunder Wave
-- Shock Wave
-- Howl
+Eelektross @ Choice Band  
+Ability: Levitate  
+Level: 32
+EVs: 252 Atk / 128 SpD / 136 Def
+Adamant Nature
+- Aqua Tail  
+- U-turn  
+- Supercell Slam  
+- Drain Punch  
+
+Electivire @ Electrium Z  
+Ability: Motor Drive  
+Level: 32  
+Shiny: Yes  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Supercell Slam  
+- Ice Punch  
+- Bulk Up  
+- Darkest Lariat  
+
+Jolteon @ Magnet 
+Ability: Volt Absorb  
+Level: 32  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk / 30 SpA  
+- Thunderbolt 
+- Signal Beam  
+- Hidden Power 
+- Volt Switch
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
