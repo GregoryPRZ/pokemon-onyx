@@ -4590,50 +4590,71 @@ Class: Elite Four
 Pic: Elite Four Sidney
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Setup First Turn
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Purple
 
-Mightyena
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Roar
-- Double Edge
-- Sand Attack
-- Crunch
+Heatran (F) @ Air Balloon  
+Ability: Flash Fire  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Dusk Ball
+Timid Nature  
+IVs: 0 Atk  
+- Stealth Rock  
+- Magma Storm  
+- Earth Power  
+- Toxic
 
-Shiftry
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
+Brute Bonnet @ Leftovers  
+Ability: Protosynthesis  
+EVs: 128 HP / 252 Atk / 128 Def  
+Ball: Dusk Ball
+Adamant Nature  
+- Spore  
+- Sucker Punch  
+- Close Combat  
+- Seed Bomb  
 
-Cacturne
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
+Chi-Yu @ Choice Scarf  
+Ability: Beads of Ruin  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Dusk Ball
+Timid Nature  
+IVs: 0 Atk  
+- Flamethrower
+- Dark Pulse  
+- Psychic  
+- Overheat  
 
-Crawdaunt
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Surf
-- Swords Dance
-- Strength
-- Facade
+Kingambit @ Focus Sash  
+Ability: Supreme Overlord  
+EVs: 128 HP / 252 Atk / 128 SpD
+Ball: Dusk Ball  
+Adamant Nature  
+- Kowtow Cleave  
+- Iron Head  
+- Sucker Punch  
+- Zen Headbutt  
 
-Absol @ Sitrus Berry
-Level: 49
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rock Slide
-- Swords Dance
-- Slash
+Absol @ Absolite  
+Ability: Magic Bounce  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Dusk Ball
+Jolly Nature  
+- Sucker Punch  
+- Play Rough  
+- Knock Off  
+- Close Combat  
+
+Yveltal @ Life Orb  
+Ability: Dark Aura
+EVs: 252 SpA / 4 SpD / 252 Spe
+Ball: Dusk Ball
+Timid Nature  
+- Oblivion Wing  
+- Dark Pulse  
+- Heat Wave  
+- U-turn 
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4641,50 +4662,74 @@ Class: Elite Four
 Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Green
 
-Dusclops
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
+Palafin @ Choice Scarf  
+Ability: Zero to Hero  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Dive Ball
+Jolly Nature  
+- Flip Turn  
+- Wave Crash  
+- Ice Punch  
+- Drain Punch
 
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
+Flutter Mane @ Booster Energy  
+Ability: Protosynthesis  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Dive Ball
+Timid Nature  
+IVs: 0 Atk  
+- Moonblast  
+- Protect  
+- Shadow Ball  
+- Energy Ball  
 
-Sableye
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
+Gengar @ Gengarite  
+Ability: Shadow Tag  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Dive Ball
+Timid Nature  
+IVs: 0 Atk  
+- Shadow Ball  
+- Sludge Wave  
+- Protect  
+- Thunder  
 
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
+Basculegion @ Choice Scarf  
+Ability: Adaptability  
+Shiny: Yes  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Dive Ball
+Jolly Nature  
+- Fishious Rend  
+- Flip Turn  
+- Last Respects  
+- Zen Headbutt  
 
-Dusclops @ Sitrus Berry
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Ball
-- Ice Beam
-- Rock Slide
-- Earthquake
+Gholdengo @ Life Orb  
+Ability: Good as Gold  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Dive Ball
+Timid Nature  
+IVs: 0 Atk  
+- Make It Rain  
+- Shadow Ball  
+- Power Gem  
+- Nasty Plot
+
+Giratina-Origin @ Griseous Core  
+Ability: Levitate  
+EVs: 4 Def / 252 SpA / 252 Spe  
+Ball: Dive Ball
+Modest Nature  
+IVs: 0 Atk  
+- Draco Meteor  
+- Aura Sphere  
+- Shadow Ball  
+- Earth Power  
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -4692,50 +4737,71 @@ Class: Elite Four
 Pic: Elite Four Glacia
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Pink
 
-Sealeo
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
+Clefable @ Leftovers  
+Ability: Unaware  
+EVs: 252 HP / 252 Def / 4 SpA  
+Bold Nature
+IVs: 0 Atk  
+- Soft-Boiled  
+- Calm Mind  
+- Moonblast  
+- Blizzard  
 
-Glalie
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
+Ninetales-Alola @ Life Orb  
+Ability: Snow Cloak  
+EVs: 252 SpA / 4 SpD / 252 Spe 
+Ball: Love Ball
+Timid Nature  
+IVs: 0 Atk  
+- Blizzard  
+- Dazzling Gleam  
+- Freeze-Dry  
+- Aurora Veil  
 
-Sealeo
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Attract
-- Double Edge
-- Hail
-- Blizzard
+Lapras @ Odd Keystone
+Ability: Water Absorb  
+EVs: 124 HP / 252 SpA / 132 SpD  
+Ball: Love Ball
+Modest Nature  
+IVs: 0 Atk  
+- Ice Beam  
+- Thunderbolt  
+- Freeze-Dry  
+- Scald
 
-Glalie
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
+Baxcalibur @ Loaded Dice  
+Ability: Thermal Exchange  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Love Ball
+Adamant Nature  
+- Icicle Spear  
+- Glaive Rush  
+- Earthquake  
+- Dragon Dance  
 
-Walrein @ Sitrus Berry
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+Chien-Pao @ Focus Sash  
+Ability: Sword of Ruin  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Love Ball
+Jolly Nature  
+- Sacred Sword  
+- Sucker Punch  
+- Ice Spinner  
+- Psychic Fangs  
+
+Iron Bundle @ Booster Energy  
+Ability: Quark Drive  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Love Ball
+Timid Nature  
+- Freeze-Dry  
+- Blizzard  
+- Scald  
+- Flip Turn  
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -4743,50 +4809,65 @@ Class: Elite Four
 Pic: Elite Four Drake
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Blue
+Starting Status : STARTING_STATUS_TAILWIND_OPPONENT
 
-Shelgon
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rock Tomb
-- Dragon Claw
-- Protect
-- Double Edge
+Ho-Oh @ Heavy-Duty Boots  
+Ability: Regenerator  
+EVs: 248 HP / 8 Atk / 252 SpD  
+Careful Nature  
+- Sacred Fire  
+- Earthquake  
+- Recover  
+- Tailwind  
 
-Altaria
-Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Dracovish @ Choice Band  
+Ability: Strong Jaw  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Fishious Rend  
+- Psychic Fangs  
+- Earthquake  
+- Outrage  
 
-Kingdra
-Level: 53
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
+Lugia @ Leftovers  
+Ability: Multiscale  
+EVs: 248 HP / 252 Def / 8 SpA  
+Bold Nature  
+IVs: 0 Atk  
+- Aeroblast  
+- Recover  
+- Earth Power  
+- Toxic  
 
-Flygon
-Level: 53
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Flamethrower
-- Crunch
-- Dragon Breath
-- Earthquake
+Roaring Moon @ Booster Energy  
+Ability: Protosynthesis  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Scale Shot  
+- Throat Chop  
+- Iron Head  
+- Roost  
 
-Salamence @ Sitrus Berry
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+Rayquaza @ Life Orb  
+Ability: Air Lock  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Dragon Ascent  
+- V-create  
+- Extreme Speed  
+- Earthquake  
+
+Naganadel @ Choice Scarf  
+Ability: Beast Boost  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- U-turn  
+- Sludge Bomb  
+- Draco Meteor  
+- Flamethrower  
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
