@@ -4741,15 +4741,15 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Pink
 
-Arctozolt @ Leftovers
-Ability: Slush Rush  
-Tera Type: Electric  
-EVs: 252 Atk / 4 SpA / 252 Spe  
-Naive Nature  
-- Bolt Beak  
+Iron Bundle @ Leftovers
+Ability: Quark Drive  
+EVs: 4 Def / 252 SpA / 252 Spe  
+Ball: Love Ball
+Timid Nature  
+- Hydro Pump 
 - Freeze-Dry  
-- Substitute  
-- Protect
+- Flip Turn
+- Ice Beam
 
 Ninetales-Alola @ Life Orb  
 Ability: Snow Cloak  
@@ -4814,60 +4814,67 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscie
 Mugshot: Blue
 Starting Status : STARTING_STATUS_TAILWIND_OPPONENT
 
-Ho-Oh @ Heavy-Duty Boots  
-Ability: Regenerator  
-EVs: 248 HP / 8 Atk / 252 SpD  
-Careful Nature  
-- Sacred Fire  
-- Earthquake  
-- Recover  
-- Tailwind  
-
-Dracovish @ Choice Band  
-Ability: Strong Jaw  
+Landorus-Therian (M) @ Leftovers  
+Ability: Intimidate   
 EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Heavy Ball
 Jolly Nature  
-- Fishious Rend  
-- Psychic Fangs  
 - Earthquake  
-- Outrage  
+- Stealth Rock  
+- U-turn  
+- Knock Off  
 
-Lugia @ Leftovers  
-Ability: Multiscale  
-EVs: 248 HP / 252 Def / 8 SpA  
-Bold Nature  
+Dialga-Origin @ Adamant Crystal  
+Ability: Pressure  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Heavy Ball
+Timid Nature  
 IVs: 0 Atk  
-- Aeroblast  
-- Recover  
 - Earth Power  
+- Flash Cannon  
+- Dragon Tail  
 - Toxic  
+
+Palkia-Origin @ Lustrous Globe  
+Ability: Pressure  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Heavy Ball
+Timid Nature  
+IVs: 0 Atk  
+- Draco Meteor  
+- Hydro Pump  
+- Earth Power  
+- Thunderbolt  
 
 Roaring Moon @ Booster Energy  
 Ability: Protosynthesis  
 EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Heavy Ball
 Jolly Nature  
 - Scale Shot  
 - Throat Chop  
-- Iron Head  
-- Roost  
+- Earthquake  
+- Iron Head 
 
-Rayquaza @ Life Orb  
-Ability: Air Lock  
+Rayquaza-Mega @ Mental Herb  
+Ability: Delta Stream   
 EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Heavy Ball
 Jolly Nature  
 - Dragon Ascent  
 - V-create  
-- Extreme Speed  
+- Dragon Dance  
 - Earthquake  
 
-Naganadel @ Choice Scarf  
-Ability: Beast Boost  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-- U-turn  
-- Sludge Bomb  
-- Draco Meteor  
-- Flamethrower  
+Excadrill @ Life Orb  
+Ability: Sand Rush  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Heavy Ball
+Adamant Nature  
+- Iron Head  
+- Earthquake  
+- Rock Slide  
+- Poison Jab  
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
@@ -4875,33 +4882,75 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Pink
 
-Geodude
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+Glimmet @ Focus Sash  
+Ability: Toxic Debris  
+Level: 16  
+Tera Type: Rock  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Stealth Rock  
+- Rock Tomb  
+- Acid Spray  
+- Memento  
 
-Geodude
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+Rockruff @ Hard Stone  
+Ability: Keen Eye  
+Level: 16  
+Tera Type: Rock  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Rock Tomb  
+- Fire Fang  
+- Trailblaze  
+- Crunch  
 
-Nosepass @ Oran Berry
-Level: 15
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
-- Harden
-- Tackle
-- Rock Tomb
+Anorith @ Silver Powder  
+Ability: Battle Armor  
+Level: 16  
+Tera Type: Rock  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Rock Tomb  
+- Fury Cutter  
+- Knock Off  
+- Aqua Jet  
+
+Lileep @ Leftovers  
+Ability: Storm Drain  
+Level: 16  
+Tera Type: Rock  
+EVs: 252 HP / 12 Def / 232 SpD  
+Sassy Nature  
+- Giga Drain  
+- Rock Tomb  
+- Recover  
+- Toxic  
+
+Lunatone @ Expert Belt  
+Ability: Levitate  
+Level: 16  
+Tera Type: Rock  
+EVs: 252 HP / 252 SpA / 4 SpD  
+Quiet Nature  
+- Confusion  
+- Rock Tomb  
+- Bulldoze  
+- Power Gem  
+
+Gligar @ Yache Berry  
+Ability: Immunity  
+Level: 16  
+Tera Type: Ground  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Bulldoze  
+- U-turn  
+- Rock Tomb  
+- Dual Wingbeat  
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -15989,18 +16038,18 @@ Pic: Red
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Omniscient / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Green
 
-Sanguine (Crobat) @ Black Sludge  
-Ability: Inner Focus  
-EVs: 252 Atk / 4 SpD / 252 Spe  
+Okimouye (Swampert) @ Leftovers  
+Ability: Torrent  
+EVs: 252 HP / 4 Atk / 252 SpD  
 Ball: Master Ball
-Jolly Nature  
-- Tailwind  
-- U-turn  
-- Brave Bird  
-- Roost  
+Careful Nature  
+- Earthquake  
+- Flip Turn  
+- Substitute  
+- Stealth Rock
 
 Venusaur-Mega @ Life Orb  
 Ability: Thick Fat   
@@ -16044,16 +16093,15 @@ Jolly Nature
 - Fake Out  
 - Play Rough  
 
-Allemand (Dracovish) @ Choice Scarf  
-Ability: Strong Jaw  
+KFC (Blaziken-Mega) @ Leftovers  
+Ability: Speed Boost
 EVs: 252 Atk / 4 SpD / 252 Spe  
-Tera Type: Water
 Ball: Master Ball
-Jolly Nature  
-- Fishious Rend  
-- Crunch  
-- Earthquake  
-- Iron Head  
+Adamant Nature  
+- Bulk Up  
+- Protect  
+- Blaze Kick  
+- Close Combat
 
 === TRAINER_ANABEL ===
 Name: ANABEL
@@ -16994,17 +17042,75 @@ Bulbasaur
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
+=== TRAINER_EVIL ===
+Name: EVIL
+Class: Champion
+Pic: Magma Grunt M
 Gender: Male
 Music: Male
 Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Yellow
 
-Groudon
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Behemoth (Great Tusk) @ Leftovers  
+Ability: Protosynthesis  
+EVs: 252 HP / 220 Def / 36 Spe  
+Ball: Cherish Ball
+Impish Nature  
+- Earthquake  
+- Stealth Rock  
+- Knock Off  
+- Rapid Spin
+
+Foudrage (Electivire) @ Choice Scarf  
+Ability: Motor Drive  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Cherish Ball
+Adamant Nature  
+- Supercell Slam  
+- Volt Switch  
+- Ice Punch  
+- Earthquake
+
+Giratina @ Leftovers
+Ability: Pressure
+EVs: 252 HP / 252 Def / 4 SpD
+Ball: Cherish Ball
+Relaxed Nature
+- Dragon Tail
+- Toxic
+- Hex
+- Rest
+
+Natsu (Charizard) @ Charizardite X
+Ability: Blaze
+EVs: 252 Atk / 4 SpD / 252 Spe
+Ball: Cherish Ball
+Jolly Nature
+- Dragon Dance
+- Flare Blitz
+- Earthquake
+- Roost
+
+Kage (Greninja-Ash) @ Choice Specs
+Ability: Battle Bond
+EVs: 4 Def / 252 SpA / 252 Spe
+Ball: Cherish Ball
+Timid Nature
+- Hydro Pump
+- Dark Pulse
+- Water Shuriken
+- Ice Beam
+
+Inferno (Infernape) @ Life Orb  
+Ability: Iron Fist  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Ball: Cherish Ball
+Jolly Nature  
+- Mach Punch  
+- Close Combat  
+- U-turn  
+- Pyro Ball
 
 === TRAINER_MAY_PLACEHOLDER ===
 Name: MAY
