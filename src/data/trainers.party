@@ -4590,7 +4590,7 @@ Class: Elite Four
 Pic: Elite Four Sidney
 Gender: Male
 Music: Elite Four
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Purple
 
@@ -4621,7 +4621,7 @@ EVs: 252 SpA / 4 SpD / 252 Spe
 Ball: Dusk Ball
 Timid Nature  
 IVs: 0 Atk  
-- Flamethrower
+- Heat Wave
 - Dark Pulse  
 - Psychic  
 - Overheat  
@@ -4741,15 +4741,15 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Pink
 
-Clefable @ Leftovers  
-Ability: Unaware  
-EVs: 252 HP / 252 Def / 4 SpA  
-Bold Nature
-IVs: 0 Atk  
-- Soft-Boiled  
-- Calm Mind  
-- Moonblast  
-- Blizzard  
+Arctozolt @ Leftovers
+Ability: Slush Rush  
+Tera Type: Electric  
+EVs: 252 Atk / 4 SpA / 252 Spe  
+Naive Nature  
+- Bolt Beak  
+- Freeze-Dry  
+- Substitute  
+- Protect
 
 Ninetales-Alola @ Life Orb  
 Ability: Snow Cloak  
@@ -4762,6 +4762,16 @@ IVs: 0 Atk
 - Freeze-Dry  
 - Aurora Veil  
 
+Calyrex-Ice @ Choice Band  
+Ability: As One Ice Rider
+EVs: 96 HP / 252 Atk / 160 SpD  
+Ball: Love Ball
+Adamant Nature  
+- Glacial Lance  
+- High Horsepower  
+- Seed Bomb  
+- Zen Headbutt
+
 Lapras @ Odd Keystone
 Ability: Water Absorb  
 EVs: 124 HP / 252 SpA / 132 SpD  
@@ -4773,15 +4783,15 @@ IVs: 0 Atk
 - Freeze-Dry  
 - Scald
 
-Baxcalibur @ Loaded Dice  
-Ability: Thermal Exchange  
+Darmanitan-Galar @ Choice Scarf  
+Ability: Gorilla Tactics  
 EVs: 252 Atk / 4 SpD / 252 Spe  
 Ball: Love Ball
-Adamant Nature  
-- Icicle Spear  
-- Glaive Rush  
-- Earthquake  
-- Dragon Dance  
+Jolly Nature  
+- Icicle Crash  
+- U-turn  
+- Zen Headbutt  
+- Flare Blitz
 
 Chien-Pao @ Focus Sash  
 Ability: Sword of Ruin  
@@ -4792,16 +4802,6 @@ Jolly Nature
 - Sucker Punch  
 - Ice Spinner  
 - Psychic Fangs  
-
-Iron Bundle @ Booster Energy  
-Ability: Quark Drive  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Ball: Love Ball
-Timid Nature  
-- Freeze-Dry  
-- Blizzard  
-- Scald  
-- Flip Turn  
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -6354,7 +6354,7 @@ Electrike
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_STEVEN_1 ===
+=== TRAINER_STEVEN ===
 Name: STEVEN
 Class: Champion
 Pic: Steven
@@ -15982,63 +15982,78 @@ Tropius
 Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-=== TRAINER_STEVEN ===
-Name: STEVEN
-Class: Rival
-Pic: Steven
+=== TRAINER_BOBBY ===
+Name: BOBBY
+Class: Champion
+Pic: Red
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Omniscient / Smart Switching
+Mugshot: Green
 
-Skarmory
-Level: 77
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Aerial Ace
-- Spikes
-- Steel Wing
+Sanguine (Crobat) @ Black Sludge  
+Ability: Inner Focus  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Master Ball
+Jolly Nature  
+- Tailwind  
+- U-turn  
+- Brave Bird  
+- Roost  
 
-Claydol
-Level: 75
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Reflect
-- Light Screen
-- Ancient Power
-- Earthquake
+Venusaur-Mega @ Life Orb  
+Ability: Thick Fat   
+EVs: 252 HP / 192 Def / 64 SpA  
+Ball: Master Ball
+Bold Nature  
+IVs: 0 Atk  
+- Giga Drain  
+- Sleep Powder  
+- Sludge Bomb  
+- Earth Power  
 
-Aggron
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Earthquake
-- Solar Beam
-- Dragon Claw
+Mewtwo-Mega-Y @ Choice Specs  
+Ability: Insomnia  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Ball: Master Ball
+Timid Nature  
+IVs: 0 Atk  
+- Psystrike  
+- Ice Beam  
+- Thunderbolt  
+- Shadow Ball  
 
-Cradily
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Ancient Power
-- Ingrain
-- Confuse Ray
+Dieudargnan (Beedrill-Mega) @ Life Orb  
+Ability: Adaptability  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Ball: Master Ball
+Jolly Nature  
+- U-turn  
+- Knock Off  
+- Poison Jab  
+- Drill Run  
 
-Armaldo
-Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Ancient Power
-- Aerial Ace
-- Slash
+Torbjorn (Tinkaton) (F) @ Leftovers  
+Ability: Mold Breaker  
+EVs: 252 Atk / 4 SpD / 252 Spe
+Ball: Master Ball
+Jolly Nature  
+- Gigaton Hammer  
+- Protect  
+- Fake Out  
+- Play Rough  
 
-Metagross @ Sitrus Berry
-Level: 78
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Psychic
-- Meteor Mash
-- Shadow Ball
+Allemand (Dracovish) @ Choice Scarf  
+Ability: Strong Jaw  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Tera Type: Water
+Ball: Master Ball
+Jolly Nature  
+- Fishious Rend  
+- Crunch  
+- Earthquake  
+- Iron Head  
 
 === TRAINER_ANABEL ===
 Name: ANABEL
