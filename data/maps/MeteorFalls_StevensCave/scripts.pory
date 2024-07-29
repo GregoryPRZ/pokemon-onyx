@@ -1,7 +1,7 @@
 raw `
 .set LOCALID_BOBBY, 1
 
-MeteorFalls_BobbysCave_MapScripts::
+MeteorFalls_StevensCave_MapScripts::
 	.byte 0
 
 MeteorFalls_BobbysCave_EventScript_Bobby::
@@ -18,10 +18,48 @@ MeteorFalls_BobbysCave_EventScript_Bobby::
 	msgbox MeteorFalls_BobbysCave_Text_ShouldKnowHowGoodIAmExpectWorst, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BOBBY, MeteorFalls_BobbysCave_Text_BobbyDefeat
 	msgbox MeteorFalls_BobbysCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
-	giveitem ITEM_TERA_ORB
-	setflag FLAG_DEFEATED_METEOR_FALLS_BOBBY
+	goto MeteorFalls_BobbysCave_EventScript_GiveMewtwo
 	release
 	end
+
+MeteorFalls_BobbysCave_EventScript_GiveMewtwo::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEWTWO
+	givemon SPECIES_MEWTWO, 100, ITEM_MEWTWONITE_Y
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MeteorFalls_BobbysCave_EventScript_SendMewtwoParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MeteorFalls_BobbysCave_EventScript_SendMewtwoPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+MeteorFalls_BobbysCave_EventScript_SendMewtwoParty::
+	call MeteorFalls_BobbysCave_EventScript_ReceivedMewtwoFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MeteorFalls_BobbysCave_EventScript_ReceivedMewtwo
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto MeteorFalls_BobbysCave_EventScript_ReceivedMewtwo
+	end
+
+MeteorFalls_BobbysCave_EventScript_SendMewtwoPC::
+	call MeteorFalls_BobbysCave_EventScript_ReceivedMewtwoFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MeteorFalls_BobbysCave_EventScript_MewtwoTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto MeteorFalls_BobbysCave_EventScript_MewtwoTransferredToPC
+	end
+
+MeteorFalls_BobbysCave_EventScript_MewtwoTransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto MeteorFalls_BobbysCave_EventScript_ReceivedMewtwo
+	end
+
+MeteorFalls_BobbysCave_EventScript_ReceivedMewtwoFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MEWTWO
+	playfanfare MUS_OBTAIN_ITEM
+	message MossdeepCity_StevensHouse_Text_ObtainedMewtwo
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MEWTWO
+	return
 
 MeteorFalls_BobbysCave_EventScript_Defeated::
 	applymovement LOCALID_BOBBY, Common_Movement_FacePlayer
@@ -29,6 +67,14 @@ MeteorFalls_BobbysCave_EventScript_Defeated::
 	msgbox MeteorFalls_BobbysCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
 	release
 	end
+
+MeteorFalls_BobbysCave_EventScript_ReceivedMewtwo::
+setflag FLAG_DEFEATED_METEOR_FALLS_BOBBY
+release
+end
+
+MossdeepCity_StevensHouse_Text_ObtainedMewtwo:
+	.string "{PLAYER} obtained MEWTWO.$"
 
 MeteorFalls_BobbysCave_Text_ShouldKnowHowGoodIAmExpectWorst:
 	.string "BOBBY: A trainer! I don't have the time,\n"
