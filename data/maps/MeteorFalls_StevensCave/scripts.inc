@@ -65,9 +65,9 @@ MeteorFalls_BobbysCave_EventScript_Defeated::
 # 33 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 MeteorFalls_BobbysCave_Text_ShouldKnowHowGoodIAmExpectWorst:
 # 34 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "BOBBY: I don't have the time,\n"
+	.string "BOBBY: A trainer! I don't have the time,\n"
 # 35 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "Let's just fight!\p"
+	.string "Let's just fight!$"
 # 36 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 
 # 37 "data/maps/MeteorFalls_StevensCave/scripts.pory"
