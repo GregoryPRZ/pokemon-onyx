@@ -157,24 +157,26 @@ MossdeepCity_StevensHouse_Text_ObtainedMewtwo:
 # 79 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 MeteorFalls_BobbysCave_Text_ShouldKnowHowGoodIAmExpectWorst:
 # 80 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "BOBBY: A trainer! I don't have the time,\n"
+	.string "BOBBY: Yo! what's up! You're a trainer?\p"
 # 81 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "Let's just fight!$"
+	.string "Alright, I don't have the time,\n"
 # 82 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-
+	.string "Let's just fight!$"
 # 83 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-MeteorFalls_BobbysCave_Text_BobbyDefeat:
-# 84 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "The haxx got me in this run!\n"
-# 85 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "I have to reset the game.$"
-# 86 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 
+# 84 "data/maps/MeteorFalls_StevensCave/scripts.pory"
+MeteorFalls_BobbysCave_Text_BobbyDefeat:
+# 85 "data/maps/MeteorFalls_StevensCave/scripts.pory"
+	.string "The haxx got me in this run!\n"
+# 86 "data/maps/MeteorFalls_StevensCave/scripts.pory"
+	.string "I have to reset the game.$"
 # 87 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-MeteorFalls_BobbysCave_Text_MyPredictionCameTrue:
+
 # 88 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "BOBBY: That was so haaard, the haxx\n"
+MeteorFalls_BobbysCave_Text_MyPredictionCameTrue:
 # 89 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	.string "didn't like me...\p"
+	.string "BOBBY: That was so haaard, the haxx\n"
 # 90 "data/maps/MeteorFalls_StevensCave/scripts.pory"
+	.string "didn't like me...\p"
+# 91 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 	.string "Now calm down and go away!$"
