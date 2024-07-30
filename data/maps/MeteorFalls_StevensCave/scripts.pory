@@ -77,7 +77,8 @@ MossdeepCity_StevensHouse_Text_ObtainedMewtwo:
 	.string "{PLAYER} obtained MEWTWO.$"
 
 MeteorFalls_BobbysCave_Text_ShouldKnowHowGoodIAmExpectWorst:
-	.string "BOBBY: A trainer! I don't have the time,\n"
+	.string "BOBBY: Yo! what's up! You're a trainer?\p"
+	.string "Alright, I don't have the time,\n"
 	.string "Let's just fight!$"
 
 MeteorFalls_BobbysCave_Text_BobbyDefeat:
