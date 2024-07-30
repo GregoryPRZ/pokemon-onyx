@@ -5,16 +5,10 @@ MossdeepCity_EvilsHouse_MapScripts::
 
 MossdeepCity_EvilsHouse_EventScript_Evil::
 lock
-waitse
-playse SE_PIN
-applymovement LOCALID_EVIL, Common_Movement_ExclamationMark
-waitmovement 0
-applymovement LOCALID_EVIL, Common_Movement_Delay48
-waitmovement 0
-applymovement LOCALID_EVIL, Common_Movement_FacePlayer
-waitmovement 0
 goto_if_unset FLAG_DEFEATED_ELITE_4_DRAKE, MossdeepCity_EvilsHouse_EventScript_TooWeak
 goto_if_set FLAG_DEFEATED_MOSSDEEP_EVIL, MossdeepCity_EvilsHouse_EventScript_Defeated
+applymovement LOCALID_EVIL, Common_Movement_FacePlayer
+waitmovement 0
 msgbox MossdeepCity_EvilsHouse_Text_Intro, MSGBOX_DEFAULT
 trainerbattle_no_intro TRAINER_EVIL, MossdeepCity_EvilsHouse_Text_EvilDefeat
 msgbox MossdeepCity_EvilsHouse_Text_GoodGame, MSGBOX_DEFAULT
@@ -25,6 +19,12 @@ release
 end
 
 MossdeepCity_EvilsHouse_EventScript_TooWeak::
+waitse
+playse SE_PIN
+applymovement LOCALID_EVIL, Common_Movement_ExclamationMark
+waitmovement 0
+applymovement LOCALID_EVIL, Common_Movement_Delay48
+waitmovement 0
 msgbox MossdeepCity_EvilsHouse_Text_TooWeak, MSGBOX_DEFAULT
 applymovement LOCALID_EVIL, Common_Movement_FaceRight
 waitmovement 0
@@ -32,6 +32,8 @@ release
 end
 
 MossdeepCity_EvilsHouse_EventScript_Defeated::
+applymovement LOCALID_EVIL, Common_Movement_FacePlayer
+waitmovement 0
 msgbox MossdeepCity_EvilsHouse_Text_GoodGame, MSGBOX_DEFAULT
 applymovement LOCALID_EVIL, Common_Movement_FaceRight
 waitmovement 0
