@@ -40,6 +40,7 @@ EverGrandeCity_GlaciasRoom_EventScript_CloseDoor::
 EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	lock
 	faceplayer
+	goto_if_set FLAG_DEFEATED_CHAMPION, EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
@@ -58,6 +59,13 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
+
+EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch::
+playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+trainerbattle_no_intro TRAINER_GLACIA_2, EverGrandeCity_GlaciasRoom_Text_Defeat
+goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
+end
 
 EverGrandeCity_GlaciasRoom_Text_IntroSpeech:
 	.string "Welcome, my name is GLACIA\n"

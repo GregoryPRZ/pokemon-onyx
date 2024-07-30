@@ -264,10 +264,10 @@
 #define TRAINER_WALTER_3                    258
 #define TRAINER_WALTER_4                    259
 #define TRAINER_WALTER_5                    260
-#define TRAINER_SIDNEY                      261
-#define TRAINER_PHOEBE                      262
-#define TRAINER_GLACIA                      263
-#define TRAINER_DRAKE                       264
+#define TRAINER_SIDNEY_2                    261
+#define TRAINER_PHOEBE_2                    262
+#define TRAINER_GLACIA_2                    263
+#define TRAINER_DRAKE_2                     264
 #define TRAINER_ROXANNE_1                   265
 #define TRAINER_BRAWLY_1                    266
 #define TRAINER_WATTSON_1                   267
@@ -858,12 +858,16 @@
 #define TRAINER_LEAF                        852
 #define TRAINER_EVIL                        853
 #define TRAINER_MAY_PLACEHOLDER             854
+#define TRAINER_SIDNEY                      855
+#define TRAINER_PHOEBE                      856
+#define TRAINER_GLACIA                      857
+#define TRAINER_DRAKE                       858
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      855
+#define TRAINERS_COUNT                      859
 #define MAX_TRAINERS_COUNT                  864
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
