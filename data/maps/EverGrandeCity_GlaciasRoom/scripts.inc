@@ -83,7 +83,7 @@ EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 # 42 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	faceplayer
 # 43 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
-	goto_if_set FLAG_DEFEATED_CHAMPION, EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch
 # 44 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 # 45 "data/maps/EverGrandeCity_GlaciasRoom/scripts.pory"

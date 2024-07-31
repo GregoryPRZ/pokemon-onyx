@@ -83,7 +83,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 # 42 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	faceplayer
 # 43 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	goto_if_set FLAG_DEFEATED_CHAMPION, EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch
 # 44 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
 # 45 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"

@@ -45,7 +45,13 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerApproachSteven:
 EverGrandeCity_ChampionsRoom_EventScript_Steven::
 	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
 	msgbox EverGrandeCity_ChampionsRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_ChampionsRoom_EventScript_StevenRematch
 	trainerbattle_no_intro TRAINER_STEVEN, EverGrandeCity_ChampionsRoom_Text_Defeat
+	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_ChampionsRoom_EventScript_StevenRematch::
+	trainerbattle_no_intro TRAINER_STEVEN_2, EverGrandeCity_ChampionsRoom_Text_Defeat
 	goto EverGrandeCity_ChampionsRoom_EventScript_Defeated
 	end
 
@@ -56,7 +62,6 @@ EverGrandeCity_ChampionsRoom_EventScript_Defeated::
 	special DrawWholeMapView
 	msgbox EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_DEFEATED_CHAMPION
 	playse SE_DOOR
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, EverGrandeCity_ChampionsRoom_EventScript_PlayMayMusic

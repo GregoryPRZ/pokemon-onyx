@@ -85,7 +85,7 @@ EverGrandeCity_DrakesRoom_EventScript_Drake::
 # 43 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	faceplayer
 # 44 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	goto_if_set FLAG_DEFEATED_CHAMPION, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
 # 45 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 # 46 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
