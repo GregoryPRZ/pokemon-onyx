@@ -95,7 +95,7 @@ EverGrandeCity_SidneysRoom_EventScript_Sidney::
 # 48 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 	faceplayer
 # 49 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	goto_if_set FLAG_DEFEATED_CHAMPION, EverGrandeCity_SidneysRoom_EventScript_SidneyRematch
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_SidneysRoom_EventScript_SidneyRematch
 # 50 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 # 51 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"

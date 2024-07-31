@@ -5,7 +5,7 @@ MossdeepCity_EvilsHouse_MapScripts::
 
 MossdeepCity_EvilsHouse_EventScript_Evil::
 lock
-goto_if_unset FLAG_DEFEATED_ELITE_4_DRAKE, MossdeepCity_EvilsHouse_EventScript_TooWeak
+goto_if_unset FLAG_IS_CHAMPION, MossdeepCity_EvilsHouse_EventScript_TooWeak
 goto_if_set FLAG_DEFEATED_MOSSDEEP_EVIL, MossdeepCity_EvilsHouse_EventScript_Defeated
 applymovement LOCALID_EVIL, Common_Movement_FacePlayer
 waitmovement 0
