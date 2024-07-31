@@ -16291,7 +16291,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_BOBBY ===
 Name: BOBBY
-Class: Champion
+Class: Legend
 Pic: Red
 Gender: Male
 Music: Male
@@ -17302,7 +17302,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_EVIL ===
 Name: EVIL
-Class: Champion
+Class: Legend
 Pic: Magma Admin
 Gender: Male
 Music: Male
@@ -17370,14 +17370,68 @@ Jolly Nature
 - U-turn  
 - Pyro Ball
 
-=== TRAINER_MAY_PLACEHOLDER ===
-Name: MAY
-Class: RS Protag
-Pic: RS May
-Gender: Female
+=== TRAINER_BLAYZE ===
+Name: BLAYZE
+Class: Creator
+Pic: RS Brendan
+Gender: Male
 Music: Male
 Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Blue
 
-Kyogre
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Douglas (Drifblim) @ Focus Sash  
+Ability: Unburden  
+EVs: 248 HP / 8 Atk / 252 Spe  
+Hasty Nature  
+- Destiny Bond  
+- Tailwind  
+- Shadow Ball  
+- Explosion  
+
+Tortuga (Torterra) @ Mental Herb  
+Ability: Shell Armor  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Shell Smash  
+- Earthquake  
+- Horn Leech  
+- Stone Edge  
+
+Perlouze (Naganadel) @ Choice Specs  
+Ability: Beast Boost  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Draco Meteor  
+- Sludge Bomb  
+- Fire Blast  
+- U-turn  
+
+Raikou @ Leftovers  
+Ability: Pressure  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Aura Sphere  
+- Calm Mind  
+- Thunderbolt  
+- Scald  
+
+Spyder-Man (Metagross) @ Metagrossite  
+Ability: Clear Body   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Meteor Mash  
+- Zen Headbutt  
+- Earthquake  
+- Ice Punch  
+
+Froggies (Greninja) @ Life Orb  
+Ability: Protean  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Scald  
+- Dark Pulse  
+- Ice Beam  
+- Sludge Wave 

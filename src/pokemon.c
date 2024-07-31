@@ -5737,6 +5737,10 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_CREATOR:
+            return MUS_DP_VS_GALACTIC_COMMANDER;
+        case TRAINER_CLASS_LEGEND:
+            return MUS_VS_CHAMPION;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;

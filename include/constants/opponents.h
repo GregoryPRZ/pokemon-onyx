@@ -857,7 +857,7 @@
 #define TRAINER_RED                         851
 #define TRAINER_LEAF                        852
 #define TRAINER_EVIL                        853
-#define TRAINER_MAY_PLACEHOLDER             854
+#define TRAINER_BLAYZE            854
 #define TRAINER_SIDNEY                      855
 #define TRAINER_PHOEBE                      856
 #define TRAINER_GLACIA                      857

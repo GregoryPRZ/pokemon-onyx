@@ -40764,7 +40764,7 @@ F_TRAINER_FEMALE |
 #line 16228
         .trainerName = _("BOBBY"),
 #line 16229
-        .trainerClass = TRAINER_CLASS_CHAMPION,
+        .trainerClass = TRAINER_CLASS_LEGEND,
 #line 16230
         .trainerPic = TRAINER_PIC_RED,
         .encounterMusic_gender = 
@@ -43396,7 +43396,7 @@ F_TRAINER_FEMALE |
 #line 17239
         .trainerName = _("EVIL"),
 #line 17240
-        .trainerClass = TRAINER_CLASS_CHAMPION,
+        .trainerClass = TRAINER_CLASS_LEGEND,
 #line 17241
         .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
         .encounterMusic_gender = 
@@ -43587,34 +43587,186 @@ F_TRAINER_FEMALE |
         },
     },
 #line 17308
-    [TRAINER_MAY_PLACEHOLDER] =
+    [TRAINER_BLAYZE] =
     {
 #line 17309
-        .trainerName = _("MAY"),
+        .trainerName = _("BLAYZE"),
 #line 17310
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .trainerClass = TRAINER_CLASS_CREATOR,
 #line 17311
-        .trainerPic = TRAINER_PIC_RS_MAY,
+        .trainerPic = TRAINER_PIC_RS_BRENDAN,
         .encounterMusic_gender = 
-#line 17312
-F_TRAINER_FEMALE | 
 #line 17313
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17314
         .doubleBattle = FALSE,
-        .partySize = 1,
+#line 17315
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT,
+#line 17316
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_BLUE,
+        .partySize = 6,
         .party = (const struct TrainerMon[])
         {
             {
-#line 17316
-            .species = SPECIES_KYOGRE,
+#line 17318
+            .nickname = COMPOUND_STRING("Douglas"),
+#line 17318
+            .species = SPECIES_DRIFBLIM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17318
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-#line 17317
-            .lvl = 5,
-            .nature = NATURE_HARDY,
+            .heldItem = ITEM_FOCUS_SASH,
+#line 17320
+            .ev = TRAINER_PARTY_EVS(248, 8, 0, 252, 0, 0),
+#line 17322
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 17319
+            .ability = ABILITY_UNBURDEN,
+#line 17322
+            .lvl = 100,
+#line 17321
+            .nature = NATURE_HASTY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17322
+                MOVE_DESTINY_BOND,
+                MOVE_TAILWIND,
+                MOVE_SHADOW_BALL,
+                MOVE_EXPLOSION,
+            },
+            },
+            {
+#line 17327
+            .nickname = COMPOUND_STRING("Tortuga"),
+#line 17327
+            .species = SPECIES_TORTERRA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17327
+            .heldItem = ITEM_MENTAL_HERB,
+#line 17329
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 17331
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 17328
+            .ability = ABILITY_SHELL_ARMOR,
+#line 17331
+            .lvl = 100,
+#line 17330
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17331
+                MOVE_SHELL_SMASH,
+                MOVE_EARTHQUAKE,
+                MOVE_HORN_LEECH,
+                MOVE_STONE_EDGE,
+            },
+            },
+            {
+#line 17336
+            .nickname = COMPOUND_STRING("Perlouze"),
+#line 17336
+            .species = SPECIES_NAGANADEL,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17336
+            .heldItem = ITEM_CHOICE_SPECS,
+#line 17338
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+#line 17340
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 17337
+            .ability = ABILITY_BEAST_BOOST,
+#line 17340
+            .lvl = 100,
+#line 17339
+            .nature = NATURE_TIMID,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17340
+                MOVE_DRACO_METEOR,
+                MOVE_SLUDGE_BOMB,
+                MOVE_FIRE_BLAST,
+                MOVE_U_TURN,
+            },
+            },
+            {
+#line 17345
+            .species = SPECIES_RAIKOU,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17345
+            .heldItem = ITEM_LEFTOVERS,
+#line 17347
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+#line 17349
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 17346
+            .ability = ABILITY_PRESSURE,
+#line 17350
+            .lvl = 100,
+#line 17348
+            .nature = NATURE_TIMID,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17350
+                MOVE_AURA_SPHERE,
+                MOVE_CALM_MIND,
+                MOVE_THUNDERBOLT,
+                MOVE_SCALD,
+            },
+            },
+            {
+#line 17355
+            .nickname = COMPOUND_STRING("Spyder-Man"),
+#line 17355
+            .species = SPECIES_METAGROSS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17355
+            .heldItem = ITEM_METAGROSSITE,
+#line 17357
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 17359
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 17356
+            .ability = ABILITY_CLEAR_BODY,
+#line 17359
+            .lvl = 100,
+#line 17358
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17359
+                MOVE_METEOR_MASH,
+                MOVE_ZEN_HEADBUTT,
+                MOVE_EARTHQUAKE,
+                MOVE_ICE_PUNCH,
+            },
+            },
+            {
+#line 17364
+            .nickname = COMPOUND_STRING("Froggies"),
+#line 17364
+            .species = SPECIES_GRENINJA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17364
+            .heldItem = ITEM_LIFE_ORB,
+#line 17366
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+#line 17368
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 17365
+            .ability = ABILITY_PROTEAN,
+#line 17369
+            .lvl = 100,
+#line 17367
+            .nature = NATURE_TIMID,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17369
+                MOVE_SCALD,
+                MOVE_DARK_PULSE,
+                MOVE_ICE_BEAM,
+                MOVE_SLUDGE_WAVE,
+            },
             },
         },
     },
