@@ -13,4 +13,25 @@ FieryPath_EventScript_MoveScottToFallarbor::
 	clearflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 	return
 
+FieryPath_EventScript_BlayzeTest::
+	lock
+	faceplayer
+	msgbox FieryPath_Text_BlayzeIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BLAYZE, FieryPath_Text_BlayzeDefeat
+	goto FieryPath_EventScript_BlayzeDefeated
+	end
+
+FieryPath_EventScript_BlayzeDefeated::
+	msgbox FieryPath_Text_BlayzeDefeated, MSGBOX_DEFAULT
+	release
+	end
+
+FieryPath_Text_BlayzeDefeat:
+	.string "GG!$"
+
+FieryPath_Text_BlayzeDefeated:
+	.string "GG!$"
+
+FieryPath_Text_BlayzeIntro:
+	.string "Hello!$"
 `
