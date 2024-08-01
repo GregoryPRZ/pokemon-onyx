@@ -22,9 +22,7 @@ OldaleTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 # 12 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_VISITED_OLDALE_TOWN
-# 13 "data/maps/OldaleTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE101
-# 14 "data/maps/OldaleTown/scripts.pory"
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 # 15 "data/maps/OldaleTown/scripts.pory"
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee

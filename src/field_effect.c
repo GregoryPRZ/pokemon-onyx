@@ -278,13 +278,11 @@ static const u8 sRockFragment_TopRight[] = INCBIN_U8("graphics/field_effects/pic
 static const u8 sRockFragment_BottomLeft[] = INCBIN_U8("graphics/field_effects/pics/deoxys_rock_fragment_bottom_left.4bpp");
 static const u8 sRockFragment_BottomRight[] = INCBIN_U8("graphics/field_effects/pics/deoxys_rock_fragment_bottom_right.4bpp");
 
-
 void Fldeff_FlyLand(void)
 {
 	SetMainCallback2(CB2_ReturnToField);
 	gFieldCallback = FieldCallback_Fly_2;
 }
-
 
 bool8 (*const gFieldEffectScriptFuncs[])(u8 **, u32 *) =
 {
@@ -1370,6 +1368,17 @@ void FieldCallback_UseFly(void)
     gFieldCallback = NULL;
 }
 
+static void FieldCallback_Fly_2(void)
+{
+	u8 taskId;
+    FadeInFromBlack();
+	taskId = CreateTask(Task_UseFly, 0);
+	gTasks[taskId].data[0] = 1; //do landing anim only
+	LockPlayerFieldControls();
+    FreezeObjectEvents();
+	gFieldCallback = NULL;
+}
+
 static void Task_UseFly(u8 taskId)
 {
     struct Task *task;
@@ -1409,17 +1418,6 @@ static void FieldCallback_FlyIntoMap(void)
     LockPlayerFieldControls();
     FreezeObjectEvents();
     gFieldCallback = NULL;
-}
-
-static void FieldCallback_Fly_2(void)
-{
-	u8 taskId;
-    FadeInFromBlack();
-	taskId = CreateTask(Task_UseFly, 0);
-	gTasks[taskId].data[0] = 1; //do landing anim only
-	ScriptContext2_Enable();
-    FreezeObjectEvents();
-	gFieldCallback = NULL;
 }
 
 static void Task_FlyIntoMap(u8 taskId)

@@ -20,11 +20,8 @@ LilycoveCity_MapScripts::
 LilycoveCity_OnTransition:
 # 11 "data/maps/LilycoveCity/scripts.pory"
 	setflag FLAG_VISITED_LILYCOVE_CITY
-# 12 "data/maps/LilycoveCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE120
-# 13 "data/maps/LilycoveCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE121
-# 14 "data/maps/LilycoveCity/scripts.pory"
 	setvar VAR_CONTEST_HALL_STATE, 0
 # 15 "data/maps/LilycoveCity/scripts.pory"
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER

@@ -36,11 +36,8 @@ DewfordTown_MapScripts::
 DewfordTown_OnTransition:
 # 19 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_VISITED_DEWFORD_TOWN
-# 20 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE106
-# 21 "data/maps/DewfordTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE107
-# 22 "data/maps/DewfordTown/scripts.pory"
 	end
 # 23 "data/maps/DewfordTown/scripts.pory"
 

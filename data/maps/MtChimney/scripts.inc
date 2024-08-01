@@ -28,9 +28,7 @@ MtChimney_MapScripts::
 MtChimney_OnTransition:
 # 15 "data/maps/MtChimney/scripts.pory"
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 1
-# 16 "data/maps/MtChimney/scripts.pory"
 	setflag FLAG_VISITED_MT_CHIMNEY
-# 17 "data/maps/MtChimney/scripts.pory"
 	end
 # 18 "data/maps/MtChimney/scripts.pory"
 

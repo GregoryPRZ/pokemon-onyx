@@ -14,11 +14,8 @@ PacifidlogTown_MapScripts::
 PacifidlogTown_OnTransition:
 # 8 "data/maps/PacifidlogTown/scripts.pory"
 	setflag FLAG_VISITED_PACIFIDLOG_TOWN
-# 9 "data/maps/PacifidlogTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE127
-# 10 "data/maps/PacifidlogTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE128
-# 11 "data/maps/PacifidlogTown/scripts.pory"
 	end
 # 12 "data/maps/PacifidlogTown/scripts.pory"
 

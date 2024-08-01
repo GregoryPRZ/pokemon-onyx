@@ -14,13 +14,9 @@ FortreeCity_MapScripts::
 FortreeCity_OnTransition:
 # 8 "data/maps/FortreeCity/scripts.pory"
 	setflag FLAG_VISITED_FORTREE_CITY
-# 9 "data/maps/FortreeCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE118
-# 10 "data/maps/FortreeCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE119
-# 11 "data/maps/FortreeCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE123
-# 12 "data/maps/FortreeCity/scripts.pory"
 	end
 # 13 "data/maps/FortreeCity/scripts.pory"
 

@@ -48,6 +48,7 @@
 #include "soar.h"
 #include "tv.h" //Pokevial Branch
 #include "pokevial.h" //Pokevial Branch
+#include "constants/vars.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);

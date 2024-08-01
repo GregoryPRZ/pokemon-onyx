@@ -74,9 +74,7 @@ SlateportCity_OnTransition:
 SlateportCity_EventScript_EnterSlateport::
 # 38 "data/maps/SlateportCity/scripts.pory"
 	setflag FLAG_VISITED_SLATEPORT_CITY
-# 39 "data/maps/SlateportCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE109
-# 40 "data/maps/SlateportCity/scripts.pory"
 	setvar VAR_CONTEST_HALL_STATE, 0
 # 41 "data/maps/SlateportCity/scripts.pory"
 	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER

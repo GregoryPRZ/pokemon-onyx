@@ -26,13 +26,9 @@ SealedChamber_OuterRoom_OnResume:
 SealedChamber_OuterRoom_OnTransition:
 # 14 "data/maps/SealedChamber_OuterRoom/scripts.pory"
 	setflag FLAG_LANDMARK_SEALED_CHAMBER
-# 15 "data/maps/SealedChamber_OuterRoom/scripts.pory"
 	setflag FLAG_VISITED_ROUTE132
-# 16 "data/maps/SealedChamber_OuterRoom/scripts.pory"
 	setflag FLAG_VISITED_ROUTE133
-# 17 "data/maps/SealedChamber_OuterRoom/scripts.pory"
 	setflag FLAG_VISITED_ROUTE124
-# 18 "data/maps/SealedChamber_OuterRoom/scripts.pory"
 	end
 # 19 "data/maps/SealedChamber_OuterRoom/scripts.pory"
 

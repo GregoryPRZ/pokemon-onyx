@@ -20,11 +20,8 @@ MauvilleCity_MapScripts::
 MauvilleCity_OnTransition:
 # 11 "data/maps/MauvilleCity/scripts.pory"
 	setflag FLAG_VISITED_MAUVILLE_CITY
-# 12 "data/maps/MauvilleCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE103
-# 13 "data/maps/MauvilleCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE110
-# 14 "data/maps/MauvilleCity/scripts.pory"
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 # 15 "data/maps/MauvilleCity/scripts.pory"
 	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
