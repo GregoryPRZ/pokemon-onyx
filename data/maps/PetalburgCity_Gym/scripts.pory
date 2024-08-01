@@ -374,7 +374,9 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
+	setflag FLAG_INVERSE_BATTLE
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	clearflag FLAG_INVERSE_BATTLE
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare

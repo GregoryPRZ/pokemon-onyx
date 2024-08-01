@@ -5240,33 +5240,69 @@ Class: Leader
 Pic: Leader Brawly
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Blue
 
-Machop
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Karate Chop
-- Low Kick
-- Seismic Toss
-- Bulk Up
+Hariyama @ Expert Belt  
+Ability: Thick Fat  
+Level: 24  
+EVs: 144 HP / 252 Atk / 112 SpD  
+Adamant Nature  
+- Fake Out  
+- Force Palm  
+- Knock Off  
+- Protect  
 
-Meditite
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Bulk Up
+Breloom @ Focus Sash  
+Ability: Technician  
+Level: 24  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Mach Punch  
+- Bullet Seed  
+- Rock Tomb  
+- Bulk Up  
 
-Makuhita @ Sitrus Berry
-Level: 19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Arm Thrust
-- Vital Throw
-- Reversal
-- Bulk Up
+Monferno @ Eviolite  
+Ability: Iron Fist  
+Level: 24  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Mach Punch  
+- Fire Punch  
+- U-turn  
+- Bulk Up  
+
+Heracross @ Silver Powder  
+Ability: Moxie  
+Level: 24  
+EVs: 244 Atk / 16 SpD / 248 Spe  
+Jolly Nature  
+- Lunge  
+- Rock Slide  
+- Knock Off  
+- Brick Break  
+
+Hitmonlee @ Fighting Gem  
+Ability: Unburden  
+Level: 24  
+EVs: 252 Atk / 8 Def / 248 Spe  
+Adamant Nature  
+- Mach Punch  
+- High Jump Kick  
+- Rock Slide  
+- Fake Out  
+
+Hitmonchan @ Leftovers  
+Ability: Iron Fist  
+Level: 24  
+EVs: 144 HP / 252 Atk / 112 Def  
+Adamant Nature  
+- Mach Punch  
+- Thunder Punch  
+- Fire Punch  
+- Drain Punch  
 
 === TRAINER_WATTSON_1 ===
 Name: WATTSON
@@ -5275,7 +5311,7 @@ Pic: Leader Wattson
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
 Mugshot: Yellow
 Starting Status: STARTING_STATUS_ELECTRIC_TERRAIN
 
@@ -5290,7 +5326,7 @@ IVs: 0 Atk / 30 Def
 - Volt Switch  
 - Hidden Power  
 
-Electrode-Hisui @ Life Orb  
+Electrode-Hisui @ Normal Gem 
 Ability: Static  
 Level: 32  
 EVs: 4 Atk / 252 SpA / 252 Spe  
@@ -5311,15 +5347,16 @@ IVs: 0 Atk
 - Ice Beam  
 - Recover  
 
-Eelektross @ Choice Band  
-Ability: Levitate  
-Level: 32
-EVs: 252 Atk / 128 SpD / 136 Def
-Adamant Nature
-- Aqua Tail  
-- U-turn  
-- Supercell Slam  
-- Drain Punch  
+Raichu-Alola (F) @ Life Orb  
+Ability: Surge Surfer  
+Level: 32  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Psyshock  
+- Draining Kiss  
+- Volt Switch  
+- Calm Mind
 
 Electivire @ Electrium Z  
 Ability: Motor Drive  
@@ -5349,41 +5386,72 @@ Class: Leader
 Pic: Leader Flannery
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Pink
 
-Numel
-Level: 24
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Overheat
-- Take Down
-- Magnitude
-- Sunny Day
+Torkoal @ Heat Rock  
+Ability: Drought  
+Level: 40  
+EVs: 248 HP / 252 Def / 8 SpD  
+Bold Nature  
+- Heat Wave  
+- Rapid Spin  
+- Stealth Rock  
+- Solar Beam  
 
-Slugma
-Level: 24
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Overheat
-- Smog
-- Light Screen
-- Sunny Day
+Arcanine @ Leftovers  
+Ability: Intimidate  
+Level: 40  
+EVs: 116 HP / 252 Atk / 140 Def  
+Adamant Nature  
+- Extreme Speed  
+- Flare Blitz  
+- Crunch  
+- Morning Sun  
 
-Camerupt
-Level: 26
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Overheat
-- Tackle
-- Sunny Day
-- Attract
+Scovillain @ Firium Z  
+Ability: Chlorophyll  
+Level: 40  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Giga Drain  
+- Solar Beam  
+- Flamethrower  
+- Overheat  
 
-Torkoal @ White Herb
-Level: 29
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Overheat
-- Sunny Day
-- Body Slam
-- Attract
+Houndoom @ Houndoominite  
+Ability: Flash Fire  
+Level: 40  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Heat Wave  
+- Dark Pulse  
+- Sludge Bomb  
+- Will-O-Wisp  
+
+Talonflame @ Heavy-Duty Boots  
+Ability: Gale Wings  
+Level: 40   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Brave Bird  
+- Roost  
+- Flare Blitz  
+- U-turn  
+
+Armarouge @ Assault Vest  
+Ability: Flash Fire  
+Level: 40  
+EVs: 116 HP / 252 SpA / 140 SpD  
+Modest Nature  
+IVs: 0 Atk  
+- Armor Cannon  
+- Psyshock  
+- Energy Ball  
+- Heat Wave  
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -5391,41 +5459,69 @@ Class: Leader
 Pic: Leader Norman
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Yellow
 
-Spinda
-Level: 27
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Teeter Dance
-- Psybeam
-- Facade
-- Encore
+Kangaskhan @ Kangaskhanite  
+Ability: Scrappy  
+Level: 42  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Return  
+- Sucker Punch  
+- Earthquake  
+- Drain Punch  
 
-Vigoroth
-Level: 27
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
-- Facade
-- Encore
-- Feint Attack
+Snorlax @ Leftovers  
+Ability: Thick Fat  
+Level: 42  
+EVs: 200 HP / 252 Atk / 56 Def  
+Adamant Nature  
+- Body Slam  
+- Crunch  
+- Rest  
+- Sleep Talk  
 
-Linoone
-Level: 29
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
-- Belly Drum
-- Facade
-- Headbutt
+Diggersby @ Choice Scarf  
+Ability: Huge Power  
+Level: 42  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Return  
+- Earthquake  
+- U-turn  
+- Ice Punch  
 
-Slaking @ Sitrus Berry
-Level: 31
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Counter
-- Yawn
-- Facade
-- Feint Attack
+Obstagoon @ Normalium Z  
+Ability: Reckless  
+Level: 42  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+- Double-Edge  
+- Obstruct  
+- Knock Off  
+- Cross Chop  
+
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 42   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Brave Bird  
+- Roost  
+- U-turn  
+- Return  
+
+Wyrdeer @ Assault Vest  
+Ability: Intimidate  
+Level: 42  
+EVs: 200 HP / 252 Atk / 56 SpD  
+Adamant Nature  
+- Psyshield Bash  
+- Return  
+- Sucker Punch  
+- Lunge  
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
@@ -5433,49 +5529,70 @@ Class: Leader
 Pic: Leader Winona
 Gender: Female
 Music: Female
-Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Risky
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Purple
+Starting Status: STARTING_STATUS_TAILWIND_OPPONENT
 
-Swablu
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Perish Song
-- Mirror Move
-- Safeguard
-- Aerial Ace
+Skarmory @ Leftovers  
+Ability: Keen Eye  
+Level: 54
+EVs: 252 HP / 232 Def / 24 Spe  
+Impish Nature  
+- Stealth Rock  
+- Brave Bird  
+- Roost  
+- Toxic  
 
-Tropius
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Synthesis
+Pidgeot @ Pidgeotite  
+Ability: Keen Eye  
+Level: 54
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+- Hurricane  
+- Heat Wave  
+- Roost  
+- U-turn  
 
-Pelipper
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Water Gun
-- Supersonic
-- Protect
-- Aerial Ace
+Tornadus-Therian (M) @ Heavy-Duty Boots  
+Ability: Regenerator  
+Level: 54
+EVs: 4 Atk / 252 SpA / 252 Spe  
+Hasty Nature  
+- Bleakwind Storm  
+- Defog  
+- Knock Off  
+- U-turn  
 
-Skarmory
-Level: 31
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Sand Attack
-- Fury Attack
-- Steel Wing
-- Aerial Ace
+Gyarados @ Flyinium Z  
+Ability: Intimidate  
+Level: 54 
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Bounce  
+- Dragon Dance  
+- Earthquake  
+- Waterfall  
 
-Altaria @ Oran Berry
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Gliscor @ Toxic Orb  
+Ability: Poison Heal  
+Level: 54 
+EVs: 244 HP / 36 Def / 228 SpD  
+Careful Nature  
+- Earthquake  
+- Knock Off  
+- Swords Dance  
+- Protect  
+
+Staraptor @ Choice Scarf  
+Ability: Intimidate  
+Level: 54
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Brave Bird  
+- Close Combat  
+- U-turn  
+- Return  
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: TATE&LIZA
@@ -5483,41 +5600,72 @@ Class: Leader
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
-Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient / Setup First Turn
+Mugshot: Pink
 
-Claydol
-Level: 41
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Earthquake
-- Ancient Power
-- Psychic
-- Light Screen
+Indeedee @ Life Orb  
+Ability: Psychic Surge  
+Level: 64
+EVs: 4 Def / 252 SpA / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Protect  
+- Expanding Force  
+- Dazzling Gleam  
+- Hyper Voice  
 
-Xatu
-Level: 41
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Psychic
-- Sunny Day
-- Confuse Ray
-- Calm Mind
+Espathra @ Psychic Seed  
+Ability: Speed Boost  
+Level: 64
+EVs: 152 HP / 244 Def / 112 Spe  
+Bold Nature  
+IVs: 0 Atk  
+- Roost  
+- Calm Mind  
+- Baton Pass  
+- Dazzling Gleam  
 
-Lunatone @ Sitrus Berry
-Level: 42
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Psychic
-- Hypnosis
-- Calm Mind
+Gallade (M) @ Galladite  
+Ability: Steadfast  
+Level: 64
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Zen Headbutt  
+- Drain Punch  
+- Knock Off  
+- Swords Dance  
 
-Solrock @ Sitrus Berry
-Level: 42
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Sunny Day
-- Solar Beam
-- Psychic
-- Flamethrower
+Gardevoir @ Gardevoirite  
+Ability: Trace  
+Level: 64
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Stored Power  
+- Moonblast  
+- Mystical Fire  
+- Thunderbolt  
+
+Victini @ Psychium Z  
+Ability: Victory Star  
+Level: 64
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Bolt Strike  
+- V-create  
+- U-turn  
+- Zen Headbutt  
+
+Jirachi @ Choice Scarf  
+Ability: Serene Grace  
+Level: 64
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Iron Head  
+- Zen Headbutt  
+- U-turn  
+- Drain Punch  
 
 === TRAINER_JUAN_1 ===
 Name: JUAN
@@ -5525,49 +5673,73 @@ Class: Leader
 Pic: Leader Juan
 Gender: Male
 Music: Male
-Items: Hyper Potion / Hyper Potion
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Blue
 
-Luvdisc
-Level: 41
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Pulse
-- Attract
-- Sweet Kiss
-- Flail
+Politoed @ Damp Rock  
+Ability: Drizzle  
+Level: 72  
+EVs: 248 HP / 252 Def / 8 SpA  
+Bold Nature  
+IVs: 0 Atk  
+- Scald  
+- Ice Beam  
+- Toxic  
+- Rest  
 
-Whiscash
-Level: 41
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rain Dance
-- Water Pulse
-- Amnesia
-- Earthquake
+Thundurus @ Life Orb  
+Ability: Prankster  
+Level: 72  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Rain Dance  
+- Thunder Wave  
+- Thunder  
+- Weather Ball  
 
-Sealeo
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Encore
-- Body Slam
-- Aurora Beam
-- Water Pulse
+Seaking @ Choice Band  
+Ability: Swift Swim  
+Level: 72  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Fishious Rend  
+- Drill Run  
+- Swords Dance  
+- Poison Jab  
 
-Crawdaunt
-Level: 43
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Pulse
-- Crabhammer
-- Taunt
-- Leer
+Manaphy @ Leftovers  
+Ability: Hydration  
+Level: 72  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Calm Mind  
+- Scald  
+- Stored Power  
+- Ice Beam  
 
-Kingdra @ Chesto Berry
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Water Pulse
-- Double Team
-- Ice Beam
-- Rest
+Kingdra @ Waterium Z  
+Ability: Swift Swim  
+Level: 72  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Modest Nature  
+IVs: 0 Atk  
+- Hydro Pump  
+- Hurricane  
+- Draco Meteor  
+- Protect  
+
+Swampert-Mega @ Swampertite  
+Ability: Swift Swim  
+Level: 72  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Adamant Nature  
+- Earthquake  
+- Ice Punch  
+- Waterfall  
+- Power-Up Punch  
 
 === TRAINER_JERRY_1 ===
 Name: JERRY

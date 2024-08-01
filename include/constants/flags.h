@@ -1540,8 +1540,8 @@
 #define FLAG_EXP_SHARE                              (SYSTEM_FLAGS + 0xA8) // Unused Flag
 #define FLAG_STAT_EDIT_ACTIVATED                    (SYSTEM_FLAGS + 0xA9) // Unused Flag
 #define FLAG_RECEIVED_DEXNAV_FROM_BIRCH             (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
+#define FLAG_INVERSE_BATTLE                         (SYSTEM_FLAGS + 0xAB) // Unused Flag
+#define FLAG_NO_BAG_USE                             (SYSTEM_FLAGS + 0xAC) // Unused Flag
 #define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
 #define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
 #define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
