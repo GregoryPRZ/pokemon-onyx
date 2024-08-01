@@ -1872,3 +1872,6 @@ const u8 gText_YourPkmnWereRestored[] =_("Your POKéMON were restored to full he
 const u8 gText_Moves_Menu[] = _("{COLOR BLUE}{SHADOW LIGHT_BLUE}MOVES");
 const u8 gText_AM[] = _("AM");
 const u8 gText_PM[] = _("PM");
+
+const u8 gText_InfiniteRepelOn[] = _("The Infinite Repel is now ON!");
+const u8 gText_InfiniteRepelOff[] = _("The Infinite Repel is now OFF!");

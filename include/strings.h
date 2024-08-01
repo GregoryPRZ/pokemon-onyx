@@ -3071,4 +3071,7 @@ extern const u8 gText_Moves_Menu[];
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
 
+extern const u8 gText_InfiniteRepelOn[];
+extern const u8 gText_InfiniteRepelOff[];
+
 #endif // GUARD_STRINGS_H

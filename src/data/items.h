@@ -152,6 +152,10 @@ static const u8 sPokevialDesc[]       = _("Restores all\n"
                                           "POKéMON to full\n"
                                           "health.");
 
+static const u8 sInfiniteRepelDesc[] =  _("Repels all wild\n"
+                                          "Pokémon for any\n"
+                                          "number of steps.");
+
 
 const struct Item gItemsInfo[] =
 {
@@ -14213,5 +14217,18 @@ const struct Item gItemsInfo[] =
         .effect = gItemEffect_RareCandy,
         .iconPic = gItemIcon_InfiniteCandy,
         .iconPalette = gItemIconPalette_InfiniteCandy,
+    },
+
+    [ITEM_INFINITE_REPEL] =
+    {
+        .name = _("Infinite Repel"),
+        .price = 0,
+        .description = sInfiniteRepelDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
+        .iconPic = gItemIcon_Repel,
+        .iconPalette = gItemIconPalette_InfiniteRepel,
     },
 };

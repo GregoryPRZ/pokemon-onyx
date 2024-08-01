@@ -1759,6 +1759,8 @@ extern const u32 gItemIconPalette_Pokevial[];
 extern const u32 gItemIcon_InfiniteCandy[];
 extern const u32 gItemIconPalette_InfiniteCandy[];
 
+extern const u32 gItemIconPalette_InfiniteRepel[];
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

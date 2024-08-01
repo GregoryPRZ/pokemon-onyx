@@ -1542,7 +1542,7 @@
 #define FLAG_RECEIVED_DEXNAV_FROM_BIRCH             (SYSTEM_FLAGS + 0xAA) // Unused Flag
 #define FLAG_INVERSE_BATTLE                         (SYSTEM_FLAGS + 0xAB) // Unused Flag
 #define FLAG_NO_BAG_USE                             (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
+#define FLAG_NO_ENCOUNTER                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
 #define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
 #define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
 #define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
