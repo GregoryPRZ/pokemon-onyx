@@ -2113,4 +2113,7 @@ const u32 gItemIcon_Pokevial9[] = INCBIN_U32("graphics/items/icons/pokevial9.4bp
 const u32 gItemIcon_Pokevial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
 
 const u32 gItemIconPalette_Pokevial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal.lz");
+
+const u32 gItemIcon_InfiniteCandy[] = INCBIN_U32("graphics/items/icons/infinite_candy.4bpp.lz");
+const u32 gItemIconPalette_InfiniteCandy[] = INCBIN_U32("graphics/items/icon_palettes/infinite_candy.gbapal.lz");
 //End Pokevial Branch

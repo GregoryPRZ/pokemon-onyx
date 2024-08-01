@@ -25,6 +25,8 @@ applymovement LOCALID_EVIL, Common_Movement_ExclamationMark
 waitmovement 0
 applymovement LOCALID_EVIL, Common_Movement_Delay48
 waitmovement 0
+applymovement LOCALID_EVIL, Common_Movement_FacePlayer
+waitmovement 0
 msgbox MossdeepCity_EvilsHouse_Text_TooWeak, MSGBOX_DEFAULT
 applymovement LOCALID_EVIL, Common_Movement_FaceRight
 waitmovement 0
