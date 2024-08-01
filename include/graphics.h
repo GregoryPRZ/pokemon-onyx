@@ -1743,6 +1743,8 @@ extern const u16 gItemIconPalette_TwiceSpicedRadish[];
 extern const u32 gItemIcon_InfiniteCandy[];
 extern const u16 gItemIconPalette_InfiniteCandy[];
 
+extern const u16 gItemIconPalette_InfiniteRepel[];
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];
 

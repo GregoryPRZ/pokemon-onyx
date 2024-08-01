@@ -2102,4 +2102,6 @@ const u16 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon
 
 const u32 gItemIcon_InfiniteCandy[] = INCBIN_U32("graphics/items/icons/infinite_candy.4bpp.lz");
 const u16 gItemIconPalette_InfiniteCandy[] = INCBIN_U16("graphics/items/icon_palettes/infinite_candy.gbapal");
+
+const u16 gItemIconPalette_InfiniteRepel[] = INCBIN_U16("graphics/items/icon_palettes/infinite_repel.gbapal");
 //End Pokevial Branch
