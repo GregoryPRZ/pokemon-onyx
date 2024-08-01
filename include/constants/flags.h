@@ -43,7 +43,7 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
+#define FLAG_ENDLESS_CANDY_GIVEN 0x20 // Flag for infinite candy given by Rustboro gangster
 #define FLAG_UNUSED_0x021    0x21 // Unused Flag
 #define FLAG_UNUSED_0x022    0x22 // Unused Flag
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
@@ -660,7 +660,7 @@
 #define FLAG_DN_DEXNAV_GET        0x265
 #define FLAG_DN_DEXNAV_DETECTOR   0x266
 #define FLAG_DN_VAR_SPECIES       0x267
-#define FLAG_DN_VAR_STEP_COUNTER  0x268-
+#define FLAG_DN_VAR_STEP_COUNTER  0x268
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
