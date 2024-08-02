@@ -16,7 +16,9 @@ VerdanturfTown_MapScripts::
 VerdanturfTown_OnTransition:
 # 9 "data/maps/VerdanturfTown/scripts.pory"
 	setflag FLAG_VISITED_VERDANTURF_TOWN
+# 10 "data/maps/VerdanturfTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE117
+# 11 "data/maps/VerdanturfTown/scripts.pory"
 	setvar VAR_CONTEST_HALL_STATE, 0
 # 12 "data/maps/VerdanturfTown/scripts.pory"
 	end

@@ -62,7 +62,9 @@ IslandCave_EventScript_HideRegiEntrance::
 IslandCave_OnTransition:
 # 32 "data/maps/IslandCave/scripts.pory"
 	setflag FLAG_LANDMARK_ISLAND_CAVE
+# 33 "data/maps/IslandCave/scripts.pory"
 	setflag FLAG_VISITED_ROUTE105
+# 34 "data/maps/IslandCave/scripts.pory"
 	call IslandCave_EventScript_ClearSteps
 # 35 "data/maps/IslandCave/scripts.pory"
 	call_if_unset FLAG_DEFEATED_REGICE, IslandCave_EventScript_ShowRegice

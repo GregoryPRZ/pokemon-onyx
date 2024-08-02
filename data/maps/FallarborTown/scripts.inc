@@ -12,8 +12,11 @@ FallarborTown_MapScripts::
 FallarborTown_OnTransition:
 # 7 "data/maps/FallarborTown/scripts.pory"
 	setflag FLAG_VISITED_FALLARBOR_TOWN
+# 8 "data/maps/FallarborTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE111
+# 9 "data/maps/FallarborTown/scripts.pory"
 	setflag FLAG_VISITED_ROUTE113
+# 10 "data/maps/FallarborTown/scripts.pory"
 	setvar VAR_CONTEST_HALL_STATE, 0
 # 11 "data/maps/FallarborTown/scripts.pory"
 	clearflag FLAG_CONTEST_SKETCH_CREATED

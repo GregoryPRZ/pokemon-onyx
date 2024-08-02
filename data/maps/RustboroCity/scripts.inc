@@ -28,7 +28,9 @@ RustboroCity_MapScripts::
 RustboroCity_OnTransition:
 # 15 "data/maps/RustboroCity/scripts.pory"
 	setflag FLAG_VISITED_RUSTBORO_CITY
+# 16 "data/maps/RustboroCity/scripts.pory"
 	setflag FLAG_VISITED_ROUTE104
+# 17 "data/maps/RustboroCity/scripts.pory"
 	call Common_EventScript_SetupRivalGfxId
 # 18 "data/maps/RustboroCity/scripts.pory"
 	call_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_HideMapNamePopup
