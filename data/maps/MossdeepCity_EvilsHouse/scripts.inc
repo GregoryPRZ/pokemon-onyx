@@ -1,5 +1,5 @@
 .set LOCALID_EVIL, 1
-
+.set LOCALID_SPHEAL, 2
 MossdeepCity_EvilsHouse_MapScripts::
 	.byte 0
 
@@ -42,6 +42,16 @@ waitmovement 0
 release
 end
 
+MossdeepCity_EvilsHouse_EventScript_Spheal::
+lock
+faceplayer
+applymovement LOCALID_EVIL, Common_Movement_ExclamationMark
+playmoncry SPECIES_SPHEAL, CRY_MODE_NORMAL
+waitmoncry
+msgbox MossdeepCity_EvilsHouse_Text_SphealHappy, MSGBOX_DEFAULT
+release
+end
+
 MossdeepCity_EvilsHouse_Text_Intro:
 	.string "EVIL: So you want to battle me,\n"
 	.string "now that you are the HOENNs\l"
@@ -63,4 +73,8 @@ MossdeepCity_EvilsHouse_Text_TooWeak:
 	.string "your power.\p"
 	.string "The only thing I see from\n"
 	.string "you is weakness.$"
+
+MossdeepCity_EvilsHouse_Text_SphealHappy:
+	.string "Spheal seems happy to see\n"
+	.string "a new guest! He hugs you.$"
 
