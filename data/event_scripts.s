@@ -1080,3 +1080,15 @@ EventScript_VsSeekerChargingDone::
     
 
 	.include "data/maps/MossdeepCity_EvilsHouse/scripts.inc"
+
+	.include "data/maps/MtRusturf_B1F/scripts.inc"
+
+	.include "data/maps/MtRusturf_1F/scripts.inc"
+
+	.include "data/maps/MtRusturf_Past/scripts.inc"
+
+	.include "data/maps/MtRusturf_2F/scripts.inc"
+
+	.include "data/maps/MtRusturf_HeatransRoom/scripts.inc"
+
+	.include "data/maps/MtRusturf_Top/scripts.inc"

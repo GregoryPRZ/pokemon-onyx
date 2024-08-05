@@ -17557,17 +17557,72 @@ Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_LEAF ===
-Name: LEAF
-Class: Rival
-Pic: Leaf
-Gender: Female
+=== TRAINER_BLAYZE_1 ===
+Name: BLAYZE
+Class: Creator
+Pic: RS Brendan
+Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient / Prefer Strongest Move
+Mugshot: Blue
 
-Bulbasaur
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Princessa (Gardevoir-Mega) @ Choice Specs  
+Ability: Pixilate  
+Shiny: Yes   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Hyper Voice  
+- Protect  
+- Shadow Ball  
+- Thunderbolt   
+
+Slay (Kartana) @ Choice Scarf  
+Ability: Beast Boost  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Leaf Blade  
+- Smart Strike  
+- Sacred Sword  
+- Knock Off  
+
+Arpona (Arceus) @ Life Orb  
+Ability: Multitype  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Extreme Speed  
+- Swords Dance  
+- Recover  
+- Earthquake  
+
+Heather (Salamence-Mega) @ Leftovers  
+Ability: Aerilate   
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Return  
+- Earthquake  
+- Roost  
+- Substitute  
+
+Pepette (Raikou-Mega) @ Leftovers  
+Ability: Pressure   
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Thunder  
+- Scald  
+- Protect  
+- Calm Mind  
+
+Embarcadere (Basculegion) @ Choice Band  
+Ability: Swift Swim  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Fishious Rend  
+- Last Respects  
+- Flip Turn  
+- Zen Headbutt 
 
 === TRAINER_EVIL ===
 Name: EVIL
@@ -17676,15 +17731,15 @@ Timid Nature
 - Fire Blast  
 - U-turn  
 
-Raikou @ Leftovers  
-Ability: Pressure  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Aura Sphere  
-- Calm Mind  
-- Thunderbolt  
-- Scald  
+Hot Wings (Ho-Oh) @ Heavy-Duty Boots  
+Ability: Regenerator  
+Shiny: Yes  
+EVs: 252 Atk / 4 Def / 252 Spe  
+Jolly Nature  
+- Sacred Fire  
+- Brave Bird  
+- Recover  
+- Earthquake
 
 Spyder-Man (Metagross) @ Metagrossite  
 Ability: Clear Body   

@@ -813,6 +813,8 @@ u16 JohtoMusicHandler(u16 songNum) {
             return MUS_HG_DRAGONS_DEN;
         case MUS_SAILING:
             return MUS_HG_SS_AQUA;
+        case MUS_RG_SEVII_CAVE:
+            return MUS_HG_ROCK_TUNNEL;
         default:
             return songNum;
     }
@@ -1096,8 +1098,8 @@ u16 SinnohMusicHandler(u16 songNum) {
             return MUS_DP_CATASTROPHE;
         case MUS_WEATHER_KYOGRE:
             return MUS_DP_CATASTROPHE;
-        case MUS_SAILING:
-            return MUS_HG_SS_AQUA;
+        case MUS_RG_SEVII_CAVE:
+            return MUS_DP_OREBURGH_GATE;
         default:
             return songNum;
     }

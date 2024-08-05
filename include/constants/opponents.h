@@ -855,7 +855,7 @@
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851
-#define TRAINER_LEAF                        852
+#define TRAINER_BLAYZE_1                        852
 #define TRAINER_EVIL                        853
 #define TRAINER_BLAYZE            854
 #define TRAINER_SIDNEY                      855

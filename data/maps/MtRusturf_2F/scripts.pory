@@ -1,0 +1,9 @@
+mapscripts MtRusturf_2F_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION: MtRusturf_2F_OnTransition
+}
+
+script MtRusturf_2F_OnTransition{
+	clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+	end
+}
+
