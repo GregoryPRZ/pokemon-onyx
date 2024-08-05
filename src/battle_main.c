@@ -5399,7 +5399,7 @@ static void HandleEndTurn_BattleWon(void)
         switch (GetTrainerClassFromId(gTrainerBattleOpponent_A))
         {
         case TRAINER_CLASS_CREATOR:
-            PlayBGM(MUS_DP_VICTORY_ELITE_FOUR);
+            PlayBGM(MUS_VS_POSTGAME);
             break;
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:

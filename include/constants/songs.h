@@ -949,10 +949,12 @@
 #define MUS_HG_OBTAIN_CASTLE_POINTS       896 // Received Castle Points!
 #define MUS_HG_OBTAIN_B_POINTS            897 // Received Battle Points!
 #define MUS_HG_WIN_MINIGAME               898 // Cleared Wobbuffet Pop!
-#define MUS_VS_ZINNIA             899 // Cleared Wobbuffet Pop!
+#define MUS_VS_POSTGAME                     899
+#define MUS_ONYX_TITLE                    900
+#define MUS_VS_COLOSSEUM                   901
 
 
-#define HG_MUSIC_END                      MUS_VS_ZINNIA
+#define HG_MUSIC_END                      MUS_VS_COLOSSEUM
 
 #define SONGS_END                         HG_MUSIC_END
 #define END_MUS                           SONGS_END

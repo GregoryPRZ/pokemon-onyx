@@ -1048,7 +1048,7 @@ $(MID_SUBDIR)/se_success.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V080 -P4
 
 $(MID_SUBDIR)/se_select.s: %.s: %.mid
-	$(MID) $< $@ -E -G127 -V080 -P5
+	$(MID) $< $@ -E -G191 -V090 -P5
 
 $(MID_SUBDIR)/se_ball_trade.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V100 -P5
@@ -2339,3 +2339,12 @@ $(MID_SUBDIR)/mus_hg_obtain_b_points.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_hg_win_minigame.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V091 -p5
+
+$(MID_SUBDIR)/mus_vs_postgame.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V90
+
+$(MID_SUBDIR)/mus_onyx_title.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V90
+
+$(MID_SUBDIR)/mus_vs_colosseum.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V90

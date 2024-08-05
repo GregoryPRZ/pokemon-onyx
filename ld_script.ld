@@ -1636,6 +1636,9 @@ SECTIONS {
         sound/songs/midi/mus_hg_obtain_castle_points.o(.rodata);
         sound/songs/midi/mus_hg_obtain_b_points.o(.rodata);
         sound/songs/midi/mus_hg_win_minigame.o(.rodata);
+        sound/songs/midi/mus_vs_postgame.o(.rodata);
+        sound/songs/midi/mus_onyx_title.o(.rodata);
+        sound/songs/midi/mus_vs_colosseum.o(.rodata);
     } > ROM =0
 
     lib_rodata :

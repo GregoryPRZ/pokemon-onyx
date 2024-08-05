@@ -4992,6 +4992,9 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_HG_OBTAIN_CASTLE_POINTS) \
     X(MUS_HG_OBTAIN_B_POINTS) \
     X(MUS_HG_WIN_MINIGAME) \
+    X(MUS_VS_POSTGAME) \
+    X(MUS_ONYX_TITLE) \
+    X(MUS_VS_COLOSSEUM) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \
