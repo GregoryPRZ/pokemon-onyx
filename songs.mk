@@ -1829,3 +1829,6 @@ $(MID_SUBDIR)/se_menu_select.s: %.s: %.mid
 
 $(MID_SUBDIR)/se_menu_change.s: %.s: %.mid
 	$(MID) $< $@ -E -G191 -V100 -P5
+
+$(MID_SUBDIR)/mus_last_pokemon.s: %.s: %.mid
+	$(MID) $< $@ -E -G191 -V90 -P5

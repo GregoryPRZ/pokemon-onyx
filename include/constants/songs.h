@@ -773,9 +773,10 @@
 #define SE_DP_START                       726
 #define SE_MENU_SELECT                    727
 #define SE_MENU_CHANGE                   728
+#define MUS_LAST_POKEMON                  729
 
 
-#define PL_MUSIC_END                      SE_MENU_CHANGE
+#define PL_MUSIC_END                      MUS_LAST_POKEMON
 
 
 #define SONGS_END                         PL_MUSIC_END

@@ -13747,7 +13747,7 @@ F_TRAINER_FEMALE |
 #line 5477
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 5473
-            .ability = ABILITY_KEEN_EYE,
+            .ability = ABILITY_STURDY,
 #line 5474
             .lvl = 54,
 #line 5476
@@ -14213,7 +14213,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 5669
-            .species = SPECIES_SWAMPERT_MEGA,
+            .species = SPECIES_SWAMPERT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5669
             .heldItem = ITEM_SWAMPERTITE,

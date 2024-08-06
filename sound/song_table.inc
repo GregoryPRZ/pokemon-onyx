@@ -730,6 +730,7 @@ gSongTable::
 	song se_dp_start, 1, 1
 	song se_menu_select, 1, 1
 	song se_menu_change, 1, 1
+	song mus_last_pokemon, 0, 0
 
 	.align 2
 dummy_song_header:
