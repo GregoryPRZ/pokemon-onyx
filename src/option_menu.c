@@ -395,7 +395,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             gTasks[taskId].tMenuSelection--;
         else
             gTasks[taskId].tMenuSelection = MENUITEM_CANCEL;
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -404,7 +404,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             gTasks[taskId].tMenuSelection++;
         else
             gTasks[taskId].tMenuSelection = 0;
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else
@@ -500,7 +500,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             gTasks[taskId].data[0]--;
         else
             gTasks[taskId].data[0] = MENUITEM_CANCEL_PG2;
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         HighlightOptionMenuItem(gTasks[taskId].data[0]);
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -509,7 +509,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             gTasks[taskId].data[0]++;
         else
             gTasks[taskId].data[0] = 0;
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         HighlightOptionMenuItem(gTasks[taskId].data[0]);
     }
     else

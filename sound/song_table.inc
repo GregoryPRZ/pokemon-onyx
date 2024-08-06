@@ -728,6 +728,8 @@ gSongTable::
 	song mus_onyx_title, 0, 0
 	song mus_vs_colosseum, 0, 0
 	song se_dp_start, 1, 1
+	song se_menu_select, 1, 1
+	song se_menu_change, 1, 1
 
 	.align 2
 dummy_song_header:

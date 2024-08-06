@@ -2385,7 +2385,7 @@ static void Task_DexNavMain(u8 taskId)
             sDexNavUiDataPtr->cursorRow--;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -2406,7 +2406,7 @@ static void Task_DexNavMain(u8 taskId)
             sDexNavUiDataPtr->cursorRow++;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(DPAD_LEFT))
@@ -2431,7 +2431,7 @@ static void Task_DexNavMain(u8 taskId)
             sDexNavUiDataPtr->cursorCol--;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(DPAD_RIGHT))
@@ -2458,7 +2458,7 @@ static void Task_DexNavMain(u8 taskId)
             break;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(R_BUTTON))

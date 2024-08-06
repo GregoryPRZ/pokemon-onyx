@@ -1464,6 +1464,8 @@ SECTIONS {
         sound/songs/midi/mus_onyx_title.o(.rodata);
         sound/songs/midi/mus_vs_colosseum.o(.rodata);
         sound/songs/midi/se_dp_start.o(.rodata);
+        sound/songs/midi/se_menu_select.o(.rodata);
+        sound/songs/midi/se_menu_change.o(.rodata);
     } > ROM =0
 
     lib_rodata :

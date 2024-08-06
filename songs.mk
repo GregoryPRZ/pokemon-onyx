@@ -775,7 +775,7 @@ $(MID_SUBDIR)/se_glass_flute.s: %.s: %.mid
 	$(MID) $< $@ -E -G128 -V105 -P5
 
 $(MID_SUBDIR)/se_boo.s: %.s: %.mid
-	$(MID) $< $@ -E -G127 -V110 -P4
+	$(MID) $< $@ -E -G191 -V110 -P4
 
 $(MID_SUBDIR)/se_ball.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V070 -P4
@@ -871,7 +871,7 @@ $(MID_SUBDIR)/se_bridge_walk.s: %.s: %.mid
 	$(MID) $< $@ -E -G128 -V095 -P4
 
 $(MID_SUBDIR)/se_failure.s: %.s: %.mid
-	$(MID) $< $@ -E -G127 -V120 -P4
+	$(MID) $< $@ -E -G191 -V120 -P4
 
 $(MID_SUBDIR)/se_rotating_gate.s: %.s: %.mid
 	$(MID) $< $@ -E -G128 -V090 -P4
@@ -964,7 +964,7 @@ $(MID_SUBDIR)/se_pc_on.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V100 -P5
 
 $(MID_SUBDIR)/se_pin.s: %.s: %.mid
-	$(MID) $< $@ -E -G127 -V060 -P4
+	$(MID) $< $@ -E -G191 -V060 -P4
 
 $(MID_SUBDIR)/se_ding_dong.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V090 -P5
@@ -985,7 +985,7 @@ $(MID_SUBDIR)/se_shop.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -V090 -P5
 
 $(MID_SUBDIR)/se_rg_bag_cursor.s: %.s: %.mid
-	$(MID) $< $@ -E -G129 -P5
+	$(MID) $< $@ -E -G191 -P5
 
 $(MID_SUBDIR)/se_rg_bag_pocket.s: %.s: %.mid
 	$(MID) $< $@ -E -G129 -P5
@@ -1042,10 +1042,10 @@ $(MID_SUBDIR)/se_fall.s: %.s: %.mid
 	$(MID) $< $@ -E -G128 -V110 -P4
 
 $(MID_SUBDIR)/se_save.s: %.s: %.mid
-	$(MID) $< $@ -E -G128 -V080 -P5
+	$(MID) $< $@ -E -G191 -V080 -P5
 
 $(MID_SUBDIR)/se_success.s: %.s: %.mid
-	$(MID) $< $@ -E -G127 -V080 -P4
+	$(MID) $< $@ -E -G191 -V080 -P4
 
 $(MID_SUBDIR)/se_select.s: %.s: %.mid
 	$(MID) $< $@ -E -G191 -V090 -P5
@@ -1822,4 +1822,10 @@ $(MID_SUBDIR)/mus_vs_colosseum.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V90
 
 $(MID_SUBDIR)/se_dp_start.s: %.s: %.mid
+	$(MID) $< $@ -E -G191 -V100 -P5
+
+$(MID_SUBDIR)/se_menu_select.s: %.s: %.mid
+	$(MID) $< $@ -E -G191 -V100 -P5
+
+$(MID_SUBDIR)/se_menu_change.s: %.s: %.mid
 	$(MID) $< $@ -E -G191 -V100 -P5

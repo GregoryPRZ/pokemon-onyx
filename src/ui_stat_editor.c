@@ -838,7 +838,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         else
             partyid -= 1;
         sStatEditorDataPtr->partyid = partyid;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_MENU_CHANGE);
         ReloadNewPokemon(taskId);
     }
     if (JOY_NEW(R_BUTTON))
@@ -849,7 +849,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         else
             partyid += 1;
         sStatEditorDataPtr->partyid = partyid;
-        PlaySE(SE_SELECT);
+        PlaySE(SE_MENU_CHANGE);
         ReloadNewPokemon(taskId);
     }
     if (JOY_NEW(B_BUTTON))
