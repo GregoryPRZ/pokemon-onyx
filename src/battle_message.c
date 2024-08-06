@@ -18,6 +18,7 @@
 #include "recorded_battle.h"
 #include "string_util.h"
 #include "strings.h"
+#include "sound.h"
 #include "test_runner.h"
 #include "text.h"
 #include "trainer_hill.h"
@@ -35,6 +36,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/songs.h"
 
 struct BattleWindowText
 {

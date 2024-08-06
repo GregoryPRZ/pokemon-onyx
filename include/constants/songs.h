@@ -740,8 +740,9 @@
 #define MUS_PL_WIN_MINIGAME 800
 #define MUS_VS_ELITE_TRAINER 801
 #define SE_DP_START                       802
+#define MUS_LAST_POKEMON                  803
 
-#define END_MUS                     SE_DP_START
+#define END_MUS                     MUS_LAST_POKEMON
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
