@@ -2949,7 +2949,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         ClearMonSprites();
         CreateMonSpritesAtPos(selectedMon, 0xE);
         sPokedexView->justScrolled = TRUE;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
     else if (JOY_NEW(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
     {
@@ -2960,7 +2960,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         ClearMonSprites();
         CreateMonSpritesAtPos(selectedMon, 0xE);
         sPokedexView->justScrolled = TRUE;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
 
     if (scrollDir == 0)
@@ -4965,7 +4965,7 @@ static void Task_HandleStatsScreenInput(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         if (gTasks[taskId].data[5] == 0)
             gTasks[taskId].data[5] = 1;
         else
@@ -7148,7 +7148,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
             m4aMPlayContinue(&gMPlayInfo_BGM);
             sPokedexView->screenSwitchState = 2;
             gTasks[taskId].func = Task_SwitchScreensFromCryScreen;
-            PlaySE(SE_DEX_PAGE);
+            PlaySE(SE_PIN);
             return;
         }
         if (JOY_NEW(DPAD_RIGHT)
@@ -7164,7 +7164,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
                 m4aMPlayContinue(&gMPlayInfo_BGM);
                 sPokedexView->screenSwitchState = 3;
                 gTasks[taskId].func = Task_SwitchScreensFromCryScreen;
-                PlaySE(SE_DEX_PAGE);
+                PlaySE(SE_PIN);
             }
             return;
         }
@@ -7321,7 +7321,7 @@ static void Task_HandleSizeScreenInput(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 2;
         gTasks[taskId].func = Task_SwitchScreensFromSizeScreen;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
 }
 
@@ -7888,7 +7888,7 @@ static void Task_HandleSearchTopBarInput(u8 taskId)
     }
     if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tTopBarItem > SEARCH_TOPBAR_SEARCH)
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         gTasks[taskId].tTopBarItem--;
         HighlightSelectedSearchTopBarItem(gTasks[taskId].tTopBarItem);
         CopyWindowToVram(0, COPYWIN_GFX);
@@ -7896,7 +7896,7 @@ static void Task_HandleSearchTopBarInput(u8 taskId)
     }
     if (JOY_NEW(DPAD_RIGHT) && gTasks[taskId].tTopBarItem < SEARCH_TOPBAR_CANCEL)
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         gTasks[taskId].tTopBarItem++;
         HighlightSelectedSearchTopBarItem(gTasks[taskId].tTopBarItem);
         CopyWindowToVram(0, COPYWIN_GFX);

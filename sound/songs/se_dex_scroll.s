@@ -1,32 +1,36 @@
 	.include "MPlayDef.s"
 
-	.equ	se_dex_scroll_grp, voicegroup127
+	.equ	se_dex_scroll_grp, voicegroup191
 	.equ	se_dex_scroll_pri, 5
 	.equ	se_dex_scroll_rev, 0
-	.equ	se_dex_scroll_mvl, 127
+	.equ	se_dex_scroll_mvl, 100
 	.equ	se_dex_scroll_key, 0
 	.equ	se_dex_scroll_tbs, 1
-	.equ	se_dex_scroll_exg, 0
+	.equ	se_dex_scroll_exg, 1
 	.equ	se_dex_scroll_cmp, 1
 
 	.section .rodata
 	.global	se_dex_scroll
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_dex_scroll_1:
 	.byte	KEYSH , se_dex_scroll_key+0
-	.byte	TEMPO , 100*se_dex_scroll_tbs/2
+@ 000   ----------------------------------------
+	.byte	TEMPO , (100*se_dex_scroll_tbs+1)/2
 	.byte		VOICE , 4
-	.byte		BENDR , 12
-	.byte		XCMD  , xIECV , 10
-	.byte		        xIECL , 8
-	.byte		VOL   , 40*se_dex_scroll_mvl/mxv
-	.byte		BEND  , c_v+4
-	.byte		N01   , Gn4 , v127
-	.byte	W01
-	.byte		        Gn4 , v020
+	.byte		VOL   , 127*se_dex_scroll_mvl/mxv
+	.byte		BEND  , c_v+0
+	.byte		N02   , Bn3 , v127
+	.byte	W02
+	.byte		N03   , Bn4 , v112
+	.byte	W04
+	.byte		N02   , Bn4 , v024
+	.byte	W03
+	.byte		        Bn4 , v048
+	.byte	W03
+	.byte		        Bn4 , v024
 	.byte	W02
 	.byte	FINE
 
