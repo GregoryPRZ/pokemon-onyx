@@ -1535,7 +1535,6 @@ const u8 gText_ButtonTypeLR[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
 const u8 gText_MusicHoenn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}HOENN");
 const u8 gText_MusicSinnoh[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}SINNOH");
-const u8 gText_MusicJohto[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}JOHTO");
 const u8 gText_StatEditorOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}OFF");
 const u8 gText_StatEditorOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}ON");
 const u8 gText_NumPlayerLink[] = _("{STR_VAR_1}P LINK");

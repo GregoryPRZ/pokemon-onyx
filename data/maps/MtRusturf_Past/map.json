@@ -2,7 +2,7 @@
   "id": "MAP_MT_RUSTURF_PAST",
   "name": "MtRusturf_Past",
   "layout": "LAYOUT_MT_RUSTURF_PAST",
-  "music": "MUS_HG_MT_MOON_SQUARE",
+  "music": "MUS_DP_AMITY_SQUARE",
   "region_map_section": "MAPSEC_RUSTURF_TUNNEL",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -214,8 +214,6 @@ void CB2_InitSoar(void)
 				FadeOutAndFadeInNewMapMusic(MUS_SAILING, 2, 2);
 			else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
 				FadeOutAndFadeInNewMapMusic(MUS_DP_AMITY_SQUARE, 2, 2);
-			else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_JOHTO)
-				FadeOutAndFadeInNewMapMusic(MUS_HG_ROUTE47, 2, 2);
 
 			// some of these may not be necessary, but I'm just being safe
 			ScanlineEffect_Stop();

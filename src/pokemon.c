@@ -5796,19 +5796,6 @@ u16 GetBattleBGM(void)
             return MUS_RG_VS_MEWTWO;
         case SPECIES_MEW:
             return MUS_VS_MEW;
-        case SPECIES_RAIKOU:
-            return MUS_HG_VS_RAIKOU;
-        case SPECIES_ENTEI:
-            return MUS_HG_VS_ENTEI;
-        case SPECIES_SUICUNE:
-            return MUS_HG_VS_SUICUNE;
-        case SPECIES_LUGIA:
-            return MUS_HG_VS_LUGIA;
-        case SPECIES_HO_OH:
-            return MUS_HG_VS_HO_OH;
-        case SPECIES_CELEBI:
-            return MUS_HG_VS_WILD;
-        case SPECIES_REGIROCK:
         case SPECIES_REGICE:
         case SPECIES_REGISTEEL:
         #ifdef POKEMON_EXPANSION
