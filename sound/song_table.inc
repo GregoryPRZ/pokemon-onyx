@@ -727,6 +727,7 @@ gSongTable::
 	song mus_vs_postgame, 0, 0
 	song mus_onyx_title, 0, 0
 	song mus_vs_colosseum, 0, 0
+	song se_dp_start, 1, 1
 
 	.align 2
 dummy_song_header:

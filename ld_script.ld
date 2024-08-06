@@ -1463,6 +1463,7 @@ SECTIONS {
         sound/songs/midi/mus_vs_postgame.o(.rodata);
         sound/songs/midi/mus_onyx_title.o(.rodata);
         sound/songs/midi/mus_vs_colosseum.o(.rodata);
+        sound/songs/midi/se_dp_start.o(.rodata);
     } > ROM =0
 
     lib_rodata :

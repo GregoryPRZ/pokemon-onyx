@@ -770,9 +770,10 @@
 #define MUS_VS_POSTGAME                   723
 #define MUS_ONYX_TITLE                    724
 #define MUS_VS_COLOSSEUM                  725
+#define SE_DP_START                       726
 
 
-#define PL_MUSIC_END                      MUS_VS_COLOSSEUM
+#define PL_MUSIC_END                      SE_DP_START
 
 
 #define SONGS_END                         PL_MUSIC_END

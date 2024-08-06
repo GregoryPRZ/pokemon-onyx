@@ -1820,3 +1820,6 @@ $(MID_SUBDIR)/mus_onyx_title.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_vs_colosseum.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V90
+
+$(MID_SUBDIR)/se_dp_start.s: %.s: %.mid
+	$(MID) $< $@ -E -G191 -V100 -P5
