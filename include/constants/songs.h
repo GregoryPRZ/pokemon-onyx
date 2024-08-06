@@ -739,8 +739,9 @@
 #define MUS_PL_OBTAIN_B_POINTS 799
 #define MUS_PL_WIN_MINIGAME 800
 #define MUS_VS_ELITE_TRAINER 801
+#define SE_DP_START                       802
 
-#define END_MUS                     MUS_VS_ELITE_TRAINER
+#define END_MUS                     SE_DP_START
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

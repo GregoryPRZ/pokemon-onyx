@@ -803,7 +803,8 @@ gSongTable::
 	song mus_pl_obtain_b_points, 2, 2
 	song mus_pl_win_minigame, 2, 2
 	song mus_vs_elite_trainer, 0, 0
-	
+	song se_dp_start, 1, 1
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0
