@@ -1469,6 +1469,7 @@ SECTIONS {
         sound/songs/midi/se_menu_select.o(.rodata);
         sound/songs/midi/se_menu_change.o(.rodata);
         sound/songs/midi/se_menu_select.o(.rodata);
+        sound/songs/midi/se_save_button.o(.rodata);
         sound/songs/midi/mus_last_pokemon.o(.rodata);
     } > ROM =0
 

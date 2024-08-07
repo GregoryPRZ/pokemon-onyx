@@ -1434,7 +1434,7 @@ void Task_HandleSaveConfirmation(u8 taskId)
 {
     if(JOY_NEW(A_BUTTON)) //confirm and leave
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_SAVE_BUTTON);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_ReturnToFieldOnSave;
         gFieldCallback = SaveStartCallback_FullStartMenu;
@@ -1553,6 +1553,7 @@ static void Task_StartMenuFullMain(u8 taskId)
 
     if(JOY_NEW(START_BUTTON)) // If start button pressed go to Save Confirmation Control Task
     {
+        PlaySE(SE_SELECT);
         PrintSaveConfirmToWindow();
         gTasks[taskId].func = Task_HandleSaveConfirmation;
     }
