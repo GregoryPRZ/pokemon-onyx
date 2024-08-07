@@ -62,7 +62,6 @@ enum
     MENU_ACTION_PLAYER,
     MENU_ACTION_SAVE,
     MENU_ACTION_OPTION,
-    MENU_ACTION_DEXNAV,
     MENU_ACTION_RETIRE_SAFARI,
     MENU_ACTION_PLAYER_LINK,
     MENU_ACTION_REST_FRONTIER,
@@ -111,7 +110,6 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuStatEditorCallback(void);
-static bool8 StartMenuDexNavCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -199,7 +197,6 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
     [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_OPTION]          = {gText_MenuOption,  {.u8_void = StartMenuOptionCallback}},
-    [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}},
     [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,  {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,  {.u8_void = StartMenuLinkModePlayerNameCallback}},
     [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
@@ -336,7 +333,6 @@ static void BuildNormalStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
         FlagSet(FLAG_SYS_DEXNAV_GET);
         FlagSet(FLAG_SYS_DETECTOR_MODE);
-        AddStartMenuAction(MENU_ACTION_DEXNAV);
     }
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
@@ -638,9 +634,6 @@ static bool8 HandleStartMenuInput(void)
             if (GetNationalPokedexCount(FLAG_GET_SEEN) == 0)
                 return FALSE;
         }
-        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
-          && MapHasNoEncounterData())
-            return FALSE;
         
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
@@ -1482,11 +1475,5 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 static bool8 StartMenuStatEditorCallback(void)
 {
     CreateTask(Task_OpenStatEditorFromStartMenu, 0);
-    return TRUE;
-}
-
-static bool8 StartMenuDexNavCallback(void)
-{
-    CreateTask(Task_OpenDexNavFromStartMenu, 0);
     return TRUE;
 }
