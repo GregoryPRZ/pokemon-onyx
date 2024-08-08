@@ -581,6 +581,12 @@ u16 HoennMusicHandler(u16 songNum) {
 u16 SinnohMusicHandler(u16 songNum) {
     u8 currentTime = GetCurrentTimeOfDay();
     switch(songNum) {
+        case MUS_RG_OBTAIN_KEY_ITEM:
+            return MUS_PL_OBTAIN_ARCADE_POINTS;
+        case MUS_INTRO:
+            return MUS_DP_INTRO;
+        case MUS_END:
+            return MUS_PL_TWINLEAF_MUSIC_BOX;
         case MUS_TITLE:
             return MUS_DP_TITLE;
         case MUS_EVOLUTION:

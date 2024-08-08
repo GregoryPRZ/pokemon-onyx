@@ -221,6 +221,11 @@ Route120_EventScript_StevenGiveDeconScope::
 	msgbox Route120_Text_StevenGiveDevonScope, MSGBOX_DEFAULT
 	giveitem ITEM_DEVON_SCOPE
 	setflag FLAG_RECEIVED_DEVON_SCOPE
+	msgbox Route120_Text_StevenGiveMegaStones, MSGBOX_DEFAULT
+	giveitem ITEM_SWAMPERTITE
+	giveitem ITEM_BLAZIKENITE
+	giveitem ITEM_SCEPTILITE
+	setflag FLAG_RECEIVED_STEVEN_MEGA_STONES
 	msgbox Route120_Text_StevenGoodbye, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
@@ -431,4 +436,8 @@ Route120_Text_RouteSignFortree:
 Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} ROUTE 121\n"
 	.string "{LEFT_ARROW} ROUTE 120$"
+
+Route120_Text_StevenGiveMegaStones:
+	.string "STEVEN: Also, take these for your\n"
+	.string "POKéMON. It may be useful to you.$"
 `

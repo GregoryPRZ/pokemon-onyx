@@ -47,6 +47,85 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	release
 	end
 
+LilycoveCity_DepartmentStore_3F_EventScript_ClerkMegaStones::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_GAME_CLEAR, LilycoveCity_DepartmentStore_3F_EventScript_ClerkMegaStonesPostgame
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_MegaStones
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_3F_Pokemart_MegaStones:
+	.2byte ITEM_GIGASAURITE
+	.2byte ITEM_GIGAZARDITE
+	.2byte ITEM_GIGASTOISITE
+	.2byte ITEM_BUTTERFREEITE
+	.2byte ITEM_MEOWTHITE
+	.2byte ITEM_PIKACHUITE
+	.2byte ITEM_EEVEEITE
+	.2byte ITEM_GIGAGARITE
+	.2byte ITEM_INTELEONITE
+	.2byte ITEM_RILLABOOMITE
+	.2byte ITEM_CINDERACITE
+	.2byte ITEM_ORBEETITE
+	.2byte ITEM_CENTISKORCHITE
+	.2byte ITEM_DREDNAWITE
+	.2byte ITEM_FLAPPITE
+	.2byte ITEM_APPLETUNITE
+	.2byte ITEM_ALCREMITE
+	.2byte ITEM_GRIMMSNARLITE
+	.2byte ITEM_HATTERENITE
+	.2byte ITEM_COPPERAJITE
+	.2byte ITEM_DURALUDONITE
+	.2byte ITEM_NONE
+	release
+	end
+
+LilycoveCity_DepartmentStore_3F_EventScript_ClerkMegaStonesPostgame::
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_MegaStonesPostgame
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_3F_Pokemart_MegaStonesPostgame:
+	.2byte ITEM_GIGASAURITE
+	.2byte ITEM_GIGAZARDITE
+	.2byte ITEM_GIGASTOISITE
+	.2byte ITEM_BUTTERFREEITE
+	.2byte ITEM_MEOWTHITE
+	.2byte ITEM_PIKACHUITE
+	.2byte ITEM_EEVEEITE
+	.2byte ITEM_GIGAGARITE
+	.2byte ITEM_INTELEONITE
+	.2byte ITEM_RILLABOOMITE
+	.2byte ITEM_CINDERACITE
+	.2byte ITEM_ORBEETITE
+	.2byte ITEM_CENTISKORCHITE
+	.2byte ITEM_DREDNAWITE
+	.2byte ITEM_FLAPPITE
+	.2byte ITEM_APPLETUNITE
+	.2byte ITEM_ALCREMITE
+	.2byte ITEM_GRIMMSNARLITE
+	.2byte ITEM_HATTERENITE
+	.2byte ITEM_COPPERAJITE
+	.2byte ITEM_DURALUDONITE
+	.2byte ITEM_SNORLAXITE
+	.2byte ITEM_GARBODORITE
+	.2byte ITEM_MELMETALITE
+	.2byte ITEM_URSHIFITE
+	.2byte ITEM_MACHAMPITE
+	.2byte ITEM_RAIKOUITE
+	.2byte ITEM_NONE
+	release
+	end
+
 LilycoveCity_DepartmentStore_3F_EventScript_TriathleteM::
 	msgbox LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon, MSGBOX_NPC
 	end

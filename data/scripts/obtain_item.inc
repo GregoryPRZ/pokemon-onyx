@@ -71,7 +71,7 @@ EventScript_BufferPowerUpPocket::
 
 EventScript_BufferMegaStonesPocket::
 	bufferstdstring STR_VAR_3, STDSTRING_MEGASTONES
-	call_if_eq VAR_0x8007, TRUE, EventScript_PlayFanfareObtainedItem
+	call_if_eq VAR_0x8007, TRUE, EventScript_PlayFanfareObtainedMegaStone
 	return
 
 EventScript_BufferZCrystalsPocket::
@@ -103,6 +103,10 @@ EventScript_PlayFanfareObtainedItem::
 
 EventScript_PlayFanfareObtainedTMHM::
 	playfanfare MUS_OBTAIN_TMHM
+	return
+
+EventScript_PlayFanfareObtainedMegaStone::
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	return
 
 Std_ObtainDecoration::

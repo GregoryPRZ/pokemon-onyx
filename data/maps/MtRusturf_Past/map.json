@@ -67,17 +67,17 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
       "x": 7,
       "y": 8,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_CLEFABLITE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MT_MOON_CLEFABLITE"
+      "flag": "FLAG_ITEM_MT_RUSTURF_CLEFABLITE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRICK_HOUSE_STATUE",

@@ -91,6 +91,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
       "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "x": 17,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_CAMERUPTITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_TEAM_MAGMA_HIDEOUT_CAMERUPTITE"
     }
   ],
   "warp_events": [

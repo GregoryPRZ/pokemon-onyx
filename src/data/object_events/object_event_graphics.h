@@ -379,6 +379,9 @@ const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_event
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 
+const u32 gObjectEventPic_MegaStone[] = INCBIN_U32("graphics/object_events/pics/people/mega_stone.4bpp");
+const u16 gObjectEventPalette_MegaStone[] = INCBIN_U16("graphics/object_events/pics/people/mega_stone.gbapal");
+
 const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/pics/cave_dust.4bpp");
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");

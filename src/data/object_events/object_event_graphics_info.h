@@ -4671,3 +4671,22 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower = {
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_MEGA_STONE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 16,
+    .height = 16,
+    .paletteSlot = 0,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = sOamTables_16x16,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_MegaStone,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
