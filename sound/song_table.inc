@@ -732,6 +732,10 @@ gSongTable::
 	song se_menu_change, 1, 1
 	song se_save_button, 1, 1
 	song mus_last_pokemon, 0, 0
+	song se_pokenav_cursor, 1, 1
+	song se_pokenav_decide, 1, 1
+	song se_pokenav_back, 1, 1
+	song se_pokenav_boot, 1, 1
 
 	.align 2
 dummy_song_header:

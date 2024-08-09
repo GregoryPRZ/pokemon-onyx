@@ -2367,7 +2367,7 @@ static void Task_DexNavMain(u8 taskId)
     
     if (JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_POKENAV_OFF);
+        PlaySE(SE_POKENAV_BACK);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         task->func = Task_DexNavFadeAndExit;
     }

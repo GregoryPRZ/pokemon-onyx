@@ -4268,7 +4268,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             case WEATHER_DROUGHT:
                 if (!(gBattleWeather & B_WEATHER_SUN))
                 {
-                    gBattleWeather = (B_WEATHER_SUN_PERMANENT | B_WEATHER_SUN_TEMPORARY);
+                    gBattleWeather = (B_WEATHER_SUN_TEMPORARY | B_WEATHER_SUN_PERMANENT);
                     gBattleScripting.animArg1 = B_ANIM_SUN_CONTINUES;
                     effect++;
                 }

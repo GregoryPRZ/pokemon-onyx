@@ -1466,7 +1466,7 @@ static void Task_StartMenuFullMain(u8 taskId)
 {
     if (JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_PC_OFF);
+        PlaySE(SE_POKENAV_BACK);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_StartMenuFullTurnOff;
     }

@@ -1825,13 +1825,25 @@ $(MID_SUBDIR)/se_dp_start.s: %.s: %.mid
 	$(MID) $< $@ -E -G191 -V100 -P5
 
 $(MID_SUBDIR)/se_menu_select.s: %.s: %.mid
-	$(MID) $< $@ -E -G191 -V100 -P5
+	$(MID) $< $@ -E -G191 -V85 -P5
 
 $(MID_SUBDIR)/se_menu_change.s: %.s: %.mid
-	$(MID) $< $@ -E -G191 -V100 -P5
+	$(MID) $< $@ -E -G191 -V85 -P5
 
 $(MID_SUBDIR)/se_save_button.s: %.s: %.mid
-	$(MID) $< $@ -E -G191 -V90 -P5
+	$(MID) $< $@ -E -G191 -V85 -P5
 
 $(MID_SUBDIR)/mus_last_pokemon.s: %.s: %.mid
 	$(MID) $< $@ -E -G191 -V90 -P5
+
+$(MID_SUBDIR)/se_pokenav_cursor.s: %.s: %.mid
+	$(MID) $< $@ -E -G229 -V85 -P5
+
+$(MID_SUBDIR)/se_pokenav_decide.s: %.s: %.mid
+	$(MID) $< $@ -E -G229 -V85 -P5
+
+$(MID_SUBDIR)/se_pokenav_back.s: %.s: %.mid
+	$(MID) $< $@ -E -G229 -V85 -P5
+
+$(MID_SUBDIR)/se_pokenav_boot.s: %.s: %.mid
+	$(MID) $< $@ -E -G229 -V85 -P5

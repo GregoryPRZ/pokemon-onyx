@@ -1471,6 +1471,10 @@ SECTIONS {
         sound/songs/midi/se_menu_select.o(.rodata);
         sound/songs/midi/se_save_button.o(.rodata);
         sound/songs/midi/mus_last_pokemon.o(.rodata);
+        sound/songs/midi/se_pokenav_cursor.o(.rodata);
+        sound/songs/midi/se_pokenav_decide.o(.rodata);
+        sound/songs/midi/se_pokenav_back.o(.rodata);
+        sound/songs/midi/se_pokenav_boot.o(.rodata);
     } > ROM =0
 
     lib_rodata :

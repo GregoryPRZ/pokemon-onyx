@@ -228,6 +228,7 @@
 .include "sound/voicegroups/voicegroup226.inc"
 .include "sound/voicegroups/voicegroup227.inc"
 .include "sound/voicegroups/voicegroup228.inc"
+.include "sound/voicegroups/voicegroup229.inc"
 .include "sound/voicegroups/voicegroup230.inc"
 .include "sound/voicegroups/voicegroup231.inc"
 .include "sound/voicegroups/voicegroup232.inc"

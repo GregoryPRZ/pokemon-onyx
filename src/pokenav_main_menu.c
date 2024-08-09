@@ -312,7 +312,7 @@ u32 PokenavMainMenuLoopedTaskIsActive(void)
 
 void ShutdownPokenav(void)
 {
-    PlaySE(SE_POKENAV_OFF);
+    PlaySE(SE_POKENAV_BACK);
     ResetBldCnt_();
     BeginNormalPaletteFade(PALETTES_ALL, -1, 0, 16, RGB_BLACK);
 }

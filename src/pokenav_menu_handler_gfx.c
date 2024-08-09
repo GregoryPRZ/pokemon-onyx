@@ -519,7 +519,7 @@ static u32 LoopedTask_OpenMenu(s32 state)
             PokenavFadeScreen(POKENAV_FADE_FROM_BLACK);
         else
         {
-            PlaySE(SE_POKENAV_ON);
+            PlaySE(SE_POKENAV_BOOT);
             PokenavFadeScreen(POKENAV_FADE_FROM_BLACK_ALL);
         }
         switch (GetPokenavMenuType())
@@ -571,7 +571,7 @@ static u32 LoopedTask_MoveMenuCursor(s32 state)
         SetMenuOptionGlow();
         StartOptionAnimations_CursorMoved();
         PrintCurrentOptionDescription();
-        PlaySE(SE_SELECT);
+        PlaySE(SE_POKENAV_CURSOR);
         return LT_INC_AND_PAUSE;
     case 1:
         if (AreMenuOptionSpritesMoving())
@@ -783,7 +783,7 @@ static u32 LoopedTask_OpenPokenavFeature(s32 state)
             HideMainOrSubMenuLeftHeader(POKENAV_GFX_MAIN_MENU, FALSE);
             break;
         }
-        PlaySE(SE_SELECT);
+        PlaySE(SE_POKENAV_DECIDE);
         return LT_INC_AND_PAUSE;
     case 2:
         if (AreMenuOptionSpritesMoving())
@@ -824,7 +824,7 @@ static u32 LoopedTask_OpenPokenavDexNav(s32 state)
             HideMainOrSubMenuLeftHeader(POKENAV_GFX_MAIN_MENU, FALSE);
             break;
         }
-        PlaySE(SE_SELECT);
+        PlaySE(SE_POKENAV_DECIDE);
         return LT_INC_AND_PAUSE;
     case 2:
         if (AreMenuOptionSpritesMoving())

@@ -775,9 +775,14 @@
 #define SE_MENU_CHANGE                   728
 #define SE_SAVE_BUTTON                  729
 #define MUS_LAST_POKEMON                  730
+#define SE_POKENAV_CURSOR                  731
+#define SE_POKENAV_DECIDE                  732
+#define SE_POKENAV_BACK                 733
+#define SE_POKENAV_BOOT                734
 
 
-#define PL_MUSIC_END                      MUS_LAST_POKEMON
+
+#define PL_MUSIC_END                      SE_POKENAV_BOOT
 
 
 #define SONGS_END                         PL_MUSIC_END
