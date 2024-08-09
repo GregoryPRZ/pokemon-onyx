@@ -156,6 +156,187 @@ SlateportCity_Pokemart_EnergyGuru:
 	.2byte ITEM_ZINC
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_HP_UP
+	.2byte ITEM_SWIFT_MOCHI
+	.2byte ITEM_CLEVER_MOCHI
+	.2byte ITEM_MUSCLE_MOCHI
+	.2byte ITEM_GENIUS_MOCHI
+	.2byte ITEM_HEALTH_MOCHI
+	.2byte ITEM_RESIST_MOCHI
+	.2byte ITEM_FRESH_START_MOCHI
+	.2byte ITEM_HONDEW_BERRY
+	.2byte ITEM_POMEG_BERRY
+	.2byte ITEM_KELPSY_BERRY
+	.2byte ITEM_QUALOT_BERRY
+	.2byte ITEM_GREPA_BERRY
+	.2byte ITEM_TAMATO_BERRY
+	.2byte ITEM_SWIFT_FEATHER
+	.2byte ITEM_CLEVER_FEATHER
+	.2byte ITEM_GENIUS_FEATHER
+	.2byte ITEM_HEALTH_FEATHER
+	.2byte ITEM_MUSCLE_FEATHER
+	.2byte ITEM_PRETTY_FEATHER
+	.2byte ITEM_RESIST_FEATHER
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_BattleGuy::
+	lock
+	faceplayer
+	message SlateportCity_Text_BattleGuySellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_BattleGuy
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_BattleGuy:
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_SP_ATK
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_GUARD_SPEC
+	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_AUX_EVASION
+	.2byte ITEM_AUX_POWER
+	.2byte ITEM_AUX_POWERGUARD
+	.2byte ITEM_AUX_GUARD
+	.2byte ITEM_MIRROR_HERB
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_StoneMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE05_GET, SlateportCity_EventScript_StoneGemMan
+	message SlateportCity_Text_StoneManSellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_StoneMan
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_StoneMan:
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_DUSK_STONE
+	.2byte ITEM_ICE_STONE
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_SHINY_STONE
+	.2byte ITEM_MOON_STONE
+	.2byte ITEM_OVAL_STONE
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_FLOAT_STONE
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_StoneGemMan::
+	message SlateportCity_Text_StoneManSellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_StoneGemMan
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_StoneGemMan:
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_DUSK_STONE
+	.2byte ITEM_ICE_STONE
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_SHINY_STONE
+	.2byte ITEM_MOON_STONE
+	.2byte ITEM_OVAL_STONE
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_FLOAT_STONE
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_BUG_GEM
+	.2byte ITEM_ICE_GEM
+	.2byte ITEM_GHOST_GEM
+	.2byte ITEM_DARK_GEM
+	.2byte ITEM_FIRE_GEM
+	.2byte ITEM_ROCK_GEM
+	.2byte ITEM_STEEL_GEM
+	.2byte ITEM_FAIRY_GEM
+	.2byte ITEM_DRAGON_GEM
+	.2byte ITEM_FLYING_GEM
+	.2byte ITEM_NORMAL_GEM
+	.2byte ITEM_GRASS_GEM
+	.2byte ITEM_WATER_GEM
+	.2byte ITEM_ELECTRIC_GEM
+	.2byte ITEM_GROUND_GEM
+	.2byte ITEM_FIGHTING_GEM
+	.2byte ITEM_PSYCHIC_GEM
+	.2byte ITEM_POISON_GEM
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_PowerGirl::
+	lock
+	faceplayer
+	message SlateportCity_Text_PowerGirlSellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_PowerGirl
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_PowerGirl:
+	.2byte ITEM_POWER_ANKLET
+	.2byte ITEM_POWER_BAND
+	.2byte ITEM_POWER_BELT
+	.2byte ITEM_POWER_BRACER
+	.2byte ITEM_POWER_LENS
+	.2byte ITEM_POWER_WEIGHT
+	.2byte ITEM_MACHO_BRACE
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_CandyLady::
+	lock
+	faceplayer
+	message SlateportCity_Text_CandyLadySellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_CandyLady
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_CandyLady:
+	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_XL
+	.2byte ITEM_RAGE_CANDY_BAR
+	.2byte ITEM_STAR_SWEET
+	.2byte ITEM_BERRY_SWEET
+	.2byte ITEM_CLOVER_SWEET
+	.2byte ITEM_FLOWER_SWEET
+	.2byte ITEM_RIBBON_SWEET
+	.2byte ITEM_STRAWBERRY_SWEET
+	.2byte ITEM_LOVE_SWEET
+	.2byte ITEM_RED_NECTAR
+	.2byte ITEM_PINK_NECTAR
+	.2byte ITEM_PURPLE_NECTAR
+	.2byte ITEM_YELLOW_NECTAR
 	.2byte ITEM_NONE
 	release
 	end
@@ -188,16 +369,28 @@ SlateportCity_EventScript_MonHasEffortRibbon::
 	release
 	end
 
-SlateportCity_EventScript_Cook::
+SlateportCity_EventScript_IncenseWoman::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_CookSternInterview
-	msgbox SlateportCity_Text_SeaweedFullOfLife, MSGBOX_DEFAULT
+	message SlateportCity_Text_IncenseWomanSellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_IncenseWoman
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-SlateportCity_EventScript_CookSternInterview::
-	msgbox SlateportCity_Text_CaptainComeBackWithBigFish, MSGBOX_DEFAULT
+	.align 2
+SlateportCity_Pokemart_IncenseWoman:
+	.2byte ITEM_WAVE_INCENSE
+	.2byte ITEM_ROCK_INCENSE
+	.2byte ITEM_ROSE_INCENSE
+	.2byte ITEM_PURE_INCENSE
+	.2byte ITEM_LUCK_INCENSE
+	.2byte ITEM_FULL_INCENSE
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_ODD_INCENSE
+	.2byte ITEM_LAX_INCENSE
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -553,24 +746,6 @@ SlateportCity_PokemartDecor:
 	.2byte DECOR_B_NOTE_MAT
 	.2byte DECOR_C_HIGH_NOTE_MAT
 	.2byte DECOR_NONE
-	release
-	end
-
-SlateportCity_EventScript_PowerTMClerk::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemart SlateportCity_Pokemart_PowerTMs
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-SlateportCity_Pokemart_PowerTMs:
-	.2byte ITEM_TM_HIDDEN_POWER
-	.2byte ITEM_TM_SECRET_POWER
-	.2byte ITEM_NONE
 	release
 	end
 
@@ -956,6 +1131,26 @@ SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
 	.string "sell you what you need!$"
 
+SlateportCity_Text_BattleGuySellWhatYouNeed:
+	.string "I'm the BATTLE GUY! I'll go for it and\n"
+	.string "sell you what you need!$"
+
+SlateportCity_Text_StoneManSellWhatYouNeed:
+	.string "I'm the STONE MAN! I'll go for it and\n"
+	.string "sell you what you need!$"
+
+SlateportCity_Text_CandyLadySellWhatYouNeed:
+	.string "I'm the CANDY LADY! I'll go for it and\n"
+	.string "sell you what you need!$"
+
+SlateportCity_Text_PowerGirlSellWhatYouNeed:
+	.string "I'm the POWER GIRL! I'll go for it and\n"
+	.string "sell you what you need!$"
+
+SlateportCity_Text_IncenseWomanSellWhatYouNeed:
+	.string "I'm the INCENSE WOMAN! I'll go for it and\n"
+	.string "sell you what you need!$"
+
 SlateportCity_Text_OhYourPokemon:
 	.string "Oh?\n"
 	.string "Your {STR_VAR_1}…$"
@@ -986,13 +1181,6 @@ SlateportCity_Text_WonderIfLighthouseStartlesPokemon:
 	.string "dozens of miles away.\p"
 	.string "I wonder if it doesn't startle POKéMON\n"
 	.string "in the sea.$"
-
-SlateportCity_Text_SeaweedFullOfLife:
-	.string "Ooh, look at this!\p"
-	.string "The seaweed you can get around these\n"
-	.string "parts is fresh and full of life.\p"
-	.string "Why, it looks like it can even rear up\n"
-	.string "and attack!$"
 
 SlateportCity_Text_HowTownIsBornAndGrows:
 	.string "Where the water is clean, the fruits\n"
@@ -1156,11 +1344,6 @@ SlateportCity_Text_SternSaysDiscoveredSomething:
 	.string "something at the bottom of the sea.\p"
 	.string "I wonder what it is?\n"
 	.string "What could it be?$"
-
-SlateportCity_Text_CaptainComeBackWithBigFish:
-	.string "What's going on here?\p"
-	.string "Did the good CAPTAIN come back with\n"
-	.string "a big fish from the ocean floor?$"
 
 SlateportCity_Text_AmIOnTV:
 	.string "Hey! Are you watching?\n"

@@ -88,11 +88,12 @@ script MtRusturf_Top_EventScript_RanFromArceus{
 }
 
 script MtRusturf_Top_EventScript_Blayze{
-    fadenewbgm(MUS_NONE)
 	lock
+    fadenewbgm(MUS_NONE)
     delay(180)
-	faceplayer
     applymovement(POLITOED, Common_Movement_FaceDown)
+	waitmovement(0)
+	faceplayer
 	msgbox(format("BLAYZE: I knew you would come here. Let me introduce myself. I'm the creator of this ROM hack. I'm the one who made you go through many challenges in this region. You must think you don't understand what I'm talking about, and why I'm standing here, at the top of a mountain, with my POKéMON, doing nothing but to stare at the horizon.  Well, it's because I waited for you, just for one thing... To battle you, and see how this travel made you strong. Just as a warning though, I won't hold back. Show me what you've got!"), MSGBOX_DEFAULT)
 	trainerbattle_no_intro(TRAINER_BLAYZE, MtRusturf_Top_Text_BlayzeDefeatOne)
 	goto(MtRusturf_Top_EventScript_BlayzeRematch)

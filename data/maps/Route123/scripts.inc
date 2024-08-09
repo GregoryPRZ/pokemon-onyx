@@ -345,52 +345,148 @@ Route123_EventScript_RematchFernando::
 # 173 "data/maps/Route123/scripts.pory"
 
 # 174 "data/maps/Route123/scripts.pory"
-Route123_Text_LoveGrassMonsHaveAny:
+Route123_EventScript_BerrySeller::
 # 175 "data/maps/Route123/scripts.pory"
-	.string "I love GRASS-type POKéMON!\p"
+	lock
 # 176 "data/maps/Route123/scripts.pory"
-	.string "Do you have any GRASS-type POKéMON?$"
+	faceplayer
 # 177 "data/maps/Route123/scripts.pory"
-
+	message gText_HowMayIServeYou
 # 178 "data/maps/Route123/scripts.pory"
-Route123_Text_YouLikeGrassMonsTooHaveThis:
+	waitmessage
 # 179 "data/maps/Route123/scripts.pory"
-	.string "Oh?\p"
+	pokemart Route123_PokemartBerry
 # 180 "data/maps/Route123/scripts.pory"
-	.string "You like GRASS-type POKéMON, too,\n"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 # 181 "data/maps/Route123/scripts.pory"
-	.string "don't you?\p"
+	release
 # 182 "data/maps/Route123/scripts.pory"
-	.string "I'm so happy, you can have this!\n"
+	end
 # 183 "data/maps/Route123/scripts.pory"
-	.string "It's a token of our friendship.$"
+
 # 184 "data/maps/Route123/scripts.pory"
-
+	.align 2
 # 185 "data/maps/Route123/scripts.pory"
-Route123_Text_CheckTreesWithMyGrassMon:
+Route123_PokemartBerry:
 # 186 "data/maps/Route123/scripts.pory"
-	.string "I check trees with my GRASS-type\n"
+	.2byte ITEM_OCCA_BERRY
 # 187 "data/maps/Route123/scripts.pory"
-	.string "POKéMON. I'm like a tree doctor.$"
+	.2byte ITEM_PASSHO_BERRY
 # 188 "data/maps/Route123/scripts.pory"
-
+	.2byte ITEM_WACAN_BERRY
 # 189 "data/maps/Route123/scripts.pory"
-Route123_Text_RouteSign:
+	.2byte ITEM_RINDO_BERRY
 # 190 "data/maps/Route123/scripts.pory"
-	.string "{RIGHT_ARROW} ROUTE 123\n"
+	.2byte ITEM_YACHE_BERRY
 # 191 "data/maps/Route123/scripts.pory"
-	.string "{LEFT_ARROW} ROUTE 118$"
+	.2byte ITEM_CHOPLE_BERRY
 # 192 "data/maps/Route123/scripts.pory"
-
+	.2byte ITEM_KEBIA_BERRY
 # 193 "data/maps/Route123/scripts.pory"
-Route123_Text_RouteSignMtPyre:
+	.2byte ITEM_SHUCA_BERRY
 # 194 "data/maps/Route123/scripts.pory"
-	.string "{UP_ARROW} MT. PYRE\n"
+	.2byte ITEM_COBA_BERRY
 # 195 "data/maps/Route123/scripts.pory"
-	.string "“Forbidden to the faint of heart.”$"
+	.2byte ITEM_PAYAPA_BERRY
 # 196 "data/maps/Route123/scripts.pory"
-
+	.2byte ITEM_TANGA_BERRY
 # 197 "data/maps/Route123/scripts.pory"
-Route123_Text_BerryMastersHouse:
+	.2byte ITEM_CHARTI_BERRY
 # 198 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_KASIB_BERRY
+# 199 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_HABAN_BERRY
+# 200 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_COLBUR_BERRY
+# 201 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_BABIRI_BERRY
+# 202 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_CHILAN_BERRY
+# 203 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_LIECHI_BERRY
+# 204 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_GANLON_BERRY
+# 205 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_SALAC_BERRY
+# 206 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_PETAYA_BERRY
+# 207 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_APICOT_BERRY
+# 208 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_LANSAT_BERRY
+# 209 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_STARF_BERRY
+# 210 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_ENIGMA_BERRY
+# 211 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_MICLE_BERRY
+# 212 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_CUSTAP_BERRY
+# 213 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_JABOCA_BERRY
+# 214 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_ROWAP_BERRY
+# 215 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_ROSELI_BERRY
+# 216 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_KEE_BERRY
+# 217 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_MARANGA_BERRY
+# 218 "data/maps/Route123/scripts.pory"
+	.2byte ITEM_NONE
+# 219 "data/maps/Route123/scripts.pory"
+	release
+# 220 "data/maps/Route123/scripts.pory"
+	end
+# 221 "data/maps/Route123/scripts.pory"
+
+# 222 "data/maps/Route123/scripts.pory"
+Route123_Text_LoveGrassMonsHaveAny:
+# 223 "data/maps/Route123/scripts.pory"
+	.string "I love GRASS-type POKéMON!\p"
+# 224 "data/maps/Route123/scripts.pory"
+	.string "Do you have any GRASS-type POKéMON?$"
+# 225 "data/maps/Route123/scripts.pory"
+
+# 226 "data/maps/Route123/scripts.pory"
+Route123_Text_YouLikeGrassMonsTooHaveThis:
+# 227 "data/maps/Route123/scripts.pory"
+	.string "Oh?\p"
+# 228 "data/maps/Route123/scripts.pory"
+	.string "You like GRASS-type POKéMON, too,\n"
+# 229 "data/maps/Route123/scripts.pory"
+	.string "don't you?\p"
+# 230 "data/maps/Route123/scripts.pory"
+	.string "I'm so happy, you can have this!\n"
+# 231 "data/maps/Route123/scripts.pory"
+	.string "It's a token of our friendship.$"
+# 232 "data/maps/Route123/scripts.pory"
+
+# 233 "data/maps/Route123/scripts.pory"
+Route123_Text_CheckTreesWithMyGrassMon:
+# 234 "data/maps/Route123/scripts.pory"
+	.string "I check trees with my GRASS-type\n"
+# 235 "data/maps/Route123/scripts.pory"
+	.string "POKéMON. I'm like a tree doctor.$"
+# 236 "data/maps/Route123/scripts.pory"
+
+# 237 "data/maps/Route123/scripts.pory"
+Route123_Text_RouteSign:
+# 238 "data/maps/Route123/scripts.pory"
+	.string "{RIGHT_ARROW} ROUTE 123\n"
+# 239 "data/maps/Route123/scripts.pory"
+	.string "{LEFT_ARROW} ROUTE 118$"
+# 240 "data/maps/Route123/scripts.pory"
+
+# 241 "data/maps/Route123/scripts.pory"
+Route123_Text_RouteSignMtPyre:
+# 242 "data/maps/Route123/scripts.pory"
+	.string "{UP_ARROW} MT. PYRE\n"
+# 243 "data/maps/Route123/scripts.pory"
+	.string "“Forbidden to the faint of heart.”$"
+# 244 "data/maps/Route123/scripts.pory"
+
+# 245 "data/maps/Route123/scripts.pory"
+Route123_Text_BerryMastersHouse:
+# 246 "data/maps/Route123/scripts.pory"
 	.string "BERRY MASTER'S HOUSE$"
