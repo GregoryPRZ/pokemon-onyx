@@ -134,16 +134,6 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkZCrystals::
 
 	.align 2
 LilycoveCity_DepartmentStore_3F_Pokemart_ClerkZCrystals:
-	.2byte ITEM_ICIUM_Z
-	.2byte ITEM_FAIRIUM_Z
-	.2byte ITEM_BUGINIUM_Z
-	.2byte ITEM_STEELIUM_Z
-	.2byte ITEM_GHOSTIUM_Z
-	.2byte ITEM_DARKINIUM_Z
-	.2byte ITEM_GRASSIUM_Z
-	.2byte ITEM_DRAGONIUM_Z
-	.2byte ITEM_GROUNDIUM_Z
-	.2byte ITEM_POISONIUM_Z
 	.2byte ITEM_EEVIUM_Z
 	.2byte ITEM_MEWNIUM_Z
 	.2byte ITEM_DECIDIUM_Z

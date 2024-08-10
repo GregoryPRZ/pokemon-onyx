@@ -4352,8 +4352,8 @@ u32 ShouldDoTrainerSlide(u32 battler, u32 which)
             case TRAINER_SLIDE_LAST_SWITCHIN:
                 if (sTrainerSlides[i].msgLastSwitchIn != NULL && !CanBattlerSwitch(battler))
                 {
-                    PlayBGM(MUS_LAST_POKEMON);
                     gBattleStruct->trainerSlideMsg = sTrainerSlides[i].msgLastSwitchIn;
+                    PlayBGM(MUS_LAST_POKEMON);
                     return retValue;
                 }
                 break;

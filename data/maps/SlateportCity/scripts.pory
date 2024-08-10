@@ -341,6 +341,26 @@ SlateportCity_Pokemart_CandyLady:
 	release
 	end
 
+SlateportCity_EventScript_TmClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Pokemart_TmClerk
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_TmClerk:
+	.2byte ITEM_TM_ACROBATICS
+	.2byte ITEM_TM_THUNDER_WAVE
+	.2byte ITEM_TM_VENOSHOCK
+	.2byte ITEM_TM_DRAINING_KISS
+	.2byte ITEM_NONE
+	release
+	end
+
 SlateportCity_EventScript_EffortRibbonWoman::
 	lock
 	faceplayer

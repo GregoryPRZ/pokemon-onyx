@@ -54,6 +54,33 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	release
 	end
 
+LilycoveCity_DepartmentStore_4F_EventScript_ClerkMiddle::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart LilycoveCity_DepartmentStore_4F_Pokemart_NewTMs
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+LilycoveCity_DepartmentStore_4F_Pokemart_NewTMs:
+	.2byte ITEM_TM_ROOST
+	.2byte ITEM_TM_FOCUS_BLAST
+	.2byte ITEM_TM_DRAIN_PUNCH
+	.2byte ITEM_TM_DRAGON_PULSE
+	.2byte ITEM_TM_STEALTH_ROCK
+	.2byte ITEM_TM_X_SCISSOR
+	.2byte ITEM_TM_CHARGE_BEAM
+	.2byte ITEM_TM_GYRO_BALL
+	.2byte ITEM_TM_POISON_JAB
+	.2byte ITEM_TM_WILD_CHARGE
+	.2byte ITEM_TM_DAZZLING_GLEAM
+	.2byte ITEM_NONE
+	release
+	end
+
 LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 	.string "Hmm…\p"
 	.string "An attacking move…\n"

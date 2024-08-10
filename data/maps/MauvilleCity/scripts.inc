@@ -35,7 +35,7 @@ MauvilleCity_OnTransition:
 # 18 "data/maps/MauvilleCity/scripts.pory"
 	setvar VAR_MAUVILLE_GYM_STATE, 0
 # 19 "data/maps/MauvilleCity/scripts.pory"
-	call_if_set FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
+	call_if_set FLAG_GOT_TM_VOLT_SWITCH_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
 # 20 "data/maps/MauvilleCity/scripts.pory"
 	end
 # 21 "data/maps/MauvilleCity/scripts.pory"
@@ -845,7 +845,7 @@ MauvilleCity_EventScript_Wattson::
 # 423 "data/maps/MauvilleCity/scripts.pory"
 	faceplayer
 # 424 "data/maps/MauvilleCity/scripts.pory"
-	goto_if_set FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON, MauvilleCity_EventScript_ReceivedThunderbolt
+	goto_if_set FLAG_GOT_TM_VOLT_SWITCH_FROM_WATTSON, MauvilleCity_EventScript_ReceivedVoltSwitch
 # 425 "data/maps/MauvilleCity/scripts.pory"
 	goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, MauvilleCity_EventScript_CompletedNewMauville
 # 426 "data/maps/MauvilleCity/scripts.pory"
@@ -881,11 +881,11 @@ MauvilleCity_EventScript_CompletedNewMauville::
 # 441 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WattsonThanksTakeTM, MSGBOX_DEFAULT
 # 442 "data/maps/MauvilleCity/scripts.pory"
-	giveitem ITEM_TM_THUNDERBOLT
+	giveitem ITEM_TM_VOLT_SWITCH
 # 443 "data/maps/MauvilleCity/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 444 "data/maps/MauvilleCity/scripts.pory"
-	setflag FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON
+	setflag FLAG_GOT_TM_VOLT_SWITCH_FROM_WATTSON
 # 445 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT
 # 446 "data/maps/MauvilleCity/scripts.pory"
@@ -895,7 +895,7 @@ MauvilleCity_EventScript_CompletedNewMauville::
 # 448 "data/maps/MauvilleCity/scripts.pory"
 
 # 449 "data/maps/MauvilleCity/scripts.pory"
-MauvilleCity_EventScript_ReceivedThunderbolt::
+MauvilleCity_EventScript_ReceivedVoltSwitch::
 # 450 "data/maps/MauvilleCity/scripts.pory"
 	msgbox MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT
 # 451 "data/maps/MauvilleCity/scripts.pory"

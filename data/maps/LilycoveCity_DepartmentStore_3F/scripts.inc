@@ -271,190 +271,170 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkZCrystals::
 # 136 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Pokemart_ClerkZCrystals:
 # 137 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_ICIUM_Z
-# 138 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_FAIRIUM_Z
-# 139 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_BUGINIUM_Z
-# 140 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_STEELIUM_Z
-# 141 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_GHOSTIUM_Z
-# 142 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_DARKINIUM_Z
-# 143 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_GRASSIUM_Z
-# 144 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_DRAGONIUM_Z
-# 145 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_GROUNDIUM_Z
-# 146 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.2byte ITEM_POISONIUM_Z
-# 147 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_EEVIUM_Z
-# 148 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 138 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_MEWNIUM_Z
-# 149 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 139 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_DECIDIUM_Z
-# 150 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 140 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_PRIMARIUM_Z
-# 151 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 141 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_INCINIUM_Z
-# 152 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 142 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_PIKANIUM_Z
-# 153 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 143 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_PIKASHUNIUM_Z
-# 154 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 144 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_ALORAICHIUM_Z
-# 155 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 145 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_KOMMONIUM_Z
-# 156 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 146 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_SNORLIUM_Z
-# 157 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 147 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_MIMIKIUM_Z
-# 158 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 148 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_LYCANIUM_Z
-# 159 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 149 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_NONE
-# 160 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 150 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	release
-# 161 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 151 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	end
-# 162 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 152 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 
-# 163 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 153 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_EventScript_ClerkMegaStonesPostgame::
-# 164 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 154 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	message gText_HowMayIServeYou
-# 165 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 155 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	waitmessage
-# 166 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 156 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_MegaStonesPostgame
-# 167 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 157 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 168 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 158 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	release
-# 169 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 159 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	end
-# 170 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 160 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 
-# 171 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 161 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.align 2
-# 172 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 162 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Pokemart_MegaStonesPostgame:
-# 173 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 163 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_GIGASAURITE
-# 174 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 164 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_GIGAZARDITE
-# 175 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 165 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_GIGASTOISITE
-# 176 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 166 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_BUTTERFREEITE
-# 177 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 167 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_MEOWTHITE
-# 178 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 168 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_PIKACHUITE
-# 179 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 169 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_EEVEEITE
-# 180 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 170 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_GIGAGARITE
-# 181 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 171 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_INTELEONITE
-# 182 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 172 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_RILLABOOMITE
-# 183 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 173 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_CINDERACITE
-# 184 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 174 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_ORBEETITE
-# 185 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 175 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_CENTISKORCHITE
-# 186 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 176 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_DREDNAWITE
-# 187 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 177 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_FLAPPITE
-# 188 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 178 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_APPLETUNITE
-# 189 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 179 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_ALCREMITE
-# 190 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 180 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_GRIMMSNARLITE
-# 191 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 181 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_HATTERENITE
-# 192 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 182 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_COPPERAJITE
-# 193 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 183 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_DURALUDONITE
-# 194 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 184 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_SNORLAXITE
-# 195 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 185 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_GARBODORITE
-# 196 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 186 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_MELMETALITE
-# 197 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 187 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_URSHIFITE
-# 198 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 188 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_MACHAMPITE
-# 199 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 189 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_RAIKOUITE
-# 200 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 190 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.2byte ITEM_NONE
-# 201 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 191 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	release
-# 202 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 192 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	end
-# 203 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 193 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 
-# 204 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 194 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_EventScript_TriathleteM::
-# 205 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 195 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	msgbox LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon, MSGBOX_NPC
-# 206 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 196 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	end
-# 207 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 197 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 
-# 208 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 198 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_EventScript_PokefanM::
-# 209 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 199 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	msgbox LilycoveCity_DepartmentStore_3F_Text_WantMoreEndurance, MSGBOX_NPC
-# 210 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 200 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	end
+# 201 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+
+# 202 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+LilycoveCity_DepartmentStore_3F_EventScript_Woman::
+# 203 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+	msgbox LilycoveCity_DepartmentStore_3F_Text_GaveCarbosToSpeedUpMon, MSGBOX_NPC
+# 204 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+	end
+# 205 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+
+# 206 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon:
+# 207 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+	.string "For quickly toughening up POKéMON,\n"
+# 208 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+	.string "items are the best.\p"
+# 209 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+	.string "PROTEIN boosts ATTACK,\n"
+# 210 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+	.string "and CALCIUM raises SP. ATK.$"
 # 211 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 
 # 212 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-LilycoveCity_DepartmentStore_3F_EventScript_Woman::
-# 213 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	msgbox LilycoveCity_DepartmentStore_3F_Text_GaveCarbosToSpeedUpMon, MSGBOX_NPC
-# 214 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	end
-# 215 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-
-# 216 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon:
-# 217 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "For quickly toughening up POKéMON,\n"
-# 218 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "items are the best.\p"
-# 219 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "PROTEIN boosts ATTACK,\n"
-# 220 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-	.string "and CALCIUM raises SP. ATK.$"
-# 221 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
-
-# 222 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Text_WantMoreEndurance:
-# 223 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 213 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "I want my POKéMON to have more\n"
-# 224 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 214 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "endurance.\p"
-# 225 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 215 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "I'm trying to decide whether to raise\n"
-# 226 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 216 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "DEFENSE with IRON, or SP. DEF with ZINC.$"
-# 227 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 217 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 
-# 228 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 218 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 LilycoveCity_DepartmentStore_3F_Text_GaveCarbosToSpeedUpMon:
-# 229 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 219 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "I gave a CARBOS to my POKéMON,\n"
-# 230 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
+# 220 "data/maps/LilycoveCity_DepartmentStore_3F/scripts.pory"
 	.string "and its SPEED went up.$"

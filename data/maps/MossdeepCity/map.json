@@ -263,6 +263,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_METAGROSSITE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_MOSSDEEP_METAGROSSITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 57,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_PSYSHOCK",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_MOSSDEEP_PSYSHOCK"
     }
   ],
   "warp_events": [
