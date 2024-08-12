@@ -158,5 +158,3 @@
 	.include "src/ui_main_menu.o"
 	.include "src/ui_startmenu_full.o"
 	.include "src/dexnav.o"
-	.include "src/field_mugshot.o"
-
