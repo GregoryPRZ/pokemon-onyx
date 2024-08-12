@@ -125,60 +125,62 @@ EverGrandeCity_PhoebesRoom_EventScript_Defeated::
 # 63 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch::
 # 64 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
 # 65 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 # 66 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-trainerbattle_no_intro TRAINER_PHOEBE_2, EverGrandeCity_PhoebesRoom_Text_Defeat
+msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 67 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
+trainerbattle_no_intro TRAINER_PHOEBE_2, EverGrandeCity_PhoebesRoom_Text_Defeat
 # 68 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-end
+goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 # 69 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-
+end
 # 70 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-EverGrandeCity_PhoebesRoom_Text_IntroSpeech:
+
 # 71 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "Ahahaha!\p"
+EverGrandeCity_PhoebesRoom_Text_IntroSpeech:
 # 72 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "I'm PHOEBE of the ELITE FOUR.\n"
+	.string "Ahahaha!\p"
 # 73 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "I did my training on MT. PYRE.\p"
+	.string "I'm PHOEBE of the ELITE FOUR.\n"
 # 74 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "While I trained, I gained the ability\n"
+	.string "I did my training on MT. PYRE.\p"
 # 75 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "to commune with GHOST-type POKéMON.\p"
+	.string "While I trained, I gained the ability\n"
 # 76 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "Yes, the bond I developed with POKéMON\n"
+	.string "to commune with GHOST-type POKéMON.\p"
 # 77 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "is extremely tight.\p"
+	.string "Yes, the bond I developed with POKéMON\n"
 # 78 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "So, come on, just try and see if you can\n"
+	.string "is extremely tight.\p"
 # 79 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "even inflict damage on my POKéMON!$"
+	.string "So, come on, just try and see if you can\n"
 # 80 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-
+	.string "even inflict damage on my POKéMON!$"
 # 81 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-EverGrandeCity_PhoebesRoom_Text_Defeat:
-# 82 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "Oh, darn.\n"
-# 83 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "I've gone and lost.$"
-# 84 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 
+# 82 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
+EverGrandeCity_PhoebesRoom_Text_Defeat:
+# 83 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
+	.string "Oh, darn.\n"
+# 84 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
+	.string "I've gone and lost.$"
 # 85 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech:
+
 # 86 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "There's a definite bond between you\n"
+EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech:
 # 87 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "and your POKéMON, too.\p"
+	.string "There's a definite bond between you\n"
 # 88 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "I didn't recognize it, so it's only\n"
+	.string "and your POKéMON, too.\p"
 # 89 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "natural that I lost.\p"
+	.string "I didn't recognize it, so it's only\n"
 # 90 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "Yup, I'd like to see how far your bond\n"
+	.string "natural that I lost.\p"
 # 91 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
-	.string "will carry you.\p"
+	.string "Yup, I'd like to see how far your bond\n"
 # 92 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
+	.string "will carry you.\p"
+# 93 "data/maps/EverGrandeCity_PhoebesRoom/scripts.pory"
 	.string "Go ahead, move on to the next room.$"

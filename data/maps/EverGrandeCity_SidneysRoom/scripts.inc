@@ -137,54 +137,56 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 # 69 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 EverGrandeCity_SidneysRoom_EventScript_SidneyRematch::
 # 70 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 # 71 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 # 72 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-trainerbattle_no_intro TRAINER_SIDNEY_2, EverGrandeCity_SidneysRoom_Text_Defeat
+msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 73 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-goto EverGrandeCity_SidneysRoom_EventScript_Defeated
+trainerbattle_no_intro TRAINER_SIDNEY_2, EverGrandeCity_SidneysRoom_Text_Defeat
 # 74 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-end
+goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 # 75 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+end
 # 76 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_Text_IntroSpeech:
+
 # 77 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Welcome, challenger!\n"
+EverGrandeCity_SidneysRoom_Text_IntroSpeech:
 # 78 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "I'm SIDNEY of the ELITE FOUR.\p"
+	.string "Welcome, challenger!\n"
 # 79 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "I like that look you're giving me.\n"
+	.string "I'm SIDNEY of the ELITE FOUR.\p"
 # 80 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "I guess you'll give me a good match.\l"
+	.string "I like that look you're giving me.\n"
 # 81 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "That's good! Looking real good!\p"
+	.string "I guess you'll give me a good match.\l"
 # 82 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "All right! You and me, let's enjoy\n"
+	.string "That's good! Looking real good!\p"
 # 83 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "a battle that can only be staged\l"
+	.string "All right! You and me, let's enjoy\n"
 # 84 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "here in the POKéMON LEAGUE!$"
+	.string "a battle that can only be staged\l"
 # 85 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-
+	.string "here in the POKéMON LEAGUE!$"
 # 86 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_Text_Defeat:
-# 87 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Well, how do you like that? I lost!\n"
-# 88 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Eh, it was fun, so it doesn't matter.$"
-# 89 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 
+# 87 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+EverGrandeCity_SidneysRoom_Text_Defeat:
+# 88 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Well, how do you like that? I lost!\n"
+# 89 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Eh, it was fun, so it doesn't matter.$"
 # 90 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
+
 # 91 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Well, listen to what this loser has\n"
+EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
 # 92 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "to say.\p"
+	.string "Well, listen to what this loser has\n"
 # 93 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "You've got what it takes to go far.\n"
+	.string "to say.\p"
 # 94 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
-	.string "Now, go on to the next room and enjoy\l"
+	.string "You've got what it takes to go far.\n"
 # 95 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
+	.string "Now, go on to the next room and enjoy\l"
+# 96 "data/maps/EverGrandeCity_SidneysRoom/scripts.pory"
 	.string "your next battle!$"
