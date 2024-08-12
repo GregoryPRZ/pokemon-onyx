@@ -531,6 +531,7 @@ Gender: Male
 Music: Aqua
 Items: Super Potion
 Double Battle: No
+Mugshot: Blue
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mightyena
@@ -561,6 +562,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
+Mugshot: Blue
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Carvanha
@@ -578,6 +580,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
+Mugshot: Blue
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Sharpedo
@@ -596,6 +599,7 @@ Gender: Male
 Music: Aqua
 Items: Super Potion / Super Potion
 Double Battle: No
+Mugshot: Blue
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mightyena
@@ -10074,6 +10078,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move
 
 Camerupt
@@ -11635,6 +11640,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Numel
@@ -11713,6 +11719,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mightyena
@@ -11735,6 +11742,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mightyena
@@ -14195,6 +14203,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move
 
 Numel
@@ -14238,6 +14247,7 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Mightyena
