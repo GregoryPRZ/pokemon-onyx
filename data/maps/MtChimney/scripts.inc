@@ -1269,7 +1269,7 @@ MtChimney_Text_CourtneyIntro:
 # 635 "data/maps/MtChimney/scripts.pory"
 MtChimney_Text_CourtneyDefeat:
 # 636 "data/maps/MtChimney/scripts.pory"
-	.string "...Funny."
+	.string "...Funny.$"
 # 637 "data/maps/MtChimney/scripts.pory"
 
 # 638 "data/maps/MtChimney/scripts.pory"

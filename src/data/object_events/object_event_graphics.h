@@ -356,6 +356,18 @@ const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Brandon[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 
+const u32 gObjectEventPic_Courtney[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/courtney.4bpp");
+const u16 gObjectEventPalette_Courtney[] = INCBIN_U16("graphics/object_events/pics/people/team_magma/courtney.gbapal");
+
+const u32 gObjectEventPic_Tabitha[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/tabitha.4bpp");
+const u16 gObjectEventPalette_Tabitha[] = INCBIN_U16("graphics/object_events/pics/people/team_magma/tabitha.gbapal");
+
+const u32 gObjectEventPic_Shelly[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/shelly.4bpp");
+const u16 gObjectEventPalette_Shelly[] = INCBIN_U16("graphics/object_events/pics/people/team_aqua/shelly.gbapal");
+
+const u32 gObjectEventPic_Matt[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/matt.4bpp");
+const u16 gObjectEventPalette_Matt[] = INCBIN_U16("graphics/object_events/pics/people/team_aqua/matt.gbapal");
+
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");
 const u32 gObjectEventPic_DusclopsOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/dusclops.4bpp");

@@ -287,7 +287,7 @@ MagmaHideout_4F_Text_CourtneyIntro:
 # 144 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_CourtneyDefeat:
 # 145 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "...Slurp."
+	.string "...Slurp.$"
 # 146 "data/maps/MagmaHideout_4F/scripts.pory"
 
 # 147 "data/maps/MagmaHideout_4F/scripts.pory"
