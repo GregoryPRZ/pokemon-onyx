@@ -783,14 +783,10 @@ u8 GetTrainerBattleTransition(void)
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 
-    if (trainerClass == TRAINER_CLASS_TEAM_MAGMA
-        || trainerClass == TRAINER_CLASS_MAGMA_LEADER
-        || trainerClass == TRAINER_CLASS_MAGMA_ADMIN)
+    if (trainerClass == TRAINER_CLASS_TEAM_MAGMA)
         return B_TRANSITION_MAGMA;
 
-    if (trainerClass == TRAINER_CLASS_TEAM_AQUA
-        || trainerClass == TRAINER_CLASS_AQUA_LEADER
-        || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
+    if (trainerClass == TRAINER_CLASS_TEAM_AQUA)
         return B_TRANSITION_AQUA;
 
     switch (GetTrainerBattleType(trainerId))
