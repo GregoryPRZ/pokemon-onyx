@@ -1,3 +1,4 @@
+raw `
 .set LOCALID_GROUDON, 1
 .set LOCALID_GRUNT_1, 2
 .set LOCALID_GRUNT_2, 3
@@ -113,13 +114,9 @@ MagmaHideout_4F_Movement_MaxieLookAround:
 	delay_16
 	step_end
 
-# 117 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_EventScript_Courtney::
-# 118 "data/maps/MagmaHideout_4F/scripts.pory"
 	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MagmaHideout_4F_Text_CourtneyIntro, MagmaHideout_4F_Text_CourtneyDefeat
-# 119 "data/maps/MagmaHideout_4F/scripts.pory"
 	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
-# 120 "data/maps/MagmaHideout_4F/scripts.pory"
 	end
 
 MagmaHideout_4F_EventScript_Grunt12::
@@ -137,33 +134,19 @@ MagmaHideout_4F_EventScript_Tabitha::
 	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-# 137 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_CourtneyIntro:
-# 138 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "... ... ...I knew you would come.\p"
-# 139 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "...Too bad, though. It's all over now.\p"
-# 140 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "...GROUDON will soon wake up.\p"
-# 141 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "... ...There's still more...work for me\n"
-# 142 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "to do. ...I must...stop you!$"
-# 143 "data/maps/MagmaHideout_4F/scripts.pory"
 
-# 144 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_CourtneyDefeat:
-# 145 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "...Slurp."
-# 146 "data/maps/MagmaHideout_4F/scripts.pory"
+	.string "...Slurp.$"
 
-# 147 "data/maps/MagmaHideout_4F/scripts.pory"
 MagmaHideout_4F_Text_CourtneyPostBattle:
-# 148 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "...Again? That's unanticipated.\p"
-# 149 "data/maps/MagmaHideout_4F/scripts.pory"
 	.string "...I knew it. You...are interesting!$"
-# 150 "data/maps/MagmaHideout_4F/scripts.pory"
 
 MagmaHideout_4F_Text_Grunt12Intro:
 	.string "Fuhahaha!\n"
@@ -248,3 +231,4 @@ MagmaHideout_4F_Text_MaxieImGoingAfterGroudon:
 	.string "any need for this blasted volcano.\p"
 	.string "I am going after GROUDON, so this\n"
 	.string "is where we part!$"
+`
