@@ -114,9 +114,9 @@ MagmaHideout_4F_Movement_MaxieLookAround:
 	delay_16
 	step_end
 
-MagmaHideout_4F_EventScript_Grunt11::
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_11, MagmaHideout_4F_Text_Grunt11Intro, MagmaHideout_4F_Text_Grunt11Defeat
-	msgbox MagmaHideout_4F_Text_Grunt11PostBattle, MSGBOX_AUTOCLOSE
+MagmaHideout_4F_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MagmaHideout_4F_Text_CourtneyIntro, MagmaHideout_4F_Text_CourtneyDefeat
+	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MagmaHideout_4F_EventScript_Grunt12::
@@ -134,19 +134,19 @@ MagmaHideout_4F_EventScript_Tabitha::
 	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MagmaHideout_4F_Text_Grunt11Intro:
-	.string "I want to see GROUDON, too, but they\n"
-	.string "won't let me see even its tail…\p"
-	.string "It's got me feeling really frustrated.\p"
-	.string "Oh, no!\n"
-	.string "I blabbed about GROUDON!$"
+MagmaHideout_4F_Text_CourtneyIntro:
+	.string "... ... ...I knew you would come.\p"
+	.string "...Too bad, though. It's all over now.\p"
+	.string "...GROUDON will soon wake up.\p"
+	.string "... ...There's still more...work for me\n"
+	.string "to do. ...I must...stop you!$"
 
-MagmaHideout_4F_Text_Grunt11Defeat:
-	.string "I guess it's impossible to win if one\n"
-	.string "doesn't have a calm mind…$"
+MagmaHideout_4F_Text_CourtneyDefeat:
+	.string "...Slurp.$"
 
-MagmaHideout_4F_Text_Grunt11PostBattle:
-	.string "I wonder if GROUDON even has a tail?$"
+MagmaHideout_4F_Text_CourtneyPostBattle:
+	.string "...Again? That's unanticipated.\p"
+	.string "...I knew it. You...are interesting!$"
 
 MagmaHideout_4F_Text_Grunt12Intro:
 	.string "Fuhahaha!\n"

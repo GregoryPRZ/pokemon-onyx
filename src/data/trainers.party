@@ -2669,13 +2669,14 @@ Rhyhorn
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MT_CHIMNEY_1 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt F
+=== TRAINER_COURTNEY_MT_CHIMNEY ===
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Admin F
 Gender: Female
 Music: Magma
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move
 
 Numel
@@ -10074,7 +10075,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_TABITHA_MOSSDEEP ===
 Name: TABITHA
 Class: Magma Admin
-Pic: Magma Admin
+Pic: Magma Admin M
 Gender: Male
 Music: Magma
 Double Battle: No
@@ -11636,7 +11637,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA
 Class: Magma Admin
-Pic: Magma Admin
+Pic: Magma Admin M
 Gender: Male
 Music: Magma
 Double Battle: No
@@ -14118,13 +14119,14 @@ Mightyena
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
-Gender: Male
+=== TRAINER_COURTNEY_MAGMA_HIDEOUT ===
+Name: COURTNEY
+Class: Magma Admin
+Pic: Magma Admin F
+Gender: Female
 Music: Magma
 Double Battle: No
+Mugshot: Yellow
 AI: Check Bad Move
 
 Baltoy
@@ -14199,7 +14201,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_TABITHA_MAGMA_HIDEOUT ===
 Name: TABITHA
 Class: Magma Admin
-Pic: Magma Admin
+Pic: Magma Admin M
 Gender: Male
 Music: Magma
 Double Battle: No
@@ -17637,7 +17639,7 @@ Jolly Nature
 === TRAINER_EVIL ===
 Name: EVIL
 Class: Legend
-Pic: Magma Admin
+Pic: Magma Admin M
 Gender: Male
 Music: Male
 Double Battle: No

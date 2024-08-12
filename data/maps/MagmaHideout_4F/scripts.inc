@@ -231,11 +231,11 @@ MagmaHideout_4F_Movement_MaxieLookAround:
 # 116 "data/maps/MagmaHideout_4F/scripts.pory"
 
 # 117 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_EventScript_Grunt11::
+MagmaHideout_4F_EventScript_Courtney::
 # 118 "data/maps/MagmaHideout_4F/scripts.pory"
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_11, MagmaHideout_4F_Text_Grunt11Intro, MagmaHideout_4F_Text_Grunt11Defeat
+	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MagmaHideout_4F_Text_CourtneyIntro, MagmaHideout_4F_Text_CourtneyDefeat
 # 119 "data/maps/MagmaHideout_4F/scripts.pory"
-	msgbox MagmaHideout_4F_Text_Grunt11PostBattle, MSGBOX_AUTOCLOSE
+	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 # 120 "data/maps/MagmaHideout_4F/scripts.pory"
 	end
 # 121 "data/maps/MagmaHideout_4F/scripts.pory"
@@ -271,31 +271,31 @@ MagmaHideout_4F_EventScript_Tabitha::
 # 136 "data/maps/MagmaHideout_4F/scripts.pory"
 
 # 137 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_Grunt11Intro:
+MagmaHideout_4F_Text_CourtneyIntro:
 # 138 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I want to see GROUDON, too, but they\n"
+	.string "... ... ...I knew you would come.\p"
 # 139 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "won't let me see even its tail…\p"
+	.string "...Too bad, though. It's all over now.\p"
 # 140 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "It's got me feeling really frustrated.\p"
+	.string "...GROUDON will soon wake up.\p"
 # 141 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "Oh, no!\n"
+	.string "... ...There's still more...work for me\n"
 # 142 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I blabbed about GROUDON!$"
+	.string "to do. ...I must...stop you!$"
 # 143 "data/maps/MagmaHideout_4F/scripts.pory"
 
 # 144 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_Grunt11Defeat:
+MagmaHideout_4F_Text_CourtneyDefeat:
 # 145 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I guess it's impossible to win if one\n"
+	.string "...Slurp."
 # 146 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "doesn't have a calm mind…$"
-# 147 "data/maps/MagmaHideout_4F/scripts.pory"
 
+# 147 "data/maps/MagmaHideout_4F/scripts.pory"
+MagmaHideout_4F_Text_CourtneyPostBattle:
 # 148 "data/maps/MagmaHideout_4F/scripts.pory"
-MagmaHideout_4F_Text_Grunt11PostBattle:
+	.string "...Again? That's unanticipated.\p"
 # 149 "data/maps/MagmaHideout_4F/scripts.pory"
-	.string "I wonder if GROUDON even has a tail?$"
+	.string "...I knew it. You...are interesting!$"
 # 150 "data/maps/MagmaHideout_4F/scripts.pory"
 
 # 151 "data/maps/MagmaHideout_4F/scripts.pory"

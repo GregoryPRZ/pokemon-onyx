@@ -517,9 +517,9 @@ MtChimney_EventScript_Shirley::
 	msgbox MtChimney_Text_ShirleyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MtChimney_EventScript_Grunt1::
-	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_1, MtChimney_Text_Grunt1Intro, MtChimney_Text_Grunt1Defeat
-	msgbox MtChimney_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
+MtChimney_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MT_CHIMNEY, MtChimney_Text_CourtneyIntro, MtChimney_Text_CourtneyDefeat
+	msgbox MtChimney_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtChimney_EventScript_Sawyer::
@@ -627,17 +627,16 @@ MtChimney_Text_Grunt2PostBattle:
 	.string "But why does everyone keep getting\n"
 	.string "in our way?$"
 
-MtChimney_Text_Grunt1Intro:
-	.string "If there were more land, I'd be able\n"
-	.string "to get a big house of my own!\p"
-	.string "I'm going to build it on hardened lava!$"
+MtChimney_Text_CourtneyIntro:
+	.string "...Ha.\p"
+	.string "... ...Analyzing.\p"
+	.string "...Hah.$"
 
-MtChimney_Text_Grunt1Defeat:
-	.string "My dream of a big house…$"
+MtChimney_Text_CourtneyDefeat:
+	.string "...Funny.$"
 
-MtChimney_Text_Grunt1PostBattle:
-	.string "A kid like you, you ought to be\n"
-	.string "splashing about in the waves!$"
+MtChimney_Text_CourtneyPostBattle:
+	.string "... ...Change...the world.$"
 
 MtChimney_Text_TeamAquaAlwaysMessingWithPlans:
 	.string "That annoying TEAM AQUA…\n"
