@@ -3,8 +3,7 @@
 
 #define MUGSHOT_NONE  0
 #define MUGSHOT_TEST  1
-#define MUGSHOT_ROXANNE  2
-#define MUGSHOT_COUNT 3
+#define MUGSHOT_COUNT 2
 
 #define EMOTE_NORMAL  0
 #define EMOTE_ALT     1

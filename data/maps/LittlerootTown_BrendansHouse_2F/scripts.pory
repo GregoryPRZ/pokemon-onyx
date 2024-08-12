@@ -270,7 +270,6 @@ PlayersHouse_2F_EventScript_Notebook::
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
-	createfieldmugshot MUGSHOT_ROXANNE, EMOTE_NORMAL
 	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
 	end
 
