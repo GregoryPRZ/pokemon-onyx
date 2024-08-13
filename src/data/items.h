@@ -14807,6 +14807,8 @@ const struct Item gItemsInfo[] =
         .flingPower = 80,
         .iconPic = gItemIcon_Beedrillite,
         .iconPalette = gItemIconPalette_Beedrillite
+    },
+
     [ITEM_OUTFIT_BOX] =
     {
         .name = _("Outfit Box"),

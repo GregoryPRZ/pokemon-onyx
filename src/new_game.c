@@ -155,6 +155,7 @@ static void ResetOutfitData(void)
 {
     memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
     UnlockOutfit(DEFAULT_OUTFIT);
+    UnlockOutfit(OUTFIT_UNUSUAL_RED);
     gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
 }
 
