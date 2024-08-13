@@ -91,112 +91,128 @@ EverGrandeCity_DrakesRoom_EventScript_Drake::
 # 46 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 # 47 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	createfieldmugshot MUGSHOT_DRAKE, EMOTE_NORMAL
 # 48 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
+	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 49 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
+	removefieldmugshot
 # 50 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	end
+	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
 # 51 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-
+	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 # 52 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
+	end
 # 53 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+
 # 54 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	release
+EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
 # 55 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	end
+	createfieldmugshot MUGSHOT_DRAKE, EMOTE_NORMAL
 # 56 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-
-# 57 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-EverGrandeCity_DrakesRoom_EventScript_Defeated::
-# 58 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
-# 59 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	special Script_TryGainNewFanFromCounter
-# 60 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	setflag FLAG_DEFEATED_ELITE_4_DRAKE
-# 61 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-# 62 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
-# 63 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+# 57 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	removefieldmugshot
+# 58 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	release
-# 64 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+# 59 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	end
+# 60 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+
+# 61 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+EverGrandeCity_DrakesRoom_EventScript_Defeated::
+# 62 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
+# 63 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	special Script_TryGainNewFanFromCounter
+# 64 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 # 65 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 # 66 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-EverGrandeCity_DrakesRoom_EventScript_DrakeRematch::
+	createfieldmugshot MUGSHOT_DRAKE, EMOTE_NORMAL
 # 67 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
+	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 # 68 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	removefieldmugshot
 # 69 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	release
 # 70 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-trainerbattle_no_intro TRAINER_DRAKE_2, EverGrandeCity_DrakesRoom_Text_Defeat
+	end
 # 71 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-goto EverGrandeCity_DrakesRoom_EventScript_Defeated
+
 # 72 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-end
+EverGrandeCity_DrakesRoom_EventScript_DrakeRematch::
 # 73 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-
+	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 # 74 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-EverGrandeCity_DrakesRoom_Text_IntroSpeech:
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 # 75 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "I am the last of the POKéMON LEAGUE\n"
+	createfieldmugshot MUGSHOT_DRAKE, EMOTE_NORMAL
 # 76 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
+	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 # 77 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "In their natural state, POKéMON are\n"
+	removefieldmugshot
 # 78 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "wild living things. They are free.\p"
+	trainerbattle_no_intro TRAINER_DRAKE_2, EverGrandeCity_DrakesRoom_Text_Defeat
 # 79 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "At times, they hinder us.\n"
+	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 # 80 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "At times, they help us.\p"
+	end
 # 81 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "For us to battle with POKéMON as\n"
+
 # 82 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "partners, do you know what it takes?\p"
+EverGrandeCity_DrakesRoom_Text_IntroSpeech:
 # 83 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "Do you know what is needed?\p"
+	.string "I am the last of the POKéMON LEAGUE\n"
 # 84 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "If you don't, then you will never\n"
+	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
 # 85 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "prevail over me!$"
+	.string "In their natural state, POKéMON are\n"
 # 86 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-
+	.string "wild living things. They are free.\p"
 # 87 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-EverGrandeCity_DrakesRoom_Text_Defeat:
+	.string "At times, they hinder us.\n"
 # 88 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "Superb, it should be said.$"
+	.string "At times, they help us.\p"
 # 89 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-
+	.string "For us to battle with POKéMON as\n"
 # 90 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
+	.string "partners, do you know what it takes?\p"
 # 91 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "You deserve every credit for coming\n"
+	.string "Do you know what is needed?\p"
 # 92 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "this far as a TRAINER of POKéMON.\p"
+	.string "If you don't, then you will never\n"
 # 93 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "You do seem to know what is needed.\p"
+	.string "prevail over me!$"
 # 94 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "Yes, what a TRAINER needs is a\n"
+
 # 95 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "virtuous heart.\p"
+EverGrandeCity_DrakesRoom_Text_Defeat:
 # 96 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "POKéMON touch the good hearts of\n"
+	.string "Superb, it should be said.$"
 # 97 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "TRAINERS and learn good from wrong.\p"
+
 # 98 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "They touch the good hearts of\n"
+EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 # 99 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "TRAINERS and grow strong.\p"
+	.string "You deserve every credit for coming\n"
 # 100 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
-	.string "Go! Go onwards!\n"
+	.string "this far as a TRAINER of POKéMON.\p"
 # 101 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "You do seem to know what is needed.\p"
+# 102 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "Yes, what a TRAINER needs is a\n"
+# 103 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "virtuous heart.\p"
+# 104 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "POKéMON touch the good hearts of\n"
+# 105 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "TRAINERS and learn good from wrong.\p"
+# 106 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "They touch the good hearts of\n"
+# 107 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "TRAINERS and grow strong.\p"
+# 108 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
+	.string "Go! Go onwards!\n"
+# 109 "data/maps/EverGrandeCity_DrakesRoom/scripts.pory"
 	.string "The CHAMPION is waiting!$"

@@ -270,6 +270,54 @@ PlayersHouse_2F_EventScript_Notebook::
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
+	createfieldmugshot MUGSHOT_ROXANNE, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_BRAWLY, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_WINONA, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_TATE, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_LIZA, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_JUAN, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_SIDNEY, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_PHOEBE, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_GLACIA, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_DRAKE, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
+	delay 60
+	removefieldmugshot
 	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
 	end
 

@@ -543,68 +543,164 @@ PlayersHouse_2F_EventScript_Notebook::
 # 272 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 PlayersHouse_2F_EventScript_GameCube::
 # 273 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	createfieldmugshot MUGSHOT_ROXANNE, EMOTE_NORMAL
 # 274 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	end
+	delay 60
 # 275 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	removefieldmugshot
 # 276 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_ClockIsStopped:
+	createfieldmugshot MUGSHOT_BRAWLY, EMOTE_NORMAL
 # 277 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "The clock is stopped…\p"
+	delay 60
 # 278 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Better set it and start it!$"
+	removefieldmugshot
 # 279 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
 # 280 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
+	delay 60
 # 281 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "MOM: {PLAYER}, how do you like your\n"
+	removefieldmugshot
 # 282 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "new room?\p"
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
 # 283 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Good! Everything's put away neatly!\p"
+	delay 60
 # 284 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "They finished moving everything in\n"
+	removefieldmugshot
 # 285 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "downstairs, too.\p"
+	createfieldmugshot MUGSHOT_NORMAN, EMOTE_NORMAL
 # 286 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "POKéMON movers are so convenient!\p"
+	delay 60
 # 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Oh, you should make sure that\n"
+	removefieldmugshot
 # 288 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "everything's all there on your desk.$"
+	createfieldmugshot MUGSHOT_WINONA, EMOTE_NORMAL
 # 289 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	delay 60
 # 290 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_Notebook:
+	removefieldmugshot
 # 291 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER} flipped open the notebook.\p"
+	createfieldmugshot MUGSHOT_TATE, EMOTE_NORMAL
 # 292 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "ADVENTURE RULE NO. 1\n"
+	delay 60
 # 293 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Open the MENU with START.\p"
+	removefieldmugshot
 # 294 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "ADVENTURE RULE NO. 2\n"
+	createfieldmugshot MUGSHOT_LIZA, EMOTE_NORMAL
 # 295 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Record your progress with SAVE.\p"
+	delay 60
 # 296 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "The remaining pages are blank…$"
+	removefieldmugshot
 # 297 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	createfieldmugshot MUGSHOT_JUAN, EMOTE_NORMAL
 # 298 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-Common_Text_LookCloserAtMap:
+	delay 60
 # 299 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER} took a closer look at the\n"
+	removefieldmugshot
 # 300 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "HOENN region map.$"
+	createfieldmugshot MUGSHOT_SIDNEY, EMOTE_NORMAL
 # 301 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+	delay 60
 # 302 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_ItsAGameCube:
+	removefieldmugshot
 # 303 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "It's a Nintendo GameCube.\p"
+	createfieldmugshot MUGSHOT_PHOEBE, EMOTE_NORMAL
 # 304 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "A Game Boy Advance is connected to\n"
+	delay 60
 # 305 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	removefieldmugshot
+# 306 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	createfieldmugshot MUGSHOT_GLACIA, EMOTE_NORMAL
+# 307 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay 60
+# 308 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	removefieldmugshot
+# 309 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	createfieldmugshot MUGSHOT_DRAKE, EMOTE_NORMAL
+# 310 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay 60
+# 311 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	removefieldmugshot
+# 312 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
+# 313 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay 60
+# 314 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	removefieldmugshot
+# 315 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
+# 316 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay 60
+# 317 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	removefieldmugshot
+# 318 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
+# 319 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	delay 60
+# 320 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	removefieldmugshot
+# 321 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+# 322 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	end
+# 323 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 324 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_ClockIsStopped:
+# 325 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "The clock is stopped…\p"
+# 326 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Better set it and start it!$"
+# 327 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 328 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
+# 329 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "MOM: {PLAYER}, how do you like your\n"
+# 330 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "new room?\p"
+# 331 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Good! Everything's put away neatly!\p"
+# 332 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "They finished moving everything in\n"
+# 333 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "downstairs, too.\p"
+# 334 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "POKéMON movers are so convenient!\p"
+# 335 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Oh, you should make sure that\n"
+# 336 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "everything's all there on your desk.$"
+# 337 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 338 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_Notebook:
+# 339 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "{PLAYER} flipped open the notebook.\p"
+# 340 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "ADVENTURE RULE NO. 1\n"
+# 341 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Open the MENU with START.\p"
+# 342 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "ADVENTURE RULE NO. 2\n"
+# 343 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Record your progress with SAVE.\p"
+# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "The remaining pages are blank…$"
+# 345 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 346 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+Common_Text_LookCloserAtMap:
+# 347 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "{PLAYER} took a closer look at the\n"
+# 348 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "HOENN region map.$"
+# 349 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 350 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_ItsAGameCube:
+# 351 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "It's a Nintendo GameCube.\p"
+# 352 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "A Game Boy Advance is connected to\n"
+# 353 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "serve as the Controller.$"

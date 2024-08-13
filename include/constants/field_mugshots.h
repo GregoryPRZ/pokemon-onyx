@@ -3,7 +3,23 @@
 
 #define MUGSHOT_NONE  0
 #define MUGSHOT_TEST  1
-#define MUGSHOT_COUNT 2
+#define MUGSHOT_ROXANNE  2
+#define MUGSHOT_BRAWLY  3
+#define MUGSHOT_WATTSON 4
+#define MUGSHOT_FLANNERY 5
+#define MUGSHOT_NORMAN  6
+#define MUGSHOT_WINONA  7
+#define MUGSHOT_TATE     8
+#define MUGSHOT_LIZA     9  
+#define MUGSHOT_JUAN     10
+#define MUGSHOT_SIDNEY  11
+#define MUGSHOT_PHOEBE  12
+#define MUGSHOT_GLACIA  13
+#define MUGSHOT_DRAKE   14
+#define MUGSHOT_STEVEN  15
+#define MUGSHOT_ARCHIE  16
+#define MUGSHOT_MAXIE   17
+#define MUGSHOT_COUNT   18
 
 #define EMOTE_NORMAL  0
 #define EMOTE_ALT     1
