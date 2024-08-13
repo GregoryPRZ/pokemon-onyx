@@ -273,5 +273,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
+	additem ITEM_OUTFIT_BOX, 1
+	toggleoutfit OUTFIT_UNUSUAL_RED
 	call EventScript_ResetAllBerries
 	end
