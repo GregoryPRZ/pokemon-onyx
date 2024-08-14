@@ -2103,6 +2103,22 @@ static void CB_ExitFlyMap(void)
                 }
                 FreeAllWindowBuffers();
             }
-            break;
-    }
+            else
+            {
+                if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
+                    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+                else
+                    SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
+            }
+
+
+            if (sFlyMap != NULL)
+            {
+                free(sFlyMap);
+                sFlyMap = NULL;
+            }
+            FreeAllWindowBuffers();
+        }
+        break;
 }
+
