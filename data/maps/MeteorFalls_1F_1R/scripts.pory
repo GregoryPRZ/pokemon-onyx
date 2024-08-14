@@ -71,7 +71,9 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	removeobject LOCALID_MAGMA_GRUNT_2
 	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieApproachPlayer
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox MeteorFalls_1F_1R_Text_ArchieSeenYouBefore, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
 	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie
@@ -79,10 +81,14 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	msgbox MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma, MSGBOX_DEFAULT
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo, MSGBOX_DEFAULT
+	removefieldmugshot
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox MeteorFalls_1F_1R_Text_ArchieFarewell, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieExit
 	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1Exit

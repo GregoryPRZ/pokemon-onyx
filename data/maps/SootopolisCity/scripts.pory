@@ -903,31 +903,43 @@ SootopolisCity_EventScript_Steven::
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_StevenHelpedWallace
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_StevenHelpedWallace
 	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_StevenMaxieArchieLeft
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_SoThatsRayquaza, MSGBOX_DEFAULT
+	removefieldmugshot
 	releaseall
 	end
 
 SootopolisCity_EventScript_StevenHelpWallace::
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_KnowWhatsNeededToHelpHim, MSGBOX_DEFAULT
+	removefieldmugshot
 	releaseall
 	end
 
 SootopolisCity_EventScript_StevenMaxieArchieLeft::
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_MaxieArchieLeft, MSGBOX_DEFAULT
+	removefieldmugshot
 	releaseall
 	end
 
 SootopolisCity_EventScript_StevenHelpedWallace::
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_NeverBeenToSkyPillar, MSGBOX_DEFAULT
+	removefieldmugshot
 	releaseall
 	end
 
 SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin::
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_InvolvedWithCrisisComeWithMe, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	call_if_eq VAR_FACING, DIR_WEST, SootopolisCity_EventScript_StartWalkToCaveOfOriginWest
 	call_if_eq VAR_FACING, DIR_NORTH, SootopolisCity_EventScript_StartWalkToCaveOfOriginNorth
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_DoesThisMakeYourFearPokemon, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_STEVEN, SootopolisCity_Movement_StevenWalkToCaveOfOrigin
 	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerWalkToCaveOfOrigin
@@ -938,7 +950,9 @@ SootopolisCity_EventScript_StevenLeadPlayerCaveOfOrigin::
 	applymovement LOCALID_STEVEN, SootopolisCity_Movement_StevenArriveCaveEntrance
 	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerArriveCaveEntrance
 	waitmovement 0
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_HereWereAreHelpWallace, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	setflag FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN
 	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Movement_PlayerEnterCaveOfOrigin
@@ -1356,13 +1370,17 @@ SootopolisCity_Movement_WallaceMoveFromGymWest:
 SootopolisCity_EventScript_Maxie::
 	lockall
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_MaxieRayquaza
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_GroudonPleaseStop, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	releaseall
 	end
 
 SootopolisCity_EventScript_MaxieRayquaza::
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_AfterAllOurScheming, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_MET_MAXIE_SOOTOPOLIS
 	goto_if_set FLAG_MET_ARCHIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
@@ -1371,13 +1389,17 @@ SootopolisCity_EventScript_MaxieRayquaza::
 SootopolisCity_EventScript_Archie::
 	lockall
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 5, SootopolisCity_EventScript_ArchieRayquaza
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_KyogreCalmDown, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	releaseall
 	end
 
 SootopolisCity_EventScript_ArchieRayquaza::
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_MET_ARCHIE_SOOTOPOLIS
 	goto_if_set FLAG_MET_MAXIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
