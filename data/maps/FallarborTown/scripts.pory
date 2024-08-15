@@ -54,6 +54,19 @@ FallarborTown_EventScript_MoveTutorSign::
 	msgbox FallarborTown_Text_MoveTutorSign, MSGBOX_SIGN
 	end
 
+FallarborTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+FallarborTown_EventScript_DrifblimStopSign::
+	msgbox FallarborTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+FallarborTown_Text_DrifblimStopSign:
+	.string "FALLARBOR TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"
 	.string "and I don't like it!\p"

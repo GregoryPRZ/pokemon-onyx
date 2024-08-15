@@ -1427,6 +1427,19 @@ SootopolisCity_Movement_DestroyTask::
 	destroy_extra_task
 	step_end
 
+SootopolisCity_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+SootopolisCity_EventScript_DrifblimStopSign::
+	msgbox SootopolisCity_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+SootopolisCity_Text_DrifblimStopSign:
+	.string "SOOTOPOLIS CITY DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 SootopolisCity_Text_GymSign:
 	.string "SOOTOPOLIS CITY POKéMON GYM\n"
 	.string "LEADER: JUAN\p"

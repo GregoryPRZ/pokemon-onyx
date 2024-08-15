@@ -627,246 +627,272 @@ MossdeepCity_Movement_ScottExitEast:
 # 314 "data/maps/MossdeepCity/scripts.pory"
 
 # 315 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_WantKingsRockStevenGaveMe:
+MossdeepCity_EventScript_DrifblimStop::
 # 316 "data/maps/MossdeepCity/scripts.pory"
-	.string "I got this from STEVEN, but I don't\n"
+	call Common_EventScript_FlyingTaxi
 # 317 "data/maps/MossdeepCity/scripts.pory"
-	.string "know what it's good for.\p"
+	release
 # 318 "data/maps/MossdeepCity/scripts.pory"
-	.string "I think it's called KING'S ROCK.\n"
+	end
 # 319 "data/maps/MossdeepCity/scripts.pory"
-	.string "Do you want it?$"
+
 # 320 "data/maps/MossdeepCity/scripts.pory"
-
+MossdeepCity_EventScript_DrifblimStopSign::
 # 321 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_YouCanKeepIt:
+	msgbox MossdeepCity_Text_DrifblimStopSign, MSGBOX_SIGN
 # 322 "data/maps/MossdeepCity/scripts.pory"
-	.string "Why would you want it?\n"
+	end
 # 323 "data/maps/MossdeepCity/scripts.pory"
-	.string "You're weird.\p"
+
 # 324 "data/maps/MossdeepCity/scripts.pory"
-	.string "You can keep it, but keep it a secret\n"
+MossdeepCity_Text_DrifblimStopSign:
 # 325 "data/maps/MossdeepCity/scripts.pory"
-	.string "from STEVEN.$"
+	.string "MOSSDEEP CITY DRIFBLIM STOP\n"
 # 326 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "A new way to fly over HOENN!$"
 # 327 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_StevensHouseOverThere:
-# 328 "data/maps/MossdeepCity/scripts.pory"
-	.string "STEVEN's house is right over there!$"
-# 329 "data/maps/MossdeepCity/scripts.pory"
 
+# 328 "data/maps/MossdeepCity/scripts.pory"
+MossdeepCity_Text_WantKingsRockStevenGaveMe:
+# 329 "data/maps/MossdeepCity/scripts.pory"
+	.string "I got this from STEVEN, but I don't\n"
 # 330 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_WhatToDoWithWeirdRock:
+	.string "know what it's good for.\p"
 # 331 "data/maps/MossdeepCity/scripts.pory"
-	.string "Yeah, you think so, too! What are you\n"
+	.string "I think it's called KING'S ROCK.\n"
 # 332 "data/maps/MossdeepCity/scripts.pory"
-	.string "supposed to do with some weird rock?$"
+	.string "Do you want it?$"
 # 333 "data/maps/MossdeepCity/scripts.pory"
 
 # 334 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_WailmerWatching:
+MossdeepCity_Text_YouCanKeepIt:
 # 335 "data/maps/MossdeepCity/scripts.pory"
-	.string "Around MOSSDEEP, you can see wild\n"
+	.string "Why would you want it?\n"
 # 336 "data/maps/MossdeepCity/scripts.pory"
-	.string "WAILMER.\p"
+	.string "You're weird.\p"
 # 337 "data/maps/MossdeepCity/scripts.pory"
-	.string "It's called, uh…\n"
+	.string "You can keep it, but keep it a secret\n"
 # 338 "data/maps/MossdeepCity/scripts.pory"
-	.string "What was it now…\p"
+	.string "from STEVEN.$"
 # 339 "data/maps/MossdeepCity/scripts.pory"
-	.string "WAI, WAI, WAI…\p"
+
 # 340 "data/maps/MossdeepCity/scripts.pory"
-	.string "WAILMER watching!$"
+MossdeepCity_Text_StevensHouseOverThere:
 # 341 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "STEVEN's house is right over there!$"
 # 342 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_SpaceCenterReceivedLetter:
+
 # 343 "data/maps/MossdeepCity/scripts.pory"
-	.string "The island's SPACE CENTER has been\n"
+MossdeepCity_Text_WhatToDoWithWeirdRock:
 # 344 "data/maps/MossdeepCity/scripts.pory"
-	.string "launching huge rockets.\p"
+	.string "Yeah, you think so, too! What are you\n"
 # 345 "data/maps/MossdeepCity/scripts.pory"
-	.string "There's been some kind of an uproar\n"
+	.string "supposed to do with some weird rock?$"
 # 346 "data/maps/MossdeepCity/scripts.pory"
-	.string "over a letter they received recently.$"
+
 # 347 "data/maps/MossdeepCity/scripts.pory"
-
+MossdeepCity_Text_WailmerWatching:
 # 348 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_SpaceCenterLaunchingRockets:
+	.string "Around MOSSDEEP, you can see wild\n"
 # 349 "data/maps/MossdeepCity/scripts.pory"
-	.string "The island's SPACE CENTER has been\n"
+	.string "WAILMER.\p"
 # 350 "data/maps/MossdeepCity/scripts.pory"
-	.string "launching huge rockets.$"
+	.string "It's called, uh…\n"
 # 351 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "What was it now…\p"
 # 352 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_MossdeepTargetedByMagma:
+	.string "WAI, WAI, WAI…\p"
 # 353 "data/maps/MossdeepCity/scripts.pory"
-	.string "I heard from a SAILOR buddy that\n"
+	.string "WAILMER watching!$"
 # 354 "data/maps/MossdeepCity/scripts.pory"
-	.string "TEAM AQUA set up shop in LILYCOVE.\p"
+
 # 355 "data/maps/MossdeepCity/scripts.pory"
-	.string "I also heard that someone came along\n"
+MossdeepCity_Text_SpaceCenterReceivedLetter:
 # 356 "data/maps/MossdeepCity/scripts.pory"
-	.string "and wiped the floor with them!\p"
+	.string "The island's SPACE CENTER has been\n"
 # 357 "data/maps/MossdeepCity/scripts.pory"
-	.string "But MOSSDEEP here's been targeted\n"
+	.string "launching huge rockets.\p"
 # 358 "data/maps/MossdeepCity/scripts.pory"
-	.string "by that TEAM MAGMA.\p"
+	.string "There's been some kind of an uproar\n"
 # 359 "data/maps/MossdeepCity/scripts.pory"
-	.string "If you want to know what they're up to,\n"
+	.string "over a letter they received recently.$"
 # 360 "data/maps/MossdeepCity/scripts.pory"
-	.string "go visit the SPACE CENTER.$"
+
 # 361 "data/maps/MossdeepCity/scripts.pory"
-
+MossdeepCity_Text_SpaceCenterLaunchingRockets:
 # 362 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_FeelReliefOnLand:
+	.string "The island's SPACE CENTER has been\n"
 # 363 "data/maps/MossdeepCity/scripts.pory"
-	.string "I'm a SAILOR, so the sea's obviously\n"
+	.string "launching huge rockets.$"
 # 364 "data/maps/MossdeepCity/scripts.pory"
-	.string "more important to me.\p"
+
 # 365 "data/maps/MossdeepCity/scripts.pory"
-	.string "But you know? When I get back on land\n"
+MossdeepCity_Text_MossdeepTargetedByMagma:
 # 366 "data/maps/MossdeepCity/scripts.pory"
-	.string "after a long voyage, I do feel relief!$"
+	.string "I heard from a SAILOR buddy that\n"
 # 367 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "TEAM AQUA set up shop in LILYCOVE.\p"
 # 368 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_NiceIfWorldCoveredByFlowers:
+	.string "I also heard that someone came along\n"
 # 369 "data/maps/MossdeepCity/scripts.pory"
-	.string "Wouldn't it be nice?\p"
+	.string "and wiped the floor with them!\p"
 # 370 "data/maps/MossdeepCity/scripts.pory"
-	.string "If the whole world was covered in\n"
+	.string "But MOSSDEEP here's been targeted\n"
 # 371 "data/maps/MossdeepCity/scripts.pory"
-	.string "plants and flowers like this island?$"
+	.string "by that TEAM MAGMA.\p"
 # 372 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "If you want to know what they're up to,\n"
 # 373 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_LifeNeedsSeaToLive:
+	.string "go visit the SPACE CENTER.$"
 # 374 "data/maps/MossdeepCity/scripts.pory"
-	.string "All life needs the sea to live, even\n"
+
 # 375 "data/maps/MossdeepCity/scripts.pory"
-	.string "though it makes its home on the land.\p"
+MossdeepCity_Text_FeelReliefOnLand:
 # 376 "data/maps/MossdeepCity/scripts.pory"
-	.string "Life, having run its course, becomes\n"
+	.string "I'm a SAILOR, so the sea's obviously\n"
 # 377 "data/maps/MossdeepCity/scripts.pory"
-	.string "soil and returns to the land.\p"
+	.string "more important to me.\p"
 # 378 "data/maps/MossdeepCity/scripts.pory"
-	.string "And the sea is always connected to\n"
+	.string "But you know? When I get back on land\n"
 # 379 "data/maps/MossdeepCity/scripts.pory"
-	.string "the land.\p"
+	.string "after a long voyage, I do feel relief!$"
 # 380 "data/maps/MossdeepCity/scripts.pory"
-	.string "Yes, like the very shoreline here.$"
+
 # 381 "data/maps/MossdeepCity/scripts.pory"
-
+MossdeepCity_Text_NiceIfWorldCoveredByFlowers:
 # 382 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_SurfExhilarating:
+	.string "Wouldn't it be nice?\p"
 # 383 "data/maps/MossdeepCity/scripts.pory"
-	.string "A voyage on a ship is fine.\p"
+	.string "If the whole world was covered in\n"
 # 384 "data/maps/MossdeepCity/scripts.pory"
-	.string "But crossing the sea with POKéMON\n"
+	.string "plants and flowers like this island?$"
 # 385 "data/maps/MossdeepCity/scripts.pory"
-	.string "using SURF…\p"
+
 # 386 "data/maps/MossdeepCity/scripts.pory"
-	.string "Now that's an exhilarating trip!\n"
+MossdeepCity_Text_LifeNeedsSeaToLive:
 # 387 "data/maps/MossdeepCity/scripts.pory"
-	.string "Wouldn't you agree, youngster?$"
+	.string "All life needs the sea to live, even\n"
 # 388 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "though it makes its home on the land.\p"
 # 389 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_SpecialSpaceCenterRock:
+	.string "Life, having run its course, becomes\n"
 # 390 "data/maps/MossdeepCity/scripts.pory"
-	.string "This rock has a special meaning to\n"
+	.string "soil and returns to the land.\p"
 # 391 "data/maps/MossdeepCity/scripts.pory"
-	.string "the people at the SPACE CENTER.\p"
+	.string "And the sea is always connected to\n"
 # 392 "data/maps/MossdeepCity/scripts.pory"
-	.string "They put it here as their wish for\n"
+	.string "the land.\p"
 # 393 "data/maps/MossdeepCity/scripts.pory"
-	.string "their rockets to fly safely.\p"
+	.string "Yes, like the very shoreline here.$"
 # 394 "data/maps/MossdeepCity/scripts.pory"
-	.string "When you make a wish, what do you use?\n"
-# 395 "data/maps/MossdeepCity/scripts.pory"
-	.string "Do you wish upon a star?\p"
-# 396 "data/maps/MossdeepCity/scripts.pory"
-	.string "I use a wish tag to make it happen.\n"
-# 397 "data/maps/MossdeepCity/scripts.pory"
-	.string "That's what I do.$"
-# 398 "data/maps/MossdeepCity/scripts.pory"
 
+# 395 "data/maps/MossdeepCity/scripts.pory"
+MossdeepCity_Text_SurfExhilarating:
+# 396 "data/maps/MossdeepCity/scripts.pory"
+	.string "A voyage on a ship is fine.\p"
+# 397 "data/maps/MossdeepCity/scripts.pory"
+	.string "But crossing the sea with POKéMON\n"
+# 398 "data/maps/MossdeepCity/scripts.pory"
+	.string "using SURF…\p"
 # 399 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_ItsAWhiteRock:
+	.string "Now that's an exhilarating trip!\n"
 # 400 "data/maps/MossdeepCity/scripts.pory"
-	.string "It's a white rock.$"
+	.string "Wouldn't you agree, youngster?$"
 # 401 "data/maps/MossdeepCity/scripts.pory"
 
 # 402 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_GymSign:
+MossdeepCity_Text_SpecialSpaceCenterRock:
 # 403 "data/maps/MossdeepCity/scripts.pory"
-	.string "MOSSDEEP CITY POKéMON GYM\n"
+	.string "This rock has a special meaning to\n"
 # 404 "data/maps/MossdeepCity/scripts.pory"
-	.string "LEADERS: LIZA & TATE\p"
+	.string "the people at the SPACE CENTER.\p"
 # 405 "data/maps/MossdeepCity/scripts.pory"
-	.string "“The mystic combination!”$"
+	.string "They put it here as their wish for\n"
 # 406 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "their rockets to fly safely.\p"
 # 407 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_CitySign:
+	.string "When you make a wish, what do you use?\n"
 # 408 "data/maps/MossdeepCity/scripts.pory"
-	.string "MOSSDEEP CITY\n"
+	.string "Do you wish upon a star?\p"
 # 409 "data/maps/MossdeepCity/scripts.pory"
-	.string "“Our slogan: Cherish POKéMON!”$"
+	.string "I use a wish tag to make it happen.\n"
 # 410 "data/maps/MossdeepCity/scripts.pory"
-
+	.string "That's what I do.$"
 # 411 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_SpaceCenterSign:
+
 # 412 "data/maps/MossdeepCity/scripts.pory"
-	.string "MOSSDEEP SPACE CENTER\n"
+MossdeepCity_Text_ItsAWhiteRock:
 # 413 "data/maps/MossdeepCity/scripts.pory"
-	.string "“The closest place to space.”$"
+	.string "It's a white rock.$"
 # 414 "data/maps/MossdeepCity/scripts.pory"
 
 # 415 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_ScottSomethingWrongWithTown:
+MossdeepCity_Text_GymSign:
 # 416 "data/maps/MossdeepCity/scripts.pory"
-	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
+	.string "MOSSDEEP CITY POKéMON GYM\n"
 # 417 "data/maps/MossdeepCity/scripts.pory"
-	.string "I'm doing great!\p"
+	.string "LEADERS: LIZA & TATE\p"
 # 418 "data/maps/MossdeepCity/scripts.pory"
-	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
+	.string "“The mystic combination!”$"
 # 419 "data/maps/MossdeepCity/scripts.pory"
-	.string "pretty strong, so I decided to come\l"
+
 # 420 "data/maps/MossdeepCity/scripts.pory"
-	.string "take a look-see for myself.\p"
+MossdeepCity_Text_CitySign:
 # 421 "data/maps/MossdeepCity/scripts.pory"
-	.string "But there's something wrong about\n"
+	.string "MOSSDEEP CITY\n"
 # 422 "data/maps/MossdeepCity/scripts.pory"
-	.string "this town.\p"
+	.string "“Our slogan: Cherish POKéMON!”$"
 # 423 "data/maps/MossdeepCity/scripts.pory"
-	.string "People are going on about a warning\n"
+
 # 424 "data/maps/MossdeepCity/scripts.pory"
-	.string "letter and the SPACE CENTER…\p"
+MossdeepCity_Text_SpaceCenterSign:
 # 425 "data/maps/MossdeepCity/scripts.pory"
-	.string "I don't think it concerns me in any\n"
+	.string "MOSSDEEP SPACE CENTER\n"
 # 426 "data/maps/MossdeepCity/scripts.pory"
-	.string "way, though.$"
+	.string "“The closest place to space.”$"
 # 427 "data/maps/MossdeepCity/scripts.pory"
 
 # 428 "data/maps/MossdeepCity/scripts.pory"
-MossdeepCity_Text_SootopolisNewGymLeader:
+MossdeepCity_Text_ScottSomethingWrongWithTown:
 # 429 "data/maps/MossdeepCity/scripts.pory"
-	.string "Ahh… It feels great letting the waves\n"
+	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
 # 430 "data/maps/MossdeepCity/scripts.pory"
-	.string "wash over my feet…\p"
+	.string "I'm doing great!\p"
 # 431 "data/maps/MossdeepCity/scripts.pory"
-	.string "Speaking of the waves, you know that\n"
+	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
 # 432 "data/maps/MossdeepCity/scripts.pory"
-	.string "island city SOOTOPOLIS?\p"
+	.string "pretty strong, so I decided to come\l"
 # 433 "data/maps/MossdeepCity/scripts.pory"
-	.string "I think the GYM there had a new\n"
+	.string "take a look-see for myself.\p"
 # 434 "data/maps/MossdeepCity/scripts.pory"
-	.string "LEADER come in.\p"
+	.string "But there's something wrong about\n"
 # 435 "data/maps/MossdeepCity/scripts.pory"
-	.string "People tell me the new LEADER once\n"
+	.string "this town.\p"
 # 436 "data/maps/MossdeepCity/scripts.pory"
+	.string "People are going on about a warning\n"
+# 437 "data/maps/MossdeepCity/scripts.pory"
+	.string "letter and the SPACE CENTER…\p"
+# 438 "data/maps/MossdeepCity/scripts.pory"
+	.string "I don't think it concerns me in any\n"
+# 439 "data/maps/MossdeepCity/scripts.pory"
+	.string "way, though.$"
+# 440 "data/maps/MossdeepCity/scripts.pory"
+
+# 441 "data/maps/MossdeepCity/scripts.pory"
+MossdeepCity_Text_SootopolisNewGymLeader:
+# 442 "data/maps/MossdeepCity/scripts.pory"
+	.string "Ahh… It feels great letting the waves\n"
+# 443 "data/maps/MossdeepCity/scripts.pory"
+	.string "wash over my feet…\p"
+# 444 "data/maps/MossdeepCity/scripts.pory"
+	.string "Speaking of the waves, you know that\n"
+# 445 "data/maps/MossdeepCity/scripts.pory"
+	.string "island city SOOTOPOLIS?\p"
+# 446 "data/maps/MossdeepCity/scripts.pory"
+	.string "I think the GYM there had a new\n"
+# 447 "data/maps/MossdeepCity/scripts.pory"
+	.string "LEADER come in.\p"
+# 448 "data/maps/MossdeepCity/scripts.pory"
+	.string "People tell me the new LEADER once\n"
+# 449 "data/maps/MossdeepCity/scripts.pory"
 	.string "mentored WALLACE.$"

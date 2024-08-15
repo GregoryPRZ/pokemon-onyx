@@ -30,6 +30,19 @@ PacifidlogTown_EventScript_TownSign::
 	msgbox PacifidlogTown_Text_TownSign, MSGBOX_SIGN
 	end
 
+PacifidlogTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+PacifidlogTown_EventScript_DrifblimStopSign::
+	msgbox PacifidlogTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+PacifidlogTown_Text_DrifblimStopSign:
+	.string "PACIFIDLOG TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 PacifidlogTown_Text_FastRunningCurrent:
 	.string "The sea between PACIFIDLOG and\n"
 	.string "SLATEPORT has a fast-running tide.\p"

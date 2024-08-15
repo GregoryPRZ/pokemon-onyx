@@ -3360,6 +3360,7 @@ static void FlyOutFieldEffect_End(struct Task *task)
 {
     if (!gPaletteFade.active)
     {
+        VarSet(VAR_0x800A, 0);
         FieldEffectActiveListRemove(FLDEFF_USE_FLY);
         DestroyTask(FindTaskIdByFunc(Task_FlyOut));
     }

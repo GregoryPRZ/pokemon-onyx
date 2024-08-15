@@ -277,6 +277,19 @@ LavaridgeTown_EventScript_HerbShopSign::
 	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
 	end
 
+LavaridgeTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+LavaridgeTown_EventScript_DrifblimStopSign::
+	msgbox LavaridgeTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+LavaridgeTown_Text_DrifblimStopSign:
+	.string "LAVARIDGE TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "MAY: {PLAYER}{KUN}! Long time no see!\p"
 	.string "Oh? While I visited the hot springs,\n"
