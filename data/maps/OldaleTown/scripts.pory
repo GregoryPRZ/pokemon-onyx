@@ -287,6 +287,15 @@ OldaleTown_EventScript_RivalFinish::
 	releaseall
 	end
 
+OldaleTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+OldaleTown_EventScript_DrifblimStopSign::
+	msgbox OldaleTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
 OldaleTown_EventScript_DoExitMovement1::
 	goto_if_ne VAR_FACING, DIR_SOUTH, OldaleTown_EventScript_DoExitMovement2
 	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalExit
@@ -344,6 +353,10 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_down
 	walk_left
 	step_end
+
+OldaleTown_Text_DrifblimStopSign:
+	.string "OLDALE TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
 
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"

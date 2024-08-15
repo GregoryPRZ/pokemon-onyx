@@ -2091,17 +2091,6 @@ static void CB_ExitFlyMap(void)
                             break;
                     }
                     ReturnToFieldFromFlyMapSelect();
-                }
-                else
-                {
-                    SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
-                }
-                if (sFlyMap != NULL)
-                {
-                    TRY_FREE_AND_SET_NULL(sFlyMap);
-                    sFlyMap = NULL;
-                }
-                FreeAllWindowBuffers();
             }
             else
             {
@@ -2110,15 +2099,13 @@ static void CB_ExitFlyMap(void)
                 else
                     SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
             }
-
-
             if (sFlyMap != NULL)
             {
-                free(sFlyMap);
+                TRY_FREE_AND_SET_NULL(sFlyMap);
                 sFlyMap = NULL;
             }
             FreeAllWindowBuffers();
         }
         break;
+    }
 }
-

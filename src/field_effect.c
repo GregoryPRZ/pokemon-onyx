@@ -3246,6 +3246,7 @@ static void FlyingTaxiFieldEffect_FlyNoises(struct Task *task)
 
 static void Task_FlyOut(u8 taskId)
 {
+    sFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
     if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
         sFlyingTaxiFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
     else
