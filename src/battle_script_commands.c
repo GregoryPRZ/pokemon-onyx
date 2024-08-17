@@ -2245,8 +2245,12 @@ static void Cmd_healthbarupdate(void)
     if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
-		if (!DN_CONFIG_ONLY_ATTACK_DAMAGE)
-			ShowDamageNumbers(battler);
+		if (!DN_CONFIG_ONLY_ATTACK_DAMAGE && FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+            if(FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+                PlaySE(SE_CONTEST_ICON_CHANGE);
+			    ShowDamageNumbers(battler);
+            }
+        }
 
         if (DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove) && gDisableStructs[battler].substituteHP && !(gHitMarker & HITMARKER_IGNORE_SUBSTITUTE))
         {
@@ -7665,8 +7669,12 @@ static void Cmd_hitanimation(void)
         BtlController_EmitHitAnimation(battler, BUFFER_A);
         MarkBattlerForControllerExec(battler);
         gBattlescriptCurrInstr = cmd->nextInstr;
-		if(DN_CONFIG_ONLY_ATTACK_DAMAGE)
-			ShowDamageNumbers(battler);
+		if (DN_CONFIG_ONLY_ATTACK_DAMAGE && FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+            if(FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+                PlaySE(SE_CONTEST_ICON_CHANGE);
+			    ShowDamageNumbers(battler);
+            }
+        }
     }
     else
     {

@@ -359,19 +359,19 @@ static const struct SpritePalette sDamageNumSpritePalette_Normal =
 
 static const struct SpritePalette sDamageNumSpritePalette_Heal =
 {
-    .data = sDamageNumber_HealPalette,
+    .data = sDamageNumber_NormalPalette,
     .tag = PALETTE_TAG_DAMAGE_NUMS
 };
 
 static const struct SpritePalette sDamageNumSpritePalette_SE =
 {
-    .data = sDamageNumber_SEPalette,
+    .data = sDamageNumber_NormalPalette,
     .tag = PALETTE_TAG_DAMAGE_NUMS
 };
 
 static const struct SpritePalette sDamageNumSpritePalette_NVE =
 {
-    .data = sDamageNumber_NVEPalette,
+    .data = sDamageNumber_NormalPalette,
     .tag = PALETTE_TAG_DAMAGE_NUMS
 };
 

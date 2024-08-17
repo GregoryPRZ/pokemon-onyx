@@ -30,6 +30,7 @@
 #define tWindowFrameType data[6]
 #define tMusic data[7]
 #define tStats data[8]
+#define tDamage data[9]
 
 // Menu items Pg1
 enum
@@ -49,6 +50,7 @@ enum
 {
     MENUITEM_MUSIC,
     MENUITEM_STAT,
+    MENUITEM_DAMAGE,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -71,6 +73,7 @@ enum
 //Pg2
 #define YPOS_MUSIC        (MENUITEM_MUSIC * 16)
 #define YPOS_STAT         (MENUITEM_STAT * 16)
+#define YPOS_DAMAGE       (MENUITEM_DAMAGE * 16)
 #define PAGE_COUNT  2
 
 static void Task_OptionMenuFadeIn(u8 taskId);
@@ -86,6 +89,8 @@ static u8 BattleScene_ProcessInput(u8 selection);
 static void BattleScene_DrawChoices(u8 selection);
 static u8 BattleStyle_ProcessInput(u8 selection);
 static void BattleStyle_DrawChoices(u8 selection);
+static u8   Damage_ProcessInput(u8 selection);
+static void Damage_DrawChoices(u8 selection);
 static u8   StatEditor_ProcessInput(u8 selection);
 static void StatEditor_DrawChoices(u8 selection);
 static u8   Music_ProcessInput(u8 selection);
@@ -122,6 +127,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_MUSIC]        = gText_Music,
     [MENUITEM_STAT]        = gText_Stat_Editor,
+    [MENUITEM_DAMAGE]        = gText_Damage_Numbers,
     [MENUITEM_CANCEL_PG2]   = gText_OptionMenuCancel,
 };
 
@@ -200,6 +206,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].data[6] = gSaveBlock2Ptr->optionsWindowFrameType;
     gTasks[taskId].data[7] = gSaveBlock2Ptr->optionsMusic;
     gTasks[taskId].data[8] = FlagGet(FLAG_STAT_EDIT_ACTIVATED);
+    gTasks[taskId].data[9] = FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED);
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -220,6 +227,7 @@ static void DrawOptionsPg2(u8 taskId)
     ReadAllCurrentSettings(taskId);
     Music_DrawChoices(gTasks[taskId].data[7]);
     StatEditor_DrawChoices(gTasks[taskId].data[8]);
+    Damage_DrawChoices(gTasks[taskId].data[9]);
     HighlightOptionMenuItem(gTasks[taskId].data[0]);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -532,6 +540,13 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             if (previousOption != gTasks[taskId].data[8])
                 StatEditor_DrawChoices(gTasks[taskId].data[8]);
             break;
+        case MENUITEM_DAMAGE:
+            previousOption = gTasks[taskId].tDamage;
+            gTasks[taskId].tDamage = Damage_ProcessInput(gTasks[taskId].tDamage);
+
+            if (previousOption != gTasks[taskId].tDamage)
+                Damage_DrawChoices(gTasks[taskId].tDamage);
+            break;
         default:
             return;
         }
@@ -557,6 +572,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsMusic = gTasks[taskId].tMusic;
     gTasks[taskId].data[8] == 0 ? FlagClear(FLAG_STAT_EDIT_ACTIVATED) : FlagSet(FLAG_STAT_EDIT_ACTIVATED);
+    gTasks[taskId].data[9] == 0 ? FlagClear(FLAG_DAMAGE_NUMBERS_ACTIVATED) : FlagSet(FLAG_DAMAGE_NUMBERS_ACTIVATED);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -771,6 +787,29 @@ static void StatEditor_DrawChoices(u8 selection)
     styles[selection] = 1;
     DrawOptionMenuChoice(gText_StatEditorOff, 104, YPOS_STAT, styles[0]);
     DrawOptionMenuChoice(gText_StatEditorOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_StatEditorOn, 174), YPOS_STAT, styles[1]);
+}
+
+static u8 Damage_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    {
+        selection ^= 1;
+        sArrowPressed = TRUE;
+    }
+
+    return selection;
+}
+
+static void Damage_DrawChoices(u8 selection)
+{
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_DamageNumbersOff, 104, YPOS_DAMAGE, styles[0]);
+    DrawOptionMenuChoice(gText_DamageNumbersOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_DamageNumbersOn, 198), YPOS_DAMAGE, styles[1]);
 }
 
 static u8 FrameType_ProcessInput(u8 selection)

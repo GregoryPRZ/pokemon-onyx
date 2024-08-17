@@ -1543,7 +1543,7 @@
 #define FLAG_INVERSE_BATTLE                         (SYSTEM_FLAGS + 0xAB) // Unused Flag
 #define FLAG_NO_BAG_USE                             (SYSTEM_FLAGS + 0xAC) // Unused Flag
 #define FLAG_NO_ENCOUNTER                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
+#define FLAG_DAMAGE_NUMBERS_ACTIVATED               (SYSTEM_FLAGS + 0xAE) // Unused Flag
 #define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
 #define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag

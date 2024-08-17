@@ -316,6 +316,8 @@ extern const u8 gText_ButtonTypeLR[];
 extern const u8 gText_ButtonTypeLEqualsA[];
 extern const u8 gText_StatEditorOff[];
 extern const u8 gText_StatEditorOn[];
+extern const u8 gText_DamageNumbersOff[];
+extern const u8 gText_DamageNumbersOn[];
 extern const u8 gText_MusicHoenn[];
 extern const u8 gText_MusicSinnoh[];
 extern const u8 gText_Option[];
@@ -332,6 +334,7 @@ extern const u8 gText_OptionMenuCancel[];
 extern const u8 gText_ButtonMode[];
 extern const u8 gText_Music[];
 extern const u8 gText_Stat_Editor[];
+extern const u8 gText_Damage_Numbers[];
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];
 
