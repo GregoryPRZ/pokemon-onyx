@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_DAMAGE_NUMS_H
 #define GUARD_CONSTANTS_BATTLE_DAMAGE_NUMS_H
 
-#define DAMAGE_NUMBER_TIME 45 // Number of frames each number stays on-screen for
+#define DAMAGE_NUMBER_TIME 90 // Number of frames each number stays on-screen for
 #define DAMAGE_NUMBER_DELAY 2 // Number of frames in between each number appearing
 
 // the default color for the numbers is white for damage and green for healing.
