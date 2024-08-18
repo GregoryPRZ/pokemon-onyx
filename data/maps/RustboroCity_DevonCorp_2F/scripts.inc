@@ -310,7 +310,8 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep::
 RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty::
 # 156 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	call RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare
-# 157 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 158 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, RustboroCity_DevonCorp_2F_EventScript_FinishReceivingLileep
@@ -324,11 +325,17 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty::
 	end
 # 163 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 
-# 164 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
+RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto RustboroCity_DevonCorp_2F_EventScript_FinishReceivingLileep
+	end
+
 RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepPC::
 # 165 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	call RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare
-# 166 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepPC_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 167 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, RustboroCity_DevonCorp_2F_EventScript_TransferLileepToPC
@@ -340,7 +347,11 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepPC::
 	end
 # 171 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 
-# 172 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
+RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto RustboroCity_DevonCorp_2F_EventScript_TransferLileepToPC
+	end
+
 RustboroCity_DevonCorp_2F_EventScript_TransferLileepToPC::
 # 173 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	call Common_EventScript_TransferredToPC

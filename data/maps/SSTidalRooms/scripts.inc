@@ -42,7 +42,8 @@ SSTidalRooms_EventScript_ExplainSnatch::
 
 # 22 "data/maps/SSTidalRooms/scripts.pory"
 SSTidalRooms_EventScript_Bed::
-# 23 "data/maps/SSTidalRooms/scripts.pory"
+	specialvar VAR_RESULT, IsPokecenterChallengeActivated
+	goto_if_eq VAR_RESULT, TRUE, SSTidalRooms_EventScript_Bed_PokecenterChallenge
 	lockall
 # 24 "data/maps/SSTidalRooms/scripts.pory"
 	msgbox SSTidalRooms_Text_TakeRestOnBed, MSGBOX_DEFAULT
@@ -58,7 +59,11 @@ SSTidalRooms_EventScript_Bed::
 	end
 # 30 "data/maps/SSTidalRooms/scripts.pory"
 
-# 31 "data/maps/SSTidalRooms/scripts.pory"
+SSTidalRooms_EventScript_Bed_PokecenterChallenge::
+	msgbox SSTidalRooms_Text_TakeRestOnBed_PokecenterChallenge, MSGBOX_DEFAULT
+	closemessage
+	end
+
 SSTidalRooms_EventScript_Colton::
 # 32 "data/maps/SSTidalRooms/scripts.pory"
 	trainerbattle_single TRAINER_COLTON, SSTidalRooms_Text_ColtonIntro, SSTidalRooms_Text_ColtonDefeat
@@ -136,7 +141,10 @@ SSTidalRooms_Text_TakeRestOnBed:
 	.string "Let's take a rest.$"
 # 69 "data/maps/SSTidalRooms/scripts.pory"
 
-# 70 "data/maps/SSTidalRooms/scripts.pory"
+SSTidalRooms_Text_TakeRestOnBed_PokecenterChallenge:
+	.string "Sorry, you are playing with\n"
+	.string "the POKéCENTER challenge!$"
+
 SSTidalRooms_Text_ColtonIntro:
 # 71 "data/maps/SSTidalRooms/scripts.pory"
 	.string "I often sail to LILYCOVE CITY.\p"

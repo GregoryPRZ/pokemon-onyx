@@ -200,7 +200,8 @@ MossdeepCity_StevensHouse_EventScript_GiveBeldum::
 MossdeepCity_StevensHouse_EventScript_SendBeldumParty::
 # 101 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
-# 102 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_StevensHouse_EventScript_SendBeldumParty_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 103 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
@@ -214,11 +215,17 @@ MossdeepCity_StevensHouse_EventScript_SendBeldumParty::
 	end
 # 108 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 
-# 109 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
+MossdeepCity_StevensHouse_EventScript_SendBeldumParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
+	end
+
 MossdeepCity_StevensHouse_EventScript_SendBeldumPC::
 # 110 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
-# 111 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_StevensHouse_EventScript_SendBeldumPC_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 112 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
@@ -230,7 +237,11 @@ MossdeepCity_StevensHouse_EventScript_SendBeldumPC::
 	end
 # 116 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 
-# 117 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
+MossdeepCity_StevensHouse_EventScript_SendBeldumPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
+	end
+
 MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC::
 # 118 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	call Common_EventScript_TransferredToPC

@@ -31,6 +31,7 @@
 #include "constants/songs.h"
 #include "constants/party_menu.h"
 #include "constants/trainers.h"
+#include "tx_randomizer_and_challenges.h"
 
 static void PlayerPartnerHandleLoadMonSprite(u32 battler);
 static void PlayerPartnerHandleSwitchInAnim(u32 battler);

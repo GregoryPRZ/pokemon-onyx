@@ -1,13 +1,14 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_gfx_sfx_util.h"
+#include "battle_setup.h" //tx_randomizer_and_challenges
 #include "berry.h"
 #include "data.h"
 #include "daycare.h"
 #include "decompress.h"
 #include "event_data.h"
 #include "international_string_util.h"
-#include "item.h"
+#include "item.h" //tx_randomizer_and_challenges
 #include "link.h"
 #include "link_rfu.h"
 #include "main.h"
@@ -28,6 +29,7 @@
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
 #include "pokevial.h" //Pokevial Branch
+#include "tx_randomizer_and_challenges.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -144,6 +146,12 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];
 
+    //tx_randomizer_and_challenges
+    if (gSaveBlock1Ptr->tx_Random_Static)
+        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_STATIC, 0);
+    if (gSaveBlock1Ptr->tx_Random_Items)
+        item = RandomItemId(item);
+
     ZeroEnemyPartyMons();
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
         CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
@@ -155,6 +163,8 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
         heldItem[1] = item >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
+
+    SetNuzlockeChecks(); //tx_randomizer_and_challenges
 }
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {
@@ -354,6 +364,9 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     u32 i;
     u8 genderRatio = gSpeciesInfo[species].genderRatio;
     u16 targetSpecies;
+
+    if (gSaveBlock1Ptr->tx_Random_WildPokemon || gSaveBlock1Ptr->tx_Random_Evolutions) //tx_randomizer_and_challenges
+            species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
 
     // check whether to use a specific nature or a random one
     if (nature >= NUM_NATURES)

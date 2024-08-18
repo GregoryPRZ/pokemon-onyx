@@ -79,6 +79,7 @@
 #include "naming_screen.h"
 #include "pokevial.h" //Pokevial Branch
 #include "move_relearner.h"
+#include "tx_randomizer_and_challenges.h"
 
 enum {
     MENU_SUMMARY,
@@ -2908,6 +2909,7 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
+    bool8 hasFlashAlready, hasFlyAlready = FALSE;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
@@ -2923,22 +2925,24 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                // If Mon already knows FLY and the HM is in the bag, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH || !CheckBagHasItem(ITEM_HM_FLASH, 1)){ 
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    }
+                //tx_randomizer_and_challenges
+                if (sFieldMoves[j] == MOVE_FLASH)
+                    hasFlashAlready = TRUE;
+                if (sFieldMoves[j] == MOVE_FLY)
+                    hasFlyAlready = TRUE;
+                
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
             }
         }
     }
 
-    // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
-    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), ITEM_HM02 - ITEM_TM01) && CheckBagHasItem(ITEM_HM_FLY, 1)){
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
-    }
-    // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
-    if (sPartyMenuInternal->numActions < 5 && CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), ITEM_HM05 - ITEM_TM01) && CheckBagHasItem(ITEM_HM_FLASH, 1)){
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+    if (HMsOverwriteOptionActive() && slotId == 0) //tx_randomizer_and_challenges
+    {
+        if (CheckBagHasItem(ITEM_HM05, 1) && !hasFlashAlready)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+        if (CheckBagHasItem(ITEM_HM02, 1) && !hasFlyAlready)
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
     }
 
     if (!InBattlePike())
@@ -5465,6 +5469,20 @@ u16 ItemIdToBattleMoveId(u16 item)
     return (ItemId_GetPocket(item) == POCKET_TM_HM) ? gItemsInfo[item].secondaryId : MOVE_NONE;
 }
 
+u16 BattleMoveIdToItemId(u16 moveId) //tx_randomizer_and_challenges
+{
+    u8 i;
+    u16 item = gSpecialVar_ItemId;
+    //u16 type = ItemId_GetType(gSpecialVar_ItemId);
+
+    for (i = 0; i < 100 + NUM_HIDDEN_MACHINES; i++)
+    {
+        if (gItemsInfo[item].secondaryId == moveId)
+            return ITEM_TM01 + i;
+    }
+    return ITEM_NONE;
+}
+
 bool8 MonKnowsMove(struct Pokemon *mon, u16 move)
 {
     u8 i;
@@ -5791,7 +5809,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
+    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentPartyLevelCap()))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -5886,7 +5904,7 @@ void ItemUseCB_InfiniteCandy(u8 taskId, TaskFunc task)
     u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
 
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
+    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentPartyLevelCap()))
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);

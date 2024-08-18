@@ -66,6 +66,40 @@
 #include "constants/pokemon.h"
 #include "config/battle.h"
 #include "data/battle_move_effects.h"
+#include "tx_randomizer_and_challenges.h"
+
+// Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
+//
+// For example accuracycheck is defined as:
+//
+//     .macro accuracycheck failInstr:req, move:req
+//     .byte 0x1
+//     .4byte \failInstr
+//     .2byte \move
+//     .endm
+//
+// Which corresponds to:
+//
+//     CMD_ARGS(const u8 *failInstr, u16 move);
+//
+// The arguments can be accessed as cmd->failInstr and cmd->move.
+// gBattlescriptCurrInstr = cmd->nextInstr; advances to the next instruction.
+#define CMD_ARGS(...) const struct __attribute__((packed)) { u8 opcode; MEMBERS(__VA_ARGS__) const u8 nextInstr[0]; } *const cmd UNUSED = (const void *)gBattlescriptCurrInstr
+#define VARIOUS_ARGS(...) CMD_ARGS(u8 battler, u8 id, ##__VA_ARGS__)
+#define NATIVE_ARGS(...) CMD_ARGS(void (*func)(void), ##__VA_ARGS__)
+
+#define MEMBERS(...) VARARG_8(MEMBERS_, __VA_ARGS__)
+#define MEMBERS_0()
+#define MEMBERS_1(a) a;
+#define MEMBERS_2(a, b) a; b;
+#define MEMBERS_3(a, b, c) a; b; c;
+#define MEMBERS_4(a, b, c, d) a; b; c; d;
+#define MEMBERS_5(a, b, c, d, e) a; b; c; d; e;
+#define MEMBERS_6(a, b, c, d, e, f) a; b; c; d; e; f;
+#define MEMBERS_7(a, b, c, d, e, f, g) a; b; c; d; e; f; g;
+#define MEMBERS_8(a, b, c, d, e, f, g, h) a; b; c; d; e; f; g; h;
+
+extern const u8 *const gBattleScriptsForMoveEffects[];
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
 // this returns (i^2.5)/4
@@ -4303,6 +4337,28 @@ static void Cmd_getexp(void)
             if (orderId < PARTY_SIZE)
                 gBattleStruct->expGettersOrder[orderId] = PARTY_SIZE;
 
+            //tx_randomizer_and_challenges
+            if (gSaveBlock1Ptr->tx_Challenges_ExpMultiplier != 0)
+            {
+                if (TX_EXP_MULTIPLER_ONLY_ON_NUZLOCKE_AND_RANDOMIZER) //special for Jaizu
+                {
+                    if (IsNuzlockeActive() || IsRandomizerActivated())
+                    {
+                        if (gSaveBlock1Ptr->tx_Challenges_ExpMultiplier == 3)
+                            calculatedExp = 0;
+                        else
+                            calculatedExp *= 1 + 0.5 * gSaveBlock1Ptr->tx_Challenges_ExpMultiplier;
+                    }
+                }
+                else
+                {
+                    if (gSaveBlock1Ptr->tx_Challenges_ExpMultiplier == 3)
+                        calculatedExp = 0;
+                    else
+                        calculatedExp *= 1 + 0.5 * gSaveBlock1Ptr->tx_Challenges_ExpMultiplier;
+                }
+            }
+
             calculatedExp = gSpeciesInfo[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level;
             if (B_SCALED_EXP >= GEN_5 && B_SCALED_EXP != GEN_6)
                 calculatedExp /= 5;
@@ -4340,6 +4396,23 @@ static void Cmd_getexp(void)
                     gBattleStruct->expShareExpValue = 1;
             }
 
+            if (gSaveBlock1Ptr->tx_Challenges_ExpMultiplier == 3)
+            {
+                if (TX_EXP_MULTIPLER_ONLY_ON_NUZLOCKE_AND_RANDOMIZER) //special for Jaizu
+                {
+                    if (IsNuzlockeActive() || IsRandomizerActivated())
+                    {
+                        *exp = 0;
+                        gBattleStruct->expShareExpValue = 0;
+                    }
+                }
+                else
+                {
+                    *exp = 0;
+                    gBattleStruct->expShareExpValue = 0;
+                }
+            }
+
             gBattleScripting.getexpState++;
             gBattleStruct->expOrderId = 0;
             *expMonId = gBattleStruct->expGettersOrder[0];
@@ -4359,7 +4432,7 @@ static void Cmd_getexp(void)
                 gBattleMoveDamage = 0; // used for exp
             }
             else if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && *expMonId >= 3)
-                  || GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) == MAX_LEVEL)
+                  || GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) == GetCurrentPartyLevelCap())
             {
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
@@ -4399,7 +4472,7 @@ static void Cmd_getexp(void)
                     {
                         u32 growthRate = gSpeciesInfo[GetMonData(&gPlayerParty[*expMonId], MON_DATA_SPECIES)].growthRate;
                         u32 currentExp = GetMonData(&gPlayerParty[*expMonId], MON_DATA_EXP);
-                        u32 levelCap = GetCurrentLevelCap();
+                        u32 levelCap = GetCurrentPartyLevelCap();
 
                         if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) >= levelCap)
                             gBattleMoveDamage = 0;
@@ -4464,7 +4537,7 @@ static void Cmd_getexp(void)
         if (gBattleControllerExecFlags == 0)
         {
             gBattleResources->bufferB[gBattleStruct->expGetterBattlerId][0] = 0;
-            if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_HP) && GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) != MAX_LEVEL)
+            if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_HP) && GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) != GetCurrentPartyLevelCap())
             {
                 gBattleResources->beforeLvlUp->stats[STAT_HP]    = GetMonData(&gPlayerParty[*expMonId], MON_DATA_MAX_HP);
                 gBattleResources->beforeLvlUp->stats[STAT_ATK]   = GetMonData(&gPlayerParty[*expMonId], MON_DATA_ATK);
@@ -6521,8 +6594,8 @@ static void Cmd_switchindataupdate(void)
         }
     }
 
-    gBattleMons[battler].type1 = gSpeciesInfo[gBattleMons[battler].species].types[0];
-    gBattleMons[battler].type2 = gSpeciesInfo[gBattleMons[battler].species].types[1];
+    gBattleMons[battler].type1 = GetTypeBySpecies(gBattleMons[battler].species, 1);
+    gBattleMons[battler].type2 = GetTypeBySpecies(gBattleMons[battler].species, 2);
     gBattleMons[battler].type3 = TYPE_MYSTERY;
     gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
     #if TESTING
@@ -13849,8 +13922,22 @@ static void Cmd_trydobeatup(void)
 
             gBattleMoveDamage = gSpeciesInfo[GetMonData(&party[gBattleCommunication[0]], MON_DATA_SPECIES)].baseAttack;
             gBattleMoveDamage *= gMovesInfo[gCurrentMove].power;
+            if (gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer)
+                {
+                    u16 baseStat[] = {10, 100, 255, 500};
+                    gBattleMoveDamage = baseStat[gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer];
+                }
+            else
+            gBattleMoveDamage = gSpeciesInfo[GetMonData(&party[gBattleCommunication[0]], MON_DATA_SPECIES)].baseAttack;
+            gBattleMoveDamage *= gMovesInfo[gCurrentMove].power;
             gBattleMoveDamage *= (GetMonData(&party[gBattleCommunication[0]], MON_DATA_LEVEL) * 2 / 5 + 2);
-            gBattleMoveDamage /= gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseDefense;
+            if (gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer)
+                {
+                    u16 baseStat[] = {10, 100, 255, 500};
+                    gBattleMoveDamage /= baseStat[gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer];
+                }
+            else
+                gBattleMoveDamage /= gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseDefense;
             gBattleMoveDamage = (gBattleMoveDamage / 50) + 2;
             if (gProtectStructs[gBattlerAttacker].helpingHand)
                 gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
@@ -14697,7 +14784,7 @@ static void Cmd_pickup(void)
             if (lvlDivBy10 > 9)
                 lvlDivBy10 = 9;
 
-            ability = gSpeciesInfo[species].abilities[GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM)];
+            ability = GetMonAbility(&gPlayerParty[i]);
 
             if (ability == ABILITY_PICKUP
                 && species != SPECIES_NONE
@@ -15499,18 +15586,31 @@ void BattleDestroyYesNoCursorAt(u8 cursorPosition)
 
 static void Cmd_trygivecaughtmonnick(void)
 {
+    u8 typeChallenge = gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge;
+
     CMD_ARGS(const u8 *successInstr);
 
     switch (gBattleCommunication[MULTIUSE_STATE])
     {
     case 0:
         HandleBattleWindow(YESNOBOX_X_Y, 0);
-        BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
-        gBattleCommunication[MULTIUSE_STATE]++;
-        gBattleCommunication[CURSOR_POSITION] = 0;
-        BattleCreateYesNoCursorAt(0);
+        if (IsNuzlockeNicknamingActive())
+        {
+            gBattleCommunication[MULTIUSE_STATE]++;
+            BeginFastPaletteFade(3);
+        }
+        else
+        {
+            BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
+            gBattleCommunication[MULTIUSE_STATE]++;
+            gBattleCommunication[CURSOR_POSITION] = 0;
+            BattleCreateYesNoCursorAt(0);
+        }
         break;
     case 1:
+        if (IsNuzlockeNicknamingActive())
+            gBattleCommunication[MULTIUSE_STATE]++;
+
         if (JOY_NEW(DPAD_UP) && gBattleCommunication[CURSOR_POSITION] != 0)
         {
             PlaySE(SE_SELECT);
@@ -15567,7 +15667,11 @@ static void Cmd_trygivecaughtmonnick(void)
         }
         break;
     case 4:
-        if (CalculatePlayerPartyCount() == PARTY_SIZE)
+        if (CalculatePlayerPartyCount() == GetMaxPartySize()) //tx_randomizer_and_challenges
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        else if (typeChallenge != TX_CHALLENGE_TYPE_OFF && //tx_randomizer_and_challenges
+                GetTypeBySpecies(GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker ^ BIT_SIDE]], MON_DATA_SPECIES), 1) != typeChallenge &&
+                GetTypeBySpecies(GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker ^ BIT_SIDE]], MON_DATA_SPECIES), 2) != typeChallenge)
             gBattlescriptCurrInstr = cmd->nextInstr;
         else
             gBattlescriptCurrInstr = cmd->successInstr;

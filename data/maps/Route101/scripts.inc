@@ -500,9 +500,6 @@ Route101_EventScript_BirchsBag::
 	lock
 # 251 "data/maps/Route101/scripts.pory"
 	faceplayer
-# 252 "data/maps/Route101/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 253 "data/maps/Route101/scripts.pory"
 	setflag FLAG_RESCUED_BIRCH
 # 254 "data/maps/Route101/scripts.pory"
 	fadescreen FADE_TO_BLACK
@@ -518,7 +515,7 @@ Route101_EventScript_BirchsBag::
 	special ChooseStarter
 # 260 "data/maps/Route101/scripts.pory"
 	waitstate
-# 261 "data/maps/Route101/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchApproachPlayer
 # 262 "data/maps/Route101/scripts.pory"
 	waitmovement 0

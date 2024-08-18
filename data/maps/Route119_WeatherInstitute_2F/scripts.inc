@@ -198,7 +198,8 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty::
 # 100 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
-# 101 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 102 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_ExplainCastform
@@ -212,11 +213,17 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty::
 	end
 # 107 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
-# 108 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Route119_WeatherInstitute_2F_EventScript_ExplainCastform
+	end
+
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC::
 # 109 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
-# 110 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 111 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_SendCastformToPC
@@ -228,7 +235,11 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC::
 	end
 # 115 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 
-# 116 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto Route119_WeatherInstitute_2F_EventScript_SendCastformToPC
+	end
+
 Route119_WeatherInstitute_2F_EventScript_SendCastformToPC::
 # 117 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	call Common_EventScript_TransferredToPC

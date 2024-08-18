@@ -18,6 +18,11 @@ extern u16 gTrainerBattleOpponent_A;
 extern u16 gTrainerBattleOpponent_B;
 extern u16 gPartnerTrainerId;
 
+//tx_randomizer_and_challenges
+extern u8 NuzlockeIsCaptureBlocked;
+extern u8 NuzlockeIsSpeciesClauseActive;
+extern u8 OneTypeChallengeCaptureBlocked;
+
 void BattleSetup_StartWildBattle(void);
 void BattleSetup_StartDoubleWildBattle(void);
 void BattleSetup_StartBattlePikeWildBattle(void);
@@ -73,5 +78,9 @@ void BattleSetup_StartTrainerBattle_Debug(void);
 s32 TrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
 s32 FirstBattleTrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
 u16 GetRematchTrainerIdFromTable(const struct RematchTrainer *table, u16 firstBattleTrainerId);
+
+//tx_randomizer_and_challenges
+u8 NuzlockeIsCaptureBlockedBySpeciesClause(u16 species);
+void SetNuzlockeChecks(void);
 
 #endif // GUARD_BATTLE_SETUP_H

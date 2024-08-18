@@ -26,6 +26,7 @@
 #include "constants/hold_effects.h"
 #include "constants/moves.h"
 #include "constants/region_map_sections.h"
+#include "tx_randomizer_and_challenges.h"
 
 #define IS_DITTO(species) (gSpeciesInfo[species].eggGroups[0] == EGG_GROUP_DITTO || gSpeciesInfo[species].eggGroups[1] == EGG_GROUP_DITTO)
 
@@ -304,7 +305,7 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
     bool8 firstMove;
     u16 learnedMove;
 
-    for (i = 0; i < MAX_LEVEL; i++)
+    for (i = 0; i < GetCurrentPartyLevelCap(); i++)
     {
         // Add the mon's gained daycare experience level by level until it can't level up anymore.
         if (TryIncrementMonLevel(mon))
@@ -347,7 +348,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
         species = newSpecies;
     }
 
-    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCap())
+    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentPartyLevelCap())
     {
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
@@ -396,8 +397,8 @@ static u8 GetNumLevelsGainedFromSteps(struct DaycareMon *daycareMon)
 
     levelBefore = GetLevelFromBoxMonExp(&daycareMon->mon);
     levelAfter = GetLevelAfterDaycareSteps(&daycareMon->mon, daycareMon->steps);
-    if (levelAfter > GetCurrentLevelCap())
-        levelAfter = GetCurrentLevelCap();
+    if (levelAfter > GetCurrentPartyLevelCap())
+        levelAfter = GetCurrentPartyLevelCap();
     return levelAfter - levelBefore;
 }
 
@@ -1173,6 +1174,8 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
             }
             else
             {
+                if (IsNuzlockeActive() && NuzlockeFlagGet(NuzlockeGetCurrentRegionMapSectionId()))
+                    return FALSE;
                 gSpecialVar_0x8004 = i;
                 return TRUE;
             }

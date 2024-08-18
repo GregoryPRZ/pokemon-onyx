@@ -299,6 +299,15 @@
 #define EVO_DEFEAT_THREE_WITH_ITEM        51     // Pokémon levels up after having defeat 3 Pokémon of the same species holding the specified item
 #define EVO_OVERWORLD_STEPS               52     // Pokémon levels up after having taken a specific amount of steps in the overworld (or as the party lead if OW_FOLLOWERS_ENABLED is FALSE) without switching
 
+//tx_randomizer_and_challenges
+#ifndef POKEMON_EXPANSION 
+#define EVOS_PER_MON 5
+#define EVOS_PER_LINE 6
+#else
+#define EVOS_PER_MON 11
+#define EVOS_PER_LINE 22
+#endif
+
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0
 #define EVO_MODE_CANT_STOP         1

@@ -110,7 +110,8 @@ Route119_WeatherInstitute_1F_EventScript_InstituteWorker2::
 
 # 56 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 Route119_WeatherInstitute_1F_EventScript_Bed::
-# 57 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
+	specialvar VAR_RESULT, IsPokecenterChallengeActivated
+	goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_1F_EventScript_Bed_PokecenterChallenge
 	lockall
 # 58 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 	msgbox Route119_WeatherInstitute_1F_Text_TakeRestInBed, MSGBOX_DEFAULT
@@ -124,7 +125,11 @@ Route119_WeatherInstitute_1F_EventScript_Bed::
 	end
 # 63 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 
-# 64 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
+Route119_WeatherInstitute_1F_EventScript_Bed_PokecenterChallenge::
+	msgbox Route119_WeatherInstitute_1F_Text_TakeRestInBed_PokecenterChallenge, MSGBOX_DEFAULT
+	closemessage
+	end
+
 Route119_WeatherInstitute_1F_EventScript_Grunt1::
 # 65 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, Route119_WeatherInstitute_1F_Text_Grunt1Intro, Route119_WeatherInstitute_1F_Text_Grunt1Defeat
@@ -268,3 +273,8 @@ Route119_WeatherInstitute_1F_Text_TakeRestInBed:
 	.string "There's a bed…\n"
 # 135 "data/maps/Route119_WeatherInstitute_1F/scripts.pory"
 	.string "Let's take a rest.$"
+
+Route119_WeatherInstitute_1F_Text_TakeRestInBed_PokecenterChallenge:
+	.string "Sorry, you are playing with\n"
+	.string "the POKéCENTER challenge!$"
+

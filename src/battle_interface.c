@@ -5,6 +5,8 @@
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_z_move.h"
+#include "battle_setup.h"
+#include "event_data.h"
 #include "graphics.h"
 #include "sprite.h"
 #include "window.h"
@@ -34,6 +36,7 @@
 #include "constants/songs.h"
 #include "constants/items.h"
 #include "level_caps.h"
+#include "tx_randomizer_and_challenges.h"
 
 enum
 {   // Corresponds to gHealthboxElementsGfxTable (and the tables after it) in graphics.c
@@ -168,6 +171,7 @@ enum
     HEALTHBOX_GFX_123,
     HEALTHBOX_GFX_FRAME_END,
     HEALTHBOX_GFX_FRAME_END_BAR,
+    HEALTHBOX_GFX_NUZLOCKE_CAPTURABLE, //First route capturable
 };
 
 static const u8 *GetHealthboxElementGfxPtr(u8);
@@ -1778,7 +1782,20 @@ static void TryAddPokeballIconToHealthbox(u8 healthboxSpriteId, bool8 noStatus)
     if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
         return;
     if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES)), FLAG_GET_CAUGHT))
+    {
+        if (!IsNuzlockeActive())
+            return;
+        if (NuzlockeIsSpeciesClauseActive || OneTypeChallengeCaptureBlocked || NuzlockeIsCaptureBlocked)
+            return;
+
+        healthBarSpriteId = gSprites[healthboxSpriteId].hMain_HealthBarSpriteId;
+
+        if (noStatus)
+            CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_NUZLOCKE_CAPTURABLE), (void *)(OBJ_VRAM0 + (gSprites[healthBarSpriteId].oam.tileNum + 8) * TILE_SIZE_4BPP), 32);
+        else
+            CpuFill32(0, (void*)(OBJ_VRAM0 + (gSprites[healthBarSpriteId].oam.tileNum + 8) * TILE_SIZE_4BPP), 32);
         return;
+    }
 
     healthBarSpriteId = gSprites[healthboxSpriteId].hMain_HealthBarSpriteId;
 
@@ -2138,6 +2155,7 @@ static void MoveBattleBarGraphically(u8 battlerId, u8 whichBar)
                     array, B_EXPBAR_PIXELS / 8);
         level = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_LEVEL);
         if (level >= MAX_LEVEL)
+        if (level >= GetCurrentPartyLevelCap())
         {
             for (i = 0; i < 8; i++)
                 array[i] = 0;

@@ -688,7 +688,10 @@ PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "I think you should rest a bit.$"
 # 345 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 
-# 346 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
+PlayersHouse_1F_Text_YouShouldRestABit_PokecenterChallenge:
+	.string "MOM: Sorry honey, you are playing\n"
+	.string "with the POKéCENTER challenge!$"
+
 PlayersHouse_1F_Text_TakeCareHoney:
 # 347 "data/maps/LittlerootTown_BrendansHouse_1F/scripts.pory"
 	.string "MOM: Take care, honey!$"

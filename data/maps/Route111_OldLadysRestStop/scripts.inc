@@ -34,7 +34,8 @@ Route111_OldLadysRestStop_EventScript_OldLady::
 
 # 18 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 Route111_OldLadysRestStop_EventScript_Rest::
-# 19 "data/maps/Route111_OldLadysRestStop/scripts.pory"
+	specialvar VAR_RESULT, IsPokecenterChallengeActivated
+    goto_if_eq VAR_RESULT, TRUE, Route111_OldLadysRestStop_EventScript_Rest_PokecenterChallenge
 	msgbox Route111_OldLadysRestStop_Text_TakeYourTimeRestUp, MSGBOX_DEFAULT
 # 20 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 	closemessage
@@ -50,7 +51,11 @@ Route111_OldLadysRestStop_EventScript_Rest::
 	end
 # 26 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 
-# 27 "data/maps/Route111_OldLadysRestStop/scripts.pory"
+Route111_OldLadysRestStop_EventScript_Rest_PokecenterChallenge::
+	msgbox Route111_OldLadysRestStop_Text_PokecenterChallenge, MSGBOX_DEFAULT
+	closemessage
+	end
+
 Route111_OldLadysRestStop_EventScript_DeclineRest::
 # 28 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 	msgbox Route111_OldLadysRestStop_Text_DontNeedToBeShy, MSGBOX_DEFAULT
@@ -60,7 +65,10 @@ Route111_OldLadysRestStop_EventScript_DeclineRest::
 	end
 # 31 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 
-# 32 "data/maps/Route111_OldLadysRestStop/scripts.pory"
+Route111_OldLadysRestStop_Text_PokecenterChallenge:
+	.string "Sorry, you are playing\n"
+	.string "with the POKéCENTER challenge!$"
+
 Route111_OldLadysRestStop_Text_RestUpHere:
 # 33 "data/maps/Route111_OldLadysRestStop/scripts.pory"
 	.string "Oh, dear, dear.\n"

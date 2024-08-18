@@ -28,6 +28,7 @@
 #include "constants/battle_anim.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "tx_randomizer_and_challenges.h"
 
 static void RecordedPlayerHandleLoadMonSprite(u32 battler);
 static void RecordedPlayerHandleSwitchInAnim(u32 battler);

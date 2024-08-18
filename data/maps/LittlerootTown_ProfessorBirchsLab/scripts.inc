@@ -240,7 +240,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	playfanfare MUS_OBTAIN_ITEM
 # 121 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	waitfanfare
-# 122 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter_Nuzlocke
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 # 123 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
@@ -262,7 +263,14 @@ LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
 	end
 # 132 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 133 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter_Nuzlocke::
+	message LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon_Nuzlocke
+	waitmessage
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 # 134 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
@@ -704,7 +712,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty::
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter
 # 353 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removeobject LOCALID_BALL_CYNDAQUIL
-# 354 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 355 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil
@@ -718,13 +727,19 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty::
 	end
 # 360 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 361 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToPC::
 # 362 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter
 # 363 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removeobject LOCALID_BALL_CYNDAQUIL
-# 364 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToPC_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 365 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_CyndaquilTransferredToPC
@@ -736,7 +751,11 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToPC::
 	end
 # 369 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 370 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_CyndaquilTransferredToPC
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_CyndaquilTransferredToPC::
 # 371 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_TransferredToPC
@@ -786,7 +805,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty::
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter
 # 394 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removeobject LOCALID_BALL_TOTODILE
-# 395 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 396 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile
@@ -800,13 +820,19 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty::
 	end
 # 401 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 402 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToPC::
 # 403 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter
 # 404 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removeobject LOCALID_BALL_TOTODILE
-# 405 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToPC_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 406 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_TotodileTransferredToPC
@@ -818,7 +844,11 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToPC::
 	end
 # 410 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 411 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_TotodileTransferredToPC
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_TotodileTransferredToPC::
 # 412 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_TransferredToPC
@@ -868,7 +898,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty::
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter
 # 435 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removeobject LOCALID_BALL_CHIKORITA
-# 436 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 437 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedChikorita
@@ -882,13 +913,19 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty::
 	end
 # 442 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 443 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty_Nuzlocke::
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedChikorita
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToPC::
 # 444 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter
 # 445 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	removeobject LOCALID_BALL_CHIKORITA
-# 446 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
+	goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToPC_Nuzlocke
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 # 447 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_ChikoritaTransferredToPC
@@ -900,7 +937,11 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToPC::
 	end
 # 451 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 452 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToPC_Nuzlocke::
+	call Common_EventScript_NameReceivedBoxMon
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ChikoritaTransferredToPC
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_ChikoritaTransferredToPC::
 # 453 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	call Common_EventScript_TransferredToPC
@@ -1436,7 +1477,10 @@ LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
 	.string "give a nickname to that {STR_VAR_1}?$"
 # 719 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 
-# 720 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon_Nuzlocke:
+	.string "PROF. BIRCH: While you're at it, why not\n"
+	.string "give a nickname to that {STR_VAR_1}?\p$"
+
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 # 721 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	.string "PROF. BIRCH: If you work at POKéMON\n"
