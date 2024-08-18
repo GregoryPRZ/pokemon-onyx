@@ -1956,9 +1956,9 @@ static void DrawChoices_Challenges_OneTypeChallenge(int selection, int y)
     else if (n == NUMBER_OF_MON_TYPES-1)
         StringCopyPadded(gStringVar1, sText_Random, 0, 15);
     else if (n >= TYPE_MYSTERY)
-        StringCopyPadded(gStringVar1, gTypeNames[n+1], 0, 10);
+        StringCopyPadded(gStringVar1, gTypesInfo[n+1].name, 0, 10);
     else
-        StringCopyPadded(gStringVar1, gTypeNames[n], 0, 10);
+        StringCopyPadded(gStringVar1, gTypesInfo[n].name, 0, 10);
 
     DrawOptionMenuChoice(gStringVar1, 104, y, 1, active);
 }

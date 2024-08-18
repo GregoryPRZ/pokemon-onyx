@@ -301,27 +301,27 @@ enum LevelCap {
 };
 static const u8 sLevelCapTable_Normal[] = 
 {
-    [LEVEL_CAP_NO_BADGES]   = 15,
-    [LEVEL_CAP_BADGE_1]     = 19,
-    [LEVEL_CAP_BADGE_2]     = 24,
-    [LEVEL_CAP_BADGE_3]     = 29,
-    [LEVEL_CAP_BADGE_4]     = 31,
-    [LEVEL_CAP_BADGE_5]     = 33,
-    [LEVEL_CAP_BADGE_6]     = 42,
-    [LEVEL_CAP_BADGE_7]     = 46,
-    [LEVEL_CAP_BADGE_8]     = 58,
+    [LEVEL_CAP_NO_BADGES]   = 16,
+    [LEVEL_CAP_BADGE_1]     = 24,
+    [LEVEL_CAP_BADGE_2]     = 32,
+    [LEVEL_CAP_BADGE_3]     = 40,
+    [LEVEL_CAP_BADGE_4]     = 42,
+    [LEVEL_CAP_BADGE_5]     = 54,
+    [LEVEL_CAP_BADGE_6]     = 64,
+    [LEVEL_CAP_BADGE_7]     = 72,
+    [LEVEL_CAP_BADGE_8]     = 85,
 };
 static const u8 sLevelCapTable_Hard[] = 
 {
-    [LEVEL_CAP_NO_BADGES]   = 12,
-    [LEVEL_CAP_BADGE_1]     = 16,
-    [LEVEL_CAP_BADGE_2]     = 20,
-    [LEVEL_CAP_BADGE_3]     = 24,
-    [LEVEL_CAP_BADGE_4]     = 27,
-    [LEVEL_CAP_BADGE_5]     = 29,
-    [LEVEL_CAP_BADGE_6]     = 41,
-    [LEVEL_CAP_BADGE_7]     = 41,
-    [LEVEL_CAP_BADGE_8]     = 55,
+    [LEVEL_CAP_NO_BADGES]   = 15,
+    [LEVEL_CAP_BADGE_1]     = 22,
+    [LEVEL_CAP_BADGE_2]     = 30,
+    [LEVEL_CAP_BADGE_3]     = 38,
+    [LEVEL_CAP_BADGE_4]     = 40,
+    [LEVEL_CAP_BADGE_5]     = 52,
+    [LEVEL_CAP_BADGE_6]     = 62,
+    [LEVEL_CAP_BADGE_7]     = 70,
+    [LEVEL_CAP_BADGE_8]     = 83,
 };
 #define TX_CHALLENGE_LEVEL_CAP_DEBUG 0
 u8 GetCurrentPartyLevelCap(void)
