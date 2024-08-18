@@ -365,6 +365,7 @@ SECTIONS {
         src/day_night.o(.text);
 		src/ui_stat_editor.o(.text);
         src/ui_main_menu.o(.text);
+        src/ui_startmenu_full.o(.text);
         src/dexnav.o(.text);
         src/tx_rac_menu.o(.text);
         src/tx_randomizer_and_challenges.o(.text);
@@ -743,6 +744,7 @@ SECTIONS {
         src/day_night.o(.rodata);
 		src/ui_stat_editor.o(.rodata);
         src/ui_main_menu.o(.rodata);
+        src/ui_startmenu_full.o(.rodata);
         src/dexnav.o(.rodata);
         src/tx_rac_menu.o(.rodata);
         src/tx_randomizer_and_challenges.o(.rodata);
