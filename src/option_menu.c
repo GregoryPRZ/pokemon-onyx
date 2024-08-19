@@ -557,7 +557,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             break;
         case MENUITEM_FONT:
             previousOption = gTasks[taskId].tFont;
-            gTasks[taskId].tFont = Damage_ProcessInput(gTasks[taskId].tFont);
+            gTasks[taskId].tFont = Font_ProcessInput(gTasks[taskId].tFont);
 
             if (previousOption != gTasks[taskId].tFont)
                 Font_DrawChoices(gTasks[taskId].tFont);
