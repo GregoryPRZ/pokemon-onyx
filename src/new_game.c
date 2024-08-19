@@ -99,6 +99,7 @@ static void SetDefaultOptions(void)
     VarSet(VAR_BATTLE_SPEED, OPTIONS_BATTLE_SCENE_1X);
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     gSaveBlock2Ptr->optionsMusic = OPTIONS_MUSIC_HOENN;
+    gSaveBlock2Ptr->optionsCurrentFont = 0;
 }
 
 static void ClearPokedexFlags(void)

@@ -31,6 +31,7 @@
 #define tMusic data[7]
 #define tStats data[8]
 #define tDamage data[9]
+#define tFont data[10]
 
 // Menu items Pg1
 enum
@@ -51,6 +52,7 @@ enum
     MENUITEM_MUSIC,
     MENUITEM_STAT,
     MENUITEM_DAMAGE,
+    MENUITEM_FONT,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -74,6 +76,7 @@ enum
 #define YPOS_MUSIC        (MENUITEM_MUSIC * 16)
 #define YPOS_STAT         (MENUITEM_STAT * 16)
 #define YPOS_DAMAGE       (MENUITEM_DAMAGE * 16)
+#define YPOS_FONT         (MENUITEM_FONT * 16)
 #define PAGE_COUNT  2
 
 static void Task_OptionMenuFadeIn(u8 taskId);
@@ -93,6 +96,8 @@ static u8   Damage_ProcessInput(u8 selection);
 static void Damage_DrawChoices(u8 selection);
 static u8   StatEditor_ProcessInput(u8 selection);
 static void StatEditor_DrawChoices(u8 selection);
+static u8   Font_ProcessInput(u8 selection);
+static void Font_DrawChoices(u8 selection);
 static u8   Music_ProcessInput(u8 selection);
 static void Music_DrawChoices(u8 selection);
 static u8 Sound_ProcessInput(u8 selection);
@@ -128,6 +133,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
     [MENUITEM_MUSIC]        = gText_Music,
     [MENUITEM_STAT]        = gText_Stat_Editor,
     [MENUITEM_DAMAGE]        = gText_Damage_Numbers,
+    [MENUITEM_FONT]        = gText_Font_Type,
     [MENUITEM_CANCEL_PG2]   = gText_OptionMenuCancel,
 };
 
@@ -207,6 +213,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].data[7] = gSaveBlock2Ptr->optionsMusic;
     gTasks[taskId].data[8] = FlagGet(FLAG_STAT_EDIT_ACTIVATED);
     gTasks[taskId].data[9] = FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED);
+    gTasks[taskId].data[10] = gSaveBlock2Ptr->optionsCurrentFont;
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -228,6 +235,7 @@ static void DrawOptionsPg2(u8 taskId)
     Music_DrawChoices(gTasks[taskId].data[7]);
     StatEditor_DrawChoices(gTasks[taskId].data[8]);
     Damage_DrawChoices(gTasks[taskId].data[9]);
+    Font_DrawChoices(gTasks[taskId].data[10]);
     HighlightOptionMenuItem(gTasks[taskId].data[0]);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -547,6 +555,13 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             if (previousOption != gTasks[taskId].tDamage)
                 Damage_DrawChoices(gTasks[taskId].tDamage);
             break;
+        case MENUITEM_FONT:
+            previousOption = gTasks[taskId].tFont;
+            gTasks[taskId].tFont = Damage_ProcessInput(gTasks[taskId].tFont);
+
+            if (previousOption != gTasks[taskId].tFont)
+                Font_DrawChoices(gTasks[taskId].tFont);
+            break;
         default:
             return;
         }
@@ -573,6 +588,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsMusic = gTasks[taskId].tMusic;
     gTasks[taskId].data[8] == 0 ? FlagClear(FLAG_STAT_EDIT_ACTIVATED) : FlagSet(FLAG_STAT_EDIT_ACTIVATED);
     gTasks[taskId].data[9] == 0 ? FlagClear(FLAG_DAMAGE_NUMBERS_ACTIVATED) : FlagSet(FLAG_DAMAGE_NUMBERS_ACTIVATED);
+    gSaveBlock2Ptr->optionsCurrentFont = gTasks[taskId].tFont;
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -809,7 +825,30 @@ static void Damage_DrawChoices(u8 selection)
     styles[selection] = 1;
 
     DrawOptionMenuChoice(gText_DamageNumbersOff, 104, YPOS_DAMAGE, styles[0]);
-    DrawOptionMenuChoice(gText_DamageNumbersOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_DamageNumbersOn, 198), YPOS_DAMAGE, styles[1]);
+    DrawOptionMenuChoice(gText_DamageNumbersOn, GetStringRightAlignXOffset(FONT_NORMAL, gText_DamageNumbersOn, 174), YPOS_DAMAGE, styles[1]);
+}
+
+static u8 Font_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    {
+        selection ^= 1;
+        sArrowPressed = TRUE;
+    }
+
+    return selection;
+}
+
+static void Font_DrawChoices(u8 selection)
+{
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_FontFireRed, 104, YPOS_FONT, styles[0]);
+    DrawOptionMenuChoice(gText_FontEmerald, GetStringRightAlignXOffset(FONT_NORMAL, gText_FontEmerald, 174), YPOS_FONT, styles[1]);
 }
 
 static u8 FrameType_ProcessInput(u8 selection)
