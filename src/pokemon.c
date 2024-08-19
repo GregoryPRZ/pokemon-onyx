@@ -3545,10 +3545,12 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     if (gSaveBlock1Ptr->tx_Random_Abilities) //tx_randomizer_and_challenges
     {
         species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_ABILITY, 0);
-        if (gSpeciesInfo[species].abilities[1] == ABILITY_NONE)
+        if (gSpeciesInfo[species].abilities[1] == ABILITY_NONE || gSpeciesInfo[species].abilities[2] == ABILITY_NONE)
             abilityNum = 0;
-        else
+        else if (gSpeciesInfo[species].abilities[0] == ABILITY_NONE || gSpeciesInfo[species].abilities[2] == ABILITY_NONE)
             abilityNum = 1;
+        else if (gSpeciesInfo[species].abilities[0] == ABILITY_NONE || gSpeciesInfo[species].abilities[1] == ABILITY_NONE)
+            abilityNum = 2;
     }
 
     if (abilityNum < NUM_ABILITY_SLOTS)
@@ -5744,7 +5746,6 @@ u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves)
 
     for (i = 0; i < MAX_LEVEL_UP_MOVES && learnset[i].move != LEVEL_UP_MOVE_END; i++)
     {
-        moves[numMoves++] = learnset[i].move;
         //tx_randomizer_and_challenges
         if (gSaveBlock1Ptr->tx_Random_Moves) //tx_randomizer_and_challenges
             moves[numMoves++] = GetRandomMove(learnset[i].move, species);
