@@ -320,6 +320,8 @@ extern const u8 gText_DamageNumbersOff[];
 extern const u8 gText_DamageNumbersOn[];
 extern const u8 gText_MusicHoenn[];
 extern const u8 gText_MusicSinnoh[];
+extern const u8 gText_FontFireRed[];
+extern const u8 gText_FontEmerald[];
 extern const u8 gText_Option[];
 extern const u8 gText_OptionMenu[];
 extern const u8 gText_SmallDot[];
@@ -335,6 +337,7 @@ extern const u8 gText_ButtonMode[];
 extern const u8 gText_Music[];
 extern const u8 gText_Stat_Editor[];
 extern const u8 gText_Damage_Numbers[];
+extern const u8 gText_Font_Type[];
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];
 
