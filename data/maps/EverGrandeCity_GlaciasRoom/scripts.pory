@@ -40,23 +40,40 @@ EverGrandeCity_GlaciasRoom_EventScript_CloseDoor::
 EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	createfieldmugshot MUGSHOT_GLACIA, EMOTE_NORMAL
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	removefieldmugshot
 	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
 
 EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech::
+	createfieldmugshot MUGSHOT_GLACIA, EMOTE_NORMAL
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	removefieldmugshot
 	release
 	end
 
 EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	createfieldmugshot MUGSHOT_GLACIA, EMOTE_NORMAL
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	removefieldmugshot
 	release
+	end
+
+EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch::
+	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	createfieldmugshot MUGSHOT_GLACIA, EMOTE_NORMAL
+	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	removefieldmugshot
+	trainerbattle_no_intro TRAINER_GLACIA_2, EverGrandeCity_GlaciasRoom_Text_Defeat
+	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
 	end
 
 EverGrandeCity_GlaciasRoom_Text_IntroSpeech:

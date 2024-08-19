@@ -1901,6 +1901,8 @@ const u32 gItemIconPalette_DevonScope[] = INCBIN_U32("graphics/items/icon_palett
 const u32 gItemIcon_BasementKey[] = INCBIN_U32("graphics/items/icons/basement_key.4bpp.lz");
 const u32 gItemIconPalette_OldKey[] = INCBIN_U32("graphics/items/icon_palettes/old_key.gbapal.lz");
 
+// TMs/HMs
+
 const u32 gItemIcon_Scanner[] = INCBIN_U32("graphics/items/icons/scanner.4bpp.lz");
 const u32 gItemIconPalette_Scanner[] = INCBIN_U32("graphics/items/icon_palettes/scanner.gbapal.lz");
 
@@ -2113,4 +2115,9 @@ const u32 gItemIcon_Pokevial9[] = INCBIN_U32("graphics/items/icons/pokevial9.4bp
 const u32 gItemIcon_Pokevial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
 
 const u32 gItemIconPalette_Pokevial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal.lz");
+
+const u32 gItemIcon_InfiniteCandy[] = INCBIN_U32("graphics/items/icons/infinite_candy.4bpp.lz");
+const u32 gItemIconPalette_InfiniteCandy[] = INCBIN_U32("graphics/items/icon_palettes/infinite_candy.gbapal.lz");
+
+const u32 gItemIconPalette_InfiniteRepel[] = INCBIN_U32("graphics/items/icon_palettes/infinite_repel.gbapal.lz");
 //End Pokevial Branch

@@ -8,6 +8,7 @@
 #include "battle_z_move.h"
 #include "constants/moves.h"
 #include "constants/abilities.h"
+#include "battle_damage_numbers.h"
 #include "item.h"
 #include "util.h"
 #include "pokemon.h"
@@ -2244,6 +2245,12 @@ static void Cmd_healthbarupdate(void)
     if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
+		if (!DN_CONFIG_ONLY_ATTACK_DAMAGE && FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+            if(FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+                PlaySE(SE_CONTEST_ICON_CHANGE);
+			    ShowDamageNumbers(battler);
+            }
+        }
 
         if (DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove) && gDisableStructs[battler].substituteHP && !(gHitMarker & HITMARKER_IGNORE_SUBSTITUTE))
         {
@@ -5712,10 +5719,10 @@ static void Cmd_moveend(void)
                         gBattlescriptCurrInstr = BattleScript_TargetBurnHeal;
                         break;
                     case STATUS1_FREEZE:
-                        gBattlescriptCurrInstr = BattleScript_FrostbiteHealedViaFireMove;
+                        gBattlescriptCurrInstr = BattleScript_DefrostedViaFireMove;
                         break;
                     case STATUS1_FROSTBITE:
-                        gBattlescriptCurrInstr = BattleScript_DefrostedViaFireMove;
+                        gBattlescriptCurrInstr = BattleScript_FrostbiteHealedViaFireMove;
                         break;
                     case STATUS1_POISON:
                     case STATUS1_TOXIC_POISON:
@@ -7662,6 +7669,12 @@ static void Cmd_hitanimation(void)
         BtlController_EmitHitAnimation(battler, BUFFER_A);
         MarkBattlerForControllerExec(battler);
         gBattlescriptCurrInstr = cmd->nextInstr;
+		if (DN_CONFIG_ONLY_ATTACK_DAMAGE && FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+            if(FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
+                PlaySE(SE_CONTEST_ICON_CHANGE);
+			    ShowDamageNumbers(battler);
+            }
+        }
     }
     else
     {
@@ -11748,16 +11761,6 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             }
             return STAT_CHANGE_DIDNT_WORK;
         }
-        else if (battlerAbility == ABILITY_SHIELD_DUST && flags == 0)
-        {
-            RecordAbilityBattle(battler, ABILITY_SHIELD_DUST);
-            return STAT_CHANGE_DIDNT_WORK;
-        }
-        else if (flags == 0 && battlerHoldEffect == HOLD_EFFECT_COVERT_CLOAK)
-        {
-            RecordItemEffectBattle(battler, HOLD_EFFECT_COVERT_CLOAK);
-            return STAT_CHANGE_DIDNT_WORK;
-        }
         else // try to decrease
         {
             statValue = -GET_STAT_BUFF_VALUE(statValue);
@@ -13184,7 +13187,7 @@ static void Cmd_healpartystatus(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL;
 
         if (GetBattlerAbility(gBattlerAttacker) != ABILITY_SOUNDPROOF
-         || B_HEAL_BELL_SOUNDPROOF == GEN_5 || B_HEAL_BELL_SOUNDPROOF >= GEN_9)
+         || B_HEAL_BELL_SOUNDPROOF == GEN_5 || B_HEAL_BELL_SOUNDPROOF >= GEN_8)
         {
             gBattleMons[gBattlerAttacker].status1 = 0;
             gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
@@ -13224,7 +13227,7 @@ static void Cmd_healpartystatus(void)
                 bool32 isAttacker = gBattlerPartyIndexes[gBattlerAttacker] == i;
                 bool32 isDoublesPartner = gBattlerPartyIndexes[partner] == i && IsBattlerAlive(partner);
 
-                if (B_HEAL_BELL_SOUNDPROOF == GEN_5 || (isAttacker && B_HEAL_BELL_SOUNDPROOF >= GEN_9))
+                if (B_HEAL_BELL_SOUNDPROOF == GEN_5 || (isAttacker && B_HEAL_BELL_SOUNDPROOF >= GEN_8))
                     ability = ABILITY_NONE;
                 else if (B_HEAL_BELL_SOUNDPROOF > GEN_5 && !isAttacker && !isDoublesPartner)
                     ability = ABILITY_NONE;
@@ -16940,7 +16943,7 @@ static void TryUpdateEvolutionTracker(u32 evolutionMethod, u32 upAmount, u16 use
                             val = 0;
                         SetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]], MON_DATA_EVOLUTION_TRACKER, &val);
                         break;
-                    case EVO_DEFEAT_WITH_ITEM:
+                    case EVO_DEFEAT_THREE_WITH_ITEM:
                         if (GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_SPECIES) == GetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]], MON_DATA_SPECIES)
                          && GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HELD_ITEM) == evolutions[i].param)
                             SetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]], MON_DATA_EVOLUTION_TRACKER, &val);
@@ -16973,7 +16976,7 @@ void BS_TryUpdateRecoilTracker(void)
 void BS_TryUpdateLeadersCrestTracker(void)
 {
     NATIVE_ARGS();
-    TryUpdateEvolutionTracker(EVO_DEFEAT_WITH_ITEM, 1, MOVE_NONE);
+    TryUpdateEvolutionTracker(EVO_DEFEAT_THREE_WITH_ITEM, 1, MOVE_NONE);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

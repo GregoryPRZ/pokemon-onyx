@@ -1573,7 +1573,6 @@ extern const u32 gItemIcon_TeachyTV[];
 extern const u32 gItemIconPalette_TeachyTV[];
 extern const u32 gItemIcon_EonFlute[];
 extern const u32 gItemIconPalette_EonFlute[];
-
 // Story Key Items
 extern const u32 gItemIcon_SSTicket[];
 extern const u32 gItemIconPalette_SSTicket[];
@@ -1755,6 +1754,11 @@ extern const u32 gItemIcon_Pokevial[];
 
 extern const u32 gItemIconPalette_Pokevial[];
 // End Pokevial Branch
+
+extern const u32 gItemIcon_InfiniteCandy[];
+extern const u32 gItemIconPalette_InfiniteCandy[];
+
+extern const u32 gItemIconPalette_InfiniteRepel[];
 
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
@@ -2011,6 +2015,9 @@ extern const u32 gShopMenu_Gfx[];
 extern const u32 gShopMenu_Tilemap[];
 extern const u32 gShopMenu_Pal[];
 extern const u32 gShopMenuMoney_Gfx[];
+extern const u32 gShopMenu_ScrollGfx[];
+extern const u32 gShopMenu_ScrollTilemap[];
+
 
 extern const u32 gBattleInterface_BallStatusBarGfx[];
 extern const u8 gBattleInterface_BallDisplayGfx[];
@@ -2894,6 +2901,11 @@ extern const u32 gBattleAnimSpriteGfx_SyrupShell[];
 extern const u32 gBattleAnimSpriteGfx_SyrupSplat[];
 extern const u32 gBattleAnimSpritePal_SyrupRed[];
 extern const u32 gBattleAnimSpritePal_SyrupYellow[];
+extern const u32 gBattleAnimSpriteGfx_IvyCudgel[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelGrass[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelFire[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelRock[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelWater[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];

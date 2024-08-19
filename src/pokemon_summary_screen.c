@@ -1847,7 +1847,7 @@ static void ChangePage(u8 taskId, s8 delta)
     else if (delta == 1 && sMonSummaryScreen->currPageIndex == sMonSummaryScreen->maxPageIndex)
         return;
 
-    PlaySE(SE_M_BUBBLE2);
+    PlaySE(SE_MENU_CHANGE);
     ClearPageWindowTilemaps(sMonSummaryScreen->currPageIndex);
     sMonSummaryScreen->currPageIndex += delta;
     data[0] = 0;

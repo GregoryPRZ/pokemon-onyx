@@ -661,14 +661,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-		if (gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_HOENN)
-			m4aSongNumStart(MUS_TITLE);
-		else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_SINNOH)
-			m4aSongNumStart(MUS_DP_TITLE);
-    	else if(gSaveBlock2Ptr->optionsMusic == OPTIONS_MUSIC_JOHTO)
-			m4aSongNumStart(MUS_HG_TITLE);
-		else 
-			m4aSongNumStart(MUS_TITLE);
+		m4aSongNumStart(MUS_ONYX_TITLE);
         gMain.state = 5;
         break;
     case 5:
@@ -791,6 +784,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON) || JOY_NEW(START_BUTTON))
     {
+        PlaySE(SE_DP_START);
         FadeOutBGM(4);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_GoToMainMenu);

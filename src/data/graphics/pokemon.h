@@ -1030,6 +1030,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gShinyOverworldPalette_Clefable[] = INCBIN_U32("graphics/pokemon/clefable/overworld_shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_MEGA_EVOLUTIONS
+   const u32 gMonFrontPic_ClefableMega[] = INCBIN_U32("graphics/pokemon/clefable/mega/front.4bpp.lz");
+   const u32 gMonBackPic_ClefableMega[] = INCBIN_U32("graphics/pokemon/clefable/mega/back.4bpp.lz");
+   const u32 gMonPalette_ClefableMega[] = INCBIN_U32("graphics/pokemon/clefable/mega/normal.gbapal.lz");
+   const u32 gMonShinyPalette_ClefableMega[] = INCBIN_U32("graphics/pokemon/clefable/mega/shiny.gbapal.lz");
+#endif
 #endif //P_FAMILY_CLEFAIRY
 
 #if P_FAMILY_VULPIX
@@ -6347,8 +6353,14 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u32 gOverworldPalette_Raikou[] = INCBIN_U32("graphics/pokemon/raikou/overworld_normal.gbapal.lz");
     const u32 gShinyOverworldPalette_Raikou[] = INCBIN_U32("graphics/pokemon/raikou/overworld_shiny.gbapal.lz");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_RaikouMega[] = INCBIN_U32("graphics/pokemon/raikou/mega/front.4bpp.lz");
+    const u32 gMonPalette_RaikouMega[] = INCBIN_U32("graphics/pokemon/raikou/mega/normal.gbapal.lz");
+    const u32 gMonBackPic_RaikouMega[] = INCBIN_U32("graphics/pokemon/raikou/mega/back.4bpp.lz");
+    const u32 gMonShinyPalette_RaikouMega[] = INCBIN_U32("graphics/pokemon/raikou/mega/shiny.gbapal.lz");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_RAIKOU
 
 #if P_FAMILY_ENTEI

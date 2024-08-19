@@ -119,155 +119,155 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 60 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
 # 61 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 # 62 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	closemessage
+	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
 # 63 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	savebgm MUS_DUMMY
+	removefieldmugshot
 # 64 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	fadedefaultbgm
-# 65 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 66 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	removeobject LOCALID_ARCHIE
-# 67 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	removeobject LOCALID_GRUNT_1
-# 68 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	removeobject LOCALID_GRUNT_2
-# 69 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 70 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	delay 30
-# 71 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS
-# 72 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-# 73 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	waitmovement 0
-# 74 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs, MSGBOX_DEFAULT
-# 75 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setvar VAR_0x8004, ITEM_DEVON_PARTS
-# 76 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	call Common_EventScript_PlayerHandedOverTheItem
-# 77 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
-# 78 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	closemessage
-# 79 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 65 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	savebgm MUS_DUMMY
+# 66 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	fadedefaultbgm
+# 67 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 80 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	playfanfare MUS_HEAL
-# 81 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	waitfanfare
-# 82 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	special HealPlayerParty
-	callnative UpdateFollowingPokemon
-	removeobject LOCALID_CAPT_STERN
-# 84 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setflag FLAG_HIDE_ROUTE_110_TEAM_AQUA
-# 85 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	call_if_eq VAR_REGISTER_BIRCH_STATE, 0, SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch
-# 86 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setflag FLAG_DELIVERED_DEVON_GOODS
-# 87 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	clearflag FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE
-# 88 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setflag FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE
-# 89 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
-# 90 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 68 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	removeobject LOCALID_ARCHIE
+# 69 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	removeobject LOCALID_GRUNT_1
+# 70 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	removeobject LOCALID_GRUNT_2
+# 71 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
+# 72 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	delay 30
+# 73 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	setflag FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS
+# 74 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+# 75 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	waitmovement 0
+# 76 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs, MSGBOX_DEFAULT
+# 77 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	setvar VAR_0x8004, ITEM_DEVON_PARTS
+# 78 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	call Common_EventScript_PlayerHandedOverTheItem
+# 79 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
+# 80 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	closemessage
+# 81 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 82 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	playfanfare MUS_HEAL
+# 83 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	waitfanfare
+# 84 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	special HealPlayerParty
+# 85 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	removeobject LOCALID_CAPT_STERN
+# 86 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	setflag FLAG_HIDE_ROUTE_110_TEAM_AQUA
+# 87 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	call_if_eq VAR_REGISTER_BIRCH_STATE, 0, SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch
+# 88 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	setflag FLAG_DELIVERED_DEVON_GOODS
+# 89 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	clearflag FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE
+# 90 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	setflag FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE
 # 91 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	release
+	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
 # 92 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+	fadescreen FADE_FROM_BLACK
 # 93 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	release
 # 94 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch::
+	end
 # 95 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	setvar VAR_REGISTER_BIRCH_STATE, 1
+
 # 96 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	return
+SlateportCity_OceanicMuseum_2F_EventScript_ReadyRegisterBirch::
 # 97 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	setvar VAR_REGISTER_BIRCH_STATE, 1
 # 98 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts::
+	return
 # 99 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+
 # 100 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	waitmovement 0
+SlateportCity_OceanicMuseum_2F_EventScript_PlayerFaceGrunts::
 # 101 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	return
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 # 102 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	waitmovement 0
 # 103 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_SternFaceGrunts::
+	return
 # 104 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFasterLeft
+
 # 105 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	waitmovement 0
+SlateportCity_OceanicMuseum_2F_EventScript_SternFaceGrunts::
 # 106 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	return
+	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFasterLeft
 # 107 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	waitmovement 0
 # 108 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntSouth::
+	return
 # 109 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntSouth
+
 # 110 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	waitmovement 0
+SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntSouth::
 # 111 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	return
+	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntSouth
 # 112 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
-# 113 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntWest::
-# 114 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntWest
-# 115 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitmovement 0
-# 116 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 113 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	return
+# 114 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+
+# 115 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_EventScript_PlayerApproachGruntWest::
+# 116 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntWest
 # 117 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	waitmovement 0
 # 118 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntSouth:
+	return
 # 119 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
+
 # 120 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntSouth:
 # 121 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_in_place_faster_left
+	walk_left
 # 122 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
-# 123 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
-# 124 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntWest:
-# 125 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_up
-# 126 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
-# 127 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
-# 128 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_down
-# 129 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 123 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_in_place_faster_left
-# 130 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 124 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	step_end
-# 131 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 125 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 
-# 132 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_Unused:
-# 133 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 126 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_Movement_PlayerApproachGruntWest:
+# 127 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_up
+# 128 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_left
+# 129 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_left
+# 130 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_down
+# 131 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_in_place_faster_left
+# 132 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	step_end
+# 133 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+
 # 134 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
+SlateportCity_OceanicMuseum_2F_Movement_Unused:
 # 135 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
+	walk_up
 # 136 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_left
 # 137 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -275,37 +275,37 @@ SlateportCity_OceanicMuseum_2F_Movement_Unused:
 # 138 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_left
 # 139 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_up
+	walk_left
 # 140 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_up
+	walk_left
 # 141 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
+	walk_up
 # 142 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
+	walk_up
 # 143 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_up
+	walk_left
 # 144 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_up
+	walk_left
 # 145 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	delay_8
+	walk_up
 # 146 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+	walk_up
 # 147 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	delay_8
 # 148 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer:
-# 149 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
-# 150 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	step_end
-# 151 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 149 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 
+# 150 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer:
+# 151 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_right
 # 152 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_ArchieEnter:
+	step_end
 # 153 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+
 # 154 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+SlateportCity_OceanicMuseum_2F_Movement_ArchieEnter:
 # 155 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_down
 # 156 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -313,103 +313,103 @@ SlateportCity_OceanicMuseum_2F_Movement_ArchieEnter:
 # 157 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_down
 # 158 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+	walk_down
 # 159 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+	walk_down
 # 160 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_right
 # 161 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_right
 # 162 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+	walk_right
 # 163 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	walk_right
 # 164 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_GruntApproachToBattle:
+	step_end
 # 165 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+
 # 166 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+SlateportCity_OceanicMuseum_2F_Movement_GruntApproachToBattle:
 # 167 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
-# 168 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_FirstGruntEnter:
-# 169 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
-# 170 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_right
-# 171 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_in_place_faster_down
-# 172 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 168 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	step_end
-# 173 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 169 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 
+# 170 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_Movement_FirstGruntEnter:
+# 171 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_down
+# 172 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_right
+# 173 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_in_place_faster_down
 # 174 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_FirstGruntApproach:
+	step_end
 # 175 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+
 # 176 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+SlateportCity_OceanicMuseum_2F_Movement_FirstGruntApproach:
 # 177 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_down
 # 178 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+	walk_down
 # 179 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+	walk_down
 # 180 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_right
 # 181 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+	walk_right
 # 182 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	walk_right
 # 183 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_GruntDefeated:
+	step_end
 # 184 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	lock_facing_direction
+
 # 185 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_left
+SlateportCity_OceanicMuseum_2F_Movement_GruntDefeated:
 # 186 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	unlock_facing_direction
+	lock_facing_direction
 # 187 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+	walk_left
 # 188 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	unlock_facing_direction
 # 189 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_SecondGruntEnter:
-# 190 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
-# 191 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	step_end
-# 192 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+# 190 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 
+# 191 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_Movement_SecondGruntEnter:
+# 192 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	walk_down
 # 193 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_SecondGruntApproach:
+	step_end
 # 194 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+
 # 195 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_down
+SlateportCity_OceanicMuseum_2F_Movement_SecondGruntApproach:
 # 196 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_down
 # 197 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_down
 # 198 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+	walk_down
 # 199 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_right
+	walk_down
 # 200 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_right
 # 201 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	walk_right
 # 202 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+	walk_right
 # 203 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	walk_right
 # 204 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Movement_GruntMoveForArchie:
+	step_end
 # 205 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	delay_16
+
 # 206 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	delay_16
+SlateportCity_OceanicMuseum_2F_Movement_GruntMoveForArchie:
 # 207 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	delay_16
 # 208 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
@@ -423,458 +423,462 @@ SlateportCity_OceanicMuseum_2F_Movement_GruntMoveForArchie:
 # 212 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	delay_16
 # 213 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	delay_8
+	delay_16
 # 214 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_fast_down
+	delay_16
 # 215 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	walk_in_place_faster_up
+	delay_8
 # 216 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	step_end
+	walk_fast_down
 # 217 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	walk_in_place_faster_up
 # 218 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_WaterQualitySample1::
+	step_end
 # 219 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1, MSGBOX_SIGN
+
 # 220 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_WaterQualitySample1::
 # 221 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1, MSGBOX_SIGN
 # 222 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_WaterQualitySample2::
+	end
 # 223 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2, MSGBOX_SIGN
+
 # 224 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_WaterQualitySample2::
 # 225 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2, MSGBOX_SIGN
 # 226 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_PressureExperiment::
+	end
 # 227 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_PressureExperiment, MSGBOX_SIGN
+
 # 228 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_PressureExperiment::
 # 229 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_PressureExperiment, MSGBOX_SIGN
 # 230 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_HoennModel::
+	end
 # 231 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_HoennModel, MSGBOX_SIGN
+
 # 232 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_HoennModel::
 # 233 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_HoennModel, MSGBOX_SIGN
 # 234 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_DeepSeawaterDisplay::
+	end
 # 235 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay, MSGBOX_SIGN
+
 # 236 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_DeepSeawaterDisplay::
 # 237 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay, MSGBOX_SIGN
 # 238 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_SurfaceSeawaterDisplay::
+	end
 # 239 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay, MSGBOX_SIGN
+
 # 240 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_SurfaceSeawaterDisplay::
 # 241 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay, MSGBOX_SIGN
 # 242 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_SSTidalReplica::
+	end
 # 243 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica, MSGBOX_SIGN
+
 # 244 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_SSTidalReplica::
 # 245 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica, MSGBOX_SIGN
 # 246 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_SubmarineReplica::
+	end
 # 247 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica, MSGBOX_SIGN
+
 # 248 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_SubmarineReplica::
 # 249 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica, MSGBOX_SIGN
 # 250 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_SubmersibleReplica::
+	end
 # 251 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica, MSGBOX_SIGN
+
 # 252 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_SubmersibleReplica::
 # 253 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica, MSGBOX_SIGN
 # 254 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_SSAnneReplica::
+	end
 # 255 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica, MSGBOX_SIGN
+
 # 256 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_SSAnneReplica::
 # 257 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica, MSGBOX_SIGN
 # 258 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron1::
+	end
 # 259 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip, MSGBOX_NPC
+
 # 260 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron1::
 # 261 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip, MSGBOX_NPC
 # 262 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron2::
+	end
 # 263 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum, MSGBOX_NPC
+
 # 264 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	end
+SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron2::
 # 265 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	msgbox SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum, MSGBOX_NPC
 # 266 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron3::
-# 267 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	lock
-# 268 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	faceplayer
-# 269 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	msgbox SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine, MSGBOX_DEFAULT
-# 270 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	closemessage
-# 271 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-# 272 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	waitmovement 0
-# 273 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	release
-# 274 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	end
+# 267 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+
+# 268 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron3::
+# 269 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	lock
+# 270 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	faceplayer
+# 271 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	msgbox SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine, MSGBOX_DEFAULT
+# 272 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	closemessage
+# 273 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+# 274 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	waitmovement 0
 # 275 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	release
 # 276 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts:
+	end
 # 277 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Yes? If you're looking for STERN,\n"
+
 # 278 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "that would be me.\p"
+SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts:
 # 279 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Ah! Those must be the parts I ordered\n"
+	.string "Yes? If you're looking for STERN,\n"
 # 280 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "from MR. STONE of DEVON.\p"
+	.string "that would be me.\p"
 # 281 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Thank you! That's great!\n"
+	.string "Ah! Those must be the parts I ordered\n"
 # 282 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "We can prepare for our expedition now.$"
+	.string "from MR. STONE of DEVON.\p"
 # 283 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Thank you! That's great!\n"
 # 284 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
+	.string "We can prepare for our expedition now.$"
 # 285 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Hehehe, hold it!\n"
+
 # 286 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "We'll take those parts!$"
+SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
 # 287 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Hehehe, hold it!\n"
 # 288 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
+	.string "We'll take those parts!$"
 # 289 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "CAPT. STERN: Wh-what?\n"
+
 # 290 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Who are you people?$"
+SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
 # 291 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "CAPT. STERN: Wh-what?\n"
 # 292 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
+	.string "Who are you people?$"
 # 293 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "We're TEAM AQUA!\p"
+
 # 294 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Our BOSS wants those parts!\n"
+SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
 # 295 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Shut your yap and fork them over!$"
+	.string "We're TEAM AQUA!\p"
 # 296 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Our BOSS wants those parts!\n"
 # 297 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat:
+	.string "Shut your yap and fork them over!$"
 # 298 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Awaaaah!\n"
+
 # 299 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "A kid beat me!$"
+SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat:
 # 300 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Awaaaah!\n"
 # 301 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious:
+	.string "A kid beat me!$"
 # 302 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Oh, man, what a disaster…\n"
+
 # 303 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "The BOSS is going to be furious…$"
+SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious:
 # 304 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Oh, man, what a disaster…\n"
 # 305 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis:
+	.string "The BOSS is going to be furious…$"
 # 306 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Humph, sniveling wimp!\n"
+
 # 307 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Let me take care of this!$"
+SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis:
 # 308 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Humph, sniveling wimp!\n"
 # 309 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat:
+	.string "Let me take care of this!$"
 # 310 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "What?!\n"
+
 # 311 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "I lost, too!$"
+SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat:
 # 312 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "What?!\n"
 # 313 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
+	.string "I lost, too!$"
 # 314 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Now what? If we don't get the parts,\n"
+
 # 315 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "we're in for it!\p"
+SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
 # 316 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Arrgh, I didn't count on being meddled\n"
+	.string "Now what? If we don't get the parts,\n"
 # 317 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "with by some meddling kid!$"
+	.string "we're in for it!\p"
 # 318 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Arrgh, I didn't count on being meddled\n"
 # 319 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong:
+	.string "with by some meddling kid!$"
 # 320 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "I came to see what was taking so\n"
+
 # 321 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "long to snatch some parts, and you\l"
+SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong:
 # 322 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "simps are held up by a mere child?$"
+	.string "I came to see what was taking so\n"
 # 323 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "long to snatch some parts, and you\l"
 # 324 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
+	.string "simps are held up by a mere child?$"
 # 325 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "We are TEAM AQUA,\n"
+
 # 326 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "and we love the sea!\p"
+SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 # 327 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "And I am TEAM AQUA's leader,\n"
+	.string "We are TEAM AQUA,\n"
 # 328 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "ARCHIE!\p"
+	.string "and we love the sea!\p"
 # 329 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "What makes you interfere with us?\p"
+	.string "And I am TEAM AQUA's leader,\n"
 # 330 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "…No! You can't be!\n"
+	.string "ARCHIE!\p"
 # 331 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "You're not one of TEAM MAGMA?\p"
+	.string "What makes you interfere with us?\p"
 # 332 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Wait, that can't be right.\n"
+	.string "…No! You can't be!\n"
 # 333 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "You're not dressed for the part.\p"
+	.string "You're not one of TEAM MAGMA?\p"
 # 334 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "… … … … … …\n"
+	.string "Wait, that can't be right.\n"
 # 335 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "… … … … … …\p"
+	.string "You're not dressed for the part.\p"
 # 336 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "POKéMON, people… All life depends on\n"
+	.string "… … … … … …\n"
 # 337 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "the sea.\p"
+	.string "… … … … … …\p"
 # 338 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "So, TEAM AQUA is dedicated to\n"
+	.string "POKéMON, people… All life depends on\n"
 # 339 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "the expansion of the sea.\p"
+	.string "the sea.\p"
 # 340 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Don't you agree? What we are doing\n"
+	.string "So, TEAM AQUA is dedicated to\n"
 # 341 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "is a magnificent undertaking.\p"
+	.string "the expansion of the sea.\p"
 # 342 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Ah, fine…\n"
+	.string "Don't you agree? What we are doing\n"
 # 343 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "You're still too young to understand\l"
+	.string "is a magnificent undertaking.\p"
 # 344 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "our noble objective.\p"
+	.string "Ah, fine…\n"
 # 345 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "But, I warn you, don't even consider\n"
+	.string "You're still too young to understand\l"
 # 346 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "interfering with our plans again.\p"
+	.string "our noble objective.\p"
 # 347 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "The consequences will cost you\n"
+	.string "But, I warn you, don't even consider\n"
 # 348 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "dearly!\p"
+	.string "interfering with our plans again.\p"
 # 349 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "And don't you forget it!$"
+	.string "The consequences will cost you\n"
 # 350 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "dearly!\p"
 # 351 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
+	.string "And don't you forget it!$"
 # 352 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "CAPT. STERN: You're…\n"
+
 # 353 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Ah, okay, you're {PLAYER}{KUN}…\p"
+SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
 # 354 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Anyway, that was a tense situation!\n"
+	.string "CAPT. STERN: You're…\n"
 # 355 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Thank you for saving us!\p"
+	.string "Ah, okay, you're {PLAYER}{KUN}…\p"
 # 356 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Oh, yes, I almost forgot that you\n"
+	.string "Anyway, that was a tense situation!\n"
 # 357 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "even brought the parts from DEVON!$"
+	.string "Thank you for saving us!\p"
 # 358 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Oh, yes, I almost forgot that you\n"
 # 359 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo:
+	.string "even brought the parts from DEVON!$"
 # 360 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "CAPT. STERN: Whoops!\n"
+
 # 361 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "There's no time to lose!\p"
+SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo:
 # 362 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "We have to set out on our ocean-floor\n"
+	.string "CAPT. STERN: Whoops!\n"
 # 363 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "expedition really soon.\p"
+	.string "There's no time to lose!\p"
 # 364 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Thanks again, but now I've got\n"
+	.string "We have to set out on our ocean-floor\n"
 # 365 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "to go!\p"
+	.string "expedition really soon.\p"
 # 366 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Feel free to wander around and check\n"
+	.string "Thanks again, but now I've got\n"
 # 367 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "out our facilities, though.$"
+	.string "to go!\p"
 # 368 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Feel free to wander around and check\n"
 # 369 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip:
+	.string "out our facilities, though.$"
 # 370 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "I saw a model of a ship here.\p"
+
 # 371 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "It reminded me of the ABANDONED SHIP\n"
+SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip:
 # 372 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "near DEWFORD TOWN…$"
+	.string "I saw a model of a ship here.\p"
 # 373 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "It reminded me of the ABANDONED SHIP\n"
 # 374 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum:
+	.string "near DEWFORD TOWN…$"
 # 375 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Don't you dare run around inside\n"
+
 # 376 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "the MUSEUM!$"
+SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum:
 # 377 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Don't you dare run around inside\n"
 # 378 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine:
+	.string "the MUSEUM!$"
 # 379 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Wow, the submarine's awesome!\n"
+
 # 380 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "I want to go for a ride!$"
+SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine:
 # 381 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Wow, the submarine's awesome!\n"
 # 382 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1:
+	.string "I want to go for a ride!$"
 # 383 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“WATER QUALITY SAMPLE 1,” the\n"
+
 # 384 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "label says.\p"
+SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample1:
 # 385 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "The sea is all connected, but the\n"
+	.string "“WATER QUALITY SAMPLE 1,” the\n"
 # 386 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "water seems to differ by region.$"
-# 387 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
-# 388 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2:
-# 389 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“WATER QUALITY SAMPLE 2,” the\n"
-# 390 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	.string "label says.\p"
+# 387 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "The sea is all connected, but the\n"
+# 388 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "water seems to differ by region.$"
+# 389 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+
+# 390 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_Text_WaterQualitySample2:
 # 391 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Does the saltiness of seawater differ\n"
+	.string "“WATER QUALITY SAMPLE 2,” the\n"
 # 392 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "by region, too?$"
+	.string "label says.\p"
 # 393 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "Does the saltiness of seawater differ\n"
 # 394 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
+	.string "by region, too?$"
 # 395 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "A rubber ball is expanding and\n"
+
 # 396 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "shrinking.\p"
+SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 # 397 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“In the sea, the weight of water itself\n"
+	.string "A rubber ball is expanding and\n"
 # 398 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "exerts pressure.\p"
+	.string "shrinking.\p"
 # 399 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“In shallow water, the pressure is not\n"
+	.string "“In the sea, the weight of water itself\n"
 # 400 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "very heavy.\p"
+	.string "exerts pressure.\p"
 # 401 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“However, in extremely deep water,\n"
+	.string "“In shallow water, the pressure is not\n"
 # 402 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "the pressure can reach even tens of\l"
+	.string "very heavy.\p"
 # 403 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "thousands of tons on a small area.”$"
+	.string "“However, in extremely deep water,\n"
 # 404 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "the pressure can reach even tens of\l"
 # 405 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_HoennModel:
+	.string "thousands of tons on a small area.”$"
 # 406 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“MODEL OF HOENN REGION”\p"
+
 # 407 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "It's a miniature diorama of the\n"
+SlateportCity_OceanicMuseum_2F_Text_HoennModel:
 # 408 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "HOENN region.\p"
+	.string "“MODEL OF HOENN REGION”\p"
 # 409 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "Where is LITTLEROOT TOWN on this?$"
+	.string "It's a miniature diorama of the\n"
 # 410 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "HOENN region.\p"
 # 411 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:
+	.string "Where is LITTLEROOT TOWN on this?$"
 # 412 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "It's a display on the flow of seawater.\p"
+
 # 413 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“Near the bottom of the sea, water\n"
+SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:
 # 414 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "flows due to differences in such\l"
-# 415 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "factors as temperature and salinity.”$"
-# 416 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
-# 417 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay:
-# 418 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	.string "It's a display on the flow of seawater.\p"
+# 415 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "“Near the bottom of the sea, water\n"
+# 416 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "flows due to differences in such\l"
+# 417 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "factors as temperature and salinity.”$"
+# 418 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+
 # 419 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“Toward the surface, seawater flows\n"
+SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay:
 # 420 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "as currents driven by the winds.”$"
+	.string "It's a display on the flow of seawater.\p"
 # 421 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "“Toward the surface, seawater flows\n"
 # 422 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica:
+	.string "as currents driven by the winds.”$"
 # 423 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“THE FERRY S.S. TIDAL\p"
+
 # 424 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“A scale replica of the ship under\n"
+SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica:
 # 425 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "construction at STERN'S SHIPYARD.”$"
+	.string "“THE FERRY S.S. TIDAL\p"
 # 426 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "“A scale replica of the ship under\n"
 # 427 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica:
+	.string "construction at STERN'S SHIPYARD.”$"
 # 428 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“SUBMARINE EXPLORER 1\p"
+
 # 429 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“A replica of the high-performance\n"
+SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica:
 # 430 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "ocean floor exploration submarine.”$"
+	.string "“SUBMARINE EXPLORER 1\p"
 # 431 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-
+	.string "“A replica of the high-performance\n"
 # 432 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica:
+	.string "ocean floor exploration submarine.”$"
 # 433 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“SUBMERSIBLE POD\p"
-# 434 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“A replica of a compact, unmanned\n"
-# 435 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "pod for seafloor exploration.”$"
-# 436 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 
+# 434 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+SlateportCity_OceanicMuseum_2F_Text_SumbersibleReplica:
+# 435 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "“SUBMERSIBLE POD\p"
+# 436 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "“A replica of a compact, unmanned\n"
 # 437 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica:
+	.string "pod for seafloor exploration.”$"
 # 438 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“S.S. ANNE\p"
+
 # 439 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	.string "“A replica of the luxury liner that\n"
+SlateportCity_OceanicMuseum_2F_Text_SSAnneReplica:
 # 440 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "“S.S. ANNE\p"
+# 441 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
+	.string "“A replica of the luxury liner that\n"
+# 442 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	.string "circles the globe.”$"

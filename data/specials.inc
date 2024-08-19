@@ -560,3 +560,4 @@ gSpecials::
     def_special PokevialRefill
     //End Pokevial Branch
 	def_special GetDayOrNight
+	def_special FieldLoadFlyMap

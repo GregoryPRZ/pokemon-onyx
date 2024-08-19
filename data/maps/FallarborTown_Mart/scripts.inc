@@ -41,92 +41,94 @@ FallarborTown_Mart_Pokemart:
 # 21 "data/maps/FallarborTown_Mart/scripts.pory"
 	.2byte ITEM_ESCAPE_ROPE
 # 22 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_SUPER_LURE
 # 23 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_X_SP_ATK
+	.2byte ITEM_SUPER_REPEL
 # 24 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_SP_ATK
 # 25 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_SPEED
 # 26 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_X_ATTACK
 # 27 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_X_DEFENSE
 # 28 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_GUARD_SPEC
+	.2byte ITEM_DIRE_HIT
 # 29 "data/maps/FallarborTown_Mart/scripts.pory"
-	.2byte ITEM_NONE
+	.2byte ITEM_GUARD_SPEC
 # 30 "data/maps/FallarborTown_Mart/scripts.pory"
-	release
+	.2byte ITEM_NONE
 # 31 "data/maps/FallarborTown_Mart/scripts.pory"
-	end
-# 32 "data/maps/FallarborTown_Mart/scripts.pory"
-
-# 33 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_EventScript_Woman::
-# 34 "data/maps/FallarborTown_Mart/scripts.pory"
-	msgbox FallarborTown_Mart_Text_DecidingSkittyEvolve, MSGBOX_NPC
-# 35 "data/maps/FallarborTown_Mart/scripts.pory"
-	end
-# 36 "data/maps/FallarborTown_Mart/scripts.pory"
-
-# 37 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_EventScript_PokefanM::
-# 38 "data/maps/FallarborTown_Mart/scripts.pory"
-	msgbox FallarborTown_Mart_Text_SellNuggetIFound, MSGBOX_NPC
-# 39 "data/maps/FallarborTown_Mart/scripts.pory"
-	end
-# 40 "data/maps/FallarborTown_Mart/scripts.pory"
-
-# 41 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_EventScript_Skitty::
-# 42 "data/maps/FallarborTown_Mart/scripts.pory"
-	lock
-# 43 "data/maps/FallarborTown_Mart/scripts.pory"
-	faceplayer
-# 44 "data/maps/FallarborTown_Mart/scripts.pory"
-	waitse
-# 45 "data/maps/FallarborTown_Mart/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
-# 46 "data/maps/FallarborTown_Mart/scripts.pory"
-	msgbox FallarborTown_Mart_Text_Skitty, MSGBOX_DEFAULT
-# 47 "data/maps/FallarborTown_Mart/scripts.pory"
-	waitmoncry
-# 48 "data/maps/FallarborTown_Mart/scripts.pory"
 	release
-# 49 "data/maps/FallarborTown_Mart/scripts.pory"
+# 32 "data/maps/FallarborTown_Mart/scripts.pory"
 	end
+# 33 "data/maps/FallarborTown_Mart/scripts.pory"
+
+# 34 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_EventScript_Woman::
+# 35 "data/maps/FallarborTown_Mart/scripts.pory"
+	msgbox FallarborTown_Mart_Text_DecidingSkittyEvolve, MSGBOX_NPC
+# 36 "data/maps/FallarborTown_Mart/scripts.pory"
+	end
+# 37 "data/maps/FallarborTown_Mart/scripts.pory"
+
+# 38 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_EventScript_PokefanM::
+# 39 "data/maps/FallarborTown_Mart/scripts.pory"
+	msgbox FallarborTown_Mart_Text_SellNuggetIFound, MSGBOX_NPC
+# 40 "data/maps/FallarborTown_Mart/scripts.pory"
+	end
+# 41 "data/maps/FallarborTown_Mart/scripts.pory"
+
+# 42 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_EventScript_Skitty::
+# 43 "data/maps/FallarborTown_Mart/scripts.pory"
+	lock
+# 44 "data/maps/FallarborTown_Mart/scripts.pory"
+	faceplayer
+# 45 "data/maps/FallarborTown_Mart/scripts.pory"
+	waitse
+# 46 "data/maps/FallarborTown_Mart/scripts.pory"
+	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+# 47 "data/maps/FallarborTown_Mart/scripts.pory"
+	msgbox FallarborTown_Mart_Text_Skitty, MSGBOX_DEFAULT
+# 48 "data/maps/FallarborTown_Mart/scripts.pory"
+	waitmoncry
+# 49 "data/maps/FallarborTown_Mart/scripts.pory"
+	release
 # 50 "data/maps/FallarborTown_Mart/scripts.pory"
-
+	end
 # 51 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_Text_DecidingSkittyEvolve:
+
 # 52 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I'm having a hard time deciding if I\n"
+FallarborTown_Mart_Text_DecidingSkittyEvolve:
 # 53 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "should make my SKITTY evolve or not.\p"
+	.string "I'm having a hard time deciding if I\n"
 # 54 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I only have to use this MOON STONE,\n"
+	.string "should make my SKITTY evolve or not.\p"
 # 55 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "but it's so hard to decide…\p"
+	.string "I only have to use this MOON STONE,\n"
 # 56 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "If I make it evolve, it will become\n"
+	.string "but it's so hard to decide…\p"
 # 57 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "much stronger.\p"
+	.string "If I make it evolve, it will become\n"
 # 58 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "But it will look so different, too.$"
+	.string "much stronger.\p"
 # 59 "data/maps/FallarborTown_Mart/scripts.pory"
-
+	.string "But it will look so different, too.$"
 # 60 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_Text_Skitty:
-# 61 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "SKITTY: Miyao?$"
-# 62 "data/maps/FallarborTown_Mart/scripts.pory"
 
+# 61 "data/maps/FallarborTown_Mart/scripts.pory"
+FallarborTown_Mart_Text_Skitty:
+# 62 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "SKITTY: Miyao?$"
 # 63 "data/maps/FallarborTown_Mart/scripts.pory"
-FallarborTown_Mart_Text_SellNuggetIFound:
+
 # 64 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "This NUGGET I found here…\n"
+FallarborTown_Mart_Text_SellNuggetIFound:
 # 65 "data/maps/FallarborTown_Mart/scripts.pory"
-	.string "I suppose I'll have to sell it, seeing\l"
+	.string "This NUGGET I found here…\n"
 # 66 "data/maps/FallarborTown_Mart/scripts.pory"
+	.string "I suppose I'll have to sell it, seeing\l"
+# 67 "data/maps/FallarborTown_Mart/scripts.pory"
 	.string "as how it has no other use.$"

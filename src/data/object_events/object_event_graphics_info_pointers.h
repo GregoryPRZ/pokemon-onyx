@@ -247,6 +247,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Storyteller
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelly;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -490,6 +495,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
+    [OBJ_EVENT_GFX_MEGA_STONE] =               &gObjectEventGraphicsInfo_MegaStone,
+    [OBJ_EVENT_GFX_COURTNEY] =         &gObjectEventGraphicsInfo_Courtney,
+    [OBJ_EVENT_GFX_TABITHA] =         &gObjectEventGraphicsInfo_Tabitha,
+    [OBJ_EVENT_GFX_SHELLY] =         &gObjectEventGraphicsInfo_Shelly,
+    [OBJ_EVENT_GFX_MATT] =         &gObjectEventGraphicsInfo_Matt,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

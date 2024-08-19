@@ -4410,6 +4410,76 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOSSDEEP_CITY_EVILS_HOUSE",
+      "name": "MossdeepCity_EvilsHouse_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/MossdeepCity_EvilsHouse/border.bin",
+      "blockdata_filepath": "data/layouts/MossdeepCity_EvilsHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_RUSTURF_B1F",
+      "name": "MtRusturf_B1F_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/MtRusturf_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/MtRusturf_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_RUSTURF_1F",
+      "name": "MtRusturf_1F_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtRusturf_1F/border.bin",
+      "blockdata_filepath": "data/layouts/MtRusturf_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_RUSTURF_PAST",
+      "name": "MtRusturf_Past_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/MtRusturf_Past/border.bin",
+      "blockdata_filepath": "data/layouts/MtRusturf_Past/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_RUSTURF_2F",
+      "name": "MtRusturf_2F_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtRusturf_2F/border.bin",
+      "blockdata_filepath": "data/layouts/MtRusturf_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_RUSTURF_HEATRANS_ROOM",
+      "name": "MtRusturf_HeatransRoom_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MtRusturf_HeatransRoom/border.bin",
+      "blockdata_filepath": "data/layouts/MtRusturf_HeatransRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_RUSTURF_TOP",
+      "name": "MtRusturf_Top_Layout",
+      "width": 28,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/MtRusturf_Top/border.bin",
+      "blockdata_filepath": "data/layouts/MtRusturf_Top/map.bin"
     }
   ]
 }

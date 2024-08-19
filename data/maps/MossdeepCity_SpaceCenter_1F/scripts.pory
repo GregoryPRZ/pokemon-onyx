@@ -193,7 +193,9 @@ MossdeepCity_SpaceCenter_1F_EventScript_OldManMagma::
 MossdeepCity_SpaceCenter_1F_EventScript_Steven::
 	lock
 	faceplayer
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_1F_Text_StevenMagmaCantBeAllowedToTakeFuel, MSGBOX_DEFAULT
+	removefieldmugshot
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release

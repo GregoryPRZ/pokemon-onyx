@@ -312,6 +312,19 @@ MossdeepCity_Movement_ScottExitEast:
 	walk_left
 	step_end
 
+MossdeepCity_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+MossdeepCity_EventScript_DrifblimStopSign::
+	msgbox MossdeepCity_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+MossdeepCity_Text_DrifblimStopSign:
+	.string "MOSSDEEP CITY DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 MossdeepCity_Text_WantKingsRockStevenGaveMe:
 	.string "I got this from STEVEN, but I don't\n"
 	.string "know what it's good for.\p"

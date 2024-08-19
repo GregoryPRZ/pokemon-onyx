@@ -1,6 +1,7 @@
 #include "global.h"
 #include "data.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
@@ -30,6 +31,7 @@
 #include "util.h"
 #include "constants/field_effects.h"
 #include "constants/event_objects.h"
+#include "constants/field_specials.h"
 #include "constants/event_object_movement.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
@@ -210,6 +212,8 @@ static void FlyOutFieldEffect_FlyOffWithBird(struct Task *);
 static void FlyOutFieldEffect_WaitFlyOff(struct Task *);
 static void FlyOutFieldEffect_End(struct Task *);
 
+static void FlyingTaxiFieldEffect_FlyNoises(struct Task *);
+
 static u8 CreateFlyBirdSprite(void);
 static u8 GetFlyBirdAnimCompleted(u8);
 static void StartFlyBirdSwoopDown(u8);
@@ -278,13 +282,11 @@ static const u8 sRockFragment_TopRight[] = INCBIN_U8("graphics/field_effects/pic
 static const u8 sRockFragment_BottomLeft[] = INCBIN_U8("graphics/field_effects/pics/deoxys_rock_fragment_bottom_left.4bpp");
 static const u8 sRockFragment_BottomRight[] = INCBIN_U8("graphics/field_effects/pics/deoxys_rock_fragment_bottom_right.4bpp");
 
-
 void Fldeff_FlyLand(void)
 {
 	SetMainCallback2(CB2_ReturnToField);
 	gFieldCallback = FieldCallback_Fly_2;
 }
-
 
 bool8 (*const gFieldEffectScriptFuncs[])(u8 **, u32 *) =
 {
@@ -1370,6 +1372,17 @@ void FieldCallback_UseFly(void)
     gFieldCallback = NULL;
 }
 
+static void FieldCallback_Fly_2(void)
+{
+	u8 taskId;
+    FadeInFromBlack();
+	taskId = CreateTask(Task_UseFly, 0);
+	gTasks[taskId].data[0] = 1; //do landing anim only
+	LockPlayerFieldControls();
+    FreezeObjectEvents();
+	gFieldCallback = NULL;
+}
+
 static void Task_UseFly(u8 taskId)
 {
     struct Task *task;
@@ -1409,17 +1422,6 @@ static void FieldCallback_FlyIntoMap(void)
     LockPlayerFieldControls();
     FreezeObjectEvents();
     gFieldCallback = NULL;
-}
-
-static void FieldCallback_Fly_2(void)
-{
-	u8 taskId;
-    FadeInFromBlack();
-	taskId = CreateTask(Task_UseFly, 0);
-	gTasks[taskId].data[0] = 1; //do landing anim only
-	ScriptContext2_Enable();
-    FreezeObjectEvents();
-	gFieldCallback = NULL;
 }
 
 static void Task_FlyIntoMap(u8 taskId)
@@ -3224,9 +3226,31 @@ static void (*const sFlyOutFieldEffectFuncs[])(struct Task *) = {
     FlyOutFieldEffect_End,
 };
 
+void (*const sFlyingTaxiFieldEffectFuncs[])(struct Task *) = {
+    FlyingTaxiFieldEffect_FlyNoises,
+    FlyOutFieldEffect_End,
+};
+
+static void FlyingTaxiFieldEffect_FlyNoises(struct Task *task)
+{
+    struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    if ((task->tTimer == 0 || (--task->tTimer) == 0) && ObjectEventClearHeldMovementIfFinished(objectEvent))
+    {
+        task->tState++;
+        task->tTimer = 2;
+        PlaySE(SE_M_FLY);
+        StartFlyBirdSwoopDown(task->tBirdSpriteId);
+    }
+}
+
+
 static void Task_FlyOut(u8 taskId)
 {
     sFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+    if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
+        sFlyingTaxiFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+    else
+        sFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
 }
 
 static void FlyOutFieldEffect_FieldMovePose(struct Task *task)
@@ -3336,6 +3360,7 @@ static void FlyOutFieldEffect_End(struct Task *task)
 {
     if (!gPaletteFade.active)
     {
+        VarSet(VAR_0x800A, 0);
         FieldEffectActiveListRemove(FLDEFF_USE_FLY);
         DestroyTask(FindTaskIdByFunc(Task_FlyOut));
     }
@@ -3403,7 +3428,7 @@ static void SpriteCB_FlyBirdLeaveBall(struct Sprite *sprite)
             sprite->affineAnims = sAffineAnims_FlyBird;
             InitSpriteAffineAnim(sprite);
             StartSpriteAffineAnim(sprite, 0);
-            sprite->x = 0x76;
+            sprite->x = 0x80;
             sprite->y = -0x30;
             sprite->data[0]++;
             sprite->data[1] = 0x40;
@@ -3466,7 +3491,7 @@ static void SpriteCB_FlyBirdReturnToBall(struct Sprite *sprite)
         sprite->data[1] += sprite->data[2] >> 8;
         sprite->data[3] += sprite->data[2] >> 8;
         sprite->data[1] &= 0xff;
-        sprite->x2 = Cos(sprite->data[1], 0x20);
+        sprite->x2 = Cos(sprite->data[1], 0x40);
         sprite->y2 = Sin(sprite->data[1], 0x78);
         if (sprite->data[2] > 0x100)
         {

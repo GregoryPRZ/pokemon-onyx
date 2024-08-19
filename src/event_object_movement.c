@@ -533,6 +533,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
     {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
     {gObjectEventPal_BeastBall,             OBJ_EVENT_PAL_TAG_BALL_BEAST},
+    {gObjectEventPalette_MegaStone,         OBJ_EVENT_PAL_MEGA_STONE},
+    {gObjectEventPalette_Courtney, OBJ_EVENT_PAL_COURTNEY},
+    {gObjectEventPalette_Tabitha, OBJ_EVENT_PAL_TABITHA},
+    {gObjectEventPalette_Shelly, OBJ_EVENT_PAL_SHELLY},
+    {gObjectEventPalette_Matt, OBJ_EVENT_PAL_MATT},
     // Gen VIII
     #ifdef ITEM_STRANGE_BALL
     {gObjectEventPal_StrangeBall,           OBJ_EVENT_PAL_TAG_BALL_STRANGE},
@@ -1598,6 +1603,12 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
 
     if (OW_GFX_COMPRESS)
         spriteTemplate->tileTag = LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, NULL);
+
+    if (objectEvent->graphicsId >= OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+    {
+        objectEvent->shiny = TRUE;
+        objectEvent->graphicsId -= SPECIES_SHINY_TAG;
+    }
 
     spriteId = CreateSprite(spriteTemplate, 0, 0, 0);
     if (spriteId == MAX_SPRITES)
@@ -2751,6 +2762,8 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
     if (graphicsId >= OBJ_EVENT_GFX_VARS && graphicsId <= OBJ_EVENT_GFX_VAR_F)
         graphicsId = VarGetObjectEventGraphicsId(graphicsId - OBJ_EVENT_GFX_VARS);
 
+    if (graphicsId >= OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+        graphicsId -= SPECIES_SHINY_TAG;
     // graphicsId may contain mon form info
     if (graphicsId > OBJ_EVENT_GFX_SPECIES_MASK)
     {

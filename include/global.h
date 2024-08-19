@@ -175,11 +175,16 @@ struct Time
     /*0x04*/ s8 seconds;
 };
 
+#include "constants/items.h"
+#define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
 struct SaveBlock3
 {
 #if OW_USE_FAKE_RTC
     struct Time fakeRTC;
+#endif
+#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
+    u8 itemFlags[ITEM_FLAGS_COUNT];
 #endif
 };
 
@@ -509,8 +514,9 @@ struct SaveBlock2
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
-             u16 optionsMusic:3; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
-             u16 optionsBattleSceneOff:1; // whether battle animations are disabled
+             u16 optionsMusic:1; //
+             u16 optionsBattleSceneOff:5; // whether battle animations are disabled
+             u16 optionsCurrentFont:1; // whether battle animations are disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
              //u16 padding1:4;
              //u16 padding2;

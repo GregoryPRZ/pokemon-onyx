@@ -249,7 +249,7 @@ static const u8 sText_EVO_USE_MOVE_TWENTY_TIMES[] = _("{LV}{UP_ARROW} after 20x 
 static const u8 sText_EVO_RECOIL_DAMAGE_MALE[] = _("{LV}{UP_ARROW} with {STR_VAR_2} recoil, male");
 static const u8 sText_EVO_RECOIL_DAMAGE_FEMALE[] = _("{LV}{UP_ARROW} with {STR_VAR_2} recoil, female");
 static const u8 sText_EVO_ITEM_COUNT_999[] = _("{LV}{UP_ARROW} with 999 {STR_VAR_2} in bag");
-static const u8 sText_EVO_DEFEAT_WITH_ITEM[] = _("{LV}{UP_ARROW} defeating {STR_VAR_3} holding {STR_VAR_2}");
+static const u8 sText_EVO_DEFEAT_THREE_WITH_ITEM[] = _("{LV}{UP_ARROW} defeating 3 {STR_VAR_3} holding {STR_VAR_2}");
 static const u8 sText_EVO_OVERWORLD_STEPS[] = _("{LV}{UP_ARROW} after {STR_VAR_2} steps");
 static const u8 sText_EVO_UNKNOWN[] = _("Method unknown");
 static const u8 sText_EVO_NONE[] = _("{STR_VAR_1} has no evolution.");
@@ -2343,7 +2343,7 @@ static void Task_ClosePokedex(u8 taskId)
         ClearMonSprites();
         FreeWindowAndBgBuffers();
         DestroyTask(taskId);
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        SetMainCallback2(CB2_ReturnToFullScreenStartMenu); 
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
         Free(sPokedexView);
     }
@@ -2949,7 +2949,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         ClearMonSprites();
         CreateMonSpritesAtPos(selectedMon, 0xE);
         sPokedexView->justScrolled = TRUE;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
     else if (JOY_NEW(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
     {
@@ -2960,7 +2960,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         ClearMonSprites();
         CreateMonSpritesAtPos(selectedMon, 0xE);
         sPokedexView->justScrolled = TRUE;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
 
     if (scrollDir == 0)
@@ -4965,7 +4965,7 @@ static void Task_HandleStatsScreenInput(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         if (gTasks[taskId].data[5] == 0)
             gTasks[taskId].data[5] = 1;
         else
@@ -6629,11 +6629,11 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
             CopyItemName(item, gStringVar2);
             StringExpandPlaceholders(gStringVar4, sText_EVO_ITEM_COUNT_999);
             break;
-         case EVO_DEFEAT_WITH_ITEM:
+         case EVO_DEFEAT_THREE_WITH_ITEM:
             item = evolutions[i].param;
             CopyItemName(item, gStringVar2);
             StringCopy(gStringVar3, GetSpeciesName(species));
-            StringExpandPlaceholders(gStringVar4, sText_EVO_DEFEAT_WITH_ITEM);
+            StringExpandPlaceholders(gStringVar4, sText_EVO_DEFEAT_THREE_WITH_ITEM);
             break;
         case EVO_OVERWORLD_STEPS:
             ConvertIntToDecimalStringN(gStringVar2, evolutions[i].param, STR_CONV_MODE_LEADING_ZEROS, 4);
@@ -7148,7 +7148,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
             m4aMPlayContinue(&gMPlayInfo_BGM);
             sPokedexView->screenSwitchState = 2;
             gTasks[taskId].func = Task_SwitchScreensFromCryScreen;
-            PlaySE(SE_DEX_PAGE);
+            PlaySE(SE_PIN);
             return;
         }
         if (JOY_NEW(DPAD_RIGHT)
@@ -7164,7 +7164,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
                 m4aMPlayContinue(&gMPlayInfo_BGM);
                 sPokedexView->screenSwitchState = 3;
                 gTasks[taskId].func = Task_SwitchScreensFromCryScreen;
-                PlaySE(SE_DEX_PAGE);
+                PlaySE(SE_PIN);
             }
             return;
         }
@@ -7321,7 +7321,7 @@ static void Task_HandleSizeScreenInput(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 2;
         gTasks[taskId].func = Task_SwitchScreensFromSizeScreen;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
 }
 
@@ -7888,7 +7888,7 @@ static void Task_HandleSearchTopBarInput(u8 taskId)
     }
     if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tTopBarItem > SEARCH_TOPBAR_SEARCH)
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         gTasks[taskId].tTopBarItem--;
         HighlightSelectedSearchTopBarItem(gTasks[taskId].tTopBarItem);
         CopyWindowToVram(0, COPYWIN_GFX);
@@ -7896,7 +7896,7 @@ static void Task_HandleSearchTopBarInput(u8 taskId)
     }
     if (JOY_NEW(DPAD_RIGHT) && gTasks[taskId].tTopBarItem < SEARCH_TOPBAR_CANCEL)
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         gTasks[taskId].tTopBarItem++;
         HighlightSelectedSearchTopBarItem(gTasks[taskId].tTopBarItem);
         CopyWindowToVram(0, COPYWIN_GFX);

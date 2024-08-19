@@ -642,6 +642,19 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
+DewfordTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+DewfordTown_EventScript_DrifblimStopSign::
+	msgbox DewfordTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+DewfordTown_Text_DrifblimStopSign:
+	.string "DEWFORD TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 DewfordTown_Text_TinyIslandCommunity:
 	.string "DEWFORD is a tiny island community.\n"
 	.string "If something gets trendy here,\l"

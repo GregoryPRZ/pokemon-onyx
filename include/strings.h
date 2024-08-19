@@ -301,8 +301,10 @@ extern const u8 gText_BattlePyramidConfirmRetire[];
 extern const u8 gText_TextSpeedSlow[];
 extern const u8 gText_TextSpeedMid[];
 extern const u8 gText_TextSpeedFast[];
-extern const u8 gText_BattleSceneOn[];
-extern const u8 gText_BattleSceneOff[];
+extern const u8 gText_BattleSceneNormal[];
+extern const u8 gText_BattleSceneFast[];
+extern const u8 gText_BattleSceneFaster[];
+extern const u8 gText_BattleSceneFastest[];
 extern const u8 gText_BattleStyleShift[];
 extern const u8 gText_BattleStyleSet[];
 extern const u8 gText_SoundMono[];
@@ -314,9 +316,12 @@ extern const u8 gText_ButtonTypeLR[];
 extern const u8 gText_ButtonTypeLEqualsA[];
 extern const u8 gText_StatEditorOff[];
 extern const u8 gText_StatEditorOn[];
+extern const u8 gText_DamageNumbersOff[];
+extern const u8 gText_DamageNumbersOn[];
 extern const u8 gText_MusicHoenn[];
 extern const u8 gText_MusicSinnoh[];
-extern const u8 gText_MusicJohto[];
+extern const u8 gText_FontFireRed[];
+extern const u8 gText_FontEmerald[];
 extern const u8 gText_Option[];
 extern const u8 gText_OptionMenu[];
 extern const u8 gText_SmallDot[];
@@ -331,6 +336,8 @@ extern const u8 gText_OptionMenuCancel[];
 extern const u8 gText_ButtonMode[];
 extern const u8 gText_Music[];
 extern const u8 gText_Stat_Editor[];
+extern const u8 gText_Damage_Numbers[];
+extern const u8 gText_Font_Type[];
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];
 
@@ -2516,7 +2523,7 @@ extern const u8 MatchCall_Text_Sidney[];
 extern const u8 MatchCall_Text_Phoebe[];
 extern const u8 MatchCall_Text_Glacia[];
 extern const u8 MatchCall_Text_Drake[];
-extern const u8 MatchCall_Text_Wallace[];
+extern const u8 MatchCall_Text_StevenChampion[];
 extern const u8 gText_MrStoneMatchCallDesc[];
 extern const u8 gText_MrStoneMatchCallName[];
 extern const u8 gText_StevenMatchCallDesc[];
@@ -2983,6 +2990,7 @@ extern const u8 gText_Cancel6[];
 
 // PokéNav Menu Handler
 extern const u8 gText_CheckMapOfHoenn[];
+extern const u8 gText_DexNavDescription[];
 extern const u8 gText_CheckPokemonInDetail[];
 extern const u8 gText_CallRegisteredTrainer[];
 extern const u8 gText_CheckObtainedRibbons[];
@@ -3068,5 +3076,8 @@ extern const u8 gText_Moves_Menu[];
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
+
+extern const u8 gText_InfiniteRepelOn[];
+extern const u8 gText_InfiniteRepelOff[];
 
 #endif // GUARD_STRINGS_H

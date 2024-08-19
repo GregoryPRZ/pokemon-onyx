@@ -242,11 +242,16 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
+#define OBJ_EVENT_GFX_MEGA_STONE                 241
+#define OBJ_EVENT_GFX_COURTNEY                    242
+#define OBJ_EVENT_GFX_TABITHA                   243
+#define OBJ_EVENT_GFX_SHELLY                    244
+#define OBJ_EVENT_GFX_MATT                    245
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        241
+#define NUM_OBJ_EVENT_GFX                        246
 
 
 // These are dynamic object gfx ids.
@@ -275,7 +280,8 @@
 #define OBJ_EVENT_GFX_SPECIES_MASK ((1 << OBJ_EVENT_GFX_SPECIES_BITS) - 1)
 
 // Used to call a specific species' follower graphics. Useful for static encounters.
-#define OBJ_EVENT_GFX_SPECIES(name) (OBJ_EVENT_GFX_MON_BASE + SPECIES_##name)
+#define OBJ_EVENT_GFX_SPECIES(name)       (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE)
+#define OBJ_EVENT_GFX_SPECIES_SHINY(name) (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
 
 #define OW_SPECIES(x) (((x)->graphicsId & OBJ_EVENT_GFX_SPECIES_MASK) - OBJ_EVENT_GFX_MON_BASE)
 #define OW_FORM(x) ((x)->graphicsId >> OBJ_EVENT_GFX_SPECIES_BITS)
@@ -409,6 +415,12 @@
 // Gen VIII
 #define OBJ_EVENT_PAL_TAG_BALL_STRANGE            0x116A
 #endif //OW_FOLLOWERS_POKEBALLS
+#define OBJ_EVENT_PAL_MEGA_STONE                  0x116B
+
+#define OBJ_EVENT_PAL_COURTNEY                  0x116C
+#define OBJ_EVENT_PAL_TABITHA                  0x116D
+#define OBJ_EVENT_PAL_SHELLY                  0x116E
+#define OBJ_EVENT_PAL_MATT                  0x116F
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002

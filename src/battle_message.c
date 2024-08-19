@@ -18,6 +18,7 @@
 #include "recorded_battle.h"
 #include "string_util.h"
 #include "strings.h"
+#include "sound.h"
 #include "test_runner.h"
 #include "text.h"
 #include "trainer_hill.h"
@@ -33,6 +34,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/songs.h"
 
 struct BattleWindowText
 {
@@ -4084,6 +4086,22 @@ struct TrainerSlide
     const u8 *msgDynamax;
 };
 
+static const u8 sText_RoxanneLastSwitchIn[] = _("Well done! But it's not over yet!\p");
+static const u8 sText_BrawlyLastSwitchIn[] = _("My last Pokémon will knock you down!\p");
+static const u8 sText_WattsonLastSwitchIn[] = _("Wahaha! This may do a little shock!\p");
+static const u8 sText_FlanneryLastSwitchIn[] = _("That was just a warming up!\p");
+static const u8 sText_NormanLastSwitchIn[] = _("Son, I'm proud of you... But get ready!\p");
+static const u8 sText_WinonaLastSwitchIn[] = _("Prepare for the last breath.\p");
+static const u8 sText_TateLizaLastSwitchIn[] = _("We must... win this fight!\p");
+static const u8 sText_JuanLastSwitchIn[] = _("You are elegant... but not as me!\p");
+
+static const u8 sText_SidneyLastSwitchIn[] = _("Not bad! But can you keep up?\p");
+static const u8 sText_PhoebeLastSwitchIn[] = _("Hehe... Just don't scream!\p");
+static const u8 sText_GlaciaLastSwitchIn[] = _("My last will cool you down!\p");
+static const u8 sText_DrakeLastSwitchIn[] = _("This is my last chance to win!\p");
+
+static const u8 sText_StevenLastSwitchIn[] = _("The last step to become the CHAMPION!\p");
+
 static const struct TrainerSlide sTrainerSlides[] =
 {
     /* Put any trainer slide-in messages inside this array.
@@ -4105,6 +4123,147 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgDynamax = sText_TargetWokeUp,
     },
     */
+
+    {
+        .trainerId = TRAINER_ROXANNE_1,
+        .msgLastSwitchIn = sText_RoxanneLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_ROXANNE_2,
+        .msgLastSwitchIn = sText_RoxanneLastSwitchIn,
+    },
+
+
+
+    {
+        .trainerId = TRAINER_BRAWLY_1,
+        .msgLastSwitchIn = sText_BrawlyLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_BRAWLY_2,
+        .msgLastSwitchIn = sText_BrawlyLastSwitchIn,
+    },
+
+
+
+    {
+        .trainerId = TRAINER_WATTSON_1,
+        .msgLastSwitchIn = sText_WattsonLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_WATTSON_2,
+        .msgLastSwitchIn = sText_WattsonLastSwitchIn,
+    },
+
+
+
+    {
+        .trainerId = TRAINER_FLANNERY_1,
+        .msgLastSwitchIn = sText_FlanneryLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_FLANNERY_2,
+        .msgLastSwitchIn = sText_FlanneryLastSwitchIn,
+    },
+
+
+
+    {
+        .trainerId = TRAINER_NORMAN_1,
+        .msgLastSwitchIn = sText_NormanLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_NORMAN_2,
+        .msgLastSwitchIn = sText_NormanLastSwitchIn,
+    },  
+
+
+
+    {
+        .trainerId = TRAINER_WINONA_1,
+        .msgLastSwitchIn = sText_WinonaLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_WINONA_2,
+        .msgLastSwitchIn = sText_WinonaLastSwitchIn,
+    },  
+
+
+
+    {
+        .trainerId = TRAINER_TATE_AND_LIZA_1,
+        .msgLastSwitchIn = sText_TateLizaLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_TATE_AND_LIZA_2,
+        .msgLastSwitchIn = sText_TateLizaLastSwitchIn,
+    },  
+
+
+
+    {
+        .trainerId = TRAINER_JUAN_1,
+        .msgLastSwitchIn = sText_JuanLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_JUAN_2,
+        .msgLastSwitchIn = sText_JuanLastSwitchIn,
+    },   
+
+
+
+    {
+        .trainerId = TRAINER_SIDNEY,
+        .msgLastSwitchIn = sText_SidneyLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_SIDNEY_2,
+        .msgLastSwitchIn = sText_SidneyLastSwitchIn,
+    },  
+
+
+
+    {
+        .trainerId = TRAINER_PHOEBE,
+        .msgLastSwitchIn = sText_PhoebeLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_PHOEBE_2,
+        .msgLastSwitchIn = sText_PhoebeLastSwitchIn,
+    },   
+
+
+
+    {
+        .trainerId = TRAINER_GLACIA,
+        .msgLastSwitchIn = sText_GlaciaLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_GLACIA_2,
+        .msgLastSwitchIn = sText_GlaciaLastSwitchIn,
+    },       
+
+
+
+    {
+        .trainerId = TRAINER_DRAKE,
+        .msgLastSwitchIn = sText_DrakeLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_DRAKE_2,
+        .msgLastSwitchIn = sText_DrakeLastSwitchIn,
+    },     
+
+
+
+    {
+        .trainerId = TRAINER_STEVEN,
+        .msgLastSwitchIn = sText_StevenLastSwitchIn,
+    },
+    {
+        .trainerId = TRAINER_STEVEN_2,
+        .msgLastSwitchIn = sText_StevenLastSwitchIn,
+    },         
 };
 
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive)
@@ -4194,6 +4353,7 @@ u32 ShouldDoTrainerSlide(u32 battler, u32 which)
                 if (sTrainerSlides[i].msgLastSwitchIn != NULL && !CanBattlerSwitch(battler))
                 {
                     gBattleStruct->trainerSlideMsg = sTrainerSlides[i].msgLastSwitchIn;
+                    PlayBGM(MUS_LAST_POKEMON);
                     return retValue;
                 }
                 break;

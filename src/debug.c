@@ -99,6 +99,7 @@ enum UtilDebugMenu
     DEBUG_UTIL_MENU_ITEM_CHEAT,
     DEBUG_UTIL_MENU_ITEM_EXPANSION_VER,
     DEBUG_UTIL_MENU_ITEM_BERRY_FUNCTIONS,
+    DEBUG_UTIL_MENU_ITEM_EWRAM_COUNTERS,
 };
 
 enum GivePCBagDebugMenu
@@ -374,6 +375,7 @@ static void DebugAction_Util_Player_Id(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
 static void DebugAction_Util_ExpansionVersion(u8 taskId);
 static void DebugAction_Util_BerryFunctions(u8 taskId);
+static void DebugAction_Util_CheckEWRAMCounters(u8 taskId);
 
 static void DebugAction_OpenPCBagFillMenu(u8 taskId);
 static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId);
@@ -476,6 +478,7 @@ extern const u8 Debug_CheckSaveBlock[];
 extern const u8 Debug_CheckROMSpace[];
 extern const u8 Debug_BoxFilledMessage[];
 extern const u8 Debug_ShowExpansionVersion[];
+extern const u8 Debug_EventScript_EWRAMCounters[];
 
 extern const u8 Debug_BerryPestsDisabled[];
 extern const u8 Debug_BerryWeedsDisabled[];
@@ -532,6 +535,7 @@ static const u8 sDebugText_Util_Player_Id[] =                _("New Trainer ID")
 static const u8 sDebugText_Util_CheatStart[] =               _("Cheat start");
 static const u8 sDebugText_Util_ExpansionVersion[] =         _("Expansion Version");
 static const u8 sDebugText_Util_BerryFunctions[] =           _("Berry Functions…{CLEAR_TO 110}{RIGHT_ARROW}");
+static const u8 sDebugText_Util_EWRAMCounters[] =            _("EWRAM Counters…{CLEAR_TO 110}{RIGHT_ARROW}");
 // PC/Bag Menu
 static const u8 sDebugText_PCBag_Fill[] =                    _("Fill…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_PCBag_Fill_Pc_Fast[] =            _("Fill PC Boxes Fast");
@@ -720,6 +724,7 @@ static const struct ListMenuItem sDebugMenu_Items_Utilities[] =
     [DEBUG_UTIL_MENU_ITEM_CHEAT]           = {sDebugText_Util_CheatStart,       DEBUG_UTIL_MENU_ITEM_CHEAT},
     [DEBUG_UTIL_MENU_ITEM_EXPANSION_VER]   = {sDebugText_Util_ExpansionVersion, DEBUG_UTIL_MENU_ITEM_EXPANSION_VER},
     [DEBUG_UTIL_MENU_ITEM_BERRY_FUNCTIONS] = {sDebugText_Util_BerryFunctions,   DEBUG_UTIL_MENU_ITEM_BERRY_FUNCTIONS},
+    [DEBUG_UTIL_MENU_ITEM_EWRAM_COUNTERS]  = {sDebugText_Util_EWRAMCounters,    DEBUG_UTIL_MENU_ITEM_EWRAM_COUNTERS},
 };
 
 static const struct ListMenuItem sDebugMenu_Items_PCBag[] =
@@ -889,6 +894,7 @@ static void (*const sDebugMenu_Actions_Utilities[])(u8) =
     [DEBUG_UTIL_MENU_ITEM_CHEAT]           = DebugAction_Util_CheatStart,
     [DEBUG_UTIL_MENU_ITEM_EXPANSION_VER]   = DebugAction_Util_ExpansionVersion,
     [DEBUG_UTIL_MENU_ITEM_BERRY_FUNCTIONS] = DebugAction_Util_BerryFunctions,
+    [DEBUG_UTIL_MENU_ITEM_EWRAM_COUNTERS]  = DebugAction_Util_CheckEWRAMCounters,
 };
 
 static void (*const sDebugMenu_Actions_PCBag[])(u8) =
@@ -4810,182 +4816,9 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_PL_OBTAIN_CASTLE_POINTS) \
     X(MUS_PL_OBTAIN_B_POINTS) \
     X(MUS_PL_WIN_MINIGAME) \
-    X(MUS_HG_INTRO) \
-    X(MUS_HG_TITLE) \
-    X(MUS_HG_NEW_GAME) \
-    X(MUS_HG_EVOLUTION) \
-    X(MUS_HG_EVOLUTION_NO_INTRO) \
-    X(MUS_HG_CYCLING) \
-    X(MUS_HG_SURF) \
-    X(MUS_HG_E_DENDOURIRI) \
-    X(MUS_HG_CREDITS) \
-    X(MUS_HG_END) \
-    X(MUS_HG_NEW_BARK) \
-    X(MUS_HG_CHERRYGROVE) \
-    X(MUS_HG_VIOLET) \
-    X(MUS_HG_AZALEA) \
-    X(MUS_HG_GOLDENROD) \
-    X(MUS_HG_ECRUTEAK) \
-    X(MUS_HG_CIANWOOD) \
-    X(MUS_HG_ROUTE29) \
-    X(MUS_HG_ROUTE30) \
-    X(MUS_HG_ROUTE34) \
-    X(MUS_HG_ROUTE38) \
-    X(MUS_HG_ROUTE42) \
-    X(MUS_HG_VERMILION) \
-    X(MUS_HG_PEWTER) \
-    X(MUS_HG_CERULEAN) \
-    X(MUS_HG_LAVENDER) \
-    X(MUS_HG_CELADON) \
-    X(MUS_HG_PALLET) \
-    X(MUS_HG_CINNABAR) \
-    X(MUS_HG_ROUTE1) \
-    X(MUS_HG_ROUTE3) \
-    X(MUS_HG_ROUTE11) \
-    X(MUS_HG_ROUTE24) \
-    X(MUS_HG_ROUTE26) \
-    X(MUS_HG_POKE_CENTER) \
-    X(MUS_HG_POKE_MART) \
-    X(MUS_HG_GYM) \
-    X(MUS_HG_ELM_LAB) \
-    X(MUS_HG_OAK) \
-    X(MUS_HG_DANCE_THEATER) \
-    X(MUS_HG_GAME_CORNER) \
-    X(MUS_HG_B_TOWER) \
-    X(MUS_HG_B_TOWER_RECEPTION) \
-    X(MUS_HG_SPROUT_TOWER) \
-    X(MUS_HG_UNION_CAVE) \
-    X(MUS_HG_RUINS_OF_ALPH) \
-    X(MUS_HG_NATIONAL_PARK) \
-    X(MUS_HG_BURNED_TOWER) \
-    X(MUS_HG_BELL_TOWER) \
-    X(MUS_HG_LIGHTHOUSE) \
-    X(MUS_HG_TEAM_ROCKET_HQ) \
-    X(MUS_HG_ICE_PATH) \
-    X(MUS_HG_DRAGONS_DEN) \
-    X(MUS_HG_ROCK_TUNNEL) \
-    X(MUS_HG_VIRIDIAN_FOREST) \
-    X(MUS_HG_VICTORY_ROAD) \
-    X(MUS_HG_POKEMON_LEAGUE) \
-    X(MUS_HG_FOLLOW_ME_1) \
-    X(MUS_HG_FOLLOW_ME_2) \
-    X(MUS_HG_ENCOUNTER_RIVAL) \
-    X(MUS_HG_RIVAL_EXIT) \
-    X(MUS_HG_BUG_CONTEST_PREP) \
-    X(MUS_HG_BUG_CATCHING_CONTEST) \
-    X(MUS_HG_RADIO_ROCKET) \
-    X(MUS_HG_ROCKET_TAKEOVER) \
-    X(MUS_HG_MAGNET_TRAIN) \
-    X(MUS_HG_SS_AQUA) \
-    X(MUS_HG_MT_MOON_SQUARE) \
-    X(MUS_HG_RADIO_JINGLE) \
-    X(MUS_HG_RADIO_LULLABY) \
-    X(MUS_HG_RADIO_MARCH) \
-    X(MUS_HG_RADIO_UNOWN) \
-    X(MUS_HG_RADIO_POKE_FLUTE) \
-    X(MUS_HG_RADIO_OAK) \
-    X(MUS_HG_RADIO_BUENA) \
-    X(MUS_HG_EUSINE) \
-    X(MUS_HG_CLAIR) \
-    X(MUS_HG_ENCOUNTER_GIRL_1) \
-    X(MUS_HG_ENCOUNTER_BOY_1) \
-    X(MUS_HG_ENCOUNTER_SUSPICIOUS_1) \
-    X(MUS_HG_ENCOUNTER_SAGE) \
-    X(MUS_HG_ENCOUNTER_KIMONO_GIRL) \
-    X(MUS_HG_ENCOUNTER_ROCKET) \
-    X(MUS_HG_ENCOUNTER_GIRL_2) \
-    X(MUS_HG_ENCOUNTER_BOY_2) \
-    X(MUS_HG_ENCOUNTER_SUSPICIOUS_2) \
-    X(MUS_HG_VS_WILD) \
-    X(MUS_HG_VS_TRAINER) \
-    X(MUS_HG_VS_GYM_LEADER) \
-    X(MUS_HG_VS_RIVAL) \
-    X(MUS_HG_VS_ROCKET) \
-    X(MUS_HG_VS_SUICUNE) \
-    X(MUS_HG_VS_ENTEI) \
-    X(MUS_HG_VS_RAIKOU) \
-    X(MUS_HG_VS_CHAMPION) \
-    X(MUS_HG_VS_WILD_KANTO) \
-    X(MUS_HG_VS_TRAINER_KANTO) \
-    X(MUS_HG_VS_GYM_LEADER_KANTO) \
-    X(MUS_HG_VICTORY_TRAINER) \
-    X(MUS_HG_VICTORY_WILD) \
-    X(MUS_HG_CAUGHT) \
-    X(MUS_HG_VICTORY_GYM_LEADER) \
-    X(MUS_HG_VS_HO_OH) \
-    X(MUS_HG_VS_LUGIA) \
-    X(MUS_HG_POKEATHLON_LOBBY) \
-    X(MUS_HG_POKEATHLON_START) \
-    X(MUS_HG_POKEATHLON_BEFORE) \
-    X(MUS_HG_POKEATHLON_EVENT) \
-    X(MUS_HG_POKEATHLON_FINALS) \
-    X(MUS_HG_POKEATHLON_RESULTS) \
-    X(MUS_HG_POKEATHLON_END) \
-    X(MUS_HG_POKEATHLON_WINNER) \
-    X(MUS_HG_B_FACTORY) \
-    X(MUS_HG_B_HALL) \
-    X(MUS_HG_B_ARCADE) \
-    X(MUS_HG_B_CASTLE) \
-    X(MUS_HG_VS_FRONTIER_BRAIN) \
-    X(MUS_HG_VICTORY_FRONTIER_BRAIN) \
-    X(MUS_HG_WFC) \
-    X(MUS_HG_MYSTERY_GIFT) \
-    X(MUS_HG_WIFI_PLAZA) \
-    X(MUS_HG_WIFI_MINIGAMES) \
-    X(MUS_HG_WIFI_PARADE) \
-    X(MUS_HG_GLOBAL_TERMINAL) \
-    X(MUS_HG_SPIN_TRADE) \
-    X(MUS_HG_GTS) \
-    X(MUS_HG_ROUTE47) \
-    X(MUS_HG_SAFARI_ZONE_GATE) \
-    X(MUS_HG_SAFARI_ZONE) \
-    X(MUS_HG_ETHAN) \
-    X(MUS_HG_LYRA) \
-    X(MUS_HG_GAME_CORNER_WIN) \
-    X(MUS_HG_KIMONO_GIRL_DANCE) \
-    X(MUS_HG_KIMONO_GIRL) \
-    X(MUS_HG_HO_OH_APPEARS) \
-    X(MUS_HG_LUGIA_APPEARS) \
-    X(MUS_HG_SPIKY_EARED_PICHU) \
-    X(MUS_HG_SINJOU_RUINS) \
-    X(MUS_HG_RADIO_ROUTE101) \
-    X(MUS_HG_RADIO_ROUTE201) \
-    X(MUS_HG_RADIO_TRAINER) \
-    X(MUS_HG_RADIO_VARIETY) \
-    X(MUS_HG_VS_KYOGRE_GROUDON) \
-    X(MUS_HG_POKEWALKER) \
-    X(MUS_HG_VS_ARCEUS) \
-    X(MUS_HG_HEAL) \
-    X(MUS_HG_LEVEL_UP) \
-    X(MUS_HG_OBTAIN_ITEM) \
-    X(MUS_HG_OBTAIN_KEY_ITEM) \
-    X(MUS_HG_EVOLVED) \
-    X(MUS_HG_OBTAIN_BADGE) \
-    X(MUS_HG_OBTAIN_TMHM) \
-    X(MUS_HG_OBTAIN_ACCESSORY) \
-    X(MUS_HG_MOVE_DELETED) \
-    X(MUS_HG_OBTAIN_BERRY) \
-    X(MUS_HG_DEX_RATING_1) \
-    X(MUS_HG_DEX_RATING_2) \
-    X(MUS_HG_DEX_RATING_3) \
-    X(MUS_HG_DEX_RATING_4) \
-    X(MUS_HG_DEX_RATING_5) \
-    X(MUS_HG_DEX_RATING_6) \
-    X(MUS_HG_OBTAIN_EGG) \
-    X(MUS_HG_BUG_CONTEST_1ST_PLACE) \
-    X(MUS_HG_BUG_CONTEST_2ND_PLACE) \
-    X(MUS_HG_BUG_CONTEST_3RD_PLACE) \
-    X(MUS_HG_CARD_FLIP) \
-    X(MUS_HG_CARD_FLIP_GAME_OVER) \
-    X(MUS_HG_POKEGEAR_REGISTERED) \
-    X(MUS_HG_LETS_GO_TOGETHER) \
-    X(MUS_HG_POKEATHLON_READY) \
-    X(MUS_HG_POKEATHLON_1ST_PLACE) \
-    X(MUS_HG_RECEIVE_POKEMON) \
-    X(MUS_HG_OBTAIN_ARCADE_POINTS) \
-    X(MUS_HG_OBTAIN_CASTLE_POINTS) \
-    X(MUS_HG_OBTAIN_B_POINTS) \
-    X(MUS_HG_WIN_MINIGAME) \
+    X(MUS_VS_POSTGAME) \
+    X(MUS_ONYX_TITLE) \
+    X(MUS_VS_COLOSSEUM) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \
@@ -5480,6 +5313,17 @@ static void DebugAction_Party_ClearParty(u8 taskId)
     ZeroPlayerPartyMons();
     ScriptContext_Enable();
     Debug_DestroyMenu_Full(taskId);
+}
+
+void CheckEWRAMCounters(struct ScriptContext *ctx)
+{
+    ConvertIntToDecimalStringN(gStringVar1, gFollowerSteps, STR_CONV_MODE_LEFT_ALIGN, 5);
+    ConvertIntToDecimalStringN(gStringVar2, gChainFishingDexNavStreak, STR_CONV_MODE_LEFT_ALIGN, 5);
+}
+
+static void DebugAction_Util_CheckEWRAMCounters(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_EWRAMCounters);
 }
 
 #endif //DEBUG_OVERWORLD_MENU == TRUE

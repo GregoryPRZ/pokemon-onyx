@@ -1,0 +1,14 @@
+mapscripts MtRusturf_1F_MapScripts {}
+
+script MtRusturf_1F_EventScript_TimePortal{
+    lock
+    msgbox("Do you want to touch the statue?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == 1){
+        warpteleport(MAP_MT_RUSTURF_PAST, 0, 5, 23)
+    }else{
+        release
+        end
+    }
+    release
+    end
+}

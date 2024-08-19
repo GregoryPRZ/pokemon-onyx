@@ -259,7 +259,8 @@
     "MossdeepCity_SpaceCenter_1F",
     "MossdeepCity_SpaceCenter_2F",
     "MossdeepCity_GameCorner_1F",
-    "MossdeepCity_GameCorner_B1F"
+    "MossdeepCity_GameCorner_B1F",
+    "MossdeepCity_EvilsHouse"
   ],
   "gMapGroup_IndoorSootopolis": [
     "SootopolisCity_Gym_1F",
@@ -429,7 +430,13 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "MtRusturf_B1F",
+    "MtRusturf_1F",
+    "MtRusturf_Past",
+    "MtRusturf_2F",
+    "MtRusturf_HeatransRoom",
+    "MtRusturf_Top"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

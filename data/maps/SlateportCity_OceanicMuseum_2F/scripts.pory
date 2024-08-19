@@ -58,7 +58,9 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	closemessage
 	applymovement LOCALID_ARCHIE, SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	savebgm MUS_DUMMY
 	fadedefaultbgm

@@ -51,6 +51,7 @@
 #include "constants/songs.h"
 #include "rtc.h"
 #include "ui_stat_editor.h"
+#include "ui_startmenu_full.h"
 
 // Menu actions
 enum
@@ -62,7 +63,6 @@ enum
     MENU_ACTION_PLAYER,
     MENU_ACTION_SAVE,
     MENU_ACTION_OPTION,
-    MENU_ACTION_DEXNAV,
     MENU_ACTION_RETIRE_SAFARI,
     MENU_ACTION_PLAYER_LINK,
     MENU_ACTION_REST_FRONTIER,
@@ -111,7 +111,6 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuStatEditorCallback(void);
-static bool8 StartMenuDexNavCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -199,7 +198,6 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
     [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_OPTION]          = {gText_MenuOption,  {.u8_void = StartMenuOptionCallback}},
-    [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}},
     [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,  {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,  {.u8_void = StartMenuLinkModePlayerNameCallback}},
     [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
@@ -336,7 +334,6 @@ static void BuildNormalStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
         FlagSet(FLAG_SYS_DEXNAV_GET);
         FlagSet(FLAG_SYS_DETECTOR_MODE);
-        AddStartMenuAction(MENU_ACTION_DEXNAV);
     }
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
@@ -612,7 +609,19 @@ void ShowStartMenu(void)
         PlayerFreeze();
         StopPlayerAvatar();
     }
-    CreateStartMenuTask(Task_ShowStartMenu);
+    else{
+        CreateStartMenuTask(Task_ShowStartMenu);
+        LockPlayerFieldControls();
+        return;
+    }
+    if (GetSafariZoneFlag() || InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+    {
+        CreateStartMenuTask(Task_ShowStartMenu);
+        LockPlayerFieldControls();
+        return;
+    }
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+    CreateTask(Task_OpenStartMenuFullScreen, 0);
     LockPlayerFieldControls();
 }
 
@@ -620,13 +629,13 @@ static bool8 HandleStartMenuInput(void)
 {
     if (JOY_NEW(DPAD_UP))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_MENU_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(-1);
     }
 
     if (JOY_NEW(DPAD_DOWN))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_MENU_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(1);
     }
 
@@ -638,9 +647,6 @@ static bool8 HandleStartMenuInput(void)
             if (GetNationalPokedexCount(FLAG_GET_SEEN) == 0)
                 return FALSE;
         }
-        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
-          && MapHasNoEncounterData())
-            return FALSE;
         
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
@@ -855,6 +861,53 @@ static bool8 SaveStartCallback(void)
     return FALSE;
 }
 
+static void Task_SaveFromStartMenuFull(u8 taskId);
+
+void SaveStartCallback_FullStartMenu(void)
+{
+    WarpFadeInScreen();
+    InitSave();
+    CreateTask( Task_SaveFromStartMenuFull, 0);
+    return;
+}
+
+static void Task_SaveFromStartMenuFull(u8 taskId)
+{
+    s16 *state = gTasks[taskId].data;
+
+    if (!gPaletteFade.active)
+    {
+        switch (*state)
+        {
+            case 0:
+                ShowSaveInfoWindow();
+                *state = 1;
+                break;
+            case 1:
+                ShowSaveMessage(gText_SavingDontTurnOff, SaveDoSaveCallback);
+                *state = 2;
+                break;
+            case 2:
+                if (SaveCallback())
+                    *state = 3;
+                break;
+            case 3:
+                if (SaveCallback())
+                    *state = 4;
+                break;
+            case 4:
+                DestroyTask(taskId);
+                ClearDialogWindowAndFrameToTransparent(0, TRUE);
+                HideSaveMessageWindow();
+                ScriptUnfreezeObjectEvents();
+                UnlockPlayerFieldControls();
+                SoftResetInBattlePyramid();
+                break;
+        }
+    }
+}
+
+
 static bool8 SaveCallback(void)
 {
     switch (RunSaveCallback())
@@ -862,10 +915,6 @@ static bool8 SaveCallback(void)
     case SAVE_IN_PROGRESS:
         return FALSE;
     case SAVE_CANCELED: // Back to start menu
-        ClearDialogWindowAndFrameToTransparent(0, FALSE);
-        InitStartMenu();
-        gMenuCallback = HandleStartMenuInput;
-        return FALSE;
     case SAVE_SUCCESS:
     case SAVE_ERROR:    // Close start menu
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
@@ -1482,11 +1531,5 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 static bool8 StartMenuStatEditorCallback(void)
 {
     CreateTask(Task_OpenStatEditorFromStartMenu, 0);
-    return TRUE;
-}
-
-static bool8 StartMenuDexNavCallback(void)
-{
-    CreateTask(Task_OpenDexNavFromStartMenu, 0);
     return TRUE;
 }

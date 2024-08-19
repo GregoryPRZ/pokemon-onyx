@@ -145,183 +145,183 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 # 73 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
 # 74 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	msgbox MeteorFalls_1F_1R_Text_ArchieSeenYouBefore, MSGBOX_DEFAULT
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 # 75 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	closemessage
+	msgbox MeteorFalls_1F_1R_Text_ArchieSeenYouBefore, MSGBOX_DEFAULT
 # 76 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
+	removefieldmugshot
 # 77 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie
-# 78 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	waitmovement 0
-# 79 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	msgbox MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma, MSGBOX_DEFAULT
-# 80 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
-# 81 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	waitmovement 0
-# 82 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	msgbox MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo, MSGBOX_DEFAULT
-# 83 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
-# 84 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	waitmovement 0
-# 85 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	msgbox MeteorFalls_1F_1R_Text_ArchieFarewell, MSGBOX_DEFAULT
-# 86 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	closemessage
-# 87 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieExit
-# 88 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1Exit
-# 89 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2Exit
-# 90 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 78 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
+# 79 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie
+# 80 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	waitmovement 0
+# 81 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	msgbox MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma, MSGBOX_DEFAULT
+# 82 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
+# 83 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	waitmovement 0
+# 84 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
+# 85 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	msgbox MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo, MSGBOX_DEFAULT
+# 86 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	removefieldmugshot
+# 87 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterLeft
+# 88 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	waitmovement 0
+# 89 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
+# 90 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	msgbox MeteorFalls_1F_1R_Text_ArchieFarewell, MSGBOX_DEFAULT
 # 91 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	fadedefaultbgm
+	removefieldmugshot
 # 92 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	removeobject LOCALID_ARCHIE
+	closemessage
 # 93 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	removeobject LOCALID_AQUA_GRUNT_1
+	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieExit
 # 94 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	removeobject LOCALID_AQUA_GRUNT_2
+	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1Exit
 # 95 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
+	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2Exit
 # 96 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setflag FLAG_MET_ARCHIE_METEOR_FALLS
+	waitmovement 0
 # 97 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
+	fadedefaultbgm
 # 98 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setvar VAR_METEOR_FALLS_STATE, 1
+	removeobject LOCALID_ARCHIE
 # 99 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	releaseall
+	removeobject LOCALID_AQUA_GRUNT_1
 # 100 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	end
+	removeobject LOCALID_AQUA_GRUNT_2
 # 101 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 # 102 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer:
+	setflag FLAG_MET_ARCHIE_METEOR_FALLS
 # 103 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 # 104 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	setvar VAR_METEOR_FALLS_STATE, 1
 # 105 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_in_place_faster_up
+	releaseall
 # 106 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+	end
 # 107 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
 # 108 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit:
+MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer:
 # 109 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_up
+	walk_right
 # 110 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_up
+	walk_right
 # 111 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	walk_in_place_faster_up
 # 112 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	step_end
 # 113 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+
 # 114 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit:
 # 115 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 116 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 117 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_fast_right
 # 118 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+	walk_fast_right
 # 119 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	walk_fast_right
 # 120 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit:
+	walk_fast_right
 # 121 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 122 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 123 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 124 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	step_end
 # 125 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+
 # 126 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit:
 # 127 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 128 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 129 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 130 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_fast_right
 # 131 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+	walk_fast_right
 # 132 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	walk_fast_right
 # 133 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_ArchieArrive:
+	walk_fast_right
 # 134 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_fast_right
 # 135 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_fast_right
 # 136 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_fast_right
 # 137 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 138 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 139 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 140 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	step_end
-# 141 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 138 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 139 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Movement_ArchieArrive:
+# 140 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_right
+# 141 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_right
 # 142 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_AquaGrunt1Arrive:
+	walk_right
 # 143 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	delay_16
+	walk_right
 # 144 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	delay_16
+	walk_right
 # 145 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 146 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 147 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 148 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 149 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 150 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	step_end
-# 151 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 147 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 148 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Movement_AquaGrunt1Arrive:
+# 149 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	delay_16
+# 150 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	delay_16
+# 151 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_right
 # 152 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_AquaGrunt2Arrive:
+	walk_right
 # 153 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	delay_16
+	walk_right
 # 154 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	delay_16
+	walk_right
 # 155 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 156 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 157 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 158 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 159 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
-# 160 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	step_end
-# 161 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 157 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 158 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Movement_AquaGrunt2Arrive:
+# 159 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	delay_16
+# 160 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	delay_16
+# 161 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_right
 # 162 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_ArchieExit:
+	walk_right
 # 163 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 164 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -329,59 +329,59 @@ MeteorFalls_1F_1R_Movement_ArchieExit:
 # 165 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 166 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	step_end
 # 167 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+
 # 168 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+MeteorFalls_1F_1R_Movement_ArchieExit:
 # 169 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 170 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+	walk_right
 # 171 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	walk_right
 # 172 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_ArchieApproachPlayer:
+	walk_right
 # 173 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 174 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 175 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_up
+	walk_right
 # 176 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_up
-# 177 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_in_place_faster_left
-# 178 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	step_end
-# 179 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 177 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 178 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Movement_ArchieApproachPlayer:
+# 179 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_right
 # 180 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_AquaGrunt1Exit:
+	walk_right
 # 181 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_up
 # 182 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_up
 # 183 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_in_place_faster_left
 # 184 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	step_end
 # 185 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+
 # 186 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+MeteorFalls_1F_1R_Movement_AquaGrunt1Exit:
 # 187 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_up
 # 188 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_up
 # 189 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 190 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+	walk_right
 # 191 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	walk_right
 # 192 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie:
+	walk_right
 # 193 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 194 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -389,39 +389,39 @@ MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie:
 # 195 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 196 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_in_place_faster_up
-# 197 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	step_end
-# 198 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+# 197 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 198 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie:
 # 199 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_AquaGrunt2Exit:
+	walk_right
 # 200 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_up
+	walk_right
 # 201 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_up
+	walk_right
 # 202 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_up
+	walk_in_place_faster_up
 # 203 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	step_end
 # 204 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+
 # 205 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+MeteorFalls_1F_1R_Movement_AquaGrunt2Exit:
 # 206 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_up
 # 207 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_up
 # 208 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_right
+	walk_up
 # 209 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 210 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+	walk_right
 # 211 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	walk_right
 # 212 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie:
+	walk_right
 # 213 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 214 "data/maps/MeteorFalls_1F_1R/scripts.pory"
@@ -429,208 +429,220 @@ MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie:
 # 215 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	walk_right
 # 216 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_in_place_faster_up
+	step_end
 # 217 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	step_end
+
 # 218 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie:
 # 219 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay:
+	walk_right
 # 220 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_in_place_faster_down
+	walk_right
 # 221 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	delay_4
+	walk_right
 # 222 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_in_place_faster_right
+	walk_in_place_faster_up
 # 223 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	lock_facing_direction
-# 224 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	walk_left
-# 225 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	unlock_facing_direction
-# 226 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	face_right
-# 227 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	step_end
+# 224 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+
+# 225 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay:
+# 226 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	walk_in_place_faster_down
+# 227 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	delay_4
 # 228 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	walk_in_place_faster_right
 # 229 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_EventScript_ProfCozmo::
+	lock_facing_direction
 # 230 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	lock
+	walk_left
 # 231 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	faceplayer
+	unlock_facing_direction
 # 232 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	goto_if_set FLAG_MET_PROF_COZMO, MeteorFalls_1F_1R_EventScript_MetCozmo
+	face_right
 # 233 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	setflag FLAG_MET_PROF_COZMO
+	step_end
 # 234 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	msgbox MeteorFalls_1F_1R_Text_MeetProfCozmo, MSGBOX_DEFAULT
+
 # 235 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	release
+MeteorFalls_1F_1R_EventScript_ProfCozmo::
 # 236 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	end
+	lock
 # 237 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	faceplayer
 # 238 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_EventScript_MetCozmo::
+	goto_if_set FLAG_MET_PROF_COZMO, MeteorFalls_1F_1R_EventScript_MetCozmo
 # 239 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	msgbox MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney, MSGBOX_DEFAULT
+	setflag FLAG_MET_PROF_COZMO
 # 240 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	release
+	msgbox MeteorFalls_1F_1R_Text_MeetProfCozmo, MSGBOX_DEFAULT
 # 241 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	end
+	release
 # 242 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	end
 # 243 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_WithThisMeteorite:
-# 244 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Hehehe!\p"
-# 245 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "With this METEORITE, that thing in\n"
-# 246 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "MT. CHIMNEY will…$"
-# 247 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 244 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_EventScript_MetCozmo::
+# 245 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	msgbox MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney, MSGBOX_DEFAULT
+# 246 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	release
+# 247 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	end
 # 248 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma:
+
 # 249 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Heh?\p"
+MeteorFalls_1F_1R_Text_WithThisMeteorite:
 # 250 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "I don't know who you are, but if you get\n"
+	.string "Hehehe!\p"
 # 251 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "in the way of TEAM MAGMA, don't\l"
+	.string "With this METEORITE, that thing in\n"
 # 252 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "expect any mercy!$"
+	.string "MT. CHIMNEY will…$"
 # 253 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
 # 254 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_HoldItRightThereMagma:
+MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma:
 # 255 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Hold it right there, TEAM MAGMA!\p"
+	.string "Heh?\p"
 # 256 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "You're badly mistaken if you think you\n"
+	.string "I don't know who you are, but if you get\n"
 # 257 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "can have your way with the world!$"
+	.string "in the way of TEAM MAGMA, don't\l"
 # 258 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	.string "expect any mercy!$"
 # 259 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua:
+
 # 260 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Hehehe!\n"
+MeteorFalls_1F_1R_Text_HoldItRightThereMagma:
 # 261 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Even TEAM AQUA joins us!\p"
+	.string "Hold it right there, TEAM MAGMA!\p"
 # 262 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "But it's too much trouble to deal with\n"
+	.string "You're badly mistaken if you think you\n"
 # 263 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "you all…\p"
+	.string "can have your way with the world!$"
 # 264 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Heh, it doesn't matter!\p"
+
 # 265 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "We've got the METEORITE, so off to\n"
+MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua:
 # 266 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "MT. CHIMNEY we go!\p"
+	.string "Hehehe!\n"
 # 267 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Hehehe! Be seeing you, you TEAM\n"
+	.string "Even TEAM AQUA joins us!\p"
 # 268 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "AQUA dingbats!$"
+	.string "But it's too much trouble to deal with\n"
 # 269 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	.string "you all…\p"
 # 270 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
+	.string "Heh, it doesn't matter!\p"
 # 271 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: Didn't I see you before?\n"
+	.string "We've got the METEORITE, so off to\n"
 # 272 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "At SLATEPORT's MUSEUM?\p"
+	.string "MT. CHIMNEY we go!\p"
 # 273 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Ah, so your name is {PLAYER}.\p"
+	.string "Hehehe! Be seeing you, you TEAM\n"
 # 274 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "At the time, I thought you were one\n"
+	.string "AQUA dingbats!$"
 # 275 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "of TEAM MAGMA's goons.\p"
+
 # 276 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Humph…\n"
+MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
 # 277 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "You're one odd kid.\p"
+	.string "ARCHIE: Didn't I see you before?\n"
 # 278 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "TEAM MAGMA is a dangerous group of\n"
+	.string "At SLATEPORT's MUSEUM?\p"
 # 279 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "total fanatics.\p"
+	.string "Ah, so your name is {PLAYER}.\p"
 # 280 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "They engage in destruction, claiming\n"
+	.string "At the time, I thought you were one\n"
 # 281 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "to expand the land mass.\p"
+	.string "of TEAM MAGMA's goons.\p"
 # 282 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "They are the rivals to us,\n"
+	.string "Humph…\n"
 # 283 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "the sea-loving TEAM AQUA!$"
+	.string "You're one odd kid.\p"
 # 284 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	.string "TEAM MAGMA is a dangerous group of\n"
 # 285 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma:
+	.string "total fanatics.\p"
 # 286 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "BOSS, we should give chase to\n"
+	.string "They engage in destruction, claiming\n"
 # 287 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "TEAM MAGMA…$"
+	.string "to expand the land mass.\p"
 # 288 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	.string "They are the rivals to us,\n"
 # 289 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo:
+	.string "the sea-loving TEAM AQUA!$"
 # 290 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: Yes, yes, we must!\n"
+
 # 291 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "We've got to hurry.\p"
+MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma:
 # 292 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "There's no telling what TEAM MAGMA\n"
+	.string "BOSS, we should give chase to\n"
 # 293 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "will do at MT. CHIMNEY!$"
+	.string "TEAM MAGMA…$"
 # 294 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
 # 295 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_ArchieFarewell:
+MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo:
 # 296 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "ARCHIE: {PLAYER}, you should keep\n"
+	.string "ARCHIE: Yes, yes, we must!\n"
 # 297 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "an eye out for TEAM MAGMA, too.\p"
+	.string "We've got to hurry.\p"
 # 298 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "Farewell!$"
+	.string "There's no telling what TEAM MAGMA\n"
 # 299 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-
+	.string "will do at MT. CHIMNEY!$"
 # 300 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_MeetProfCozmo:
-# 301 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "I… I'm COZMO…\n"
-# 302 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "I'm a PROFESSOR…\p"
-# 303 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "TEAM MAGMA asked me to guide them\n"
-# 304 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "to METEOR FALLS…\p"
-# 305 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "But they tricked me.\n"
-# 306 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "They even took my METEORITE away…\p"
-# 307 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "And then another similar bunch,\n"
-# 308 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "TEAM AQUA showed up.\p"
-# 309 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "After that…\n"
-# 310 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "I don't understand any of it.\p"
-# 311 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "But that TEAM MAGMA…\p"
-# 312 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "What are they going to do with that\n"
-# 313 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "METEORITE at MT. CHIMNEY?$"
-# 314 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 
+# 301 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Text_ArchieFarewell:
+# 302 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "ARCHIE: {PLAYER}, you should keep\n"
+# 303 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "an eye out for TEAM MAGMA, too.\p"
+# 304 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "Farewell!$"
+# 305 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+
+# 306 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Text_MeetProfCozmo:
+# 307 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "I… I'm COZMO…\n"
+# 308 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "I'm a PROFESSOR…\p"
+# 309 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "TEAM MAGMA asked me to guide them\n"
+# 310 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "to METEOR FALLS…\p"
+# 311 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "But they tricked me.\n"
+# 312 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "They even took my METEORITE away…\p"
+# 313 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "And then another similar bunch,\n"
+# 314 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "TEAM AQUA showed up.\p"
 # 315 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
+	.string "After that…\n"
 # 316 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "PROF. COZMO: But that TEAM MAGMA…\p"
+	.string "I don't understand any of it.\p"
 # 317 "data/maps/MeteorFalls_1F_1R/scripts.pory"
-	.string "What are they going to do with that\n"
+	.string "But that TEAM MAGMA…\p"
 # 318 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "What are they going to do with that\n"
+# 319 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "METEORITE at MT. CHIMNEY?$"
+# 320 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+
+# 321 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
+# 322 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "PROF. COZMO: But that TEAM MAGMA…\p"
+# 323 "data/maps/MeteorFalls_1F_1R/scripts.pory"
+	.string "What are they going to do with that\n"
+# 324 "data/maps/MeteorFalls_1F_1R/scripts.pory"
 	.string "METEORITE at MT. CHIMNEY?$"
