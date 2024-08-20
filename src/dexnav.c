@@ -2126,17 +2126,17 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 static void PrintCurrentSpeciesInfo(void)
 {
     u8 searchLevelBonus = 0;
-    u16 species = DexNavGetSpecies();
-    if (gSaveBlock1Ptr->tx_Random_WildPokemon)
+    u16 species = GetSpeciesRandomSeeded(DexNavGetSpecies(), TX_RANDOM_T_WILD_POKEMON, 0);
+    if (!gSaveBlock1Ptr->tx_Random_WildPokemon)
     {
-        u16 species = GetSpeciesRandomSeeded(DexNavGetSpecies(), TX_RANDOM_T_WILD_POKEMON, 0);
+        u16 species = DexNavGetSpecies();
     }
     u32 i;
     u16 dexNum = SpeciesToNationalPokedexNum(species);
     u8 type1, type2;
     
-    if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
-        species = SPECIES_NONE;
+    //if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
+        //species = SPECIES_NONE;
 
     // clear windows
     FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
