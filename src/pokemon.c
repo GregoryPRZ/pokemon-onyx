@@ -3545,11 +3545,11 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
     if (gSaveBlock1Ptr->tx_Random_Abilities) //tx_randomizer_and_challenges
     {
         species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_ABILITY, 0);
-        if (gSpeciesInfo[species].abilities[1] == ABILITY_NONE || gSpeciesInfo[species].abilities[2] == ABILITY_NONE)
+        if (gSpeciesInfo[species].abilities[1] == ABILITY_NONE && gSpeciesInfo[species].abilities[2] == ABILITY_NONE)
             abilityNum = 0;
-        else if (gSpeciesInfo[species].abilities[0] == ABILITY_NONE || gSpeciesInfo[species].abilities[2] == ABILITY_NONE)
+        else if (gSpeciesInfo[species].abilities[0] == ABILITY_NONE && gSpeciesInfo[species].abilities[2] == ABILITY_NONE)
             abilityNum = 1;
-        else if (gSpeciesInfo[species].abilities[0] == ABILITY_NONE || gSpeciesInfo[species].abilities[1] == ABILITY_NONE)
+        else if (gSpeciesInfo[species].abilities[0] == ABILITY_NONE && gSpeciesInfo[species].abilities[1] == ABILITY_NONE)
             abilityNum = 2;
     }
 

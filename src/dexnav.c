@@ -817,6 +817,12 @@ static void Task_SetUpDexNavSearch(u8 taskId)
     struct Task *task = &gTasks[taskId];
     
     u16 species = sDexNavSearchDataPtr->species;
+    if (gSaveBlock1Ptr->tx_Random_WildPokemon)
+    {
+        species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+    }else{
+        species = sDexNavSearchDataPtr->species;
+    }
     u8 environment = sDexNavSearchDataPtr->environment;
     u8 searchLevel = GetSearchLevel(SpeciesToNationalPokedexNum(species));
 
@@ -862,7 +868,7 @@ static void Task_InitDexNavSearch(u8 taskId)
     u8 searchLevel;
     u16 species = task->tSpecies;
     u8 environment = task->tEnvironment;
-    
+
     sDexNavSearchDataPtr = AllocZeroed(sizeof(struct DexNavSearch));
     
     // assign non-objects to struct
@@ -957,11 +963,13 @@ static void DexNavUpdateDirectionArrow(void)
 static void DexNavDrawIcons(void)
 {
     u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
+    u16 species = sDexNavSearchDataPtr->species;
     if (gSaveBlock1Ptr->tx_Random_WildPokemon)
     {
-        u16 species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+        species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+    }else{
+        species = sDexNavSearchDataPtr->species;
     }
-    u16 species = sDexNavSearchDataPtr->species;
     
     // init sprite ids
     /*sDexNavSearchDataPtr->iconSpriteId = 0xFF;
@@ -1029,7 +1037,9 @@ static void Task_RevealHiddenMon(u8 taskId)
     u16 species = sDexNavSearchDataPtr->species;
     if (gSaveBlock1Ptr->tx_Random_WildPokemon)
     {
-        u16 species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+        species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+    }else{
+        species = sDexNavSearchDataPtr->species;
     }
     // remove owned icon if it exists
     if (sDexNavSearchDataPtr->ownedIconSpriteId != MAX_SPRITES)
@@ -1103,6 +1113,7 @@ static void Task_DexNavSearch(u8 taskId)
     
     if (sDexNavSearchDataPtr->proximity < 1)
     {
+
         CreateDexNavWildMon(sDexNavSearchDataPtr->species, sDexNavSearchDataPtr->potential, sDexNavSearchDataPtr->monLevel, 
           sDexNavSearchDataPtr->abilityNum, sDexNavSearchDataPtr->heldItem, sDexNavSearchDataPtr->moves);
         
@@ -1155,7 +1166,9 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
     u16 species = sDexNavSearchDataPtr->species;
     if (gSaveBlock1Ptr->tx_Random_WildPokemon)
     {
-        u16 species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+        species = GetSpeciesRandomSeeded(sDexNavSearchDataPtr->species, TX_RANDOM_T_WILD_POKEMON, 0);
+    }else{
+        species = sDexNavSearchDataPtr->species;
     }
 
     if (sDexNavSearchDataPtr->hiddenSearch && !GetSetPokedexFlag(SpeciesToNationalPokedexNum(sDexNavSearchDataPtr->species), FLAG_GET_SEEN))
@@ -2007,10 +2020,11 @@ static void DrawSpeciesIcons(void)
     LoadCompressedSpriteSheetUsingHeap(&sNoDataIconSpriteSheet);
     for (i = 0; i < LAND_WILD_COUNT; i++)
     {
-        species = sDexNavUiDataPtr->landSpecies[i];
         if (gSaveBlock1Ptr->tx_Random_WildPokemon)
         {
             species = GetSpeciesRandomSeeded(sDexNavUiDataPtr->landSpecies[i], TX_RANDOM_T_WILD_POKEMON, 0);
+        }else{
+            species = sDexNavUiDataPtr->landSpecies[i];
         }
         x = 20 + (24 * (i % 6));
         y = ROW_LAND_TOP_ICON_Y + (i > 5 ? 28 : 0);
@@ -2019,10 +2033,11 @@ static void DrawSpeciesIcons(void)
     
     for (i = 0; i < WATER_WILD_COUNT; i++)
     {
-        species = sDexNavUiDataPtr->waterSpecies[i];
         if (gSaveBlock1Ptr->tx_Random_WildPokemon)
         {
             species = GetSpeciesRandomSeeded(sDexNavUiDataPtr->waterSpecies[i], TX_RANDOM_T_WILD_POKEMON, 0);
+        }else{
+            species = sDexNavUiDataPtr->waterSpecies[i];
         }
         x = 30 + 24 * i;
         y = ROW_WATER_ICON_Y;
@@ -2031,10 +2046,11 @@ static void DrawSpeciesIcons(void)
     
     for (i = 0; i < HIDDEN_WILD_COUNT; i++)
     {
-        species = sDexNavUiDataPtr->hiddenSpecies[i];
         if (gSaveBlock1Ptr->tx_Random_WildPokemon)
         {
             species = GetSpeciesRandomSeeded(sDexNavUiDataPtr->hiddenSpecies[i], TX_RANDOM_T_WILD_POKEMON, 0);
+        }else{
+            species = sDexNavUiDataPtr->hiddenSpecies[i];
         }
         x = ROW_HIDDEN_ICON_X + 24 * i;
         y = ROW_HIDDEN_ICON_Y;
@@ -2126,10 +2142,12 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 static void PrintCurrentSpeciesInfo(void)
 {
     u8 searchLevelBonus = 0;
-    u16 species = GetSpeciesRandomSeeded(DexNavGetSpecies(), TX_RANDOM_T_WILD_POKEMON, 0);
-    if (!gSaveBlock1Ptr->tx_Random_WildPokemon)
+    u16 species = DexNavGetSpecies();
+    if (gSaveBlock1Ptr->tx_Random_WildPokemon)
     {
-        u16 species = DexNavGetSpecies();
+        species = GetSpeciesRandomSeeded(DexNavGetSpecies(), TX_RANDOM_T_WILD_POKEMON, 0);
+    }else{
+        species = DexNavGetSpecies();
     }
     u32 i;
     u16 dexNum = SpeciesToNationalPokedexNum(species);
@@ -2215,10 +2233,6 @@ static void PrintMapName(void)
 
 static void PrintSearchableSpecies(u16 species)
 {
-    if (gSaveBlock1Ptr->tx_Random_WildPokemon)
-    {
-        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
-    }
     FillWindowPixelBuffer(WINDOW_REGISTERED, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     PutWindowTilemap(WINDOW_REGISTERED);
     if (species == SPECIES_NONE)
@@ -2499,10 +2513,11 @@ static void Task_DexNavMain(u8 taskId)
     else if (JOY_NEW(R_BUTTON))
     {
         // check selection is valid. Play sound if invalid
-        species = DexNavGetSpecies();
         if (gSaveBlock1Ptr->tx_Random_WildPokemon)
         {
             species = GetSpeciesRandomSeeded(DexNavGetSpecies(), TX_RANDOM_T_WILD_POKEMON, 0);
+        }else{
+            species = DexNavGetSpecies();
         }
 
         if (species != SPECIES_NONE)
