@@ -5813,35 +5813,35 @@ static void TryEvolvePokemon(void)
 
     while (gLeveledUpInBattle != 0 && gSaveBlock1Ptr->tx_Challenges_EvoLimit != 2)
     {
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        if (!(sTriedEvolving & gBitTable[i]))
+        for (i = 0; i < PARTY_SIZE; i++)
         {
-            u16 species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_SPECIAL, i, NULL);
-            bool32 evoModeNormal = TRUE;
-            sTriedEvolving |= gBitTable[i];
-
-            if (species == SPECIES_NONE && (gLeveledUpInBattle & gBitTable[i]))
+            if (!(sTriedEvolving & gBitTable[i]))
             {
-                gLeveledUpInBattle &= ~(gBitTable[i]);
-                species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_ONLY, gLeveledUpInBattle, NULL);
-            }
-
-            if (species == SPECIES_NONE)
-            {
-                species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
-                evoModeNormal = FALSE;
-            }
-
-            if (species != SPECIES_NONE)
-            {
-                FreeAllWindowBuffers();
-                gBattleMainFunc = WaitForEvoSceneToFinish;
-                EvolutionScene(&gPlayerParty[i], species, evoModeNormal, i);
-                return;
+                u16 species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_SPECIAL, i, NULL);
+                bool32 evoModeNormal = TRUE;
+                sTriedEvolving |= gBitTable[i];
+    
+                if (species == SPECIES_NONE && (gLeveledUpInBattle & gBitTable[i]))
+                {
+                    gLeveledUpInBattle &= ~(gBitTable[i]);
+                    species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_ONLY, gLeveledUpInBattle, NULL);
+                }
+    
+                if (species == SPECIES_NONE)
+                {
+                    species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_CANT_STOP, ITEM_NONE, NULL);
+                    evoModeNormal = FALSE;
+                }
+    
+                if (species != SPECIES_NONE)
+                {
+                    FreeAllWindowBuffers();
+                    gBattleMainFunc = WaitForEvoSceneToFinish;
+                    EvolutionScene(&gPlayerParty[i], species, evoModeNormal, i);
+                    return;
+                }
             }
         }
-    }
     }
     sTriedEvolving = 0;
     gLeveledUpInBattle = 0;

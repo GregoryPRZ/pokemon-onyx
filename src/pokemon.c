@@ -7483,8 +7483,12 @@ u8 GetRandomType(void)
 u8 EvolutionBlockedByEvoLimit(u16 species)
 {
     u8 slot = gSpeciesMapping[species];
-    if (slot == EVO_TYPE_1 && gSaveBlock1Ptr->tx_Challenges_EvoLimit == 1) //No Evos already previously checked
+    if (slot == EVO_TYPE_1 && gSaveBlock1Ptr->tx_Challenges_EvoLimit == 1){
         return TRUE;
-
+    }else if ((slot == EVO_TYPE_0 && gSaveBlock1Ptr->tx_Challenges_EvoLimit == 2) || (slot == EVO_TYPE_1 && gSaveBlock1Ptr->tx_Challenges_EvoLimit == 2)){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
     return FALSE;
 }
