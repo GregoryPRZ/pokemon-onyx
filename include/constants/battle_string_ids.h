@@ -712,14 +712,15 @@
 #define STRINGID_FOGISDEEP                            710
 #define STRINGID_FOGLIFTED                            711
 #define STRINGID_PKMNMADESHELLGLEAM                   712
+#define STRINGID_FICKLEBEAMDOUBLED                    713
 
 //tx_randomizer_and_challenges
-#define STRINGID_ONETYPECAPTUREBLOCKED                713
-#define STRINGID_NUZLOCKECAPTUREBLOCKED               714
-#define STRINGID_SPECIESCLAUSECAPTUREBLOCKED          715
-#define STRINGID_SAMESPECIESCAPTUREBLOCKED            716
+#define STRINGID_ONETYPECAPTUREBLOCKED                714
+#define STRINGID_NUZLOCKECAPTUREBLOCKED               715
+#define STRINGID_SPECIESCLAUSECAPTUREBLOCKED          716
+#define STRINGID_SAMESPECIESCAPTUREBLOCKED            717
 
-#define BATTLESTRINGS_COUNT                           717
+#define BATTLESTRINGS_COUNT                           718
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

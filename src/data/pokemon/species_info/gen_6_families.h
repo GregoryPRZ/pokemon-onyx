@@ -5274,9 +5274,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             sPicTable_XerneasNeutral,
             SIZE_64x64,
             SHADOW_SIZE_M,
-            TRACKS_FOOT
-            //, gOverworldPalette_XerneasNeutral
-            //, gShinyOverworldPalette_XerneasNeutral
+            TRACKS_FOOT,
+            gOverworldPalette_XerneasNeutral,
+            gShinyOverworldPalette_XerneasNeutral
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
@@ -5331,7 +5331,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         FOOTPRINT(Xerneas)
         OVERWORLD(
-            sPicTable_XerneasNeutral,
+            sPicTable_XerneasActive,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -5785,7 +5785,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Diancie"),
-        .cryId = CRY_DIANCIE_MEGA,
+        .cryId = CRY_DIANCIE,
         .natDexNum = NATIONAL_DEX_DIANCIE,
         .categoryName = _("Jewel"),
         .height = 11,

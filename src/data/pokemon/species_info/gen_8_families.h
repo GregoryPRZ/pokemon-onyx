@@ -7528,9 +7528,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             sPicTable_EnamorusIncarnate,
             SIZE_64x64,
             SHADOW_SIZE_M,
-            TRACKS_NONE
-            //, gOverworldPalette_EnamorusIncarnate
-            //, gShinyOverworldPalette_EnamorusIncarnate
+            TRACKS_NONE,
+            gOverworldPalette_EnamorusIncarnate,
+            gShinyOverworldPalette_EnamorusIncarnate
         )
         .isLegendary = TRUE,
         .levelUpLearnset = sEnamorusLevelUpLearnset,
@@ -7590,9 +7590,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             sPicTable_EnamorusTherian,
             SIZE_64x64,
             SHADOW_SIZE_M,
-            TRACKS_NONE
-            //, gOverworldPalette_EnamorusTherian
-            //, gShinyOverworldPalette_EnamorusTherian
+            TRACKS_NONE,
+            gOverworldPalette_EnamorusTherian,
+            gShinyOverworldPalette_EnamorusTherian
         )
         .isLegendary = TRUE,
         .levelUpLearnset = sEnamorusLevelUpLearnset,

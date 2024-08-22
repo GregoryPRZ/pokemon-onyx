@@ -763,25 +763,47 @@ static void Sound_DrawChoices(u8 selection)
 
 static u8 Music_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_NEW(DPAD_RIGHT))
     {
-        selection ^= 1;
+        if (selection <= 1)
+            selection++;
+        else
+            selection = 0;
+
         sArrowPressed = TRUE;
     }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (selection != 0)
+            selection--;
+        else
+            selection = 2;
 
+        sArrowPressed = TRUE;
+    }
     return selection;
 }
 
 static void Music_DrawChoices(u8 selection)
 {
-    u8 styles[2];
+    u8 styles[3];
+    s32 widthHoenn, widthJohto, widthSinnoh, xMid;
 
     styles[0] = 0;
     styles[1] = 0;
+    styles[2] = 0;
     styles[selection] = 1;
 
     DrawOptionMenuChoice(gText_MusicHoenn, 104, YPOS_MUSIC, styles[0]);
-    DrawOptionMenuChoice(gText_MusicSinnoh, GetStringRightAlignXOffset(FONT_NORMAL, gText_MusicSinnoh, 198), YPOS_MUSIC, styles[1]);
+
+    widthHoenn = GetStringWidth(FONT_NORMAL, gText_MusicHoenn, 0);
+    widthJohto = GetStringWidth(FONT_NORMAL, gText_MusicJohto, 0);
+    widthSinnoh = GetStringWidth(FONT_NORMAL, gText_MusicSinnoh, 0);
+
+    widthJohto -= 94;
+    xMid = (widthHoenn - widthJohto - widthSinnoh) / 2 + 104;
+    DrawOptionMenuChoice(gText_MusicJohto, xMid, YPOS_MUSIC, styles[1]);
+    DrawOptionMenuChoice(gText_MusicSinnoh, GetStringRightAlignXOffset(FONT_NORMAL, gText_MusicSinnoh, 198), YPOS_MUSIC, styles[2]);
 }
 
 static u8 StatEditor_ProcessInput(u8 selection)
