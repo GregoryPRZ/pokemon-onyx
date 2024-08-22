@@ -322,6 +322,7 @@ extern const u8 gText_MusicHoenn[];
 extern const u8 gText_MusicSinnoh[];
 extern const u8 gText_FontFireRed[];
 extern const u8 gText_FontEmerald[];
+extern const u8 gText_MusicJohto[];
 extern const u8 gText_Option[];
 extern const u8 gText_OptionMenu[];
 extern const u8 gText_SmallDot[];
