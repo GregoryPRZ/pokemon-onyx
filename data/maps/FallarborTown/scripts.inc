@@ -111,84 +111,110 @@ FallarborTown_EventScript_MoveTutorSign::
 # 56 "data/maps/FallarborTown/scripts.pory"
 
 # 57 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_ShadyCharactersCozmosHome:
+FallarborTown_EventScript_DrifblimStop::
 # 58 "data/maps/FallarborTown/scripts.pory"
-	.string "Something's happening,\n"
+	call Common_EventScript_FlyingTaxi
 # 59 "data/maps/FallarborTown/scripts.pory"
-	.string "and I don't like it!\p"
+	release
 # 60 "data/maps/FallarborTown/scripts.pory"
-	.string "I've seen shady characters wandering\n"
+	end
 # 61 "data/maps/FallarborTown/scripts.pory"
-	.string "in and out of PROF. COZMO's home…$"
+
 # 62 "data/maps/FallarborTown/scripts.pory"
-
+FallarborTown_EventScript_DrifblimStopSign::
 # 63 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_RegionKnownForMeteors:
+	msgbox FallarborTown_Text_DrifblimStopSign, MSGBOX_SIGN
 # 64 "data/maps/FallarborTown/scripts.pory"
-	.string "This region's been known for meteors\n"
+	end
 # 65 "data/maps/FallarborTown/scripts.pory"
-	.string "since the olden days.\p"
+
 # 66 "data/maps/FallarborTown/scripts.pory"
-	.string "They say METEOR FALLS was gouged out\n"
+FallarborTown_Text_DrifblimStopSign:
 # 67 "data/maps/FallarborTown/scripts.pory"
-	.string "by a falling meteorite long ago.$"
+	.string "FALLARBOR TOWN DRIFBLIM STOP\n"
 # 68 "data/maps/FallarborTown/scripts.pory"
-
+	.string "A new way to fly over HOENN!$"
 # 69 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_MyPreciousAzurill:
+
 # 70 "data/maps/FallarborTown/scripts.pory"
-	.string "See! Take a look!\n"
+FallarborTown_Text_ShadyCharactersCozmosHome:
 # 71 "data/maps/FallarborTown/scripts.pory"
-	.string "This is my precious AZURILL!\p"
+	.string "Something's happening,\n"
 # 72 "data/maps/FallarborTown/scripts.pory"
-	.string "It's slick and smooth and plushy, too!$"
+	.string "and I don't like it!\p"
 # 73 "data/maps/FallarborTown/scripts.pory"
-
+	.string "I've seen shady characters wandering\n"
 # 74 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_Azurill:
+	.string "in and out of PROF. COZMO's home…$"
 # 75 "data/maps/FallarborTown/scripts.pory"
-	.string "AZURILL: Rooreelooo.$"
-# 76 "data/maps/FallarborTown/scripts.pory"
 
+# 76 "data/maps/FallarborTown/scripts.pory"
+FallarborTown_Text_RegionKnownForMeteors:
 # 77 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_HaveYouChallengedFlannery:
+	.string "This region's been known for meteors\n"
 # 78 "data/maps/FallarborTown/scripts.pory"
-	.string "Have you already challenged FLANNERY,\n"
+	.string "since the olden days.\p"
 # 79 "data/maps/FallarborTown/scripts.pory"
-	.string "the LEADER of LAVARIDGE GYM?\p"
+	.string "They say METEOR FALLS was gouged out\n"
 # 80 "data/maps/FallarborTown/scripts.pory"
-	.string "The girl's grandfather was famous.\n"
+	.string "by a falling meteorite long ago.$"
 # 81 "data/maps/FallarborTown/scripts.pory"
-	.string "He was one of the ELITE FOUR in the\l"
+
 # 82 "data/maps/FallarborTown/scripts.pory"
-	.string "POKéMON LEAGUE at one point.\p"
+FallarborTown_Text_MyPreciousAzurill:
 # 83 "data/maps/FallarborTown/scripts.pory"
-	.string "It wouldn't surprise me to see FLANNERY\n"
+	.string "See! Take a look!\n"
 # 84 "data/maps/FallarborTown/scripts.pory"
-	.string "become a great TRAINER in her own\l"
+	.string "This is my precious AZURILL!\p"
 # 85 "data/maps/FallarborTown/scripts.pory"
-	.string "right.$"
+	.string "It's slick and smooth and plushy, too!$"
 # 86 "data/maps/FallarborTown/scripts.pory"
 
 # 87 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_BattleTentSign:
+FallarborTown_Text_Azurill:
 # 88 "data/maps/FallarborTown/scripts.pory"
-	.string "BATTLE TENT FALLARBOR SITE\n"
+	.string "AZURILL: Rooreelooo.$"
 # 89 "data/maps/FallarborTown/scripts.pory"
-	.string "“May the Greatest Teams Gather!”$"
+
 # 90 "data/maps/FallarborTown/scripts.pory"
-
+FallarborTown_Text_HaveYouChallengedFlannery:
 # 91 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_TownSign:
+	.string "Have you already challenged FLANNERY,\n"
 # 92 "data/maps/FallarborTown/scripts.pory"
-	.string "FALLARBOR TOWN\n"
+	.string "the LEADER of LAVARIDGE GYM?\p"
 # 93 "data/maps/FallarborTown/scripts.pory"
-	.string "“A farm community with small gardens.”$"
+	.string "The girl's grandfather was famous.\n"
 # 94 "data/maps/FallarborTown/scripts.pory"
-
+	.string "He was one of the ELITE FOUR in the\l"
 # 95 "data/maps/FallarborTown/scripts.pory"
-FallarborTown_Text_MoveTutorSign:
+	.string "POKéMON LEAGUE at one point.\p"
 # 96 "data/maps/FallarborTown/scripts.pory"
-	.string "MOVE TUTOR'S HOUSE\n"
+	.string "It wouldn't surprise me to see FLANNERY\n"
 # 97 "data/maps/FallarborTown/scripts.pory"
+	.string "become a great TRAINER in her own\l"
+# 98 "data/maps/FallarborTown/scripts.pory"
+	.string "right.$"
+# 99 "data/maps/FallarborTown/scripts.pory"
+
+# 100 "data/maps/FallarborTown/scripts.pory"
+FallarborTown_Text_BattleTentSign:
+# 101 "data/maps/FallarborTown/scripts.pory"
+	.string "BATTLE TENT FALLARBOR SITE\n"
+# 102 "data/maps/FallarborTown/scripts.pory"
+	.string "“May the Greatest Teams Gather!”$"
+# 103 "data/maps/FallarborTown/scripts.pory"
+
+# 104 "data/maps/FallarborTown/scripts.pory"
+FallarborTown_Text_TownSign:
+# 105 "data/maps/FallarborTown/scripts.pory"
+	.string "FALLARBOR TOWN\n"
+# 106 "data/maps/FallarborTown/scripts.pory"
+	.string "“A farm community with small gardens.”$"
+# 107 "data/maps/FallarborTown/scripts.pory"
+
+# 108 "data/maps/FallarborTown/scripts.pory"
+FallarborTown_Text_MoveTutorSign:
+# 109 "data/maps/FallarborTown/scripts.pory"
+	.string "MOVE TUTOR'S HOUSE\n"
+# 110 "data/maps/FallarborTown/scripts.pory"
 	.string "“New moves taught to POKéMON.”$"

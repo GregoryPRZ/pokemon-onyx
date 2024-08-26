@@ -1743,6 +1743,7 @@ void CB2_ReturnToFieldContinueScript(void)
 
 void CB2_ReturnToFieldContinueScriptPlayMapMusic(void)
 {
+    VarSet(VAR_0x800A, 0);
     FieldClearVBlankHBlankCallbacks();
     gFieldCallback = FieldCB_ContinueScriptHandleMusic;
     CB2_ReturnToField();

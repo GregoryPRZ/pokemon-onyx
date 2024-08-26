@@ -769,6 +769,15 @@ SlateportCity_PokemartDecor:
 	release
 	end
 
+SlateportCity_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+SlateportCity_EventScript_DrifblimStopSign::
+	msgbox SlateportCity_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine
 SlateportCity_EventScript_CaptStern::
 	lockall
@@ -1146,6 +1155,10 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	waitstate
 	releaseall
 	end
+
+SlateportCity_Text_DrifblimStopSign:
+	.string "SLATEPORT CITY DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
 
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"

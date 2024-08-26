@@ -33,11 +33,15 @@ MtChimney_EventScript_Archie::
 	end
 
 MtChimney_EventScript_ArchieGoStopTeamMagma::
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox MtChimney_Text_ArchieGoStopTeamMagma, MSGBOX_DEFAULT
+	removefieldmugshot
 	return
 
 MtChimney_EventScript_ArchieBusyFighting::
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox MtChimney_Text_ArchieIHaveMyHandsFull, MSGBOX_DEFAULT
+	removefieldmugshot
 	return
 
 MtChimney_EventScript_Maxie::
@@ -51,9 +55,13 @@ MtChimney_EventScript_Maxie::
 	waitmovement 0
 	applymovement LOCALID_MAXIE, Common_Movement_Delay48
 	waitmovement 0
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox MtChimney_Text_MaxieIntro, MSGBOX_DEFAULT
+	removefieldmugshot
 	trainerbattle_no_intro TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	delay 30
 	fadescreen FADE_TO_BLACK
@@ -69,7 +77,9 @@ MtChimney_EventScript_Maxie::
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieApproachPlayerNorth
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox MtChimney_Text_ArchieThankYou, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	call_if_eq VAR_FACING, DIR_EAST, MtChimney_EventScript_ArchieExitEast
 	call_if_eq VAR_FACING, DIR_NORTH, MtChimney_EventScript_ArchieExitNorth

@@ -2088,18 +2088,23 @@ static void CB_ExitFlyMap(void)
                             break;
                     }
                     ReturnToFieldFromFlyMapSelect();
-                }
-                else
-                {
-                    SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
-                }
-                if (sFlyMap != NULL)
-                {
-                    TRY_FREE_AND_SET_NULL(sFlyMap);
-                    sFlyMap = NULL;
-                }
-                FreeAllWindowBuffers();
             }
-            break;
+            else
+            {
+            if (VarGet(VAR_LAST_TALKED_TO_FLYING_TAXI) == LAST_TALKED_TO_FLYING_TAXI)
+                    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+                else
+                    SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
+            }
+
+            
+            if (sFlyMap != NULL)
+            {
+                TRY_FREE_AND_SET_NULL(sFlyMap);
+                sFlyMap = NULL;
+            }
+            FreeAllWindowBuffers();
+        }
+        break;
     }
 }

@@ -11,6 +11,11 @@ This is a feature branch that implements _Outfits System_ into Pokémon Emerald,
 This is _not_ a faithful port of Gen 6's Outfits System. So, if you want it to behave similarly to Gen 6's system, you're likely gonna have to go on your own there. However, questions regarding the Outfits System is welcomed.
 
 Note that this feature branch is still missing some of the features that's necessary, such as the ability to purchase outfits. So, stay tune for more until then!
+If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
+You can phrase it as the following:
+```
+Based off RHH's pokeemerald-expansion 1.9.1 https://github.com/rh-hideout/pokeemerald-expansion/
+```
 
 ## Known Bugs
 

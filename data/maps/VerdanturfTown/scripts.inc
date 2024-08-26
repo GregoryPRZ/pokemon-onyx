@@ -133,124 +133,150 @@ VerdanturfTown_EventScript_RusturfTunnelSign::
 # 67 "data/maps/VerdanturfTown/scripts.pory"
 
 # 68 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_ManTryingToDigTunnel:
+VerdanturfTown_EventScript_DrifblimStop::
 # 69 "data/maps/VerdanturfTown/scripts.pory"
-	.string "My papa told me.\p"
+	call Common_EventScript_FlyingTaxi
 # 70 "data/maps/VerdanturfTown/scripts.pory"
-	.string "He says this tunnel is full of\n"
+	release
 # 71 "data/maps/VerdanturfTown/scripts.pory"
-	.string "timid POKéMON.\p"
+	end
 # 72 "data/maps/VerdanturfTown/scripts.pory"
-	.string "They get all scared of loud noise and\n"
+
 # 73 "data/maps/VerdanturfTown/scripts.pory"
-	.string "make a big uproar.\p"
+VerdanturfTown_EventScript_DrifblimStopSign::
 # 74 "data/maps/VerdanturfTown/scripts.pory"
-	.string "So they had to stop the big tunnel\n"
+	msgbox VerdanturfTown_Text_DrifblimStopSign, MSGBOX_SIGN
 # 75 "data/maps/VerdanturfTown/scripts.pory"
-	.string "project.\p"
+	end
 # 76 "data/maps/VerdanturfTown/scripts.pory"
-	.string "But there's one man. He's trying to dig\n"
+
 # 77 "data/maps/VerdanturfTown/scripts.pory"
-	.string "the tunnel by himself!$"
+VerdanturfTown_Text_DrifblimStopSign:
 # 78 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "VERDANTURF TOWN DRIFBLIM STOP\n"
 # 79 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_ManDugTunnelForLove:
+	.string "A new way to fly over HOENN!$"
 # 80 "data/maps/VerdanturfTown/scripts.pory"
-	.string "There was a man who dug a tunnel for\n"
+
 # 81 "data/maps/VerdanturfTown/scripts.pory"
-	.string "a lady he loved.\p"
+VerdanturfTown_Text_ManTryingToDigTunnel:
 # 82 "data/maps/VerdanturfTown/scripts.pory"
-	.string "I don't really get it, but hey!$"
+	.string "My papa told me.\p"
 # 83 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "He says this tunnel is full of\n"
 # 84 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_AirCleanHere:
+	.string "timid POKéMON.\p"
 # 85 "data/maps/VerdanturfTown/scripts.pory"
-	.string "The way the winds blow, volcanic ash\n"
+	.string "They get all scared of loud noise and\n"
 # 86 "data/maps/VerdanturfTown/scripts.pory"
-	.string "is never blown in this direction.\p"
+	.string "make a big uproar.\p"
 # 87 "data/maps/VerdanturfTown/scripts.pory"
-	.string "The air is clean and delicious here.\n"
+	.string "So they had to stop the big tunnel\n"
 # 88 "data/maps/VerdanturfTown/scripts.pory"
-	.string "Living here should do wonders for even\l"
+	.string "project.\p"
 # 89 "data/maps/VerdanturfTown/scripts.pory"
-	.string "frail and sickly people.$"
+	.string "But there's one man. He's trying to dig\n"
 # 90 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "the tunnel by himself!$"
 # 91 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_MakeBattleTentDebut:
+
 # 92 "data/maps/VerdanturfTown/scripts.pory"
-	.string "My POKéMON and I, we've been riding\n"
+VerdanturfTown_Text_ManDugTunnelForLove:
 # 93 "data/maps/VerdanturfTown/scripts.pory"
-	.string "a hot winning streak.\p"
+	.string "There was a man who dug a tunnel for\n"
 # 94 "data/maps/VerdanturfTown/scripts.pory"
-	.string "So I decided to make my BATTLE TENT\n"
+	.string "a lady he loved.\p"
 # 95 "data/maps/VerdanturfTown/scripts.pory"
-	.string "debut in this town.$"
+	.string "I don't really get it, but hey!$"
 # 96 "data/maps/VerdanturfTown/scripts.pory"
 
 # 97 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_GuyTryingToBustThroughCave:
+VerdanturfTown_Text_AirCleanHere:
 # 98 "data/maps/VerdanturfTown/scripts.pory"
-	.string "Did you see the cave next to the\n"
+	.string "The way the winds blow, volcanic ash\n"
 # 99 "data/maps/VerdanturfTown/scripts.pory"
-	.string "POKéMON MART?\p"
+	.string "is never blown in this direction.\p"
 # 100 "data/maps/VerdanturfTown/scripts.pory"
-	.string "There's a guy in there who's trying to\n"
+	.string "The air is clean and delicious here.\n"
 # 101 "data/maps/VerdanturfTown/scripts.pory"
-	.string "bust up boulders so he can bust out\l"
+	.string "Living here should do wonders for even\l"
 # 102 "data/maps/VerdanturfTown/scripts.pory"
-	.string "through to the other side.\p"
+	.string "frail and sickly people.$"
 # 103 "data/maps/VerdanturfTown/scripts.pory"
-	.string "It'd be great if we could go through…\n"
+
 # 104 "data/maps/VerdanturfTown/scripts.pory"
-	.string "It'll make it easy to visit RUSTBORO.$"
+VerdanturfTown_Text_MakeBattleTentDebut:
 # 105 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "My POKéMON and I, we've been riding\n"
 # 106 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_EasyToGetToRustboroNow:
+	.string "a hot winning streak.\p"
 # 107 "data/maps/VerdanturfTown/scripts.pory"
-	.string "That cave next to the POKéMON MART\n"
+	.string "So I decided to make my BATTLE TENT\n"
 # 108 "data/maps/VerdanturfTown/scripts.pory"
-	.string "is now a tunnel to the other side.\p"
+	.string "debut in this town.$"
 # 109 "data/maps/VerdanturfTown/scripts.pory"
-	.string "It's great--it's easy to go shop for\n"
+
 # 110 "data/maps/VerdanturfTown/scripts.pory"
-	.string "new DEVON products in RUSTBORO now.$"
+VerdanturfTown_Text_GuyTryingToBustThroughCave:
 # 111 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "Did you see the cave next to the\n"
 # 112 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_TownSign:
+	.string "POKéMON MART?\p"
 # 113 "data/maps/VerdanturfTown/scripts.pory"
-	.string "VERDANTURF TOWN\p"
+	.string "There's a guy in there who's trying to\n"
 # 114 "data/maps/VerdanturfTown/scripts.pory"
-	.string "“The windswept highlands with the\n"
+	.string "bust up boulders so he can bust out\l"
 # 115 "data/maps/VerdanturfTown/scripts.pory"
-	.string "sweet fragrance of grass.”$"
+	.string "through to the other side.\p"
 # 116 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "It'd be great if we could go through…\n"
 # 117 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_WandasHouse:
+	.string "It'll make it easy to visit RUSTBORO.$"
 # 118 "data/maps/VerdanturfTown/scripts.pory"
-	.string "WANDA'S HOUSE$"
+
 # 119 "data/maps/VerdanturfTown/scripts.pory"
-
+VerdanturfTown_Text_EasyToGetToRustboroNow:
 # 120 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_BattleTentSign:
+	.string "That cave next to the POKéMON MART\n"
 # 121 "data/maps/VerdanturfTown/scripts.pory"
-	.string "BATTLE TENT VERDANTURF SITE\n"
+	.string "is now a tunnel to the other side.\p"
 # 122 "data/maps/VerdanturfTown/scripts.pory"
-	.string "“Feast Your Eyes on Battles!”$"
+	.string "It's great--it's easy to go shop for\n"
 # 123 "data/maps/VerdanturfTown/scripts.pory"
-
+	.string "new DEVON products in RUSTBORO now.$"
 # 124 "data/maps/VerdanturfTown/scripts.pory"
-VerdanturfTown_Text_RusturfTunnelSign:
+
 # 125 "data/maps/VerdanturfTown/scripts.pory"
-	.string "RUSTURF TUNNEL\n"
+VerdanturfTown_Text_TownSign:
 # 126 "data/maps/VerdanturfTown/scripts.pory"
-	.string "“Linking RUSTBORO and VERDANTURF\p"
+	.string "VERDANTURF TOWN\p"
 # 127 "data/maps/VerdanturfTown/scripts.pory"
-	.string "“The tunnel project has been\n"
+	.string "“The windswept highlands with the\n"
 # 128 "data/maps/VerdanturfTown/scripts.pory"
+	.string "sweet fragrance of grass.”$"
+# 129 "data/maps/VerdanturfTown/scripts.pory"
+
+# 130 "data/maps/VerdanturfTown/scripts.pory"
+VerdanturfTown_Text_WandasHouse:
+# 131 "data/maps/VerdanturfTown/scripts.pory"
+	.string "WANDA'S HOUSE$"
+# 132 "data/maps/VerdanturfTown/scripts.pory"
+
+# 133 "data/maps/VerdanturfTown/scripts.pory"
+VerdanturfTown_Text_BattleTentSign:
+# 134 "data/maps/VerdanturfTown/scripts.pory"
+	.string "BATTLE TENT VERDANTURF SITE\n"
+# 135 "data/maps/VerdanturfTown/scripts.pory"
+	.string "“Feast Your Eyes on Battles!”$"
+# 136 "data/maps/VerdanturfTown/scripts.pory"
+
+# 137 "data/maps/VerdanturfTown/scripts.pory"
+VerdanturfTown_Text_RusturfTunnelSign:
+# 138 "data/maps/VerdanturfTown/scripts.pory"
+	.string "RUSTURF TUNNEL\n"
+# 139 "data/maps/VerdanturfTown/scripts.pory"
+	.string "“Linking RUSTBORO and VERDANTURF\p"
+# 140 "data/maps/VerdanturfTown/scripts.pory"
+	.string "“The tunnel project has been\n"
+# 141 "data/maps/VerdanturfTown/scripts.pory"
 	.string "canceled.”$"

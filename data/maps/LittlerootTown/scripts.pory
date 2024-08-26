@@ -908,6 +908,19 @@ LittlerootTown_EventScript_GiveBike::
 	delay 30
 	return
 
+LittlerootTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+LittlerootTown_EventScript_DrifblimStopSign::
+	msgbox LittlerootTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+LittlerootTown_Text_DrifblimStopSign:
+	.string "LITTLEROOT TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"

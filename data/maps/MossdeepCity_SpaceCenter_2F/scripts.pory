@@ -184,7 +184,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_Tabitha::
 
 MossdeepCity_SpaceCenter_2F_EventScript_Maxie::
 	lockall
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere, MSGBOX_DEFAULT
+	removefieldmugshot
 	releaseall
 	end
 
@@ -192,8 +194,12 @@ MossdeepCity_SpaceCenter_2F_EventScript_Steven::
 	lockall
 	goto_if_set FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER, MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
 	setflag FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel, MSGBOX_DEFAULT
+	removefieldmugshot
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	delay 30
 	playse SE_NOT_EFFECTIVE
@@ -237,9 +243,13 @@ MossdeepCity_SpaceCenter_2F_Movement_StevenFightSouth:
 MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt::
 	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
 	waitmovement 0
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle, MSGBOX_YESNO
+	removefieldmugshot
 	goto_if_eq VAR_RESULT, YES, MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
@@ -266,7 +276,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
 	waitstate
 
 MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	delay 20
 	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFasterLeft
@@ -277,7 +289,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	delay 20
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	setvar VAR_MOSSDEEP_CITY_STATE, 3
 	fadedefaultbgm
@@ -299,7 +313,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	turnobject LOCALID_RICH_BOY, DIR_NORTH
 	call MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer
 	fadescreen FADE_FROM_BLACK
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_DEFEATED_MAGMA_SPACE_CENTER

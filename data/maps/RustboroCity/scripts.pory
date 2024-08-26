@@ -1043,6 +1043,19 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+RustboroCity_EventScript_DrifblimStopSign::
+	msgbox RustboroCity_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+RustboroCity_Text_DrifblimStopSign:
+	.string "RUSTBORO CITY DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
 	.string "We all just shorten it to DEVON.\p"
