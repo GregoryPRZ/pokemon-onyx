@@ -132,7 +132,6 @@ $(OBJEVENTGFXDIR)/people/oras_may/watering.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/oras_may/underwater.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-
 $(OBJEVENTGFXDIR)/people/red/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

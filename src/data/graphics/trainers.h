@@ -217,6 +217,18 @@ const u16 gTrainerPalette_Wally[] = INCBIN_U16("graphics/trainers/palettes/wally
 const u32 gTrainerFrontPic_Brendan[] = INCBIN_U32("graphics/trainers/front_pics/brendan.4bpp.lz");
 const u16 gTrainerPalette_Brendan[] = INCBIN_U16("graphics/trainers/palettes/brendan.gbapal");
 
+const u32 gTrainerFrontPic_Dawn[] = INCBIN_U32("graphics/trainers/front_pics/dawn.4bpp.lz");
+const u16 gTrainerPalette_Dawn[] = INCBIN_U16("graphics/trainers/front_pics/dawn.gbapal");
+
+const u32 gTrainerFrontPic_Lucas[] = INCBIN_U32("graphics/trainers/front_pics/lucas.4bpp.lz");
+const u16 gTrainerPalette_Lucas[] = INCBIN_U16("graphics/trainers/front_pics/lucas.gbapal");
+
+const u32 gTrainerFrontPic_ModernMay[] = INCBIN_U32("graphics/trainers/front_pics/oras_may.4bpp.lz");
+const u16 gTrainerPalette_ModernMay[] = INCBIN_U16("graphics/trainers/front_pics/oras_may.gbapal");
+
+const u32 gTrainerFrontPic_ModernBrendan[] = INCBIN_U32("graphics/trainers/front_pics/oras_brendan.4bpp.lz");
+const u16 gTrainerPalette_ModernBrendan[] = INCBIN_U16("graphics/trainers/front_pics/oras_brendan.gbapal");
+
 const u32 gTrainerFrontPic_May[] = INCBIN_U32("graphics/trainers/front_pics/may.4bpp.lz");
 const u16 gTrainerPalette_May[] = INCBIN_U16("graphics/trainers/palettes/may.gbapal");
 
@@ -282,6 +294,10 @@ const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/pale
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
+const u8 gTrainerBackPic_Dawn[] = INCBIN_U8("graphics/trainers/back_pics/dawn.4bpp");
+const u8 gTrainerBackPic_Lucas[] = INCBIN_U8("graphics/trainers/back_pics/lucas.4bpp");
+const u8 gTrainerBackPic_ModernMay[] = INCBIN_U8("graphics/trainers/back_pics/oras_may.4bpp");
+const u8 gTrainerBackPic_ModernBrendan[] = INCBIN_U8("graphics/trainers/back_pics/oras_brendan.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf.4bpp");
 const u8 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan_rs.4bpp");
@@ -291,6 +307,12 @@ const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steve
 
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
+
+const u16 gTrainerBackPicPalette_Dawn[] = INCBIN_U16("graphics/trainers/back_pics/dawn.gbapal");
+const u16 gTrainerBackPicPalette_Lucas[] = INCBIN_U16("graphics/trainers/back_pics/lucas.gbapal");
+
+const u16 gTrainerBackPicPalette_ModernMay[] = INCBIN_U16("graphics/trainers/back_pics/oras_may.gbapal");
+const u16 gTrainerBackPicPalette_ModernBrendan[] = INCBIN_U16("graphics/trainers/back_pics/oras_brendan.gbapal");
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -381,6 +403,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_WALLY, gTrainerFrontPic_Wally, gTrainerPalette_Wally),
     TRAINER_SPRITE(TRAINER_PIC_BRENDAN, gTrainerFrontPic_Brendan, gTrainerPalette_Brendan),
     TRAINER_SPRITE(TRAINER_PIC_MAY, gTrainerFrontPic_May, gTrainerPalette_May),
+    TRAINER_SPRITE(TRAINER_PIC_DAWN, gTrainerFrontPic_Dawn, gTrainerPalette_Dawn),
+    TRAINER_SPRITE(TRAINER_PIC_LUCAS, gTrainerFrontPic_Lucas, gTrainerPalette_Lucas),
+    TRAINER_SPRITE(TRAINER_PIC_MODERN_MAY, gTrainerFrontPic_ModernMay, gTrainerPalette_ModernMay),
+    TRAINER_SPRITE(TRAINER_PIC_MODERN_BRENDAN, gTrainerFrontPic_ModernBrendan, gTrainerPalette_ModernBrendan),
     TRAINER_SPRITE(TRAINER_PIC_BUG_CATCHER, gTrainerFrontPic_BugCatcher, gTrainerPalette_BugCatcher),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_RANGER_M, gTrainerFrontPic_PokemonRangerM, gTrainerPalette_PokemonRangerM),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_RANGER_F, gTrainerFrontPic_PokemonRangerF, gTrainerPalette_PokemonRangerF),
@@ -476,4 +502,8 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_DAWN, 4, gTrainerBackPic_Dawn, gTrainerBackPicPalette_Dawn, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_LUCAS, 4, gTrainerBackPic_Lucas, gTrainerBackPicPalette_Lucas, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MODERN_MAY, 4, gTrainerBackPic_ModernMay, gTrainerBackPicPalette_ModernMay, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MODERN_BRENDAN, 4, gTrainerBackPic_ModernBrendan, gTrainerBackPicPalette_ModernBrendan, sBackAnims_Hoenn),
 };
