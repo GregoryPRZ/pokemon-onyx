@@ -2,6 +2,47 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNorm
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFieldMove;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnDecorating;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasDecorating;
+
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMaySurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernMayDecorating;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanDecorating;
+
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QuintyPlump;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NinjaBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twin;
@@ -258,6 +299,45 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
     [OBJ_EVENT_GFX_BRENDAN_SURFING] =          &gObjectEventGraphicsInfo_BrendanSurfing,
     [OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE] =       &gObjectEventGraphicsInfo_BrendanFieldMove,
+
+    [OBJ_EVENT_GFX_DAWN_NORMAL] =           &gObjectEventGraphicsInfo_DawnNormal,
+    [OBJ_EVENT_GFX_DAWN_MACH_BIKE] =        &gObjectEventGraphicsInfo_DawnMachBike,
+    [OBJ_EVENT_GFX_DAWN_ACRO_BIKE] =        &gObjectEventGraphicsInfo_DawnAcroBike,
+    [OBJ_EVENT_GFX_DAWN_SURFING] =          &gObjectEventGraphicsInfo_DawnSurfing,
+    [OBJ_EVENT_GFX_DAWN_UNDERWATER] =       &gObjectEventGraphicsInfo_DawnUnderwater,
+    [OBJ_EVENT_GFX_DAWN_FISHING] =          &gObjectEventGraphicsInfo_DawnFishing,
+    [OBJ_EVENT_GFX_DAWN_FIELD_MOVE] =       &gObjectEventGraphicsInfo_DawnFieldMove,
+    [OBJ_EVENT_GFX_DAWN_DECORATING] =       &gObjectEventGraphicsInfo_DawnDecorating,
+
+    [OBJ_EVENT_GFX_LUCAS_NORMAL] =               &gObjectEventGraphicsInfo_LucasNormal,
+    [OBJ_EVENT_GFX_LUCAS_MACH_BIKE] =            &gObjectEventGraphicsInfo_LucasMachBike,
+    [OBJ_EVENT_GFX_LUCAS_ACRO_BIKE] =            &gObjectEventGraphicsInfo_LucasAcroBike,
+    [OBJ_EVENT_GFX_LUCAS_SURFING] =              &gObjectEventGraphicsInfo_LucasSurfing,
+    [OBJ_EVENT_GFX_LUCAS_UNDERWATER] =           &gObjectEventGraphicsInfo_LucasUnderwater,
+    [OBJ_EVENT_GFX_LUCAS_FISHING] =              &gObjectEventGraphicsInfo_LucasFishing,
+    [OBJ_EVENT_GFX_LUCAS_FIELD_MOVE] =           &gObjectEventGraphicsInfo_LucasFieldMove,
+    [OBJ_EVENT_GFX_LUCAS_DECORATING] =           &gObjectEventGraphicsInfo_LucasDecorating,
+
+    [OBJ_EVENT_GFX_MODERN_MAY_NORMAL] =           &gObjectEventGraphicsInfo_ModernMayNormal,
+    [OBJ_EVENT_GFX_MODERN_MAY_MACH_BIKE] =        &gObjectEventGraphicsInfo_ModernMayMachBike,
+    [OBJ_EVENT_GFX_MODERN_MAY_ACRO_BIKE] =        &gObjectEventGraphicsInfo_ModernMayAcroBike,
+    [OBJ_EVENT_GFX_MODERN_MAY_SURFING] =          &gObjectEventGraphicsInfo_ModernMaySurfing,
+    [OBJ_EVENT_GFX_MODERN_MAY_UNDERWATER] =       &gObjectEventGraphicsInfo_ModernMayUnderwater,
+    [OBJ_EVENT_GFX_MODERN_MAY_FISHING] =          &gObjectEventGraphicsInfo_ModernMayFishing,
+    [OBJ_EVENT_GFX_MODERN_MAY_FIELD_MOVE] =       &gObjectEventGraphicsInfo_ModernMayFieldMove,
+    [OBJ_EVENT_GFX_MODERN_MAY_WATERING] =         &gObjectEventGraphicsInfo_ModernMayWatering,
+    [OBJ_EVENT_GFX_MODERN_MAY_DECORATING] =       &gObjectEventGraphicsInfo_ModernMayDecorating,
+
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_NORMAL] =               &gObjectEventGraphicsInfo_ModernBrendanNormal,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_MACH_BIKE] =            &gObjectEventGraphicsInfo_ModernBrendanMachBike,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_ACRO_BIKE] =            &gObjectEventGraphicsInfo_ModernBrendanAcroBike,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_SURFING] =              &gObjectEventGraphicsInfo_ModernBrendanSurfing,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_UNDERWATER] =           &gObjectEventGraphicsInfo_ModernBrendanUnderwater,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_FISHING] =              &gObjectEventGraphicsInfo_ModernBrendanFishing,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_FIELD_MOVE] =           &gObjectEventGraphicsInfo_ModernBrendanFieldMove,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_WATERING] =             &gObjectEventGraphicsInfo_ModernBrendanWatering,
+    [OBJ_EVENT_GFX_MODERN_BRENDAN_DECORATING] =           &gObjectEventGraphicsInfo_ModernBrendanDecorating,
+
     [OBJ_EVENT_GFX_QUINTY_PLUMP] =             &gObjectEventGraphicsInfo_QuintyPlump,
     [OBJ_EVENT_GFX_NINJA_BOY] =                &gObjectEventGraphicsInfo_NinjaBoy,
     [OBJ_EVENT_GFX_TWIN] =                     &gObjectEventGraphicsInfo_Twin,
