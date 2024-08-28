@@ -538,6 +538,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Tabitha, OBJ_EVENT_PAL_TABITHA},
     {gObjectEventPalette_Shelly, OBJ_EVENT_PAL_SHELLY},
     {gObjectEventPalette_Matt, OBJ_EVENT_PAL_MATT},
+    {gObjectEventPal_Dawn,                 OBJ_EVENT_PAL_TAG_DAWN},
+    {gObjectEventPal_Lucas,                     OBJ_EVENT_PAL_TAG_LUCAS},
+    {gObjectEventPal_ModernMay,                 OBJ_EVENT_PAL_TAG_MODERN_MAY},
+    {gObjectEventPal_ModernBrendan,                     OBJ_EVENT_PAL_TAG_MODERN_BRENDAN},
     // Gen VIII
     #ifdef ITEM_STRANGE_BALL
     {gObjectEventPal_StrangeBall,           OBJ_EVENT_PAL_TAG_BALL_STRANGE},

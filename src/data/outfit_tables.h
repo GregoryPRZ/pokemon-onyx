@@ -2,13 +2,17 @@
 #include "constants/event_objects.h"
 
 #if MODERN == 0
-static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
+static const u8 sText_OutfitName_UsualGreen[] = _("BASIC");
 static const u8 sText_OutfitDesc_UsualGreen[] = _(
-    "The usual, but\nbasic OUTFIT.");
+    "Usual, but\nbasic OUTFIT.");
 
-static const u8 sText_OutfitName_UnusualRed[] = _("UNUSUAL RED");
-static const u8 sText_OutfitDesc_UnusualRed[] = _(
-    "Rather unusual,\nbut still basic\nOUTFIT.");
+static const u8 sText_OutfitName_Sinnoh[] = _("MODERN");
+static const u8 sText_OutfitDesc_Sinnoh[] = _(
+    "Modernized, but\nbasic OUTFIT.");
+
+static const u8 sText_OutfitName_Sinnoh[] = _("SINNOH");
+static const u8 sText_OutfitDesc_Sinnoh[] = _(
+    "Popular OUTFIT,\nfrom SINNOH.");
 #endif
 
 static const u16 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.4bpp");
@@ -18,6 +22,14 @@ static const u16 sRegionMapPlayerIcon_RSBrendanGfx[] = INCBIN_U16("graphics/poke
 static const u16 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U16("graphics/pokenav/region_map/may_icon.4bpp");
 
 static const u16 sRegionMapPlayerIcon_RSMayGfx[] = INCBIN_U16("graphics/pokenav/region_map/rs_may_icon.4bpp");
+
+static const u16 sRegionMapPlayerIcon_DawnGfx[] = INCBIN_U16("graphics/pokenav/region_map/dawn_icon.4bpp");
+
+static const u16 sRegionMapPlayerIcon_LucasGfx[] = INCBIN_U16("graphics/pokenav/region_map/lucas_icon.4bpp");
+
+static const u16 sRegionMapPlayerIcon_ModernMayGfx[] = INCBIN_U16("graphics/pokenav/region_map/oras_may_icon.4bpp");
+
+static const u16 sRegionMapPlayerIcon_ModernBrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/oras_brendan_icon.4bpp");
 
 //! TODO: Should the gfx here be seperated?
 
@@ -92,12 +104,15 @@ static const u8 sFrontierPassPlayerIcons_RSBrendanMay_Gfx[] = INCBIN_U8("graphic
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_DECORATING OBJ_EVENT_GFX_MAY_DECORATING
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_FIELD_MOVE OBJ_EVENT_GFX_MAY_FIELD_MOVE
 
+#define OBJ_EVENT_GFX_LUCAS_WATERING OBJ_EVENT_GFX_BRENDAN_WATERING
+#define OBJ_EVENT_GFX_DAWN_WATERING OBJ_EVENT_GFX_MAY_WATERING
+
 const struct Outfit gOutfits[OUTFIT_COUNT] =
 {
     [OUTFIT_NONE] = {
         .isHidden = TRUE
     },
-    [OUTFIT_USUAL_GREEN] = {
+    [OUTFIT_BASIC] = {
         //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
         .isHidden = FALSE,
 
@@ -107,14 +122,14 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
         #if MODERN == 1
-        .name = COMPOUND_STRING("USUAL GREEN"),
+        .name = COMPOUND_STRING("BASIC"),
         #else
         .name = sText_OutfitName_UsualGreen,
         #endif
 
         //! DESC: outfit's description
         #if MODERN == 1
-        .desc = COMPOUND_STRING("The usual, but\nbasic OUTFIT."),
+        .desc = COMPOUND_STRING("Usual, but\nbasic OUTFIT."),
         #else
         .desc = sText_OutfitDesc_UsualGreen,
         #endif
@@ -139,20 +154,36 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! unlike region map. (probably should split them tbh)
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
-    [OUTFIT_UNUSUAL_RED] = {
+    [OUTFIT_MODERN] = {
         .isHidden = FALSE,
         .prices = { 200, 500 },
         #if MODERN == 1
-        .name = COMPOUND_STRING("UNUSUAL RED"),
-        .desc = COMPOUND_STRING("Rather unusual,\nbut still basic\nOUTFIT."),
+        .name = COMPOUND_STRING("MODERN"),
+        .desc = COMPOUND_STRING("Modernized, but\nbasic OUTFIT."),
         #else
         .name = sText_OutfitName_UnusualRed,
         .desc = sText_OutfitDesc_UnusualRed,
         #endif
-        .trainerPics = TRAINER_ID(RUBY_SAPPHIRE_BRENDAN, RUBY_SAPPHIRE_MAY),
-        .avatarGfxIds = AVATAR_GFX_ID(OUTFIT_RS_BRENDAN, OUTFIT_RS_MAY),
-        .animGfxIds = ANIM_GFX_ID(OUTFIT_RS_BRENDAN, OUTFIT_RS_MAY),
-        .iconsRM = REGION_MAP_GFX(RSBrendan, RSMay),
+        .trainerPics = TRAINER_ID(MODERN_BRENDAN, MODERN_MAY),
+        .avatarGfxIds = AVATAR_GFX_ID(MODERN_BRENDAN, MODERN_MAY),
+        .animGfxIds = ANIM_GFX_ID(MODERN_BRENDAN, MODERN_MAY),
+        .iconsRM = REGION_MAP_GFX(ModernBrendan, ModernMay),
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
+    },
+        [OUTFIT_SINNOH] = {
+        .isHidden = FALSE,
+        .prices = { 200, 500 },
+        #if MODERN == 1
+        .name = COMPOUND_STRING("SINNOH"),
+        .desc = COMPOUND_STRING("Popular OUTFIT,\nfrom SINNOH."),
+        #else
+        .name = sText_OutfitName_Sinnoh,
+        .desc = sText_OutfitDesc_Sinnoh,
+        #endif
+        .trainerPics = TRAINER_ID(LUCAS, DAWN),
+        .avatarGfxIds = AVATAR_GFX_ID(LUCAS, DAWN),
+        .animGfxIds = ANIM_GFX_ID(LUCAS, DAWN),
+        .iconsRM = REGION_MAP_GFX(Lucas, Dawn),
+        .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 };
