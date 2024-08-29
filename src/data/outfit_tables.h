@@ -13,6 +13,10 @@ static const u8 sText_OutfitDesc_Sinnoh[] = _(
 static const u8 sText_OutfitName_Sinnoh[] = _("SINNOH");
 static const u8 sText_OutfitDesc_Sinnoh[] = _(
     "Popular OUTFIT,\nfrom SINNOH.");
+
+static const u8 sText_OutfitName_Kanto[] = _("KANTO");
+static const u8 sText_OutfitDesc_Kanto[] = _(
+    "Classic OUTFIT,\nfrom KANTO.");
 #endif
 
 static const u16 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.4bpp");
@@ -31,6 +35,9 @@ static const u16 sRegionMapPlayerIcon_ModernMayGfx[] = INCBIN_U16("graphics/poke
 
 static const u16 sRegionMapPlayerIcon_ModernBrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/oras_brendan_icon.4bpp");
 
+static const u16 sRegionMapPlayerIcon_LeafGfx[] = INCBIN_U16("graphics/pokenav/region_map/leaf_icon.4bpp");
+
+static const u16 sRegionMapPlayerIcon_RedGfx[] = INCBIN_U16("graphics/pokenav/region_map/red_icon.4bpp");
 //! TODO: Should the gfx here be seperated?
 
 static const u8 sFrontierPassPlayerIcons_BrendanMay_Gfx[] = INCBIN_U8("graphics/frontier_pass/map_heads.4bpp");
@@ -170,7 +177,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsRM = REGION_MAP_GFX(ModernBrendan, ModernMay),
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
     },
-        [OUTFIT_SINNOH] = {
+    [OUTFIT_SINNOH] = {
         .isHidden = FALSE,
         .prices = { 200, 500 },
         #if MODERN == 1
@@ -184,6 +191,22 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .avatarGfxIds = AVATAR_GFX_ID(LUCAS, DAWN),
         .animGfxIds = ANIM_GFX_ID(LUCAS, DAWN),
         .iconsRM = REGION_MAP_GFX(Lucas, Dawn),
+        .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
+    },
+    [OUTFIT_KANTO] = {
+        .isHidden = FALSE,
+        .prices = { 200, 500 },
+        #if MODERN == 1
+        .name = COMPOUND_STRING("KANTO"),
+        .desc = COMPOUND_STRING("Classic OUTFIT,\nfrom KANTO."),
+        #else
+        .name = sText_OutfitName_Kanto,
+        .desc = sText_OutfitDesc_Kanto,
+        #endif
+        .trainerPics = TRAINER_ID(RED, LEAF),
+        .avatarGfxIds = AVATAR_GFX_ID(RED, LEAF),
+        .animGfxIds = ANIM_GFX_ID(RED, LEAF),
+        .iconsRM = REGION_MAP_GFX(Red, Leaf),
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 };

@@ -158,6 +158,7 @@ static void ResetOutfitData(void)
     UnlockOutfit(DEFAULT_OUTFIT);
     UnlockOutfit(OUTFIT_MODERN);
     UnlockOutfit(OUTFIT_SINNOH);
+    UnlockOutfit(OUTFIT_KANTO);
     gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
 }
 

@@ -41431,7 +41431,7 @@ F_TRAINER_FEMALE |
 #line 16575
         .trainerClass = TRAINER_CLASS_LEGEND,
 #line 16576
-        .trainerPic = TRAINER_PIC_RED,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender = 
 #line 16578
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -44219,7 +44219,7 @@ F_TRAINER_FEMALE |
 #line 17641
         .trainerClass = TRAINER_CLASS_LEGEND,
 #line 17642
-        .trainerPic = TRAINER_PIC_MAGMA_ADMIN_M,
+        .trainerPic = TRAINER_PIC_LUCAS,
         .encounterMusic_gender = 
 #line 17644
             TRAINER_ENCOUNTER_MUSIC_MALE,

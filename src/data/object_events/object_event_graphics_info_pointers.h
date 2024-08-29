@@ -42,6 +42,25 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrend
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanWatering;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ModernBrendanDecorating;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeafDecorating;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedAcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedDecorating;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QuintyPlump;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NinjaBoy;
@@ -337,6 +356,26 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MODERN_BRENDAN_FIELD_MOVE] =           &gObjectEventGraphicsInfo_ModernBrendanFieldMove,
     [OBJ_EVENT_GFX_MODERN_BRENDAN_WATERING] =             &gObjectEventGraphicsInfo_ModernBrendanWatering,
     [OBJ_EVENT_GFX_MODERN_BRENDAN_DECORATING] =           &gObjectEventGraphicsInfo_ModernBrendanDecorating,
+
+    [OBJ_EVENT_GFX_LEAF_NORMAL] =           &gObjectEventGraphicsInfo_LeafNormal,
+    [OBJ_EVENT_GFX_LEAF_MACH_BIKE] =        &gObjectEventGraphicsInfo_LeafMachBike,
+    [OBJ_EVENT_GFX_LEAF_ACRO_BIKE] =        &gObjectEventGraphicsInfo_LeafAcroBike,
+    [OBJ_EVENT_GFX_LEAF_SURFING] =          &gObjectEventGraphicsInfo_LeafSurfing,
+    [OBJ_EVENT_GFX_LEAF_UNDERWATER] =       &gObjectEventGraphicsInfo_LeafUnderwater,
+    [OBJ_EVENT_GFX_LEAF_FISHING] =          &gObjectEventGraphicsInfo_LeafFishing,
+    [OBJ_EVENT_GFX_LEAF_FIELD_MOVE] =       &gObjectEventGraphicsInfo_LeafFieldMove,
+    [OBJ_EVENT_GFX_LEAF_WATERING] =         &gObjectEventGraphicsInfo_LeafWatering,
+    [OBJ_EVENT_GFX_LEAF_DECORATING] =       &gObjectEventGraphicsInfo_LeafDecorating,
+
+    [OBJ_EVENT_GFX_RED_NORMAL] =               &gObjectEventGraphicsInfo_RedNormal,
+    [OBJ_EVENT_GFX_RED_MACH_BIKE] =            &gObjectEventGraphicsInfo_RedMachBike,
+    [OBJ_EVENT_GFX_RED_ACRO_BIKE] =            &gObjectEventGraphicsInfo_RedAcroBike,
+    [OBJ_EVENT_GFX_RED_SURFING] =              &gObjectEventGraphicsInfo_RedSurfing,
+    [OBJ_EVENT_GFX_RED_UNDERWATER] =           &gObjectEventGraphicsInfo_RedUnderwater,
+    [OBJ_EVENT_GFX_RED_FISHING] =              &gObjectEventGraphicsInfo_RedFishing,
+    [OBJ_EVENT_GFX_RED_FIELD_MOVE] =           &gObjectEventGraphicsInfo_RedFieldMove,
+    [OBJ_EVENT_GFX_RED_WATERING] =             &gObjectEventGraphicsInfo_RedWatering,
+    [OBJ_EVENT_GFX_RED_DECORATING] =           &gObjectEventGraphicsInfo_RedDecorating,
 
     [OBJ_EVENT_GFX_QUINTY_PLUMP] =             &gObjectEventGraphicsInfo_QuintyPlump,
     [OBJ_EVENT_GFX_NINJA_BOY] =                &gObjectEventGraphicsInfo_NinjaBoy,
