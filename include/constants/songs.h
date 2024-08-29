@@ -951,7 +951,7 @@
 #define MUS_HG_WIN_MINIGAME               898 // Cleared Wobbuffet Pop!
 #define MUS_VS_POSTGAME                   899
 #define MUS_ONYX_TITLE                    900
-#define MUS_VS_COLOSSEUM                  901
+#define MUS_VS_TOUGH_GUY                  901
 #define SE_DP_START                       902
 #define SE_MENU_SELECT                    903
 #define SE_MENU_CHANGE                    904

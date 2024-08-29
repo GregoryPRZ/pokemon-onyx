@@ -5776,7 +5776,7 @@ u16 GetBattleBGM(void)
         switch (trainerClass)
         {
         case TRAINER_CLASS_CREATOR:
-            return MUS_VS_POSTGAME;
+            return MUS_VS_TOUGH_GUY;
         case TRAINER_CLASS_LEGEND:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_AQUA_LEADER:
