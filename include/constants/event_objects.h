@@ -247,10 +247,31 @@
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
 
+#define OBJ_EVENT_GFX_LEAF_NORMAL             280
+#define OBJ_EVENT_GFX_LEAF_FIELD_MOVE         281
+#define OBJ_EVENT_GFX_LEAF_SURFING            282
+#define OBJ_EVENT_GFX_LEAF_UNDERWATER         283
+#define OBJ_EVENT_GFX_LEAF_FISHING            284
+#define OBJ_EVENT_GFX_LEAF_MACH_BIKE          285
+#define OBJ_EVENT_GFX_LEAF_ACRO_BIKE          286
+#define OBJ_EVENT_GFX_LEAF_WATERING           287
+#define OBJ_EVENT_GFX_LEAF_DECORATING         288
+
+#define OBJ_EVENT_GFX_RED_NORMAL         289
+#define OBJ_EVENT_GFX_RED_FIELD_MOVE     290
+#define OBJ_EVENT_GFX_RED_SURFING        291
+#define OBJ_EVENT_GFX_RED_UNDERWATER     292
+#define OBJ_EVENT_GFX_RED_FISHING        293
+#define OBJ_EVENT_GFX_RED_MACH_BIKE      294
+#define OBJ_EVENT_GFX_RED_ACRO_BIKE      295
+#define OBJ_EVENT_GFX_RED_WATERING       296
+#define OBJ_EVENT_GFX_RED_DECORATING     297   
+
+
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        242
+#define NUM_OBJ_EVENT_GFX                        298
 
 
 // These are dynamic object gfx ids.
@@ -416,6 +437,12 @@
 // Gen VIII
 #define OBJ_EVENT_PAL_TAG_BALL_STRANGE            0x116A
 #endif //OW_FOLLOWERS_POKEBALLS
+#define OBJ_EVENT_PAL_TAG_DAWN                0x1170
+#define OBJ_EVENT_PAL_TAG_LUCAS                    0x1171
+#define OBJ_EVENT_PAL_TAG_MODERN_MAY                0x1172
+#define OBJ_EVENT_PAL_TAG_MODERN_BRENDAN                    0x1173
+#define OBJ_EVENT_PAL_TAG_LEAF                0x1174
+#define OBJ_EVENT_PAL_TAG_RED                    0x1175
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
 #define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001

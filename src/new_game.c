@@ -153,6 +153,16 @@ void ResetMenuAndMonGlobals(void)
     ResetPokeblockScrollPositions();
 }
 
+static void ResetOutfitData(void)
+{
+    memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
+    UnlockOutfit(DEFAULT_OUTFIT);
+    UnlockOutfit(OUTFIT_MODERN);
+    UnlockOutfit(OUTFIT_SINNOH);
+    UnlockOutfit(OUTFIT_KANTO);
+    gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+}
+
 void NewGameInitData(void)
 {
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
