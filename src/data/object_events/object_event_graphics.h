@@ -437,6 +437,9 @@ const u16 gObjectEventPalette_Shelly[] = INCBIN_U16("graphics/object_events/pics
 const u32 gObjectEventPic_Matt[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/matt.4bpp");
 const u16 gObjectEventPalette_Matt[] = INCBIN_U16("graphics/object_events/pics/people/team_aqua/matt.gbapal");
 
+const u32 gObjectEventPic_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/cynthia.4bpp");
+const u16 gObjectEventPalette_Cynthia[] = INCBIN_U16("graphics/object_events/pics/people/cynthia.gbapal");
+
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");
 const u32 gObjectEventPic_DusclopsOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/dusclops.4bpp");

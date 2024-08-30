@@ -235,6 +235,9 @@ const u32 gTrainerPalette_ModernBrendan[] = INCBIN_U32("graphics/trainers/front_
 const u32 gTrainerFrontPic_May[] = INCBIN_U32("graphics/trainers/front_pics/may.4bpp.lz");
 const u32 gTrainerPalette_May[] = INCBIN_U32("graphics/trainers/palettes/may.gbapal.lz");
 
+const u32 gTrainerFrontPic_Cynthia[] = INCBIN_U32("graphics/trainers/front_pics/cynthia.4bpp.lz");
+const u32 gTrainerPalette_Cynthia[] = INCBIN_U32("graphics/trainers/front_pics/cynthia.gbapal.lz");
+
 const u32 gTrainerFrontPic_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.4bpp.lz");
 const u32 gTrainerPalette_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.gbapal.lz");
 
@@ -371,8 +374,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(GENTLEMAN, Gentleman),
     TRAINER_SPRITE(ELITE_FOUR_SIDNEY, EliteFourSidney),
     TRAINER_SPRITE(ELITE_FOUR_PHOEBE, EliteFourPhoebe),
-    TRAINER_SPRITE(ELITE_FOUR_GLACIA, EliteFourGlacia, -4, 4, 0x1B0),
-    TRAINER_SPRITE(ELITE_FOUR_DRAKE, EliteFourDrake, 0, 5, 0x1A0),
+    TRAINER_SPRITE(ELITE_FOUR_GLACIA, EliteFourGlacia),
+    TRAINER_SPRITE(ELITE_FOUR_DRAKE, EliteFourDrake),
     TRAINER_SPRITE(LEADER_ROXANNE, LeaderRoxanne),
     TRAINER_SPRITE(LEADER_BRAWLY, LeaderBrawly),
     TRAINER_SPRITE(LEADER_WATTSON, LeaderWattson),
@@ -387,7 +390,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(POKEFAN_M, PokefanM),
     TRAINER_SPRITE(POKEFAN_F, PokefanF),
     TRAINER_SPRITE(YOUNGSTER, Youngster),
-    TRAINER_SPRITE(CHAMPION_WALLACE, ChampionWallace, -8, 7, 0x188),
+    TRAINER_SPRITE(CHAMPION_WALLACE, ChampionWallace),
     TRAINER_SPRITE(FISHERMAN, Fisherman),
     TRAINER_SPRITE(CYCLING_TRIATHLETE_M, CyclingTriathleteM),
     TRAINER_SPRITE(CYCLING_TRIATHLETE_F, CyclingTriathleteF),
@@ -411,6 +414,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(LUCAS, Lucas),
     TRAINER_SPRITE(MODERN_MAY, ModernMay),
     TRAINER_SPRITE(MODERN_BRENDAN, ModernBrendan),
+    TRAINER_SPRITE(CYNTHIA, Cynthia),
     TRAINER_SPRITE(BUG_CATCHER, BugCatcher),
     TRAINER_SPRITE(POKEMON_RANGER_M, PokemonRangerM),
     TRAINER_SPRITE(POKEMON_RANGER_F, PokemonRangerF),
@@ -419,7 +423,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(YOUNG_COUPLE, YoungCouple),
     TRAINER_SPRITE(OLD_COUPLE, OldCouple),
     TRAINER_SPRITE(SIS_AND_BRO, SisAndBro),
-    TRAINER_SPRITE(STEVEN, Steven, 0, 7, 0x188),
+    TRAINER_SPRITE(STEVEN, Steven),
     TRAINER_SPRITE(SALON_MAIDEN_ANABEL, SalonMaidenAnabel),
     TRAINER_SPRITE(DOME_ACE_TUCKER, DomeAceTucker),
     TRAINER_SPRITE(PALACE_MAVEN_SPENSER, PalaceMavenSpenser),

@@ -306,11 +306,12 @@
 #define OBJ_EVENT_GFX_RED_WATERING       296
 #define OBJ_EVENT_GFX_RED_DECORATING     297   
 
+#define OBJ_EVENT_GFX_CYNTHIA                    298
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        298
+#define NUM_OBJ_EVENT_GFX                        299
 
 
 // These are dynamic object gfx ids.
@@ -486,6 +487,7 @@
 #define OBJ_EVENT_PAL_TAG_MODERN_BRENDAN                    0x1173
 #define OBJ_EVENT_PAL_TAG_LEAF                0x1174
 #define OBJ_EVENT_PAL_TAG_RED                    0x1175
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                    0x1176
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002

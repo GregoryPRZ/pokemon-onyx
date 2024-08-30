@@ -17771,3 +17771,71 @@ IVs: 0 Atk
 - Dark Pulse  
 - Ice Beam  
 - Sludge Wave 
+
+=== TRAINER_CYNTHIA ===
+Name: CYNTHIA
+Class: Legend
+Pic: Cynthia
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+Mugshot: Purple
+
+Spiritomb @ Leftovers  
+Ability: Pressure  
+EVs: 252 HP / 4 Atk / 252 SpD  
+Careful Nature  
+- Will-O-Wisp  
+- Sucker Punch  
+- Destiny Bond  
+- Pain Split  
+
+Milotic @ Flame Orb  
+Ability: Marvel Scale  
+EVs: 252 HP / 252 Def / 4 SpA  
+Bold Nature  
+IVs: 0 Atk  
+- Scald  
+- Toxic  
+- Recover  
+- Ice Beam  
+
+Garchomp @ Choice Scarf  
+Ability: Rough Skin  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Earthquake  
+- Dragon Claw  
+- Stone Edge  
+- Poison Jab  
+
+Lucario @ Lucarionite  
+Ability: Justified  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Drain Punch  
+- Swords Dance  
+- Bullet Punch  
+- Ice Punch  
+
+Roserade @ Life Orb  
+Ability: Natural Cure  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Sludge Bomb  
+- Giga Drain  
+- Hidden Power
+- Sleep Powder  
+
+Togekiss @ Heavy-Duty Boots  
+Ability: Serene Grace  
+EVs: 252 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Air Slash  
+- Thunder Wave  
+- Flamethrower  
+- Roost  
+
