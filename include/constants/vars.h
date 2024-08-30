@@ -268,7 +268,7 @@
 #define VAR_BATTLE_SPEED                           0x40F8 // Unused Var
 #define VAR_DEXNAV_SPECIES                               0x40F9 // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER                          0x40FA // steps for finding hidden pokemon
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
+#define VAR_LAST_TALKED_TO_FLYING_TAXI                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var

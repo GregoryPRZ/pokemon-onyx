@@ -161,82 +161,84 @@ MtRusturf_Top_EventScript_BlayzeRematch::
 	playbgm MUS_DP_CATASTROPHE, FALSE
 # 105 "data/maps/MtRusturf_Top/scripts.pory"
 	msgbox MtRusturf_Top_EventScript_BlayzeRematch_Text_0, MSGBOX_DEFAULT
+# 106 "data/maps/MtRusturf_Top/scripts.pory"
+	playmoncry SPECIES_POLITOED, CRY_MODE_NORMAL
 # 107 "data/maps/MtRusturf_Top/scripts.pory"
-	playmoncry SPECIES_POLITOED, CRY_MODE_NORMAL
-# 108 "data/maps/MtRusturf_Top/scripts.pory"
 	delay 40
-# 109 "data/maps/MtRusturf_Top/scripts.pory"
+# 108 "data/maps/MtRusturf_Top/scripts.pory"
 	waitmoncry
-# 110 "data/maps/MtRusturf_Top/scripts.pory"
+# 109 "data/maps/MtRusturf_Top/scripts.pory"
 	setweather WEATHER_RAIN
+# 110 "data/maps/MtRusturf_Top/scripts.pory"
+	doweather
 # 111 "data/maps/MtRusturf_Top/scripts.pory"
-	doweather
-# 112 "data/maps/MtRusturf_Top/scripts.pory"
 	delay 240
-# 113 "data/maps/MtRusturf_Top/scripts.pory"
+# 112 "data/maps/MtRusturf_Top/scripts.pory"
 	msgbox MtRusturf_Top_EventScript_BlayzeRematch_Text_1, MSGBOX_DEFAULT
-# 114 "data/maps/MtRusturf_Top/scripts.pory"
+# 113 "data/maps/MtRusturf_Top/scripts.pory"
 	trainerbattle_no_intro TRAINER_BLAYZE_1, MtRusturf_Top_Text_BlayzeDefeatTwo
-# 115 "data/maps/MtRusturf_Top/scripts.pory"
+# 114 "data/maps/MtRusturf_Top/scripts.pory"
 	fadedefaultbgm
-# 116 "data/maps/MtRusturf_Top/scripts.pory"
+# 115 "data/maps/MtRusturf_Top/scripts.pory"
 	setweather WEATHER_NONE
-# 117 "data/maps/MtRusturf_Top/scripts.pory"
+# 116 "data/maps/MtRusturf_Top/scripts.pory"
 	doweather
-# 118 "data/maps/MtRusturf_Top/scripts.pory"
+# 117 "data/maps/MtRusturf_Top/scripts.pory"
 	msgbox MtRusturf_Top_EventScript_BlayzeRematch_Text_2, MSGBOX_DEFAULT
-# 119 "data/maps/MtRusturf_Top/scripts.pory"
+# 118 "data/maps/MtRusturf_Top/scripts.pory"
 	giveitem ITEM_MASTER_BALL, 1
-# 120 "data/maps/MtRusturf_Top/scripts.pory"
+# 119 "data/maps/MtRusturf_Top/scripts.pory"
 	msgbox MtRusturf_Top_EventScript_BlayzeRematch_Text_3, MSGBOX_DEFAULT
-# 121 "data/maps/MtRusturf_Top/scripts.pory"
+# 120 "data/maps/MtRusturf_Top/scripts.pory"
 	playmoncry SPECIES_POLITOED, CRY_MODE_NORMAL
-# 122 "data/maps/MtRusturf_Top/scripts.pory"
+# 121 "data/maps/MtRusturf_Top/scripts.pory"
 	msgbox MtRusturf_Top_EventScript_BlayzeRematch_Text_4, MSGBOX_DEFAULT
-# 123 "data/maps/MtRusturf_Top/scripts.pory"
+# 122 "data/maps/MtRusturf_Top/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 124 "data/maps/MtRusturf_Top/scripts.pory"
+# 123 "data/maps/MtRusturf_Top/scripts.pory"
 	removeobject 1
-# 125 "data/maps/MtRusturf_Top/scripts.pory"
+# 124 "data/maps/MtRusturf_Top/scripts.pory"
 	removeobject 2
-# 126 "data/maps/MtRusturf_Top/scripts.pory"
+# 125 "data/maps/MtRusturf_Top/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 127 "data/maps/MtRusturf_Top/scripts.pory"
+# 126 "data/maps/MtRusturf_Top/scripts.pory"
 	setflag FLAG_DEFEATED_BLAYZE
-# 128 "data/maps/MtRusturf_Top/scripts.pory"
+# 127 "data/maps/MtRusturf_Top/scripts.pory"
 	release
 	end
 
 
 MtRusturf_Top_Movement_CameraPanUp::
+# 132 "data/maps/MtRusturf_Top/scripts.pory"
+	walk_up
 # 133 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_up
 # 134 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_up
 # 135 "data/maps/MtRusturf_Top/scripts.pory"
-	walk_up
-# 136 "data/maps/MtRusturf_Top/scripts.pory"
 	step_end
 	return
 
 
 MtRusturf_Top_Movement_CameraPanDown::
+# 139 "data/maps/MtRusturf_Top/scripts.pory"
+	delay_16
 # 140 "data/maps/MtRusturf_Top/scripts.pory"
 	delay_16
 # 141 "data/maps/MtRusturf_Top/scripts.pory"
-	delay_16
+	walk_down
 # 142 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_down
 # 143 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_down
 # 144 "data/maps/MtRusturf_Top/scripts.pory"
-	walk_down
-# 145 "data/maps/MtRusturf_Top/scripts.pory"
 	step_end
 	return
 
 
 MtRusturf_Top_Movement_ArceusApproach::
+# 148 "data/maps/MtRusturf_Top/scripts.pory"
+	walk_down
 # 149 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_down
 # 150 "data/maps/MtRusturf_Top/scripts.pory"
@@ -244,23 +246,23 @@ MtRusturf_Top_Movement_ArceusApproach::
 # 151 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_down
 # 152 "data/maps/MtRusturf_Top/scripts.pory"
-	walk_down
-# 153 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_in_place_down
+# 153 "data/maps/MtRusturf_Top/scripts.pory"
+	delay_16
 # 154 "data/maps/MtRusturf_Top/scripts.pory"
 	delay_16
 # 155 "data/maps/MtRusturf_Top/scripts.pory"
-	delay_16
-# 156 "data/maps/MtRusturf_Top/scripts.pory"
 	step_end
 	return
 
 
 MtRusturf_Top_Movement_ArceusAppear::
+# 159 "data/maps/MtRusturf_Top/scripts.pory"
+	delay_16
 # 160 "data/maps/MtRusturf_Top/scripts.pory"
 	delay_16
 # 161 "data/maps/MtRusturf_Top/scripts.pory"
-	delay_16
+	walk_in_place_down
 # 162 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_in_place_down
 # 163 "data/maps/MtRusturf_Top/scripts.pory"
@@ -268,8 +270,6 @@ MtRusturf_Top_Movement_ArceusAppear::
 # 164 "data/maps/MtRusturf_Top/scripts.pory"
 	walk_in_place_down
 # 165 "data/maps/MtRusturf_Top/scripts.pory"
-	walk_in_place_down
-# 166 "data/maps/MtRusturf_Top/scripts.pory"
 	step_end
 	return
 
@@ -295,16 +295,16 @@ MtRusturf_Top_EventScript_BlayzeRematch_Text_0:
 # 105 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "That was a good match, very well done!\n"
 	.string "But... You haven't seen the best of me...\l"
-	.string "prepare for a rematch here and now!\l"
+	.string "Prepare for a rematch here and now!\l"
 	.string "Politoed, can you set the rain for me,\l"
 	.string "please?$"
 
 MtRusturf_Top_EventScript_BlayzeRematch_Text_1:
-# 113 "data/maps/MtRusturf_Top/scripts.pory"
+# 112 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "Thank you, Politoed! Now, let's fight!$"
 
 MtRusturf_Top_EventScript_BlayzeRematch_Text_2:
-# 118 "data/maps/MtRusturf_Top/scripts.pory"
+# 117 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "The way you battle... That was really\n"
 	.string "insane! I'm glad to see how this travel\l"
 	.string "made you this strong! As a proof of\l"
@@ -314,20 +314,20 @@ MtRusturf_Top_EventScript_BlayzeRematch_Text_2:
 	.string "this.$"
 
 MtRusturf_Top_EventScript_BlayzeRematch_Text_3:
-# 120 "data/maps/MtRusturf_Top/scripts.pory"
+# 119 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "I feel like he doesn't have to travel\n"
 	.string "with me anymore... So it's up to you to\l"
 	.string "either leave him alone or bring him with\l"
 	.string "you. I hope we'll meet again someday!$"
 
 MtRusturf_Top_EventScript_BlayzeRematch_Text_4:
-# 122 "data/maps/MtRusturf_Top/scripts.pory"
+# 121 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "Toeeeeed!$"
 
 MtRusturf_Top_Text_BlayzeDefeatOne::
-# 169 "data/maps/MtRusturf_Top/scripts.pory"
+# 168 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "That was a good fight!$"
 
 MtRusturf_Top_Text_BlayzeDefeatTwo::
-# 173 "data/maps/MtRusturf_Top/scripts.pory"
+# 172 "data/maps/MtRusturf_Top/scripts.pory"
 	.string "That's... No... That's really insane!$"

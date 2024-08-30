@@ -3247,7 +3247,7 @@ static void FlyingTaxiFieldEffect_FlyNoises(struct Task *task)
 static void Task_FlyOut(u8 taskId)
 {
     sFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
-    if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
+    if (VarGet(VAR_LAST_TALKED_TO_FLYING_TAXI) == LAST_TALKED_TO_FLYING_TAXI)
         sFlyingTaxiFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
     else
         sFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
@@ -3360,7 +3360,6 @@ static void FlyOutFieldEffect_End(struct Task *task)
 {
     if (!gPaletteFade.active)
     {
-        VarSet(VAR_0x800A, 0);
         FieldEffectActiveListRemove(FLDEFF_USE_FLY);
         DestroyTask(FindTaskIdByFunc(Task_FlyOut));
     }
@@ -4037,7 +4036,7 @@ static void UseVsSeeker_DoPlayerAnimation(struct Task *task)
 
     if (gMapHeader.mapType != MAP_TYPE_UNDERWATER)
     {
-        SetPlayerAvatarFieldMove();
+        SetPlayerAvatarVsSeeker();
         ObjectEventSetHeldMovement(playerObj, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
     }
     task->data[0]++;

@@ -248,10 +248,69 @@
 #define OBJ_EVENT_GFX_SHELLY                    244
 #define OBJ_EVENT_GFX_MATT                    245
 
+#define OBJ_EVENT_GFX_DAWN_NORMAL            246
+#define OBJ_EVENT_GFX_DAWN_FIELD_MOVE        247
+#define OBJ_EVENT_GFX_DAWN_SURFING           248
+#define OBJ_EVENT_GFX_DAWN_UNDERWATER        249
+#define OBJ_EVENT_GFX_DAWN_FISHING           250
+#define OBJ_EVENT_GFX_DAWN_MACH_BIKE         251
+#define OBJ_EVENT_GFX_DAWN_ACRO_BIKE         252
+#define OBJ_EVENT_GFX_DAWN_DECORATING        253
+
+#define OBJ_EVENT_GFX_LUCAS_NORMAL                254
+#define OBJ_EVENT_GFX_LUCAS_FIELD_MOVE            255
+#define OBJ_EVENT_GFX_LUCAS_SURFING               256
+#define OBJ_EVENT_GFX_LUCAS_UNDERWATER            257
+#define OBJ_EVENT_GFX_LUCAS_FISHING               258
+#define OBJ_EVENT_GFX_LUCAS_MACH_BIKE             259
+#define OBJ_EVENT_GFX_LUCAS_ACRO_BIKE             260
+#define OBJ_EVENT_GFX_LUCAS_DECORATING            261   
+
+#define OBJ_EVENT_GFX_MODERN_MAY_NORMAL             262
+#define OBJ_EVENT_GFX_MODERN_MAY_FIELD_MOVE         263
+#define OBJ_EVENT_GFX_MODERN_MAY_SURFING            264
+#define OBJ_EVENT_GFX_MODERN_MAY_UNDERWATER         265
+#define OBJ_EVENT_GFX_MODERN_MAY_FISHING            266
+#define OBJ_EVENT_GFX_MODERN_MAY_MACH_BIKE          267
+#define OBJ_EVENT_GFX_MODERN_MAY_ACRO_BIKE          268
+#define OBJ_EVENT_GFX_MODERN_MAY_WATERING           269
+#define OBJ_EVENT_GFX_MODERN_MAY_DECORATING         270
+
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_NORMAL         271
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_FIELD_MOVE     272
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_SURFING        273
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_UNDERWATER     274
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_FISHING        275
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_MACH_BIKE      276
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_ACRO_BIKE      277
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_WATERING       278
+#define OBJ_EVENT_GFX_MODERN_BRENDAN_DECORATING     279   
+
+#define OBJ_EVENT_GFX_LEAF_NORMAL             280
+#define OBJ_EVENT_GFX_LEAF_FIELD_MOVE         281
+#define OBJ_EVENT_GFX_LEAF_SURFING            282
+#define OBJ_EVENT_GFX_LEAF_UNDERWATER         283
+#define OBJ_EVENT_GFX_LEAF_FISHING            284
+#define OBJ_EVENT_GFX_LEAF_MACH_BIKE          285
+#define OBJ_EVENT_GFX_LEAF_ACRO_BIKE          286
+#define OBJ_EVENT_GFX_LEAF_WATERING           287
+#define OBJ_EVENT_GFX_LEAF_DECORATING         288
+
+#define OBJ_EVENT_GFX_RED_NORMAL         289
+#define OBJ_EVENT_GFX_RED_FIELD_MOVE     290
+#define OBJ_EVENT_GFX_RED_SURFING        291
+#define OBJ_EVENT_GFX_RED_UNDERWATER     292
+#define OBJ_EVENT_GFX_RED_FISHING        293
+#define OBJ_EVENT_GFX_RED_MACH_BIKE      294
+#define OBJ_EVENT_GFX_RED_ACRO_BIKE      295
+#define OBJ_EVENT_GFX_RED_WATERING       296
+#define OBJ_EVENT_GFX_RED_DECORATING     297   
+
+
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        246
+#define NUM_OBJ_EVENT_GFX                        298
 
 
 // These are dynamic object gfx ids.
@@ -421,6 +480,12 @@
 #define OBJ_EVENT_PAL_TABITHA                  0x116D
 #define OBJ_EVENT_PAL_SHELLY                  0x116E
 #define OBJ_EVENT_PAL_MATT                  0x116F
+#define OBJ_EVENT_PAL_TAG_DAWN                0x1170
+#define OBJ_EVENT_PAL_TAG_LUCAS                    0x1171
+#define OBJ_EVENT_PAL_TAG_MODERN_MAY                0x1172
+#define OBJ_EVENT_PAL_TAG_MODERN_BRENDAN                    0x1173
+#define OBJ_EVENT_PAL_TAG_LEAF                0x1174
+#define OBJ_EVENT_PAL_TAG_RED                    0x1175
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002

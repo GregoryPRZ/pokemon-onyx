@@ -2121,3 +2121,7 @@ const u32 gItemIconPalette_InfiniteCandy[] = INCBIN_U32("graphics/items/icon_pal
 
 const u32 gItemIconPalette_InfiniteRepel[] = INCBIN_U32("graphics/items/icon_palettes/infinite_repel.gbapal.lz");
 //End Pokevial Branch
+
+const u32 gItemIcon_OutfitBox[] = INCBIN_U32("graphics/items/icons/outfit_box.4bpp.lz");
+const u32 gItemIconPalette_OutfitBox[] = INCBIN_U32("graphics/items/icon_palettes/outfit_box.gbapal.lz");
+

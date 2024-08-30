@@ -102,8 +102,7 @@ script MtRusturf_Top_EventScript_Blayze{
 
 script MtRusturf_Top_EventScript_BlayzeRematch{
     playbgm(MUS_DP_CATASTROPHE, FALSE)
-	msgbox(format("That was a good match, very well done! But... You haven't seen the best of me...
-    prepare for a rematch here and now! Politoed, can you set the rain for me, please?" ), MSGBOX_DEFAULT)
+	msgbox(format("That was a good match, very well done! But... You haven't seen the best of me... Prepare for a rematch here and now! Politoed, can you set the rain for me, please?" ), MSGBOX_DEFAULT)
     playmoncry(SPECIES_POLITOED, CRY_MODE_NORMAL)
     delay(40)
     waitmoncry

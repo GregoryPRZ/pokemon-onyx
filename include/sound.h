@@ -40,6 +40,7 @@ void PlayBGM(u16 songNum);
 u16 RegionalMusicHandler(u16 songNum);
 u16 HoennMusicHandler(u16 songNum);
 u16 SinnohMusicHandler(u16 songNum);
+u16 JohtoMusicHandler(u16 songNum);
 u16 DefaultMusicHandler(u16 songNum);
 void PlaySE(u16 songNum);
 void PlaySE12WithPanning(u16 songNum, s8 pan);

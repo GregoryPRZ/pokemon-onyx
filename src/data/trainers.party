@@ -16573,7 +16573,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 === TRAINER_BOBBY ===
 Name: BOBBY
 Class: Legend
-Pic: Red
+Pic: Cooltrainer M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -17639,7 +17639,7 @@ Jolly Nature
 === TRAINER_EVIL ===
 Name: EVIL
 Class: Legend
-Pic: Magma Admin M
+Pic: Lucas
 Gender: Male
 Music: Male
 Double Battle: No
