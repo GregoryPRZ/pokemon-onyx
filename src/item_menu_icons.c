@@ -507,6 +507,13 @@ void ShakeBagSprite(void)
     }
 }
 
+void SetBagSpriteVisible(bool8 state)
+{
+    struct Sprite *sprite = &gSprites[gBagMenu->spriteIds[ITEMMENUSPRITE_BAG]];
+    sprite->invisible = !state;
+}
+
+
 static void SpriteCB_ShakeBagSprite(struct Sprite *sprite)
 {
     // Wait for shaking to end

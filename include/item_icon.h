@@ -13,5 +13,5 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId);
 u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u16 tilesTag, u16 paletteTag, u16 itemId);
 const void *GetItemIconPic(u16 itemId);
 const u16 *GetItemIconPalette(u16 itemId);
-
+u8 BlitPokemonIconToWindow(u16 species, u8 windowId, u16 x, u16 y, void * paletteDest);
 #endif //GUARD_ITEM_ICON_H
