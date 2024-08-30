@@ -8,6 +8,9 @@
 #include "pokevial.h" // Pokevial Branch
 #include "item.h"
 #include "battle_main.h"
+#include "pokemon_icon.h"
+#include "window.h"
+#include "palette.h"
 
 // EWRAM vars
 EWRAM_DATA u8 *gItemIconDecompressionBuffer = NULL;
@@ -191,4 +194,34 @@ const void *GetItemIconPalette(u16 itemId)
         return gTypesInfo[gMovesInfo[gItemsInfo[itemId].secondaryId].type].paletteTMHM;
 
     return gItemsInfo[itemId].iconPalette;
+}
+
+u8 BlitPokemonIconToWindow(u16 species, u8 windowId, u16 x, u16 y, void * paletteDest)
+{
+    u8 palId;
+
+    if (!AllocItemIconTemporaryBuffers())
+        return 16;
+
+    palId = GetMonIconPaletteIndexFromSpecies(species);
+
+    //LZDecompressWram(GetMonIconTiles(species, FALSE), gItemIconDecompressionBuffer);
+    //CopyItemIconPicTo4x4Buffer(GetMonIconTiles(species, FALSE), gItemIcon4x4Buffer);
+    
+    BlitBitmapToWindow(windowId, GetMonIconTiles(species, FALSE), x, y, 32, 32);
+
+    //gMonIconPaletteTable
+
+    // if paletteDest is nonzero, copies the decompressed palette directly into it
+    // otherwise, loads the compressed palette into the windowId's BG palette ID
+    if (paletteDest) 
+    {
+        CpuFastCopy(gMonIconPaletteTable[palId].data, paletteDest, PLTT_SIZE_4BPP);
+    } 
+    else 
+    {
+        LoadPalette(gMonIconPaletteTable[palId].data, BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+    }
+    FreeItemIconTemporaryBuffers();
+    return 0;
 }
