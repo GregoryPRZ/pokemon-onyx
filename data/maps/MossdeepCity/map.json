@@ -250,6 +250,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_EventScript_BlackBelt",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "x": 69,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_METAGROSSITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_MOSSDEEP_METAGROSSITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 57,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_PSYSHOCK",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_MOSSDEEP_PSYSHOCK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DRIFBLIM)",
+      "x": 25,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MossdeepCity_EventScript_DrifblimStop",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -321,6 +360,13 @@
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GAME_CORNER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_MOSSDEEP_CITY_EVILS_HOUSE",
       "dest_warp_id": "0"
     }
   ],
@@ -480,6 +526,14 @@
       "elevation": 7,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MossdeepCity_EventScript_WhiteRock"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MossdeepCity_EventScript_DrifblimStopSign"
     }
   ]
 }

@@ -48,6 +48,7 @@
 #include "soar.h"
 #include "tv.h" //Pokevial Branch
 #include "pokevial.h" //Pokevial Branch
+#include "constants/vars.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -442,45 +443,42 @@ static bool8 IsHiddenItemPresentAtCoords(const struct MapEvents *events, s16 x, 
 
 static bool8 IsHiddenItemPresentInConnection(const struct MapConnection *connection, int x, int y)
 {
+    s16 connectionX, connectionY;
+    struct MapHeader const *const connectionHeader = GetMapHeaderFromConnection(connection);
 
-    u16 localX, localY;
-    u32 localOffset;
-    s32 localLength;
-
-    struct MapHeader const *const mapHeader = GetMapHeaderFromConnection(connection);
-
+// To convert our x/y into coordinates that are relative to the connected map, we must:
+//  - Subtract the virtual offset used for the border buffer (MAP_OFFSET).
+//  - Subtract the horizontal offset between North/South connections, or the vertical offset for East/West
+//  - Account for map size. (0,0) is in the NW corner of our map, so when looking North/West we have to add the height/width of the connected map,
+//     and when looking South/East we have to subtract the height/width of our current map.
+#define localX (x - MAP_OFFSET)
+#define localY (y - MAP_OFFSET)
     switch (connection->direction)
     {
-    // same weird temp variable behavior seen in IsHiddenItemPresentAtCoords
     case CONNECTION_NORTH:
-        localOffset = connection->offset + MAP_OFFSET;
-        localX = x - localOffset;
-        localLength = mapHeader->mapLayout->height - MAP_OFFSET;
-        localY = localLength + y; // additions are reversed for some reason
+        connectionX = localX - connection->offset;
+        connectionY = connectionHeader->mapLayout->height + localY;
         break;
     case CONNECTION_SOUTH:
-        localOffset = connection->offset + MAP_OFFSET;
-        localX = x - localOffset;
-        localLength = gMapHeader.mapLayout->height + MAP_OFFSET;
-        localY = y - localLength;
+        connectionX = localX - connection->offset;
+        connectionY = localY - gMapHeader.mapLayout->height;
         break;
     case CONNECTION_WEST:
-        localLength = mapHeader->mapLayout->width - MAP_OFFSET;
-        localX = localLength + x; // additions are reversed for some reason
-        localOffset = connection->offset + MAP_OFFSET;
-        localY = y - localOffset;
+        connectionX = connectionHeader->mapLayout->width + localX;
+        connectionY = localY - connection->offset;
         break;
     case CONNECTION_EAST:
-        localLength = gMapHeader.mapLayout->width + MAP_OFFSET;
-        localX = x - localLength;
-        localOffset = connection->offset + MAP_OFFSET;
-        localY = y - localOffset;
+        connectionX = localX - gMapHeader.mapLayout->width;
+        connectionY = localY - connection->offset;
         break;
     default:
         return FALSE;
     }
-    return IsHiddenItemPresentAtCoords(mapHeader->events, localX, localY);
+    return IsHiddenItemPresentAtCoords(connectionHeader->events, connectionX, connectionY);
 }
+
+#undef localX
+#undef localY
 
 static void CheckForHiddenItemsInMapConnection(u8 taskId)
 {
@@ -864,6 +862,12 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_InfiniteCandy(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_InfiniteCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_DynamaxCandy(u8 taskId)
 {
     gItemUseCB = ItemUseCB_DynamaxCandy;
@@ -964,6 +968,33 @@ void HandleUseExpiredRepel(struct ScriptContext *ctx)
 #if VAR_LAST_REPEL_LURE_USED != 0
     VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(VarGet(VAR_LAST_REPEL_LURE_USED)));
 #endif
+}
+
+void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
+{
+    bool8 infiniteRepelOn = FlagGet(OW_FLAG_NO_ENCOUNTER);
+    if (!infiniteRepelOn)
+    {
+        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        PlaySE(SE_REPEL);
+        if(gTasks[taskId].tUsingRegisteredKeyItem){
+            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOn, Task_CloseCantUseKeyItemMessage);
+        }
+        else{
+            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOn, CloseItemMessage);
+        }
+    }
+    else
+    {
+        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        PlaySE(SE_PC_OFF);
+        if (gTasks[taskId].tUsingRegisteredKeyItem){
+            DisplayItemMessageOnField(taskId, gText_InfiniteRepelOff, Task_CloseCantUseKeyItemMessage);
+        }
+        else{
+            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOff, CloseItemMessage);
+        }
+    }
 }
 
 void ItemUseOutOfBattle_Lure(u8 taskId)
@@ -1336,6 +1367,7 @@ void ItemUseOutOfBattle_EnigmaBerry(u8 taskId)
     case ITEM_EFFECT_RAISE_LEVEL:
         gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
         ItemUseOutOfBattle_RareCandy(taskId);
+        ItemUseOutOfBattle_InfiniteCandy(taskId);
         break;
     case ITEM_EFFECT_PP_UP:
     case ITEM_EFFECT_PP_MAX:

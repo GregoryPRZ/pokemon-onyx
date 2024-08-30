@@ -33,6 +33,7 @@
 #include "pokemon.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
+#include "pokenav.h"
 #include "random.h"
 #include "region_map.h"
 #include "scanline_effect.h"
@@ -1117,22 +1118,6 @@ static void Task_DexNavSearch(u8 taskId)
         //sDexNavSearchDataPtr->hiddenSearch = FALSE; //now its a regular dexnav search
         task->func = Task_RevealHiddenMon;
         return;
-    }
-
-    //Caves and water the pokemon moves around
-    if ((sDexNavSearchDataPtr->environment == ENCOUNTER_TYPE_WATER || GetCurrentMapType() == MAP_TYPE_UNDERGROUND)
-        && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel() && sDexNavSearchDataPtr->movementCount < 2
-        && task->tRevealed)
-    {
-        bool8 ret;
-        
-        FieldEffectStop(&gSprites[sDexNavSearchDataPtr->fldEffSpriteId], sDexNavSearchDataPtr->fldEffId);
-        while (1) {
-            if (TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
-                break;
-        }
-        
-        sDexNavSearchDataPtr->movementCount++;
     }
 
     DexNavProximityUpdate();
@@ -2349,6 +2334,23 @@ void Task_OpenDexNavFromStartMenu(u8 taskId)
     }
 }
 
+u32 PokeNavMenuDexNavCallback(void)
+{
+    CreateTask(Task_OpenDexNavFromPokenav, 0);
+    return TRUE;
+}
+
+void Task_OpenDexNavFromPokenav(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        DexNavGuiInit(CB2_InitPokeNav);
+        DestroyTask(taskId);
+    }
+}
+
+
 static void Task_DexNavWaitFadeIn(u8 taskId)
 {
     if (!gPaletteFade.active)
@@ -2365,7 +2367,7 @@ static void Task_DexNavMain(u8 taskId)
     
     if (JOY_NEW(B_BUTTON))
     {
-        PlaySE(SE_POKENAV_OFF);
+        PlaySE(SE_POKENAV_BACK);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         task->func = Task_DexNavFadeAndExit;
     }
@@ -2385,7 +2387,7 @@ static void Task_DexNavMain(u8 taskId)
             sDexNavUiDataPtr->cursorRow--;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -2406,7 +2408,7 @@ static void Task_DexNavMain(u8 taskId)
             sDexNavUiDataPtr->cursorRow++;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(DPAD_LEFT))
@@ -2431,7 +2433,7 @@ static void Task_DexNavMain(u8 taskId)
             sDexNavUiDataPtr->cursorCol--;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(DPAD_RIGHT))
@@ -2458,7 +2460,7 @@ static void Task_DexNavMain(u8 taskId)
             break;
         }
         
-        PlaySE(SE_RG_BAG_CURSOR);
+        PlaySE(SE_MENU_SELECT);
         UpdateCursorPosition();
     }
     else if (JOY_NEW(R_BUTTON))

@@ -545,7 +545,7 @@ static u32 GetGameProgressFlags()
         FLAG_VISITED_LAVARIDGE_TOWN,
         FLAG_VISITED_FORTREE_CITY,
         FLAG_SYS_GAME_CLEAR,
-        FLAG_DEFEATED_METEOR_FALLS_STEVEN
+        FLAG_DEFEATED_METEOR_FALLS_BOBBY
     };
     u32 i = 0, numGameProgressFlags = 0;
     u32 maxGameProgressFlags = ARRAY_COUNT(gameProgressFlags);
@@ -581,7 +581,7 @@ bool32 IsVsSeekerEnabled(void)
 {
     if (I_VS_SEEKER_CHARGING == 0)
         return FALSE;
-    
+
     return (CheckBagHasItem(ITEM_VS_SEEKER, 1));
 }
 

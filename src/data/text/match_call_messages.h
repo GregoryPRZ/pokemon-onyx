@@ -383,10 +383,10 @@ const u8 gText_MatchCallEliteFour_Drake_Pokemon[] = _("The raw power of DRAGONS!
 const u8 gText_MatchCallEliteFour_Drake_Intro1[] = _("I dedicate myself to the");
 const u8 gText_MatchCallEliteFour_Drake_Intro2[] = _("POKéMON that saved me.");
 
-const u8 gText_MatchCallChampion_Wallace_Strategy[] = _("Dignity and respect.");
-const u8 gText_MatchCallChampion_Wallace_Pokemon[] = _("I prefer POKéMON of grace.");
-const u8 gText_MatchCallChampion_Wallace_Intro1[] = _("I represent beauty as");
-const u8 gText_MatchCallChampion_Wallace_Intro2[] = _("well as intelligence.");
+const u8 gText_MatchCallChampion_Steven_Strategy[] = _("Ancestral power.");
+const u8 gText_MatchCallChampion_Steven_Pokemon[] = _("I use ancient POKéMON.");
+const u8 gText_MatchCallChampion_Steven_Intro1[] = _("I study and collect all");
+const u8 gText_MatchCallChampion_Steven_Intro2[] = _("kinds of stones.");
 
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] =
 {
@@ -467,5 +467,5 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_PHOEBE] = MCFLAVOR(EliteFour_Phoebe),
     [REMATCH_GLACIA] = MCFLAVOR(EliteFour_Glacia),
     [REMATCH_DRAKE] = MCFLAVOR(EliteFour_Drake),
-    [REMATCH_WALLACE] = MCFLAVOR(Champion_Wallace),
+    [REMATCH_STEVEN_CHAMPION] = MCFLAVOR(Champion_Steven),
 };

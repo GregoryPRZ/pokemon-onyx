@@ -40,11 +40,15 @@ MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 	waitmovement 0
 	applymovement LOCALID_STEVEN, MossdeepCity_StevensHouse_Movement_StevenApproachPlayer
 	waitmovement 0
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_StevensHouse_Text_YouveEarnedHMDive, MSGBOX_DEFAULT
+	removefieldmugshot
 	giveitem ITEM_HM_DIVE
 	setflag FLAG_RECEIVED_HM_DIVE
 	setflag FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_StevensHouse_Text_ExplainDive, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	delay 20
 	applymovement LOCALID_STEVEN, MossdeepCity_StevensHouse_Movement_StevenReturn
@@ -136,7 +140,9 @@ MossdeepCity_StevensHouse_EventScript_RockDisplay::
 	end
 
 MossdeepCity_StevensHouse_EventScript_Steven::
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis, MSGBOX_NPC
+	removefieldmugshot
 	end
 
 MossdeepCity_StevensHouse_EventScript_Letter::

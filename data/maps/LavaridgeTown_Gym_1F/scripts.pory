@@ -50,11 +50,22 @@ LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_Flannery::
-	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_OVERHEAT, LavaridgeTown_Gym_1F_EventScript_FlanneryPostBattleSpeech
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryIntro, MSGBOX_DEFAULT
+	removefieldmugshot
+	trainerbattle_no_intro TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryDefeat
+ 	goto LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated
 	goto_if_unset FLAG_RECEIVED_TM_OVERHEAT, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
+	release
+	end
+
+LavaridgeTown_Gym_1F_EventScript_FlanneryPostBattleSpeech::
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT
+	removefieldmugshot
 	release
 	end
 
@@ -62,7 +73,9 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
 	setflag FLAG_BADGE04_GET
@@ -87,7 +100,9 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 	giveitem ITEM_TM_OVERHEAT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_RECEIVED_TM_OVERHEAT
 	release
 	end
@@ -95,14 +110,11 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 	giveitem ITEM_TM_OVERHEAT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	createfieldmugshot MUGSHOT_FLANNERY, EMOTE_NORMAL
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_RECEIVED_TM_OVERHEAT
 	return
-
-LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
-	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
-	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
-	end
 
 LavaridgeTown_Gym_1F_EventScript_Cole::
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_COLE, LOCALID_COLE, LavaridgeTown_Gym_1F_Text_ColeIntro, LavaridgeTown_Gym_1F_Text_ColeDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript

@@ -1869,7 +1869,7 @@ static void Task_ClosePokedex(u8 taskId)
         ClearMonSprites();
         FreeWindowAndBgBuffers();
         DestroyTask(taskId);
-        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
         Free(sPokedexView);
     }
@@ -2645,7 +2645,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         sPokedexView->pokeBallRotation += 16 * (selectedMon - startingPos);
         ClearMonSprites();
         CreateMonSpritesAtPos(selectedMon, 0xE);
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
     else if (JOY_NEW(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
     {
@@ -2655,7 +2655,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         sPokedexView->pokeBallRotation += 16 * (selectedMon - startingPos);
         ClearMonSprites();
         CreateMonSpritesAtPos(selectedMon, 0xE);
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
 
     if (scrollDir == 0)
@@ -3468,7 +3468,7 @@ static void Task_HandleInfoScreenInput(u8 taskId)
     {
         sPokedexView->selectedScreen--;
         HighlightScreenSelectBarItem(sPokedexView->selectedScreen, 0xD);
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         return;
     }
     if ((JOY_NEW(DPAD_RIGHT)
@@ -3477,7 +3477,7 @@ static void Task_HandleInfoScreenInput(u8 taskId)
     {
         sPokedexView->selectedScreen++;
         HighlightScreenSelectBarItem(sPokedexView->selectedScreen, 0xD);
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         return;
     }
 }
@@ -3716,7 +3716,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
             m4aMPlayContinue(&gMPlayInfo_BGM);
             sPokedexView->screenSwitchState = 2;
             gTasks[taskId].func = Task_SwitchScreensFromCryScreen;
-            PlaySE(SE_DEX_PAGE);
+            PlaySE(SE_PIN);
             return;
         }
         if (JOY_NEW(DPAD_RIGHT)
@@ -3732,7 +3732,7 @@ static void Task_HandleCryScreenInput(u8 taskId)
                 m4aMPlayContinue(&gMPlayInfo_BGM);
                 sPokedexView->screenSwitchState = 3;
                 gTasks[taskId].func = Task_SwitchScreensFromCryScreen;
-                PlaySE(SE_DEX_PAGE);
+                PlaySE(SE_PIN);
             }
             return;
         }
@@ -3885,7 +3885,7 @@ static void Task_HandleSizeScreenInput(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0, 0x10, RGB_BLACK);
         sPokedexView->screenSwitchState = 2;
         gTasks[taskId].func = Task_SwitchScreensFromSizeScreen;
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
     }
 }
 
@@ -5174,7 +5174,7 @@ static void Task_HandleSearchTopBarInput(u8 taskId)
     }
     if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tTopBarItem > SEARCH_TOPBAR_SEARCH)
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         gTasks[taskId].tTopBarItem--;
         HighlightSelectedSearchTopBarItem(gTasks[taskId].tTopBarItem);
         CopyWindowToVram(0, COPYWIN_GFX);
@@ -5182,7 +5182,7 @@ static void Task_HandleSearchTopBarInput(u8 taskId)
     }
     if (JOY_NEW(DPAD_RIGHT) && gTasks[taskId].tTopBarItem < SEARCH_TOPBAR_CANCEL)
     {
-        PlaySE(SE_DEX_PAGE);
+        PlaySE(SE_PIN);
         gTasks[taskId].tTopBarItem++;
         HighlightSelectedSearchTopBarItem(gTasks[taskId].tTopBarItem);
         CopyWindowToVram(0, COPYWIN_GFX);

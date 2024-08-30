@@ -75,12 +75,16 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle::
 	end
 
 MauvilleCity_Gym_EventScript_Wattson::
-	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_SHOCK_WAVE, MauvilleCity_Gym_EventScript_WattsonPostBattleSpeech
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
+	msgbox MauvilleCity_Gym_Text_WattsonIntro, MSGBOX_DEFAULT
+	removefieldmugshot
+	trainerbattle_no_intro TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonDefeat
+	goto MauvilleCity_Gym_EventScript_WattsonDefeated
 	goto_if_unset FLAG_RECEIVED_TM_SHOCK_WAVE, MauvilleCity_Gym_EventScript_GiveShockWave2
 	goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, MauvilleCity_Gym_EventScript_CompletedNewMauville
-	msgbox MauvilleCity_Gym_Text_WattsonPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
@@ -88,7 +92,9 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	message MauvilleCity_Gym_Text_ReceivedDynamoBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
+	removefieldmugshot
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
 	setflag FLAG_DEFEATED_MAUVILLE_GYM
@@ -115,7 +121,9 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 MauvilleCity_Gym_EventScript_GiveShockWave2::
 	giveitem ITEM_TM_SHOCK_WAVE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
 	release
 	end
@@ -123,18 +131,24 @@ MauvilleCity_Gym_EventScript_GiveShockWave2::
 MauvilleCity_Gym_EventScript_GiveShockWave::
 	giveitem ITEM_TM_SHOCK_WAVE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
+	removefieldmugshot
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
 	return
 
 MauvilleCity_Gym_EventScript_CompletedNewMauville::
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
 	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
+	removefieldmugshot
 	release
 	end
 
-MauvilleCity_Gym_EventScript_WattsonRematch::
-	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
-	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
+MauvilleCity_Gym_EventScript_WattsonPostBattleSpeech::
+	createfieldmugshot MUGSHOT_WATTSON, EMOTE_NORMAL
+	msgbox MauvilleCity_Gym_Text_WattsonPostBattle, MSGBOX_DEFAULT
+	removefieldmugshot
+	release
 	end
 
 MauvilleCity_Gym_EventScript_Switch1::

@@ -238,6 +238,15 @@ PetalburgCity_EventScript_Gentleman::
 	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+PetalburgCity_EventScript_DrifblimStopSign::
+	msgbox PetalburgCity_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
 PetalburgCity_EventScript_WallyHouseSign::
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
 	end
@@ -750,6 +759,10 @@ PetalburgCity_Text_CitySign:
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
+
+PetalburgCity_Text_DrifblimStopSign:
+	.string "PETALBURG CITY DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
 
 PetalburgCity_Text_AreYouATrainer:
 	.string "Excuse me!\p"

@@ -5509,8 +5509,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
-            gOverworldPalette_DialgaOrigin
-            //, gShinyOverworldPalette_DialgaOrigin
+            gOverworldPalette_DialgaOrigin,
+            gShinyOverworldPalette_DialgaOrigin
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
@@ -5647,8 +5647,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
-            gOverworldPalette_PalkiaOrigin
-            //, gShinyOverworldPalette_PalkiaOrigin
+            gOverworldPalette_PalkiaOrigin,
+            gShinyOverworldPalette_PalkiaOrigin
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
@@ -5752,7 +5752,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_SLOW_START, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_SLOW_START, ABILITY_NONE, ABILITY_HUGE_POWER },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Regigigas"),
         .cryId = CRY_REGIGIGAS,
@@ -5924,8 +5924,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gOverworldPalette_GiratinaOrigin
-            //, gShinyOverworldPalette_GiratinaOrigin
+            gOverworldPalette_GiratinaOrigin,
+            gShinyOverworldPalette_GiratinaOrigin
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,

@@ -155,7 +155,7 @@ bool32 TryChangeBattleWeather(u32 battler, u32 weatherEnumId, bool32 viaAbility)
 u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 moveArg);
 bool32 TryPrimalReversion(u32 battler);
 bool32 IsNeutralizingGasOnField(void);
-bool32 IsMoldBreakerTypeAbility(u32 ability);
+bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability);
 u32 GetBattlerAbility(u32 battler);
 u32 IsAbilityOnSide(u32 battler, u32 ability);
 u32 IsAbilityOnOpposingSide(u32 battler, u32 ability);
@@ -231,6 +231,8 @@ bool32 TryRoomService(u32 battler);
 void BufferStatChange(u32 battler, u8 statId, u8 stringId);
 bool32 BlocksPrankster(u16 move, u32 battlerPrankster, u32 battlerDef, bool32 checkTarget);
 u16 GetUsedHeldItem(u32 battler);
+bool32 PickupHasValidTarget(u32 battler);
+bool32 CantPickupItem(u32 battler);
 bool32 IsBattlerWeatherAffected(u32 battler, u32 weatherFlags);
 u32 GetBattlerMoveTargetType(u32 battler, u32 move);
 bool32 CanTargetBattler(u32 battlerAtk, u32 battlerDef, u16 move);

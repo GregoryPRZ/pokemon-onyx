@@ -125,9 +125,7 @@ struct ChooseMoveStruct
     u8 currentPp[MAX_MON_MOVES];
     u8 maxPp[MAX_MON_MOVES];
     u16 species;
-    u8 monType1;
-    u8 monType2;
-    u8 monType3;
+    u8 monTypes[3];
     struct ZMoveData zmove;
 };
 
@@ -337,5 +335,8 @@ void SetControllerToLinkOpponent(u32 battler);
 
 // link partner
 void SetControllerToLinkPartner(u32 battler);
+
+// Battle Speed Up (Credit to Pokabbie)
+u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
 
 #endif // GUARD_BATTLE_CONTROLLERS_H

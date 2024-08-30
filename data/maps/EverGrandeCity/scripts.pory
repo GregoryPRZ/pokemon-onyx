@@ -24,6 +24,27 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
+EverGrandeCity_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+EverGrandeCity_EventScript_DrifblimStopSignSouth::
+	msgbox EverGrandeCity_Text_DrifblimStopSignSouth, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_DrifblimStopSignNorth::
+	msgbox EverGrandeCity_Text_DrifblimStopSignNorth, MSGBOX_SIGN
+	end
+
+EverGrandeCity_Text_DrifblimStopSignSouth:
+	.string "SOUTH EVER GRANDE DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
+EverGrandeCity_Text_DrifblimStopSignNorth:
+	.string "NORTH EVER GRANDE DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
 

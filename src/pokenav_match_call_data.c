@@ -561,20 +561,20 @@ static const struct MatchCallStructTrainer sDrakeMatchCallHeader =
     .textData = sDrakeTextScripts
 };
 
-static const match_call_text_data_t sWallaceTextScripts[] = {
-    { MatchCall_Text_Wallace, 0xFFFF, 0xFFFF },
+static const match_call_text_data_t sStevenChampionTextScripts[] = {
+    { MatchCall_Text_StevenChampion, 0xFFFF, 0xFFFF },
     { NULL,                   0xFFFF, 0xFFFF }
 };
 
-static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
+static const struct MatchCallStructTrainer sStevenChampionMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_EVER_GRANDE_CITY,
-    .flag = FLAG_REMATCH_WALLACE,
-    .rematchTableIdx = REMATCH_WALLACE,
+    .flag = FLAG_REMATCH_STEVEN_CHAMPION,
+    .rematchTableIdx = REMATCH_STEVEN_CHAMPION,
     .desc = gText_ChampionMatchCallDesc,
     .name = NULL,
-    .textData = sWallaceTextScripts
+    .textData = sStevenChampionTextScripts
 };
 
 static const match_call_t sMatchCallHeaders[] = {
@@ -598,7 +598,7 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_PHOEBE]     = {.leader = &sPhoebeMatchCallHeader},
     [MC_HEADER_GLACIA]     = {.leader = &sGlaciaMatchCallHeader},
     [MC_HEADER_DRAKE]      = {.leader = &sDrakeMatchCallHeader},
-    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader}
+    [MC_HEADER_STEVEN_CHAMPION]      = {.leader = &sStevenChampionMatchCallHeader},
 };
 
 static bool32 (*const sMatchCallGetEnabledFuncs[])(match_call_t) = {

@@ -314,10 +314,15 @@ Route113_Text_RouteSignFallarbor:
 Route113_Text_TrainerTipsRegisterKeyItems:
 # 158 "data/maps/Route113/scripts.pory"
 	.string "TRAINER TIPS\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
+# 159 "data/maps/Route113/scripts.pory"
+	.string "You may register up to four KEY ITEMS\n"
+# 160 "data/maps/Route113/scripts.pory"
+	.string "in your BAG to SELECT.\p"
+# 161 "data/maps/Route113/scripts.pory"
 	.string "Simply press SELECT to use\n"
-	.string "the registered item conveniently.$"
+# 162 "data/maps/Route113/scripts.pory"
+	.string "the registered items conveniently.$"
+# 163 "data/maps/Route113/scripts.pory"
 
 # 164 "data/maps/Route113/scripts.pory"
 Route113_Text_GlassWorkshopSign:

@@ -21,29 +21,39 @@ Route128_EventScript_KyogreAwakenedScene::
 	delay 20
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieLookAround
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox Route128_Text_ArchieWhatHappened, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieBackUp
 	waitmovement 0
+	createfieldmugshot MUGSHOT_ARCHIE, EMOTE_NORMAL
 	msgbox Route128_Text_ArchieIOnlyWanted, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_MAXIE, Route128_Movement_MaxieApproachArchie
 	waitmovement 0
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox Route128_Text_MaxieDoYouUnderstandNow, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_MAXIE, Route128_Movement_MaxieApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox Route128_Text_MaxieResposibilityFallsToArchieAndMe, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieRunLeft
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_MAXIE, Route128_Movement_MaxieWalkLeft
 	waitmovement 0
+	createfieldmugshot MUGSHOT_MAXIE, EMOTE_NORMAL
 	msgbox Route128_Text_MaxieThisDefiesBelief, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	delay 40
 	applymovement LOCALID_MAXIE, Route128_Movement_MaxieExit
@@ -60,15 +70,21 @@ Route128_EventScript_KyogreAwakenedScene::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox Route128_Text_StevenWhatIsHappening, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_STEVEN, Route128_Movement_StevenWalkUp
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox Route128_Text_StevenWholeWorldWillDrown, MSGBOX_DEFAULT
+	removefieldmugshot
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
+	createfieldmugshot MUGSHOT_STEVEN, EMOTE_NORMAL
 	msgbox Route128_Text_StevenImGoingToSootopolis, MSGBOX_DEFAULT
+	removefieldmugshot
 	closemessage
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0

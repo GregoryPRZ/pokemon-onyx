@@ -76,6 +76,7 @@
 #define FLDEFF_TRACKS_SLITHER            71
 #define FLDEFF_TRACKS_SPOT               72
 #define FLDEFF_TRACKS_BUG                73
+#define FLDEFF_RIDE_TAXI                 74
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

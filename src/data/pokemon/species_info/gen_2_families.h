@@ -6774,7 +6774,67 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .isLegendary = TRUE,
         .levelUpLearnset = sRaikouLevelUpLearnset,
         .teachableLearnset = sRaikouTeachableLearnset,
+        .formSpeciesIdTable = sRaikouFormSpeciesIdTable,
+        .formChangeTable = sRaikouFormChangeTable,
     },
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_RAIKOU_MEGA] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 85,
+        .baseDefense   = 85,
+        .baseSpeed     = 145,
+        .baseSpAttack  = 145,
+        .baseSpDefense = 130,
+        .types = MON_TYPES(TYPE_ELECTRIC),
+        .catchRate = 3,
+        .expYield = 290,
+        .evYield_Speed = 2,
+        .evYield_SpAttack = 1,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 80,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_TRANSISTOR, ABILITY_TRANSISTOR, ABILITY_TRANSISTOR},
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Raikou"),
+        .cryId = CRY_RAIKOU,
+        .natDexNum = NATIONAL_DEX_RAIKOU,
+        .categoryName = _("Thunder"),
+        .height = 19,
+        .weight = 1780,
+        .description = COMPOUND_STRING(
+            "Raikou embodies the speed of lightning.\n"
+            "Its roars send shock waves shuddering\n"
+            "through the air and ground as if\n"
+            "lightning bolts were crashing down."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 345,
+        .trainerOffset = 7,
+        .frontPic = gMonFrontPic_RaikouMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 56),
+        .frontPicYOffset = 5,
+        .frontAnimFrames = sAnims_RaikouMega,
+        //.frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_RaikouMega,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
+        .palette = gMonPalette_RaikouMega,
+        .shinyPalette = gMonShinyPalette_RaikouMega,
+        .iconSprite = gMonIcon_Raikou,
+        .iconPalIndex = 2,
+        FOOTPRINT(Raikou)
+        .isMegaEvolution = TRUE,
+        .isLegendary = TRUE,
+        .levelUpLearnset = sRaikouLevelUpLearnset,
+        .teachableLearnset = sRaikouTeachableLearnset,
+        .formSpeciesIdTable = sRaikouFormSpeciesIdTable,
+        .formChangeTable = sRaikouFormChangeTable,
+    },
+#endif
 #endif //P_FAMILY_RAIKOU
 
 #if P_FAMILY_ENTEI

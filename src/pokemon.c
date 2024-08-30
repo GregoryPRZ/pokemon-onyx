@@ -89,6 +89,7 @@ EWRAM_DATA struct Pokemon gEnemyParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
 EWRAM_DATA static struct MonSpritesGfxManager *sMonSpritesGfxManagers[MON_SPR_GFX_MANAGERS_COUNT] = {NULL};
 EWRAM_DATA static u8 sTriedEvolving = 0;
+EWRAM_DATA u16 gFollowerSteps = 0;
 
 #include "data/moves_info.h"
 #include "data/abilities.h"
@@ -1214,7 +1215,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     else
     {
         u32 iv;
-        value = Random();
+        u32 ivRandom = Random32();
+        value = (u16)ivRandom;
 
         iv = value & MAX_IV_MASK;
         SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
@@ -1223,7 +1225,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         iv = (value & (MAX_IV_MASK << 10)) >> 10;
         SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
 
-        value = Random();
+        value = (u16)(ivRandom >> 16);
 
         iv = value & MAX_IV_MASK;
         SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
@@ -3689,9 +3691,9 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->spDefense = GetMonData(src, MON_DATA_SPDEF, NULL);
     dst->abilityNum = GetMonData(src, MON_DATA_ABILITY_NUM, NULL);
     dst->otId = GetMonData(src, MON_DATA_OT_ID, NULL);
-    dst->type1 = gSpeciesInfo[dst->species].types[0];
-    dst->type2 = gSpeciesInfo[dst->species].types[1];
-    dst->type3 = TYPE_MYSTERY;
+    dst->types[0] = gSpeciesInfo[dst->species].types[0];
+    dst->types[1] = gSpeciesInfo[dst->species].types[1];
+    dst->types[2] = TYPE_MYSTERY;
     dst->isShiny = IsMonShiny(src);
     dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
@@ -4719,12 +4721,12 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 if (evolutionTracker >= evolutions[i].param && GetMonGender(mon) == MON_FEMALE)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
-            case EVO_DEFEAT_WITH_ITEM:
+            case EVO_DEFEAT_THREE_WITH_ITEM:
                 if (evolutionTracker >= 3)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_OVERWORLD_STEPS:
-                if (evolutionTracker >= evolutions[i].param)
+                if (mon == GetFirstLiveMon() && gFollowerSteps >= evolutions[i].param)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             }
@@ -5737,6 +5739,10 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_CREATOR:
+            return MUS_VS_POSTGAME;
+        case TRAINER_CLASS_LEGEND:
+            return MUS_VS_CHAMPION;
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;
@@ -5790,19 +5796,6 @@ u16 GetBattleBGM(void)
             return MUS_RG_VS_MEWTWO;
         case SPECIES_MEW:
             return MUS_VS_MEW;
-        case SPECIES_RAIKOU:
-            return MUS_HG_VS_RAIKOU;
-        case SPECIES_ENTEI:
-            return MUS_HG_VS_ENTEI;
-        case SPECIES_SUICUNE:
-            return MUS_HG_VS_SUICUNE;
-        case SPECIES_LUGIA:
-            return MUS_HG_VS_LUGIA;
-        case SPECIES_HO_OH:
-            return MUS_HG_VS_HO_OH;
-        case SPECIES_CELEBI:
-            return MUS_HG_VS_WILD;
-        case SPECIES_REGIROCK:
         case SPECIES_REGICE:
         case SPECIES_REGISTEEL:
         #ifdef POKEMON_EXPANSION

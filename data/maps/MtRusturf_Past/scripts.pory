@@ -1,0 +1,38 @@
+mapscripts MtRusturf_Past_MapScripts {}
+
+script MtMoon_EventScript_DoorLocked {
+    lock
+    msgbox("The door is locked.", MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script MtMoon_EventScript_Clefairy{
+    lock
+    faceplayer
+    playmoncry(SPECIES_CLEFAIRY, CRY_MODE_NORMAL)
+    waitmoncry
+    msgbox("Clefaaaairy!", MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script MtMoon_EventScript_SquareSign{
+    lock
+    msgbox(format("Mt. Moon Square - Rest and look calmly at Clefairy's choreography at full moon! "), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script MtMoon_EventScript_TimePortal{
+    lock
+    msgbox("Do you want to come back to Mt. Rusturf?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == 1){
+        warpteleport(MAP_MT_RUSTURF_1F, 32, 17)
+    }else{
+        release
+        end
+    }
+    release
+    end
+}

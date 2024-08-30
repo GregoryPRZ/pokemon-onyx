@@ -75,6 +75,7 @@ s8 GetChosenMovePriority(u32 battlerId);
 s8 GetMovePriority(u32 battlerId, u16 move);
 s32 GetWhichBattlerFasterArgs(u32 battler1, u32 battler2, bool32 ignoreChosenMoves, u32 ability1, u32 ability2,
                               u32 holdEffectBattler1, u32 holdEffectBattler2, u32 speedBattler1, u32 speedBattler2, s32 priority1, s32 priority2);
+s32 GetWhichBattlerFasterOrTies(u32 battler1, u32 battler2, bool32 ignoreChosenMoves);
 s32 GetWhichBattlerFaster(u32 battler1, u32 battler2, bool32 ignoreChosenMoves);
 void RunBattleScriptCommands_PopCallbacksStack(void);
 void RunBattleScriptCommands(void);
@@ -85,6 +86,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 void ModifyPersonalityForNature(u32 *personality, u32 newNature);
 u32 GeneratePersonalityForGender(u32 gender, u32 species);
 void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry);
+bool32 InBattleChoosingMoves();
+bool32 InBattleRunningActions();
+
 
 extern struct MultiPartnerMenuPokemon gMultiPartnerParty[MULTI_PARTY_SIZE];
 

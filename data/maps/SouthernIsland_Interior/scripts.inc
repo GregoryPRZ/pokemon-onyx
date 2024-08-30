@@ -49,7 +49,7 @@ SouthernIsland_Interior_OnTransition:
 # 25 "data/maps/SouthernIsland_Interior/scripts.pory"
 SouthernIsland_Interior_EventScript_SetUpLatios::
 # 26 "data/maps/SouthernIsland_Interior/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIOS
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES(LATIOS)
 # 27 "data/maps/SouthernIsland_Interior/scripts.pory"
 	setvar VAR_TEMP_4, SPECIES_LATIOS
 # 28 "data/maps/SouthernIsland_Interior/scripts.pory"
@@ -59,7 +59,7 @@ SouthernIsland_Interior_EventScript_SetUpLatios::
 # 30 "data/maps/SouthernIsland_Interior/scripts.pory"
 SouthernIsland_Interior_EventScript_SetUpLatias::
 # 31 "data/maps/SouthernIsland_Interior/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIAS
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES	(LATIAS)
 # 32 "data/maps/SouthernIsland_Interior/scripts.pory"
 	setvar VAR_TEMP_4, SPECIES_LATIAS
 # 33 "data/maps/SouthernIsland_Interior/scripts.pory"

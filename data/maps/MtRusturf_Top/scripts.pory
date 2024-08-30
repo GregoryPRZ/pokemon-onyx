@@ -1,0 +1,175 @@
+const BLAYZE = 1
+const POLITOED = 2
+const ARCEUS = 3
+
+mapscripts MtRusturf_Top_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION: MtRusturf_Top_OnTransition
+	MAP_SCRIPT_ON_RESUME: MtRusturf_Top_OnResume
+}
+
+script MtRusturf_Top_OnTransition{
+	setflag(FLAG_TEMP_HIDE_FOLLOWER)
+	call_if_set(FLAG_CAUGHT_ARCEUS, MtRusturf_Top_EventScript_HideArceus)
+	call_if_unset(FLAG_CAUGHT_ARCEUS, MtRusturf_Top_EventScript_TryShowArceus)
+	end
+}
+
+script MtRusturf_Top_EventScript_HideArceus{
+	setvar(VAR_TEMP_1, 1)
+	setflag(FLAG_HIDE_ARCEUS)
+	return
+}
+
+script MtRusturf_Top_EventScript_TryShowArceus{
+	setvar(VAR_TEMP_1, 1)
+	goto_if_set(FLAG_DEFEATED_ARCEUS, Common_EventScript_NopReturn)
+	setvar(VAR_TEMP_1, 0)
+	clearflag(FLAG_HIDE_ARCEUS)
+	return
+}
+
+script MtRusturf_Top_OnResume{
+	call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, MtRusturf_Top_EventScript_TryRemoveArceus)
+	end
+}
+
+script MtRusturf_Top_EventScript_TryRemoveArceus{
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	goto_if_ne(VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn)
+	removeobject(ARCEUS)
+	return
+}
+
+script MtRusturf_Top_EventScript_Arceus{
+	lockall
+    fadenewbgm(MUS_DP_HALL_OF_ORIGIN)
+	setvar(VAR_TEMP_1, 1)
+	special(SpawnCameraObject)
+	applymovement(ARCEUS, MtRusturf_Top_Movement_ArceusAppear)
+	applymovement(OBJ_EVENT_ID_CAMERA, MtRusturf_Top_Movement_CameraPanUp)
+	waitmovement(0)
+	delay(50)
+	setweather(WEATHER_NONE)
+	doweather
+	waitse
+	playmoncry(SPECIES_ARCEUS, CRY_MODE_ENCOUNTER)
+	delay(30)
+	waitmoncry
+	delay(60)
+	applymovement(OBJ_EVENT_ID_CAMERA, MtRusturf_Top_Movement_CameraPanDown)
+	applymovement(ARCEUS, MtRusturf_Top_Movement_ArceusApproach)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	setwildbattle(SPECIES_ARCEUS, 100)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setflag(FLAG_CAUGHT_ARCEUS)
+	setvar(VAR_LAST_TALKED, ARCEUS)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	goto_if_eq(VAR_RESULT, B_OUTCOME_WON, MtRusturf_Top_EventScript_DefeatedArceus)
+	goto_if_eq(VAR_RESULT, B_OUTCOME_RAN, MtRusturf_Top_EventScript_RanFromArceus)
+	goto_if_eq(VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MtRusturf_Top_EventScript_RanFromArceus)
+	releaseall
+	end
+}
+
+script MtRusturf_Top_EventScript_DefeatedArceus{
+	setflag(FLAG_DEFEATED_ARCEUS)
+	setvar(VAR_0x8004, SPECIES_ARCEUS)
+	goto(Common_EventScript_LegendaryFlewAway)
+	end
+}
+
+script MtRusturf_Top_EventScript_RanFromArceus{
+	setvar(VAR_0x8004, SPECIES_ARCEUS)
+	goto(Common_EventScript_LegendaryFlewAway)
+	end
+}
+
+script MtRusturf_Top_EventScript_Blayze{
+	lock
+    fadenewbgm(MUS_NONE)
+    delay(180)
+    applymovement(POLITOED, Common_Movement_FaceDown)
+	waitmovement(0)
+	faceplayer
+	msgbox(format("BLAYZE: I knew you would come here. Let me introduce myself. I'm the creator of this ROM hack. I'm the one who made you go through many challenges in this region. You must think you don't understand what I'm talking about, and why I'm standing here, at the top of a mountain, with my POKéMON, doing nothing but to stare at the horizon.  Well, it's because I waited for you, just for one thing... To battle you, and see how this travel made you strong. Just as a warning though, I won't hold back. Show me what you've got!"), MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_BLAYZE, MtRusturf_Top_Text_BlayzeDefeatOne)
+	goto(MtRusturf_Top_EventScript_BlayzeRematch)
+	end
+}
+
+script MtRusturf_Top_EventScript_BlayzeRematch{
+    playbgm(MUS_DP_CATASTROPHE, FALSE)
+	msgbox(format("That was a good match, very well done! But... You haven't seen the best of me...
+    prepare for a rematch here and now! Politoed, can you set the rain for me, please?" ), MSGBOX_DEFAULT)
+    playmoncry(SPECIES_POLITOED, CRY_MODE_NORMAL)
+    delay(40)
+    waitmoncry
+    setweather(WEATHER_RAIN)
+    doweather
+    delay(240)
+	msgbox(format("Thank you, Politoed! Now, let's fight!"), MSGBOX_DEFAULT)
+    trainerbattle_no_intro(TRAINER_BLAYZE_1, MtRusturf_Top_Text_BlayzeDefeatTwo)
+    fadedefaultbgm
+    setweather(WEATHER_NONE)
+    doweather
+ 	msgbox(format("The way you battle... That was really insane! I'm glad to see how this travel made you this strong! As a proof of your victory and your strength, You can battle the almighty POKéMON, ARCEUS. Here, if you want to catch him, take this."), MSGBOX_DEFAULT)   
+	giveitem(ITEM_MASTER_BALL, 1)
+	msgbox(format("I feel like he doesn't have to travel with me anymore... So it's up to you to either leave him alone or bring him with you. I hope we'll meet again someday!"), MSGBOX_DEFAULT)
+    playmoncry(SPECIES_POLITOED, CRY_MODE_NORMAL)
+    msgbox(format("Toeeeeed!"), MSGBOX_DEFAULT)
+    fadescreen(FADE_TO_BLACK)
+    removeobject(BLAYZE)
+    removeobject(POLITOED)
+    fadescreen(FADE_FROM_BLACK)
+    setflag(FLAG_DEFEATED_BLAYZE)
+	release
+	end
+}
+
+script MtRusturf_Top_Movement_CameraPanUp{
+	walk_up
+	walk_up
+	walk_up
+	step_end
+}
+
+script MtRusturf_Top_Movement_CameraPanDown{
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	step_end
+}
+
+script MtRusturf_Top_Movement_ArceusApproach{
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_down
+	delay_16
+	delay_16
+	step_end
+}
+
+script MtRusturf_Top_Movement_ArceusAppear{
+	delay_16
+	delay_16
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	step_end
+}
+
+text MtRusturf_Top_Text_BlayzeDefeatOne{
+	"That was a good fight!"
+}
+
+text MtRusturf_Top_Text_BlayzeDefeatTwo{
+	"That's... No... That's really insane!"
+}

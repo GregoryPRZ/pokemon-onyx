@@ -122,7 +122,7 @@ BattleFrontier_BattlePikeLobby_EventScript_GiveBattlePoints::
 	special LoadPlayerParty
 # 62 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	special HealPlayerParty
-	callnative UpdateFollowingPokemon
+# 63 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	pike_resethelditems
 # 64 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	message BattleFrontier_BattlePikeLobby_Text_ShallRecordResults
@@ -164,7 +164,7 @@ BattleFrontier_BattlePikeLobby_EventScript_LostChallenge::
 	special LoadPlayerParty
 # 83 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	special HealPlayerParty
-	callnative UpdateFollowingPokemon
+# 84 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	pike_resethelditems
 # 85 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	pike_save 0
@@ -242,7 +242,7 @@ BattleFrontier_BattlePikeLobby_EventScript_TryEnterChallenge::
 	msgbox BattleFrontier_BattlePikeLobby_Text_PleaseChooseThreeMons, MSGBOX_DEFAULT
 # 122 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	fadescreen FADE_TO_BLACK
-	callnative RemoveFollowingPokemon
+# 123 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	call BattleFrontier_EventScript_GetLvlMode
 # 124 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	copyvar VAR_0x8004, VAR_RESULT
@@ -370,7 +370,7 @@ BattleFrontier_BattlePikeLobby_EventScript_CancelChallengeSaveFailed::
 BattleFrontier_BattlePikeLobby_EventScript_LoadPartyAndCancelChallenge::
 # 186 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	special LoadPlayerParty
-	callnative UpdateFollowingPokemon
+# 187 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 BattleFrontier_BattlePikeLobby_EventScript_CancelChallenge::
 # 188 "data/maps/BattleFrontier_BattlePikeLobby/scripts.pory"
 	msgbox BattleFrontier_BattlePikeLobby_Text_LookForwardToSeeingYou, MSGBOX_DEFAULT

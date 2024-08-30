@@ -91,13 +91,14 @@ static void InitPlayerTrainerId(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
+    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
-    gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
+    VarSet(VAR_BATTLE_SPEED, OPTIONS_BATTLE_SCENE_1X);
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     gSaveBlock2Ptr->optionsMusic = OPTIONS_MUSIC_HOENN;
+    gSaveBlock2Ptr->optionsCurrentFont = 0;
 }
 
 static void ClearPokedexFlags(void)

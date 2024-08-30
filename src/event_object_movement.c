@@ -533,6 +533,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
     {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
     {gObjectEventPal_BeastBall,             OBJ_EVENT_PAL_TAG_BALL_BEAST},
+    {gObjectEventPalette_MegaStone,         OBJ_EVENT_PAL_MEGA_STONE},
+    {gObjectEventPalette_Courtney, OBJ_EVENT_PAL_COURTNEY},
+    {gObjectEventPalette_Tabitha, OBJ_EVENT_PAL_TABITHA},
+    {gObjectEventPalette_Shelly, OBJ_EVENT_PAL_SHELLY},
+    {gObjectEventPalette_Matt, OBJ_EVENT_PAL_MATT},
     // Gen VIII
     #ifdef ITEM_STRANGE_BALL
     {gObjectEventPal_StrangeBall,           OBJ_EVENT_PAL_TAG_BALL_STRANGE},
@@ -1493,7 +1498,7 @@ static s16 ReallocSpriteTiles(struct Sprite *sprite, u32 byteSize)
     {
         i = -1;
     }
-    
+
     sprite->invisible = wasVisible;
     return i;
 }
@@ -1510,7 +1515,7 @@ u16 LoadSheetGraphicsInfo(const struct ObjectEventGraphicsInfo *info, u16 uuid, 
         bool32 oldInvisible;
         if (tag == TAG_NONE)
             tag = COMP_OW_TILE_TAG_BASE + uuid;
-        
+
         if (sprite)
         {
             oldInvisible = sprite->invisible;
@@ -1547,7 +1552,7 @@ u16 LoadSheetGraphicsInfo(const struct ObjectEventGraphicsInfo *info, u16 uuid, 
         {
             FieldEffectFreeTilesIfUnused(oldTiles);
         }
-        
+
         if (sprite)
         {
             sprite->sheetTileStart = tileStart;
@@ -1566,7 +1571,7 @@ u16 LoadSheetGraphicsInfo(const struct ObjectEventGraphicsInfo *info, u16 uuid, 
     {
         sprite->oam.tileNum = sprite->sheetTileStart;
         sprite->usingSheet = FALSE;
-    
+
     }
     else if (sprite && !sprite->sheetTileStart && sprite->oam.size != info->oam->size)
     {
@@ -1598,6 +1603,12 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
 
     if (OW_GFX_COMPRESS)
         spriteTemplate->tileTag = LoadSheetGraphicsInfo(graphicsInfo, objectEvent->graphicsId, NULL);
+
+    if (objectEvent->graphicsId >= OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+    {
+        objectEvent->shiny = TRUE;
+        objectEvent->graphicsId -= SPECIES_SHINY_TAG;
+    }
 
     spriteId = CreateSprite(spriteTemplate, 0, 0, 0);
     if (spriteId == MAX_SPRITES)
@@ -1919,7 +1930,7 @@ static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny)
             spritePalette.data = gSpeciesInfo[species].overworldShinyPalette;
         else
             spritePalette.data = gSpeciesInfo[species].overworldPalette;
-        
+
         // Check if pal data must be decompressed
         if (IsLZ77Data(spritePalette.data, PLTT_SIZE_4BPP, PLTT_SIZE_4BPP))
         {
@@ -2751,6 +2762,8 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
     if (graphicsId >= OBJ_EVENT_GFX_VARS && graphicsId <= OBJ_EVENT_GFX_VAR_F)
         graphicsId = VarGetObjectEventGraphicsId(graphicsId - OBJ_EVENT_GFX_VARS);
 
+    if (graphicsId >= OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+        graphicsId -= SPECIES_SHINY_TAG;
     // graphicsId may contain mon form info
     if (graphicsId > OBJ_EVENT_GFX_SPECIES_MASK)
     {

@@ -927,7 +927,7 @@ static void Task_MainMenuMain(u8 taskId)
 
     if (JOY_NEW(B_BUTTON)) // If B Pressed Go To Title Screen
     {
-        PlaySE(SE_PC_OFF);
+        PlaySE(SE_POKENAV_BACK);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         sMainMenuDataPtr->savedCallback = CB2_InitTitleScreen;
         sSelectedOption = HW_WIN_CONTINUE;

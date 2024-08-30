@@ -65,6 +65,19 @@ VerdanturfTown_EventScript_RusturfTunnelSign::
 	msgbox VerdanturfTown_Text_RusturfTunnelSign, MSGBOX_SIGN
 	end
 
+VerdanturfTown_EventScript_DrifblimStop::
+	call Common_EventScript_FlyingTaxi
+	release
+	end
+
+VerdanturfTown_EventScript_DrifblimStopSign::
+	msgbox VerdanturfTown_Text_DrifblimStopSign, MSGBOX_SIGN
+	end
+
+VerdanturfTown_Text_DrifblimStopSign:
+	.string "VERDANTURF TOWN DRIFBLIM STOP\n"
+	.string "A new way to fly over HOENN!$"
+
 VerdanturfTown_Text_ManTryingToDigTunnel:
 	.string "My papa told me.\p"
 	.string "He says this tunnel is full of\n"

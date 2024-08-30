@@ -323,9 +323,7 @@ struct BattlePokemon
     /*0x17*/ u32 abilityNum:2;
     /*0x18*/ s8 statStages[NUM_BATTLE_STATS];
     /*0x20*/ u16 ability;
-    /*0x22*/ u8 type1;
-    /*0x23*/ u8 type2;
-    /*0x24*/ u8 type3;
+    /*0x22*/ u8 types[3];
     /*0x25*/ u8 pp[MAX_MON_MOVES];
     /*0x29*/ u16 hp;
     /*0x2B*/ u8 level;
@@ -443,7 +441,7 @@ struct SpeciesInfo /*0xC4*/
             u32 dexForceRequired:1; // This species will be taken into account for Pokédex ratings even if they have the "isMythical" flag set.
             u32 tmIlliterate:1;     // This species will be unable to learn the universal moves.
             u32 isFrontierBanned:1; // This species is not allowed to participate in Battle Frontier facilities.
-            u32 padding4:14;
+            u32 padding4:13;
             // Move Data
  /* 0x80 */ const struct LevelUpMove *levelUpLearnset;
  /* 0x84 */ const u16 *teachableLearnset;
@@ -684,6 +682,7 @@ extern struct Pokemon gPlayerParty[PARTY_SIZE];
 extern u8 gEnemyPartyCount;
 extern struct Pokemon gEnemyParty[PARTY_SIZE];
 extern struct SpriteTemplate gMultiuseSpriteTemplate;
+extern u16 gFollowerSteps;
 
 extern const struct MoveInfo gMovesInfo[];
 extern const u8 gFacilityClassToPicIndex[];

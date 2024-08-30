@@ -3,6 +3,18 @@ OBJEVENTGFXDIR := graphics/object_events/pics
 FLDEFFGFXDIR := graphics/field_effects/pics
 MISCGFXDIR := graphics/misc
 
+$(OBJEVENTGFXDIR)/people/team_magma/courtney.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/team_magma/tabitha.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/team_aqua/shelly.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/team_aqua/matt.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -30,6 +42,8 @@ $(OBJEVENTGFXDIR)/people/brendan/watering.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/brendan/underwater.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/mega_stone.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
 
 $(OBJEVENTGFXDIR)/people/elite_four/drake.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
@@ -731,7 +745,7 @@ $(FLDEFFGFXDIR)/secret_power_tree.4bpp: %.4bpp: %.png
 
 $(FLDEFFGFXDIR)/record_mix_lights.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 1
-	
+
 $(POKEMONGFXDIR)/question_mark/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
@@ -2974,6 +2988,9 @@ $(POKEMONGFXDIR)/noivern/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/xerneas/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8
+
+$(POKEMONGFXDIR)/xerneas/active/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
 
 $(POKEMONGFXDIR)/yveltal/overworld.4bpp: %.4bpp: %.png
