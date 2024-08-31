@@ -902,6 +902,7 @@ LittlerootTown_EventScript_GiveBike::
 	giveitem ITEM_MACH_BIKE
 	giveitem ITEM_ACRO_BIKE
 	giveitem ITEM_EXP_SHARE
+	giveitem ITEM_OUTFIT_BOX, 1
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
 	delay 30

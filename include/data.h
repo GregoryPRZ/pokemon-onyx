@@ -144,6 +144,10 @@ extern const struct SpriteFrameImage gBattlerPicTable_PlayerRight[];
 extern const struct SpriteFrameImage gBattlerPicTable_OpponentRight[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Brendan[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_May[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Lucas[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Dawn[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_ModernBrendan[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_ModernMay[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Red[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Leaf[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireBrendan[];
@@ -255,5 +259,26 @@ static inline const bool32 GetTrainerAIFlagsFromId(u16 trainerId)
 {
     return gTrainers[SanitizeTrainerId(trainerId)].aiFlags;
 }
+
+//! outfits
+
+struct Outfit
+{
+    u8 isHidden:1; //! Will not shows up in the menu if locked.
+    u32 prices[GENDER_COUNT]; //! heh
+    const u8 *name;
+    const u8 *desc;
+    u16 trainerPics[GENDER_COUNT][2];
+    u16 avatarGfxIds[GENDER_COUNT][PLAYER_AVATAR_STATE_COUNT];
+    u16 animGfxIds[GENDER_COUNT][PLAYER_AVATAR_GFX_COUNT];
+    //! region map & frontier pass
+    const void *iconsRM[GENDER_COUNT]; //! region map
+    const void *iconsFP; //! frontier pass
+};
+
+extern const struct Outfit gOutfits[OUTFIT_COUNT];
+
+#define GFX 0
+#define PAL 1
 
 #endif // GUARD_DATA_H

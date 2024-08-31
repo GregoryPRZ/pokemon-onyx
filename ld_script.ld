@@ -368,6 +368,7 @@ SECTIONS {
         src/dexnav.o(.text);
         src/tx_rac_menu.o(.text);
         src/tx_randomizer_and_challenges.o(.text);
+        src/outfit_menu.o(.text);
     } > ROM =0
 
     script_data :
@@ -746,6 +747,7 @@ SECTIONS {
         src/dexnav.o(.rodata);
         src/tx_rac_menu.o(.rodata);
         src/tx_randomizer_and_challenges.o(.rodata);
+        src/outfit_menu.o(.rodata);
     } > ROM =0
 
     song_data :
@@ -1643,7 +1645,7 @@ SECTIONS {
         sound/songs/midi/mus_hg_win_minigame.o(.rodata);
         sound/songs/midi/mus_vs_postgame.o(.rodata);
         sound/songs/midi/mus_onyx_title.o(.rodata);
-        sound/songs/midi/mus_vs_colosseum.o(.rodata);
+        sound/songs/midi/mus_vs_tough_guy.o(.rodata);
         sound/songs/midi/se_dp_start.o(.rodata);
         sound/songs/midi/se_menu_select.o(.rodata);
         sound/songs/midi/se_menu_change.o(.rodata);

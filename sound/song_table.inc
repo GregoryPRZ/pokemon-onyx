@@ -902,7 +902,7 @@ gSongTable::
 	song mus_hg_win_minigame, 2, 2
 	song mus_vs_postgame, 0, 0
 	song mus_onyx_title, 0, 0
-	song mus_vs_colosseum, 0, 0
+	song mus_vs_tough_guy, 0, 0
 	song se_dp_start, 1, 1
 	song se_menu_select, 1, 1
 	song se_menu_change, 1, 1

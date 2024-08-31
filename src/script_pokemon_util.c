@@ -38,18 +38,20 @@ static void HealPlayerBoxes(void);
 void HealPlayerParty(void)
 {
     u32 i;
-    for (i = 0; i < gPlayerPartyCount; i++)
+    for (i = 0; i < gPlayerPartyCount; i++){
         HealPokemon(&gPlayerParty[i]);
-    if (OW_PC_HEAL >= GEN_8)
+    }
+    if (OW_PC_HEAL >= GEN_8){
         HealPlayerBoxes();
-    u8 j;
-    u8 ppBonuses;
-    u8 arg[4];
+    }
 
     PokevialRefill(); //Pokevial Branch
     // restore HP.
     for(i = 0; i < gPlayerPartyCount; i++)
     {
+        u8 j;
+        u8 ppBonuses;
+        u8 arg[4];
         u16 maxHP = GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP);
         arg[0] = maxHP;
         arg[1] = maxHP >> 8;

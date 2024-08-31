@@ -18,6 +18,7 @@
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "item.h"
+#include "item_icon.h"
 #include "item_menu_icons.h"
 #include "item_use.h"
 #include "lilycove_lady.h"
@@ -34,6 +35,7 @@
 #include "party_menu.h"
 #include "player_pc.h"
 #include "pokemon.h"
+#include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
 #include "scanline_effect.h"
 #include "script.h"
@@ -105,6 +107,12 @@ enum {
     WIN_TMHM_INFO_ICONS,
     WIN_TMHM_INFO,
     WIN_MESSAGE, // Identical to ITEMWIN_MESSAGE. Unused?
+    WIN_MON_ICON_0,
+    WIN_MON_ICON_1,
+    WIN_MON_ICON_2,
+    WIN_MON_ICON_3,
+    WIN_MON_ICON_4,
+    WIN_MON_ICON_5,
 };
 
 // Item list ID for toSwapPos to indicate an item is not currently being swapped
@@ -247,6 +255,15 @@ static const struct BgTemplate sBgTemplates_ItemMenu[] =
         .priority = 2,
         .baseTile = 0,
     },
+    {
+        .bg = 3,
+        .charBaseIndex = 2,
+        .mapBaseIndex = 21,
+        .screenSize = 0,
+        .paletteMode = 0,
+        .priority = 2,
+        .baseTile = 0,
+    },
 };
 
 static const struct ListMenuTemplate sItemListMenu =
@@ -263,7 +280,7 @@ static const struct ListMenuTemplate sItemListMenu =
     .upText_Y = 1,
     .cursorPal = 1,
     .fillValue = 0,
-    .cursorShadowPal = 3,
+    .cursorShadowPal = 2,
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -392,11 +409,11 @@ enum {
 };
 static const u8 sFontColorTable[][3] = {
                             // bgColor, textColor, shadowColor
-    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_LIGHT_GRAY},
-    [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_RED},
-    [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_GREEN},
-    [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_LIGHT_GRAY},
-    [COLORID_TMHM_INFO]   = {TEXT_COLOR_TRANSPARENT, TEXT_DYNAMIC_COLOR_5,  TEXT_DYNAMIC_COLOR_1}
+    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_TMHM_INFO]   = {TEXT_COLOR_TRANSPARENT, 15,      14}
 };
 
 static const struct WindowTemplate sDefaultBagWindows[] =
@@ -407,7 +424,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 2,
         .width = 15,
         .height = 16,
-        .paletteNum = 1,
+        .paletteNum = 15,
         .baseBlock = 0x27,
     },
     [WIN_DESCRIPTION] = {
@@ -416,7 +433,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 13,
         .width = 14,
         .height = 6,
-        .paletteNum = 1,
+        .paletteNum = 15,
         .baseBlock = 0x117,
     },
     [WIN_POCKET_NAME] = {
@@ -425,7 +442,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 1,
         .width = 8,
         .height = 2,
-        .paletteNum = 1,
+        .paletteNum = 15,
         .baseBlock = 0x1A1,
     },
     [WIN_TMHM_INFO_ICONS] = {
@@ -455,8 +472,66 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .paletteNum = 15,
         .baseBlock = 0x1B1,
     },
+    [WIN_MON_ICON_0] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 4,
+        .width = 4,
+        .height = 4,
+        .paletteNum = 2,
+        .baseBlock = 551,
+    },
+    [WIN_MON_ICON_1] = {
+        .bg = 0,
+        .tilemapLeft = 5,
+        .tilemapTop = 4,
+        .width = 4,
+        .height = 4,
+        .paletteNum = 3,
+        .baseBlock = 551 + 16 * 1,
+    },
+    [WIN_MON_ICON_2] = {
+        .bg = 0,
+        .tilemapLeft = 9,
+        .tilemapTop = 4,
+        .width = 4,
+        .height = 4,
+        .paletteNum = 4,
+        .baseBlock = 551 + 16 * 2,
+    },
+    [WIN_MON_ICON_3] = {
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 8,
+        .width = 4,
+        .height = 4,
+        .paletteNum = 5,
+        .baseBlock = 551 + 16 * 3,
+    },
+    [WIN_MON_ICON_4] = {
+        .bg = 0,
+        .tilemapLeft = 5,
+        .tilemapTop = 8,
+        .width = 4,
+        .height = 4,
+        .paletteNum = 6,
+        .baseBlock = 551 + 16 * 4,
+    },
+    [WIN_MON_ICON_5] = {
+        .bg = 0,
+        .tilemapLeft = 9,
+        .tilemapTop = 8,
+        .width = 4,
+        .height = 4,
+        .paletteNum = 7,
+        .baseBlock = 551 + 16 * 5,
+    },
     DUMMY_WIN_TEMPLATE,
 };
+
+// Values were setup based on 551 being the start but that has since changed so just fix with macro
+#define CONTEXT_BASE_BLOCK_START (551 + 16 * 6)
+#define CONTEXT_BASE_BLOCK(val) (val + CONTEXT_BASE_BLOCK_START - 551)
 
 static const struct WindowTemplate sContextMenuWindowTemplates[] =
 {
@@ -467,7 +542,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 7,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(551),
     },
     [ITEMWIN_1x2] = {
         .bg = 1,
@@ -476,7 +551,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 7,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(565),
     },
     [ITEMWIN_2x2] = {
         .bg = 1,
@@ -485,7 +560,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 14,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(593),
     },
     [ITEMWIN_2x3] = {
         .bg = 1,
@@ -494,7 +569,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 14,
         .height = 6,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(649),
     },
     [ITEMWIN_MESSAGE] = {
         .bg = 1,
@@ -503,7 +578,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1B1,
+        .baseBlock = CONTEXT_BASE_BLOCK(733),
     },
     [ITEMWIN_YESNO_LOW] = { // Yes/No tucked in corner, for toss confirm
         .bg = 1,
@@ -512,7 +587,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(841),
     },
     [ITEMWIN_YESNO_HIGH] = { // Yes/No higher up, positioned above a lower message box
         .bg = 1,
@@ -521,7 +596,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(861),
     },
     [ITEMWIN_QUANTITY] = { // Used for quantity of items to Toss/Deposit
         .bg = 1,
@@ -530,7 +605,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = CONTEXT_BASE_BLOCK(881),
     },
     [ITEMWIN_QUANTITY_WIDE] = { // Used for quantity and price of items to Sell
         .bg = 1,
@@ -539,7 +614,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x245,
+        .baseBlock = CONTEXT_BASE_BLOCK(891),
     },
     [ITEMWIN_MONEY] = {
         .bg = 1,
@@ -548,7 +623,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x231,
+        .baseBlock = CONTEXT_BASE_BLOCK(911),
     },
 };
 
@@ -772,6 +847,12 @@ static bool8 SetupBagMenu(void)
         break;
     case 15:
         AddBagVisualSprite(gBagPosition.pocket);
+
+        if(gBagPosition.pocket == TMHM_POCKET)
+        {
+            SetBagSpriteVisible(FALSE);
+        }
+
         gMain.state++;
         break;
     case 16:
@@ -958,10 +1039,14 @@ static void BagMenu_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListM
     if (gBagMenu->toSwapPos == NOT_SWAPPING)
     {
         RemoveBagItemIconSprite(gBagMenu->itemIconSlot ^ 1);
-        if (itemIndex != LIST_CANCEL)
-           AddBagItemIconSprite(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex), gBagMenu->itemIconSlot);
-        else
-           AddBagItemIconSprite(ITEM_LIST_END, gBagMenu->itemIconSlot);
+        // Don't use icon on TM's page as it will overlap the party preview
+        if(gBagPosition.pocket != TMHM_POCKET)
+        {
+            if (itemIndex != LIST_CANCEL)
+            AddBagItemIconSprite(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex), gBagMenu->itemIconSlot);
+            else
+            AddBagItemIconSprite(-1, gBagMenu->itemIconSlot);
+        }
         gBagMenu->itemIconSlot ^= 1;
         if (!gBagMenu->inhibitItemDescriptionPrint)
             PrintItemDescription(itemIndex);
@@ -1011,20 +1096,52 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
 
 static void PrintItemDescription(int itemIndex)
 {
-    const u8 *str;
-    if (itemIndex != LIST_CANCEL)
+
+    if(gBagPosition.pocket == TMHM_POCKET)
     {
-        str = ItemId_GetDescription(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex));
+        SetBagSpriteVisible(FALSE);
+
+        // Print move info by default (Better UX for TRs)
+        ClearWindowTilemap(WIN_DESCRIPTION);
+        PrintTMHMMoveData(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex));
+        PutWindowTilemap(WIN_TMHM_INFO_ICONS);
+        PutWindowTilemap(WIN_TMHM_INFO);
+
+        PutWindowTilemap(WIN_MON_ICON_0);
+        PutWindowTilemap(WIN_MON_ICON_1);
+        PutWindowTilemap(WIN_MON_ICON_2);
+        PutWindowTilemap(WIN_MON_ICON_3);
+        PutWindowTilemap(WIN_MON_ICON_4);
+        PutWindowTilemap(WIN_MON_ICON_5);
+
+        ScheduleBgCopyTilemapToVram(0);
     }
     else
     {
-        // Print 'Cancel' description
-        StringCopy(gStringVar1, gBagMenu_ReturnToStrings[gBagPosition.location]);
-        StringExpandPlaceholders(gStringVar4, gText_ReturnToVar1);
-        str = gStringVar4;
+        const u8 *str;
+
+        SetBagSpriteVisible(TRUE);
+        ClearWindowTilemap(WIN_MON_ICON_0);
+        ClearWindowTilemap(WIN_MON_ICON_1);
+        ClearWindowTilemap(WIN_MON_ICON_2);
+        ClearWindowTilemap(WIN_MON_ICON_3);
+        ClearWindowTilemap(WIN_MON_ICON_4);
+        ClearWindowTilemap(WIN_MON_ICON_5);
+
+        if (itemIndex != LIST_CANCEL)
+        {
+            str = ItemId_GetDescription(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex));
+        }
+        else
+        {
+            // Print 'Cancel' description
+            StringCopy(gStringVar1, gBagMenu_ReturnToStrings[gBagPosition.location]);
+            StringExpandPlaceholders(gStringVar4, gText_ReturnToVar1);
+            str = gStringVar4;
+        }
+        FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
+        BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, str, 3, 1, 0, 0, 0, COLORID_NORMAL);
     }
-    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
-    BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, str, 3, 1, 0, 0, 0, COLORID_NORMAL);
 }
 
 static void BagMenu_PrintCursor(u8 listTaskId, u8 colorIndex)
@@ -1306,9 +1423,30 @@ static void ReturnToItemList(u8 taskId)
 {
     CreatePocketScrollArrowPair();
     CreatePocketSwitchArrowPair();
-    ClearWindowTilemap(WIN_TMHM_INFO_ICONS);
-    ClearWindowTilemap(WIN_TMHM_INFO);
-    PutWindowTilemap(WIN_DESCRIPTION);
+    if(gBagPosition.pocket == TMHM_POCKET)
+    {
+        ClearWindowTilemap(WIN_DESCRIPTION);
+        PutWindowTilemap(WIN_TMHM_INFO_ICONS);
+        PutWindowTilemap(WIN_TMHM_INFO);
+        PutWindowTilemap(WIN_MON_ICON_0);
+        PutWindowTilemap(WIN_MON_ICON_1);
+        PutWindowTilemap(WIN_MON_ICON_2);
+        PutWindowTilemap(WIN_MON_ICON_3);
+        PutWindowTilemap(WIN_MON_ICON_4);
+        PutWindowTilemap(WIN_MON_ICON_5);
+    }
+    else
+    {
+        ClearWindowTilemap(WIN_TMHM_INFO_ICONS);
+        ClearWindowTilemap(WIN_TMHM_INFO);
+        ClearWindowTilemap(WIN_MON_ICON_0);
+        ClearWindowTilemap(WIN_MON_ICON_1);
+        ClearWindowTilemap(WIN_MON_ICON_2);
+        ClearWindowTilemap(WIN_MON_ICON_3);
+        ClearWindowTilemap(WIN_MON_ICON_4);
+        ClearWindowTilemap(WIN_MON_ICON_5);
+        PutWindowTilemap(WIN_DESCRIPTION);
+    }
     ScheduleBgCopyTilemapToVram(0);
     gTasks[taskId].func = Task_BagMenu_HandleInput;
 }
@@ -1419,8 +1557,30 @@ static void Task_SwitchBagPocket(u8 taskId)
         ChangeBagPocketId(&gBagPosition.pocket, tPocketSwitchDir);
         LoadBagItemListBuffers(gBagPosition.pocket);
         tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, gBagPosition.scrollPosition[gBagPosition.pocket], gBagPosition.cursorPosition[gBagPosition.pocket]);
-        PutWindowTilemap(WIN_DESCRIPTION);
         PutWindowTilemap(WIN_POCKET_NAME);
+
+        if(gBagPosition.pocket == TMHM_POCKET)
+        {
+            PutWindowTilemap(WIN_TMHM_INFO_ICONS);
+            PutWindowTilemap(WIN_TMHM_INFO);
+            PutWindowTilemap(WIN_MON_ICON_0);
+            PutWindowTilemap(WIN_MON_ICON_1);
+            PutWindowTilemap(WIN_MON_ICON_2);
+            PutWindowTilemap(WIN_MON_ICON_3);
+            PutWindowTilemap(WIN_MON_ICON_4);
+            PutWindowTilemap(WIN_MON_ICON_5);
+        }
+        else
+        {
+            PutWindowTilemap(WIN_DESCRIPTION);
+            ClearWindowTilemap(WIN_MON_ICON_0);
+            ClearWindowTilemap(WIN_MON_ICON_1);
+            ClearWindowTilemap(WIN_MON_ICON_2);
+            ClearWindowTilemap(WIN_MON_ICON_3);
+            ClearWindowTilemap(WIN_MON_ICON_4);
+            ClearWindowTilemap(WIN_MON_ICON_5);
+        }
+
         ScheduleBgCopyTilemapToVram(0);
         CreatePocketScrollArrowPair();
         CreatePocketSwitchArrowPair();
@@ -1653,7 +1813,7 @@ static void OpenContextMenu(u8 taskId)
                     gBagMenu->contextMenuItemsBuffer[1] = ACTION_DESELECT;
                 if (gSpecialVar_ItemId == ITEM_MACH_BIKE || gSpecialVar_ItemId == ITEM_ACRO_BIKE)
                 {
-                    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+                    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
                         gBagMenu->contextMenuItemsBuffer[0] = ACTION_WALK;
                 }
                 break;
@@ -1698,6 +1858,12 @@ static void OpenContextMenu(u8 taskId)
         PrintTMHMMoveData(gSpecialVar_ItemId);
         PutWindowTilemap(WIN_TMHM_INFO_ICONS);
         PutWindowTilemap(WIN_TMHM_INFO);
+        PutWindowTilemap(WIN_MON_ICON_0);
+        PutWindowTilemap(WIN_MON_ICON_1);
+        PutWindowTilemap(WIN_MON_ICON_2);
+        PutWindowTilemap(WIN_MON_ICON_3);
+        PutWindowTilemap(WIN_MON_ICON_4);
+        PutWindowTilemap(WIN_MON_ICON_5);
         ScheduleBgCopyTilemapToVram(0);
     }
     else
@@ -2619,6 +2785,28 @@ static void PrepareTMHMMoveWindow(void)
     BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_ACCURACY, 0, 24);
     BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_PP, 0, 36);
     CopyWindowToVram(WIN_TMHM_INFO_ICONS, COPYWIN_GFX);
+
+    // TODO - Blit icons?
+}
+
+static void BlitMonSlotIconForItem(u8 windowId, u16 slot, u16 itemId)
+{
+    u16 species = GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES_OR_EGG);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+
+    if(species != SPECIES_NONE)
+    {
+        BlitPokemonIconToWindow(species, windowId, 0, 0, NULL);
+
+        if(!CanLearnTeachableMove(species, ItemIdToBattleMoveId(itemId)))
+        {
+            // Make grey if can't teach move
+            TintPalette_GrayScale2(&gPlttBufferUnfaded[BG_PLTT_ID(gWindows[windowId].window.paletteNum)], PLTT_SIZE_4BPP);
+            TintPalette_GrayScale2(&gPlttBufferFaded[BG_PLTT_ID(gWindows[windowId].window.paletteNum)], PLTT_SIZE_4BPP);
+        }
+    }
+
+    CopyWindowToVram(windowId, COPYWIN_GFX);
 }
 
 static void PrintTMHMMoveData(u16 itemId)
@@ -2633,6 +2821,20 @@ static void PrintTMHMMoveData(u16 itemId)
         for (i = 0; i < 4; i++)
             BagMenu_Print(WIN_TMHM_INFO, FONT_NORMAL, gText_ThreeDashes, 7, i * 12, 0, 0, TEXT_SKIP_DRAW, COLORID_TMHM_INFO);
         CopyWindowToVram(WIN_TMHM_INFO, COPYWIN_GFX);
+
+        // Blit mon icons
+        ClearWindowTilemap(WIN_MON_ICON_0);
+        ClearWindowTilemap(WIN_MON_ICON_1);
+        ClearWindowTilemap(WIN_MON_ICON_2);
+        ClearWindowTilemap(WIN_MON_ICON_3);
+        ClearWindowTilemap(WIN_MON_ICON_4);
+        ClearWindowTilemap(WIN_MON_ICON_5);
+        CopyWindowToVram(WIN_MON_ICON_0, COPYWIN_GFX);
+        CopyWindowToVram(WIN_MON_ICON_1, COPYWIN_GFX);
+        CopyWindowToVram(WIN_MON_ICON_2, COPYWIN_GFX);
+        CopyWindowToVram(WIN_MON_ICON_3, COPYWIN_GFX);
+        CopyWindowToVram(WIN_MON_ICON_4, COPYWIN_GFX);
+        CopyWindowToVram(WIN_MON_ICON_5, COPYWIN_GFX);
     }
     else
     {
@@ -2668,5 +2870,13 @@ static void PrintTMHMMoveData(u16 itemId)
         BagMenu_Print(WIN_TMHM_INFO, FONT_NORMAL, gStringVar1, 7, 36, 0, 0, TEXT_SKIP_DRAW, COLORID_TMHM_INFO);
 
         CopyWindowToVram(WIN_TMHM_INFO, COPYWIN_GFX);
+
+        // Blit mon icons
+        BlitMonSlotIconForItem(WIN_MON_ICON_0, 0, itemId);
+        BlitMonSlotIconForItem(WIN_MON_ICON_1, 1, itemId);
+        BlitMonSlotIconForItem(WIN_MON_ICON_2, 2, itemId);
+        BlitMonSlotIconForItem(WIN_MON_ICON_3, 3, itemId);
+        BlitMonSlotIconForItem(WIN_MON_ICON_4, 4, itemId);
+        BlitMonSlotIconForItem(WIN_MON_ICON_5, 5, itemId);
     }
 }

@@ -3412,15 +3412,7 @@ static const union AnimCmd sAnim_Celebi_1[] =
 #endif //P_FAMILY_CELEBI
 
 #if P_FAMILY_TREECKO
-static const union AnimCmd sAnim_Treecko_1[] =
-{
-    ANIMCMD_FRAME(0, 6),
-    ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 6),
-    ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_END,
-};
+PLACEHOLDER_ANIM_SINGLE_FRAME(Treecko);
 
 static const union AnimCmd sAnim_Grovyle_1[] =
 {
@@ -3446,17 +3438,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(SceptileMega);
 #endif //P_FAMILY_TREECKO
 
 #if P_FAMILY_TORCHIC
-static const union AnimCmd sAnim_Torchic_1[] =
-{
-    ANIMCMD_FRAME(0, 7),
-    ANIMCMD_FRAME(1, 4),
-    ANIMCMD_FRAME(0, 4),
-    ANIMCMD_FRAME(1, 4),
-    ANIMCMD_FRAME(0, 4),
-    ANIMCMD_FRAME(1, 4),
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_END,
-};
+PLACEHOLDER_ANIM_SINGLE_FRAME(Torchic);
 
 static const union AnimCmd sAnim_Combusken_1[] =
 {
@@ -3482,15 +3464,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(BlazikenMega);
 #endif //P_FAMILY_TORCHIC
 
 #if P_FAMILY_MUDKIP
-static const union AnimCmd sAnim_Mudkip_1[] =
-{
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 8),
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 13),
-    ANIMCMD_FRAME(0, 7),
-    ANIMCMD_END,
-};
+PLACEHOLDER_ANIM_SINGLE_FRAME(Mudkip );
 
 static const union AnimCmd sAnim_Marshtomp_1[] =
 {
@@ -5648,14 +5622,7 @@ static const union AnimCmd sAnim_Gastrodon_1[] =
 #endif //P_FAMILY_SHELLOS
 
 #if P_FAMILY_DRIFLOON
-static const union AnimCmd sAnim_Drifloon_1[] =
-{
-    ANIMCMD_FRAME(1, 25),
-    ANIMCMD_FRAME(0, 25),
-    ANIMCMD_FRAME(1, 25),
-    ANIMCMD_FRAME(0, 25),
-    ANIMCMD_END,
-};
+PLACEHOLDER_ANIM_SINGLE_FRAME(Drifloon);
 
 static const union AnimCmd sAnim_Drifblim_1[] =
 {

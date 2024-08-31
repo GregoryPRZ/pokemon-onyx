@@ -1,28 +1,41 @@
-raw `
-LilycoveCity_House1_MapScripts::
-	.byte 0
+mapscripts LilycoveCity_House1_MapScripts {
+}
 
-LilycoveCity_House1_EventScript_ExpertM::
-	msgbox LilycoveCity_House1_Text_PokemonPartnersNotTools, MSGBOX_NPC
-	end
-
-LilycoveCity_House1_EventScript_Kecleon::
+script LilycoveCity_House1_EventScript_Cynthia{
 	lock
 	faceplayer
-	waitse
-	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
-	msgbox LilycoveCity_House1_Text_Kecleon, MSGBOX_DEFAULT
-	waitmoncry
+	goto_if_set(FLAG_DEFEATED_LILYCOVE_CYNTHIA, LilycoveCity_House1_EventScript_CynthiaDefeated)
+	msgbox(format("What's this?\pWhat an uncanny resemblance... It's surprising to meet another Trainer who has intense eyes like that Pokémon Trainer. What's your name? ... OK. I'll remember that! {PLAYER}, nice to meet you. I'm Cynthia. I'm a Pokémon Trainer, too, like you. I have an insatiable curiosity for researching Pokémon myths. In order to get to know each other better as Pokémon Trainers, I would like our Pokémon to have a match. Would you care to be my opponent?"),  MSGBOX_YESNO)
+	goto_if_eq(VAR_RESULT, YES, LilycoveCity_House1_EventScript_CynthiaBattle)
+	msgbox(format("Ha ha. You prefer to take things slowly and rationally, am I right? When you're ready, come and talk to me. I'll be happy to see you."))
 	release
 	end
+}
 
-LilycoveCity_House1_Text_PokemonPartnersNotTools:
-	.string "POKéMON are partners to people.\n"
-	.string "They aren't our tools.\p"
-	.string "Unfortunately, there are some people\n"
-	.string "who fail to understand that…$"
+script LilycoveCity_House1_EventScript_CynthiaBattle{
+	goto_if_unset(FLAG_IS_CHAMPION, LilycoveCity_House1_EventScript_CynthiaComeBackWhenChampion)
+	msgbox(format("Before I send out my Pokémon, my heart always begins to race... Interesting... My Pokémon in their Poké Balls are radiating a happy feeling. Are you the reason? What are you?"), MSGBOX_DEFAULT)
+	trainerbattle_no_intro(TRAINER_CYNTHIA, LilycoveCity_House1_Text_CynthiaDefeat)
+	msgbox(format("That was beyond my expectation! What an exceptional battle! You certainly bear a resemblance to that Trainer who faced Giratina... Oh, pardon me. I was just thinking out loud. I love being here in spring and summer. I can't stay all year, because there's so much to investigate in Sinnoh, as well. You're a great Trainer, and it would make me happy to see you again sometime."), MSGBOX_DEFAULT)
+	setflag(FLAG_DEFEATED_LILYCOVE_CYNTHIA)
+	release
+	end
+}
+script LilycoveCity_House1_EventScript_CynthiaComeBackWhenChampion{
+	msgbox(format("Oh! But you should come back when you finish your trip. Beat the champion first, and i'll be happy to battle you."), MSGBOX_DEFAULT)
+	release
+	end
+}
 
-LilycoveCity_House1_Text_Kecleon:
-	.string "KECLEON: Ruroro?$"
+script LilycoveCity_House1_EventScript_CynthiaDefeated{
+	lock
+	faceplayer
+	msgbox(format("I love to come here in spring and summer. But there are a lot of things to investigate in Sinnoh, as well. I'd be delighted to see you again. You're an awesome Pokémon Trainer!"), MSGBOX_DEFAULT)
+	release
+	end
+}
 
-`
+
+text LilycoveCity_House1_Text_CynthiaDefeat{
+	"My heart is pounding so hard because I had such a\nheated battle with you. You are a really great Trainer!!"
+}
