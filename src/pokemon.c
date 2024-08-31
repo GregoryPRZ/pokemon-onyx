@@ -7490,7 +7490,7 @@ u16 GetRandomMove(u16 move, u16 species)
     u16 final = sRandomValidMoves[val];
     
     #ifndef NDEBUG
-        MgbaPrintf(MGBA_LOG_DEBUG, "TX RANDOM MOVE     : GetRandomMove: move=%d=%S, species=%d; combined=%d; val=%d; final=%d=%S", move,  gMoveNames[move], species, move + species, val, final, gMoveNames[final]);
+        MgbaPrintf(MGBA_LOG_DEBUG, "TX RANDOM MOVE     : GetRandomMove: move=%d=%S, species=%d; combined=%d; val=%d; final=%d=%S", move,  gMovesInfo[move].name, species, move + species, val, final, gMovesInfo[final].name);
     #endif
 
     return final;
