@@ -235,3 +235,409 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own EXPLOSION…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_Welcome:
+	.string "Welcome! I can teach new moves to your\n"
+	.string "Pokemon.$"
+
+MoveTutor_Text_WhichMove:
+	.string "Which move should I teach?$"
+
+MoveTutor_Text_ChoosePkmn:
+	.string "Please chose your Pokémon.$"
+
+MoveTutor_Text_DoneComeBack:
+	.string "And done! Come back again if you need\n"
+	.string "my services$"
+
+MoveTutor_Text_ComeBack:
+	.string "Come again if you need my services.$"
+
+MoveTutor_Text_WelcomeComeBackLater:
+	.string "Welcome! I can teach new moves to your\n"
+	.string "Pokemon, but you need to get stronger\l"
+	.string "in order to use my services.\p"
+	.string "Come back when you'll have to beat\n"
+	.string "this city's GYM LEADER.$" 
+
+MoveTutor_Text_Exit:
+	.string "Exit$"
+
+MoveTutor_Text_FireFang:
+	.string "Fire Fang$"
+
+MoveTutor_Text_ThunderFang:
+	.string "Thunder Fang$"
+
+MoveTutor_Text_IceFang:
+	.string "Ice Fang$"
+
+MoveTutor_Text_IceBall:
+	.string "Ice Ball$"
+
+MoveTutor_Text_Snore:
+	.string "Snore$"
+
+MoveTutor_Text_Bind:
+	.string "Bind$"
+
+MoveTutor_Text_Electroweb:
+	.string "Electroweb$"
+
+MoveTutor_Text_Uproar:
+	.string "Uproar$"
+
+MoveTutor_Text_Recycle:
+	.string "Recycle$"
+
+MoveTutor_Text_HelpingHand:
+	.string "Helping Hand$"
+
+MoveTutor_Text_Spikes:
+	.string "Spikes$"
+
+MoveTutor_Text_IcyWind:
+	.string "Icy Wind$"
+
+
+
+MoveTutor_Text_FireSpin:
+	.string "Fire Spin$"
+
+MoveTutor_Text_SandTomb:
+	.string "Sand Tomb$"
+
+MoveTutor_Text_Whirlpool:
+	.string "Whirlpool$"
+
+MoveTutor_Text_AirCutter:
+	.string "Air Cutter$"
+
+MoveTutor_Text_LowKick:
+	.string "Low Kick$"
+
+MoveTutor_Text_Covet:
+	.string "Covet$"
+
+MoveTutor_Text_HealBell:
+	.string "Heal Bell$"
+
+MoveTutor_Text_Endure:
+	.string "Endure$"
+
+MoveTutor_Text_BugBite:
+	.string "Bug Bite$"
+
+MoveTutor_Text_Pounce:
+	.string "Pounce$"
+
+MoveTutor_Text_ChillingWater:
+	.string "Chilling Water$"
+
+MoveTutor_Text_Trailblaze:
+	.string "Trailblaze$"
+
+
+
+MoveTutor_Text_FirePunch:
+	.string "Fire Punch$"
+
+MoveTutor_Text_IcePunch:
+	.string "Ice Punch$"
+
+MoveTutor_Text_ThunderPunch:
+	.string "Thunder Punch$"
+
+MoveTutor_Text_LowSweep:
+	.string "Low Sweep$"
+
+MoveTutor_Text_MudShot:
+	.string "Mud Shot$"
+
+MoveTutor_Text_Avalanche:
+	.string "Avalanche$"
+
+MoveTutor_Text_ElectroBall:
+	.string "Electro Ball$"
+
+MoveTutor_Text_Encore:
+	.string "Encore$"
+
+MoveTutor_Text_StruggleBug:
+	.string "Struggle Bug$"
+
+MoveTutor_Text_FirePledge:
+	.string "Fire Pledge$"
+
+MoveTutor_Text_GrassPledge:
+	.string "Grass Pledge$"
+
+MoveTutor_Text_WaterPledge:
+	.string "Water Pledge$"
+
+
+
+MoveTutor_Text_StompingTantrum:
+	.string "Stomping Tantrum$"
+
+MoveTutor_Text_PsychoCut:
+	.string "Psycho Cut$"
+
+MoveTutor_Text_Bounce:
+	.string "Bounce$"
+
+MoveTutor_Text_MuddyWater:
+	.string "Muddy Water$"
+
+MoveTutor_Text_Trick:
+	.string "Trick$"
+
+MoveTutor_Text_SeedBomb:
+	.string "Seed Bomb$"
+
+MoveTutor_Text_Hex:
+	.string "Hex$"
+
+MoveTutor_Text_PainSplit:
+	.string "Pain Split$"
+
+MoveTutor_Text_KnockOff:
+	.string "Knock Off$"
+
+MoveTutor_Text_SuperFang:
+	.string "Super Fang$"
+
+MoveTutor_Text_ToxicSpikes:
+	.string "Toxic Spikes$"
+
+MoveTutor_Text_DualChop:
+	.string "Dual Chop$"
+
+
+
+MoveTutor_Text_DrillRun:
+	.string "Drill Run$"
+
+MoveTutor_Text_ZenHeadbutt:
+	.string "Zen Headbutt$"
+
+MoveTutor_Text_SmartStrike:
+	.string "Smart Strike$"
+
+MoveTutor_Text_Tailwind:
+	.string "Tailwind$"
+
+MoveTutor_Text_SignalBeam:
+	.string "Signal Beam$"
+
+MoveTutor_Text_AquaTail:
+	.string "Aqua Tail$"
+
+MoveTutor_Text_BodySlam:
+	.string "Body Slam$"
+
+MoveTutor_Text_IronDefense:
+	.string "Iron Defense$"
+
+MoveTutor_Text_Amnesia:
+	.string "Amnesia$"
+
+MoveTutor_Text_AirSlash:
+	.string "Air Slash$"
+
+MoveTutor_Text_PowerGem:
+	.string "Power Gem$"
+
+MoveTutor_Text_Haze:
+	.string "Haze$"
+
+
+
+MoveTutor_Text_HighHorsepower:
+	.string "High Horsepower$"
+
+MoveTutor_Text_PsychicFangs:
+	.string "Psychic Fangs$"
+
+MoveTutor_Text_IronHead:
+	.string "Iron Head$"
+
+MoveTutor_Text_HeatWave:
+	.string "Heat Wave$"
+
+MoveTutor_Text_BugBuzz:
+	.string "Bug Buzz$"
+
+MoveTutor_Text_Liquidation:
+	.string "Liquidation$"
+
+MoveTutor_Text_DragonTail:
+	.string "Dragon Tail$"
+
+MoveTutor_Text_HyperVoice:
+	.string "Hyper Voice$"
+
+MoveTutor_Text_LeechLife:
+	.string "Leech Life$"
+
+MoveTutor_Text_NastyPlot:
+	.string "Nasty Plot$"
+
+MoveTutor_Text_SwordsDance:
+	.string "Swords Dance$"
+
+MoveTutor_Text_DragonDance:
+	.string "Dragon Dance$"
+
+
+
+MoveTutor_Text_GunkShot:
+	.string "Gunk Shot$"
+
+MoveTutor_Text_Megahorn:
+	.string "Megahorn$"
+
+MoveTutor_Text_AuraSphere:
+	.string "Aura Sphere$"
+
+MoveTutor_Text_PlayRough:
+	.string "Play Rough$"
+
+MoveTutor_Text_IceSpinner:
+	.string "Ice Spinner$"
+
+MoveTutor_Text_EarthPower:
+	.string "Earth Power$"
+
+MoveTutor_Text_PhantomForce:
+	.string "Phantom Force$"
+
+MoveTutor_Text_SolarBlade:
+	.string "Solar Blade$"
+
+MoveTutor_Text_TrickRoom:
+	.string "Trick Room$"
+
+MoveTutor_Text_GrassyGlide:
+	.string "Grassy Glide$"
+
+MoveTutor_Text_DualWingbeat:
+	.string "Dual Wingbeat$"
+
+MoveTutor_Text_BodyPress:
+	.string "Body Press$"
+
+
+
+MoveTutor_Text_SteelBeam:
+	.string "Steel Beam$"
+
+MoveTutor_Text_Poltergeist:
+	.string "Poltergeist$"
+
+MoveTutor_Text_DoubleEdge:
+	.string "Double Edge$"
+
+MoveTutor_Text_DracoMeteor:
+	.string "Draco Meteor$"
+
+MoveTutor_Text_BraveBird:
+	.string "Brave Bird$"
+
+MoveTutor_Text_GigaImpact:
+	.string "Giga Impact$"
+
+MoveTutor_Text_Hurricane:
+	.string "Hurricane$"
+
+MoveTutor_Text_CloseCombat:
+	.string "Close Combat$"
+
+MoveTutor_Text_LeafStorm:
+	.string "Leaf Storm$"
+
+MoveTutor_Text_FlareBlitz:
+	.string "Flare Blitz$"
+
+MoveTutor_Text_HydroPump:
+	.string "Hydro Pump$"
+
+MoveTutor_Text_Outrage:
+	.string "Outrage$"
+
+
+
+MoveTutor_Text_BlastBurn:
+	.string "Blast Burn$"
+
+MoveTutor_Text_FrenzyPlant:
+	.string "Frenzy Plant$"
+
+MoveTutor_Text_HydroCannon:
+	.string "Hydro Cannon$"
+
+MoveTutor_Text_DragonAscent:
+	.string "Dragon Ascent$"
+
+MoveTutor_Text_SecretSword:
+	.string "Secret Sword$"
+
+MoveTutor_Text_RelicSong:
+	.string "Relic Song$"
+
+MoveTutor_Text_VoltTackle:
+	.string "Volt Tackle$"
+
+MoveTutor_Text_SurgingStrikes:
+	.string "Surging Strikes$"
+
+MoveTutor_Text_WickedBlow:
+	.string "Wicked Blow$"
+
+MoveTutor_Text_MeteorBeam:
+	.string "Meteor Beam$"
+
+MoveTutor_Text_SkyAttack:
+	.string "Sky Attack$"
+
+MoveTutor_Text_MistyExplosion:
+	.string "Misty Explosion$"
+
+
+
+MoveTutor_Text_BurningJealousy:
+	.string "Burning Jealousy$"
+
+MoveTutor_Text_SkitterSmack:
+	.string "Skitter Smack$"
+
+MoveTutor_Text_LashOut:
+	.string "Lash Out$"
+
+MoveTutor_Text_BreakingSwipe:
+	.string "Breaking Swipe$"
+
+MoveTutor_Text_ScaleShot:
+	.string "Scale Shot$"
+
+MoveTutor_Text_TripleAxel:
+	.string "Triple Axel$"
+
+MoveTutor_Text_ScorchingSands:
+	.string "Scorching Sands$"
+
+MoveTutor_Text_ExpandingForce:
+	.string "Expanding Force$"
+
+MoveTutor_Text_FlipTurn:
+	.string "Flip Turn$"
+
+MoveTutor_Text_RisingVoltage:
+	.string "Rising Voltage$"
+
+MoveTutor_Text_Coaching:
+	.string "Coaching$"
+
+MoveTutor_Text_CorrosiveGas:
+	.string "Corrosive Gas$"
+	
