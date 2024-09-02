@@ -248,7 +248,7 @@ MoveTutor_Text_ChoosePkmn:
 
 MoveTutor_Text_DoneComeBack:
 	.string "And done! Come back again if you need\n"
-	.string "my services$"
+	.string "my services.$"
 
 MoveTutor_Text_ComeBack:
 	.string "Come again if you need my services.$"
