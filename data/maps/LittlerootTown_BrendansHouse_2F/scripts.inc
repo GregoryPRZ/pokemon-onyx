@@ -572,35 +572,53 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "everything's all there on your desk.$"
 # 287 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
-# 288 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_Notebook:
-# 289 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER} flipped open the notebook.\p"
 # 290 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Adventure Rule No. 1\n"
+PlayersHouse_2F_Text_StarterPreference:
 # 291 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Open the Menu with Start.\p"
+	.string "MOM: By the way, do you have any\n"
 # 292 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Adventure Rule No. 2\n"
+	.string "preference on the Pokémon you will\l"
 # 293 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Record your progress with Save.\p"
+	.string "choose?$"
 # 294 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "The remaining pages are blank…$"
+
 # 295 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-
+PlayersHouse_2F_Text_GreatChoice:
 # 296 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-Common_Text_LookCloserAtMap:
+	.string "MOM: Oh, great choice! I'll be happy\n"
 # 297 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "{PLAYER} took a closer look at the\n"
+	.string "to see your Pokémon.$"
 # 298 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Hoenn region map.$"
-# 299 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 
+# 299 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_Notebook:
 # 300 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-PlayersHouse_2F_Text_ItsAGameCube:
+	.string "{PLAYER} flipped open the notebook.\p"
 # 301 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "It's a Nintendo GameCube.\p"
+	.string "ADVENTURE RULE NO. 1\n"
 # 302 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "A Game Boy Advance is connected to\n"
+	.string "Open the MENU with START.\p"
 # 303 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "ADVENTURE RULE NO. 2\n"
+# 304 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Record your progress with SAVE.\p"
+# 305 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "The remaining pages are blank…$"
+# 306 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 307 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+Common_Text_LookCloserAtMap:
+# 308 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "{PLAYER} took a closer look at the\n"
+# 309 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "HOENN region map.$"
+# 310 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+
+# 311 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+PlayersHouse_2F_Text_ItsAGameCube:
+# 312 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "It's a Nintendo GameCube.\p"
+# 313 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "A Game Boy Advance is connected to\n"
+# 314 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "serve as the Controller.$"
