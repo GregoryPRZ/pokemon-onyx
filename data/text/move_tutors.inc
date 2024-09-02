@@ -253,12 +253,42 @@ MoveTutor_Text_DoneComeBack:
 MoveTutor_Text_ComeBack:
 	.string "Come again if you need my services.$"
 
-MoveTutor_Text_WelcomeComeBackLater:
-	.string "Welcome! I can teach new moves to your\n"
-	.string "Pokemon, but you need to get stronger\l"
-	.string "in order to use my services.\p"
-	.string "Come back when you'll have to beat\n"
-	.string "this city's GYM LEADER.$" 
+MoveTutor_Text_CantNotEnoughBadges:
+	.string "You can't access this section for\n"
+	.string "the moment. Earn more badges in\l"
+	.string "order to access it.$"
+
+
+MoveTutor_Text_Section1:
+	.string "Section 1$"
+
+MoveTutor_Text_Section2:
+	.string "Section 2$"
+
+MoveTutor_Text_Section3:
+	.string "Section 3$"
+
+MoveTutor_Text_Section4:
+	.string "Section 4$"
+
+MoveTutor_Text_Section5:
+	.string "Section 5$"
+
+MoveTutor_Text_Section6:
+	.string "Section 6$"
+
+MoveTutor_Text_Section7:
+	.string "Section 7$"
+
+MoveTutor_Text_Section8:
+	.string "Section 8$"
+
+MoveTutor_Text_Section9:
+	.string "Section 9$"
+
+MoveTutor_Text_Section10:
+	.string "Section 10$"
+
 
 MoveTutor_Text_Exit:
 	.string "Exit$"
