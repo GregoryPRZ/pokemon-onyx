@@ -115,7 +115,8 @@ PlayersHouse_EventScript_ChooseStarterMale::
     dynmultipush Starter_Text_Alola, 6
     dynmultipush Starter_Text_Galar, 7
     dynmultipush Starter_Text_Paldea, 8
-    dynmultipush Starter_Text_No, 9
+    dynmultipush Starter_Text_Random, 9
+    dynmultipush Starter_Text_No, 10
     dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
     switch VAR_RESULT
     case 0, PlayersHouse_EventScript_ChooseStarterKantoMale
@@ -127,7 +128,8 @@ PlayersHouse_EventScript_ChooseStarterMale::
     case 6, PlayersHouse_EventScript_ChooseStarterAlolaMale
     case 7, PlayersHouse_EventScript_ChooseStarterGalarMale
     case 8, PlayersHouse_EventScript_ChooseStarterPaldeaMale
-    case 9, PlayersHouse_EventScript_ChooseStarterHoennMale
+    case 9, PlayersHouse_EventScript_ChooseStarterRandomMale
+    case 10, PlayersHouse_EventScript_ChooseStarterHoennMale
 	end
 
 PlayersHouse_EventScript_ChooseStarterKantoMale::
@@ -166,6 +168,20 @@ PlayersHouse_EventScript_ChooseStarterPaldeaMale::
 	setvar VAR_STARTER_GEN_CHOSEN, 9
 	return
 
+PlayersHouse_EventScript_ChooseStarterRandomMale::
+	random 9
+	switch VAR_RESULT
+    case 0, PlayersHouse_EventScript_ChooseStarterKantoMale
+    case 1, PlayersHouse_EventScript_ChooseStarterJohtoMale
+    case 2, PlayersHouse_EventScript_ChooseStarterHoennMale
+    case 3, PlayersHouse_EventScript_ChooseStarterSinnohMale
+    case 4, PlayersHouse_EventScript_ChooseStarterUnovaMale
+    case 5, PlayersHouse_EventScript_ChooseStarterKalosMale
+    case 6, PlayersHouse_EventScript_ChooseStarterAlolaMale
+    case 7, PlayersHouse_EventScript_ChooseStarterGalarMale
+    case 8, PlayersHouse_EventScript_ChooseStarterPaldeaMale
+	return
+
 PlayersHouse_EventScript_ChooseStarterFemale::
 	msgbox PlayersHouse_2F_Text_StarterPreference, MSGBOX_DEFAULT
     dynmultipush Starter_Text_Kanto, 0
@@ -177,7 +193,8 @@ PlayersHouse_EventScript_ChooseStarterFemale::
     dynmultipush Starter_Text_Alola, 6
     dynmultipush Starter_Text_Galar, 7
     dynmultipush Starter_Text_Paldea, 8
-    dynmultipush Starter_Text_No, 9
+    dynmultipush Starter_Text_Random, 9
+    dynmultipush Starter_Text_No, 10
     dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
     switch VAR_RESULT
     case 0, PlayersHouse_EventScript_ChooseStarterKantoFemale
@@ -189,7 +206,8 @@ PlayersHouse_EventScript_ChooseStarterFemale::
     case 6, PlayersHouse_EventScript_ChooseStarterAlolaFemale
     case 7, PlayersHouse_EventScript_ChooseStarterGalarFemale
     case 8, PlayersHouse_EventScript_ChooseStarterPaldeaFemale
-    case 9, PlayersHouse_EventScript_ChooseStarterHoennFemale
+    case 9, PlayersHouse_EventScript_ChooseStarterRandomFemale
+    case 10, PlayersHouse_EventScript_ChooseStarterHoennFemale
 	end
 
 PlayersHouse_EventScript_ChooseStarterKantoFemale::
@@ -226,6 +244,20 @@ PlayersHouse_EventScript_ChooseStarterGalarFemale::
 
 PlayersHouse_EventScript_ChooseStarterPaldeaFemale::
 	setvar VAR_STARTER_GEN_CHOSEN, 9
+	return
+
+PlayersHouse_EventScript_ChooseStarterRandomFemale::
+	random 9
+	switch VAR_RESULT
+    case 0, PlayersHouse_EventScript_ChooseStarterKantoFemale
+    case 1, PlayersHouse_EventScript_ChooseStarterJohtoFemale
+    case 2, PlayersHouse_EventScript_ChooseStarterHoennFemale
+    case 3, PlayersHouse_EventScript_ChooseStarterSinnohFemale
+    case 4, PlayersHouse_EventScript_ChooseStarterUnovaFemale
+    case 5, PlayersHouse_EventScript_ChooseStarterKalosFemale
+    case 6, PlayersHouse_EventScript_ChooseStarterAlolaFemale
+    case 7, PlayersHouse_EventScript_ChooseStarterGalarFemale
+    case 8, PlayersHouse_EventScript_ChooseStarterPaldeaFemale
 	return
 
 PlayersHouse_2F_EventScript_CheckWallClock::
@@ -833,6 +865,9 @@ Starter_Text_Galar:
 
 Starter_Text_Paldea:
 	.string "Paldea$"
+
+Starter_Text_Random:
+	.string "Random$"
 
 Starter_Text_No:
 	.string "No$"
