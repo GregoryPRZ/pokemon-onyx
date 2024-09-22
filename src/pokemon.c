@@ -688,7 +688,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #elif P_LVL_UP_LEARNSETS >= GEN_8
 #include "data/pokemon/level_up_learnsets/gen_8.h" // Sword/Shield
 #elif P_LVL_UP_LEARNSETS >= GEN_7
-#include "data/pokemon/level_up_learnsets/gen_7.h" // Ultra Sun/ Ultra Moon
+#include "data/pokemon/level_up_learnsets/gen_7.h" // Ultra Sun/Ultra Moon
 #elif P_LVL_UP_LEARNSETS >= GEN_6
 #include "data/pokemon/level_up_learnsets/gen_6.h" // Omega Ruby/Alpha Sapphire
 #elif P_LVL_UP_LEARNSETS >= GEN_5
@@ -2836,6 +2836,8 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             {
                 const u8 *types = gSpeciesInfo[substruct0->species].types;
                 retVal = (boxMon->personality & 0x1) == 0 ? types[0] : types[1];
+                // To avoid this value changing upon form change/evolution, we directly set it for future cases
+                SetBoxMonData(boxMon, MON_DATA_TERA_TYPE, &retVal);
             }
             else
             {
