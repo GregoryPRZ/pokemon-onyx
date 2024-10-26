@@ -312,6 +312,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelly;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -619,6 +620,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TABITHA] =         &gObjectEventGraphicsInfo_Tabitha,
     [OBJ_EVENT_GFX_SHELLY] =         &gObjectEventGraphicsInfo_Shelly,
     [OBJ_EVENT_GFX_MATT] =         &gObjectEventGraphicsInfo_Matt,
+    [OBJ_EVENT_GFX_CYNTHIA] =         &gObjectEventGraphicsInfo_Cynthia,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
