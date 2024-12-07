@@ -12407,7 +12407,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_LAPRAS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4999
-            .heldItem = ITEM_ODD_KEYSTONE,
+            .heldItem = ITEM_LAPRASITE,
 #line 5001
             .ev = TRAINER_PARTY_EVS(124, 0, 0, 0, 252, 132),
 #line 5004
