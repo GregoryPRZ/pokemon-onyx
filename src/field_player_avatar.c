@@ -692,16 +692,6 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerRun(direction);
 
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
-
-        if (heldKeys & B_BUTTON && gSaveBlock2Ptr->autoRun == TRUE)
-        {
-            PlayerRunSlow(direction);
-        }
-        else
-        {
-            PlayerRun(direction);
-            gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
-        }
         return;
     }
     else if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
