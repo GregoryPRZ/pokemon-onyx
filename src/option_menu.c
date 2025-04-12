@@ -149,40 +149,6 @@ static void VBlankCB(void)
     TransferPlttBuffer();
 }
 
-
-static void ReadAllCurrentSettings(u8 taskId)
-{
-    gTasks[taskId].data[0] = 0;
-    gTasks[taskId].data[1] = gSaveBlock2Ptr->optionsTextSpeed;
-    gTasks[taskId].data[2] = VarGet(VAR_BATTLE_SPEED);
-    gTasks[taskId].data[3] = gSaveBlock2Ptr->optionsBattleStyle;
-    gTasks[taskId].data[4] = gSaveBlock2Ptr->optionsSound;
-    gTasks[taskId].data[5] = gSaveBlock2Ptr->optionsButtonMode;
-    gTasks[taskId].data[6] = gSaveBlock2Ptr->optionsWindowFrameType;
-}
-
-static void DrawOptionsPg1(u8 taskId)
-{  
-    ReadAllCurrentSettings(taskId);
-    TextSpeed_DrawChoices(gTasks[taskId].data[1]);
-    BattleScene_DrawChoices(gTasks[taskId].data[2]);
-    BattleStyle_DrawChoices(gTasks[taskId].data[3]);
-    Sound_DrawChoices(gTasks[taskId].data[4]);
-    ButtonMode_DrawChoices(gTasks[taskId].data[5]);
-    FrameType_DrawChoices(gTasks[taskId].data[6]);
-    HighlightOptionMenuItem(gTasks[taskId].data[0]);
-    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
-}
-
-static void DrawOptionsPg2(u8 taskId)
-{
-    ReadAllCurrentSettings(taskId);
-    HighlightOptionMenuItem(gTasks[taskId].data[0]);
-    CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
-}
-
-
-
 void CB2_InitOptionMenu(void)
 {
     switch (gMain.state)
@@ -382,73 +348,6 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     }
 }
 
-static void Task_OptionMenuFadeIn_Pg2(u8 taskId)
-{
-    if (!gPaletteFade.active)
-        gTasks[taskId].func = Task_OptionMenuProcessInput_Pg2;
-}
-
-static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
-{
-    if (JOY_NEW(L_BUTTON) || JOY_NEW(R_BUTTON))
-    {
-        FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
-        ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
-        sCurrPage = Process_ChangePage(sCurrPage);
-        gTasks[taskId].func = Task_ChangePage;
-    }
-    else if (JOY_NEW(A_BUTTON))
-    {
-        if (gTasks[taskId].data[0] == MENUITEM_CANCEL_PG2)
-            gTasks[taskId].func = Task_OptionMenuSave;
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        gTasks[taskId].func = Task_OptionMenuSave;
-    }
-    else if (JOY_NEW(DPAD_UP))
-    {
-        if (gTasks[taskId].data[0] > 0)
-            gTasks[taskId].data[0]--;
-        else
-            gTasks[taskId].data[0] = MENUITEM_CANCEL_PG2;
-        HighlightOptionMenuItem(gTasks[taskId].data[0]);
-    }
-    else if (JOY_NEW(DPAD_DOWN))
-    {
-        if (gTasks[taskId].data[0] < MENUITEM_CANCEL_PG2)
-            gTasks[taskId].data[0]++;
-        else
-            gTasks[taskId].data[0] = 0;
-        HighlightOptionMenuItem(gTasks[taskId].data[0]);
-    }
-    else
-    {
-        u8 previousOption;
-
-        switch (gTasks[taskId].data[0])
-        {
-        case MENUITEM_MUSIC:
-            previousOption = gTasks[taskId].data[7];
-            gTasks[taskId].data[7] = Music_ProcessInput(gTasks[taskId].data[7]);
-            if (previousOption != gTasks[taskId].data[7])
-                Music_DrawChoices(gTasks[taskId].data[7]);
-            break;
-        default:
-            return;
-        }
-
-        if (sArrowPressed)
-        {
-            sArrowPressed = FALSE;
-            CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
-        }
-    }
-}
-
-
-
-
 static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsTextSpeed = gTasks[taskId].tTextSpeed;
@@ -457,6 +356,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
+
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
