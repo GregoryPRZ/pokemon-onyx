@@ -351,7 +351,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsTextSpeed = gTasks[taskId].tTextSpeed;
-    VarSet(VAR_BATTLE_SPEED, gTasks[taskId].tBattleSceneOff);
+    gSaveBlock2Ptr->optionsBattleSceneOff = gTasks[taskId].tBattleSceneOff;
     gSaveBlock2Ptr->optionsBattleStyle = gTasks[taskId].tBattleStyle;
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
@@ -443,43 +443,25 @@ static void TextSpeed_DrawChoices(u8 selection)
 
 static u8 BattleScene_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_RIGHT))
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
-        if (selection < 3)
-            selection++;
-        else
-            selection = 0;
-
+        selection ^= 1;
         sArrowPressed = TRUE;
     }
-    if (JOY_NEW(DPAD_LEFT))
-    {
-        if (selection != 0)
-            selection--;
-        else
-            selection = 3;
 
-        sArrowPressed = TRUE;
-    }
     return selection;
 }
 
 static void BattleScene_DrawChoices(u8 selection)
 {
-	switch(selection){
-	case 0:
-        DrawOptionMenuChoice(gText_BattleSceneNormal, 104, YPOS_BATTLESCENE, 1);
-		break;
-    case 1:
-        DrawOptionMenuChoice(gText_BattleSceneFast, 104, YPOS_BATTLESCENE, 1);
-		break;
-	case 2:
-        DrawOptionMenuChoice(gText_BattleSceneFaster, 104, YPOS_BATTLESCENE, 1);
-		break;
-	case 3:
-        DrawOptionMenuChoice(gText_BattleSceneFastest, 104, YPOS_BATTLESCENE, 1);
-		break;
-	}
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, YPOS_BATTLESCENE, styles[0]);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 198), YPOS_BATTLESCENE, styles[1]);
 }
 
 static u8 BattleStyle_ProcessInput(u8 selection)
