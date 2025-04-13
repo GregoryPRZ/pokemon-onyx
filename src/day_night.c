@@ -4,6 +4,7 @@
 #include "event_data.h"
 #include "field_tasks.h"
 #include "field_weather.h"
+#include "malloc.h"
 #include "overworld.h"
 #include "palette.h"
 #include "rtc.h"
@@ -257,17 +258,20 @@ void ProcessImmediateTimeEvents(void)
 
 void LoadCompressedPalette_HandleDayNight(const u32 *src, u16 offset, u16 size, bool32 isDayNight)
 {
-    LZ77UnCompWram(src, gPaletteDecompressionBuffer);
+    u16 *tempBuffer = Alloc(0x20);
+    LZ77UnCompWram(src, tempBuffer);
     if (isDayNight)
     {
-        CpuCopy16(gPaletteDecompressionBuffer, &sPlttBufferPreDN[offset], size);
+        CpuCopy16(tempBuffer, &sPlttBufferPreDN[offset], size);
         TintPaletteForDayNight(offset, size);
         CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
+        Free(tempBuffer);
     }
     else
     {
-        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferUnfaded[offset], size);
-        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferFaded[offset], size);
+        CpuCopy16(tempBuffer, &gPlttBufferUnfaded[offset], size);
+        CpuCopy16(tempBuffer, &gPlttBufferFaded[offset], size);
+        Free(tempBuffer);
     }
 }
 

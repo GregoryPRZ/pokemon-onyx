@@ -9,6 +9,7 @@
 #include "item_menu.h"
 #include "load_save.h"
 #include "main.h"
+#include "malloc.h"
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
@@ -291,8 +292,8 @@ static void CB2_LoadSoarGraphics(void)
 		LZ77UnCompVram(sRegionMapBkgnd_ImageLZ, (void *)(VRAM + BG2_IMAGE_OFFSET));
 
 		// Load tilemap
-		LZ77UnCompVram(sRegionMapBkgnd_TilemapLZ, gDecompressionBuffer);
-		src = gDecompressionBuffer;
+        void *buffer = malloc_and_decompress(sRegionMapBkgnd_TilemapLZ, NULL);
+		src = buffer;
 		dest = (void *)(VRAM + BG2_TILEMAP_OFFSET);
 		// Copy each row to VRAM
 		for (i = 0; i < 64; i++)
@@ -308,7 +309,7 @@ static void CB2_LoadSoarGraphics(void)
 		// Create sprites
 		LoadEonGraphics();
 		gPlttBufferUnfaded[0] = RGB(8, 8, 20);
-
+        Free(buffer);
 		gMain.state++;
 		break;
 	case 1:
@@ -663,9 +664,6 @@ static void WarpCB2(void)
 		break;
 	case MAPSEC_EVER_GRANDE_CITY:
 		SetWarpDestinationToHealLocation(FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && (IPART(sPlayerPosY) / 8) == 10 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE : HEAL_LOCATION_EVER_GRANDE_CITY);
-		break;
-	case MAPSEC_MT_CHIMNEY:
-		SetWarpDestinationToHealLocation(HEAL_LOCATION_MT_CHIMNEY);
 		break;
 	default:
 		SetWarpDestinationToHealLocation(sMapHealLocations[sPrevMapSection][2]);

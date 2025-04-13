@@ -17577,7 +17577,7 @@ Pic: RS Brendan
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient / Prefer Strongest Move
+AI: Check Bad Move
 Mugshot: Blue
 
 Princessa (Gardevoir-Mega) @ Choice Specs  
@@ -17644,7 +17644,7 @@ Pic: Lucas
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+AI: Check Bad Move
 Mugshot: Yellow
 
 Behemoth (Great Tusk) @ Groundium Z 
@@ -17714,7 +17714,7 @@ Pic: RS Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+AI: Check Bad Move
 Mugshot: Blue
 
 Douglas (Drifblim) @ Focus Sash  
@@ -17780,7 +17780,7 @@ Pic: Cynthia
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Omniscient
+AI: Check Bad Move
 Mugshot: Purple
 
 Spiritomb @ Leftovers  

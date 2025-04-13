@@ -574,17 +574,6 @@ extern const u8 BattleFrontier_Lounge2_Text_PyramidKingIsThere[];
 extern const u8 BattleFrontier_Lounge2_Text_PyramidKingSilverMons[];
 extern const u8 BattleFrontier_Lounge2_Text_PyramidKingGoldMons[];
 
-// Battle Frontier Nature Girl
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlAttackHighDefenseLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlAttackHighSupportLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlDefenseHighAttackLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlDefenseHighDefenseLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlDefenseHighSupportLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlSupportHighAttackLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlSupportHighDefenseLow[];
-extern const u8 BattleFrontier_Lounge5_Text_NatureGirlSupportHighSupportLow[];
-
 // Battle Frontier Gambler
 extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleTowerSingle[];
 extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleTowerDouble[];

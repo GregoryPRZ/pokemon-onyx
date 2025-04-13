@@ -380,10 +380,3 @@ gFieldEffectScript_TracksSpot::
 gFieldEffectScript_TracksSlither::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSlither
 	field_eff_end
-<<<<<<< HEAD
-=======
-
-gFieldEffectScript_CaveDust::
-	field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
-	field_eff_end
->>>>>>> aea0800f009cba36c78bf47b1fc43d07d747c8ce

@@ -36,6 +36,8 @@
 #include "constants/weather.h"
 #include "trainer_slide.h"
 #include "battle_message.h"
+#include "sound.h"
+#include "constants/songs.h"
 
 static u32 BattlerHPPercentage(u32 battler, u32 operation, u32 threshold);
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive);
@@ -52,12 +54,158 @@ static bool32 ShouldRunTrainerSlideLastLowHp(u32 firstId, u32 lastId, u32 battle
 static void SetTrainerSlideParamters(u32 battler, u32* firstId, u32* lastId, u32* trainerId, u32* retValue);
 static bool32 IsSlideInitalizedOrPlayed(enum TrainerSlideType slideId);
 
+static const u8 sText_RoxanneLastSwitchIn[] = _("Well done! But it's not over yet!\p");
+static const u8 sText_BrawlyLastSwitchIn[] = _("My last Pokémon will knock you down!\p");
+static const u8 sText_WattsonLastSwitchIn[] = _("Wahaha! This may do a little shock!\p");
+static const u8 sText_FlanneryLastSwitchIn[] = _("That was just a warming up!\p");
+static const u8 sText_NormanLastSwitchIn[] = _("Son, I'm proud of you... But get ready!\p");
+static const u8 sText_WinonaLastSwitchIn[] = _("Prepare for the last breath.\p");
+static const u8 sText_TateLizaLastSwitchIn[] = _("We must... win this fight!\p");
+static const u8 sText_JuanLastSwitchIn[] = _("You are elegant... but not as me!\p");
+
+static const u8 sText_SidneyLastSwitchIn[] = _("Not bad! But can you keep up?\p");
+static const u8 sText_PhoebeLastSwitchIn[] = _("Hehe... Just don't scream!\p");
+static const u8 sText_GlaciaLastSwitchIn[] = _("My last will cool you down!\p");
+static const u8 sText_DrakeLastSwitchIn[] = _("This is my last chance to win!\p");
+
+static const u8 sText_StevenLastSwitchIn[] = _("The last step to become the CHAMPION!\p");
+
 static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
 {
     [DIFFICULTY_NORMAL] =
     {
-    },
+        [TRAINER_ROXANNE_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_RoxanneLastSwitchIn,
+        },
+
+        [TRAINER_ROXANNE_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_RoxanneLastSwitchIn,
+        },
+
+        [TRAINER_BRAWLY_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_BrawlyLastSwitchIn,
+        },
+
+        [TRAINER_BRAWLY_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_BrawlyLastSwitchIn,
+        },
+
+        [TRAINER_WATTSON_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_WattsonLastSwitchIn,
+        },
+
+        [TRAINER_WATTSON_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_WattsonLastSwitchIn,
+        },
+
+        [TRAINER_FLANNERY_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_FlanneryLastSwitchIn,
+        },
+
+        [TRAINER_FLANNERY_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_FlanneryLastSwitchIn,
+        },
+
+        [TRAINER_NORMAN_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_NormanLastSwitchIn,
+        },
+
+        [TRAINER_NORMAN_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_NormanLastSwitchIn,
+        },
+
+        [TRAINER_WINONA_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_WinonaLastSwitchIn,
+        },
+
+        [TRAINER_WINONA_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_WinonaLastSwitchIn,
+        },
+
+        [TRAINER_TATE_AND_LIZA_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_TateLizaLastSwitchIn,
+        },
+
+        [TRAINER_TATE_AND_LIZA_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_TateLizaLastSwitchIn,
+        },
+
+        [TRAINER_JUAN_1] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_JuanLastSwitchIn,
+        },
+
+        [TRAINER_JUAN_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_JuanLastSwitchIn,
+        },
+
+        [TRAINER_SIDNEY] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_SidneyLastSwitchIn,
+        },
+
+        [TRAINER_SIDNEY_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_SidneyLastSwitchIn,
+        },
+
+        [TRAINER_PHOEBE] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_PhoebeLastSwitchIn,
+        },
+
+        [TRAINER_PHOEBE_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_PhoebeLastSwitchIn,
+        },
+
+        [TRAINER_GLACIA] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_GlaciaLastSwitchIn,
+        },
+
+        [TRAINER_GLACIA_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_GlaciaLastSwitchIn,
+        },
+
+        [TRAINER_DRAKE] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_DrakeLastSwitchIn,
+        },
+
+        [TRAINER_DRAKE_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_DrakeLastSwitchIn,
+        },
+
+        [TRAINER_STEVEN] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_StevenLastSwitchIn,
+        },
+
+        [TRAINER_STEVEN_2] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = sText_StevenLastSwitchIn,
+        },
+    }
 };
+
 
 static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
 {
@@ -275,6 +423,7 @@ enum TrainerSlideTargets ShouldDoTrainerSlide(u32 battler, enum TrainerSlideType
             shouldRun = ShouldRunTrainerSlideEnemyMonUnaffected(firstId, lastId, slideId);
             break;
         case TRAINER_SLIDE_LAST_SWITCHIN:
+            PlayBGM(MUS_LAST_POKEMON);
             shouldRun = ShouldRunTrainerSlideLastSwitchIn(battler);
             break;
         case TRAINER_SLIDE_LAST_HALF_HP:

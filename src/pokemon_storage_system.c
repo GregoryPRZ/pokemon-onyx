@@ -4104,7 +4104,6 @@ static bool8 ShowPartyMenu(void)
     if (sStorage->partyMenuMoveTimer == PARTY_MENU_ADJUSTED_SCROLL_TIMER)
         return FALSE;
 
-    sStorage->partyMenuUnused1--;
     sStorage->partyMenuY += PARTY_MENU_SCROLL_DELTA;
     TilemapUtil_Move(TILEMAPID_PARTY_MENU, 3, PARTY_MENU_SCROLL_DELTA);
     TilemapUtil_Update(TILEMAPID_PARTY_MENU);
@@ -4133,7 +4132,6 @@ static bool8 HidePartyMenu(void)
 {
     if (sStorage->partyMenuMoveTimer != PARTY_MENU_ADJUSTED_SCROLL_TIMER)
     {
-        sStorage->partyMenuUnused1++;
         sStorage->partyMenuY -= PARTY_MENU_SCROLL_DELTA;
         TilemapUtil_Move(TILEMAPID_PARTY_MENU, 3, -PARTY_MENU_SCROLL_DELTA);
         TilemapUtil_Update(TILEMAPID_PARTY_MENU);
@@ -5327,11 +5325,7 @@ static void SetUpScrollToBox(u8 boxId)
     s8 direction = DetermineBoxScrollDirection(boxId);
 
     sStorage->scrollSpeed = BOX_SCROLL_SPEED((direction > 0) ? 1 : -1);
-    sStorage->scrollUnused1 = (direction > 0) ? 1 : 2;
     sStorage->scrollTimer = 32 / BOX_SCROLL_SPEED_FACTOR;
-    sStorage->scrollToBoxIdUnused = boxId;
-    sStorage->scrollUnused2 = (direction <= 0) ? 5 : 0;
-    sStorage->scrollDirectionUnused = direction;
 
     sStorage->scrollToBoxId = boxId;
     sStorage->scrollDirection = direction;

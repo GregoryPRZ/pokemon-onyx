@@ -1158,6 +1158,7 @@ int SetCableClubWarp(void)
 
 extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
+
 static bool8 EnableAutoRun(void)
 {
     PlaySE(SE_PC_ON);
@@ -1171,9 +1172,9 @@ static bool8 EnableAutoRun(void)
         gSaveBlock2Ptr->autoRun = TRUE;
         ScriptContext_SetupScript(EventScript_EnableAutoRun);
     }
+    return TRUE;
 }
 
-    return TRUE;
 static bool32 TrySetUpWalkIntoSignpostScript(struct MapPosition *position, u32 metatileBehavior, u32 playerDirection)
 {
     const u8 *script;

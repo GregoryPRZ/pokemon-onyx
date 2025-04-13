@@ -2651,23 +2651,6 @@
 	cant_see_if 5
 	.endm
 
-
-	@ ============================ @
-	@ ITEM DESCRIPTION HEADER MACROS
-	@ Used with OW_SHOW_ITEM_DESCRIPTIONS config
-	.macro showitemdescription
-	callnative ScriptShowItemDescription
-	.byte 0
-	.endm
-
-	.macro showberrydescription
-	callnative ScriptShowItemDescription
-	.byte 1
-	.endm
-
-	.macro hideitemdescription
-	callnative ScriptHideItemDescription
-	.endm
 	@ example_usage:
 	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_NORMAL
 	@ 	msgbox test

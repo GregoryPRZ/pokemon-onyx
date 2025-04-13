@@ -1589,7 +1589,7 @@ static u32 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette,
     }
 }
 
-u8 LoadSpritePalette(const struct SpritePalette *palette)
+u32 LoadSpritePalette(const struct SpritePalette *palette)
 {
     return LoadSpritePalette_HandleDayNight(palette, FALSE);
 }

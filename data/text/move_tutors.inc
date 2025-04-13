@@ -670,4 +670,3 @@ MoveTutor_Text_Coaching:
 
 MoveTutor_Text_CorrosiveGas:
 	.string "Corrosive Gas$"
-	

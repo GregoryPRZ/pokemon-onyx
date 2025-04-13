@@ -8561,7 +8561,7 @@ static void Cmd_hitanimation(void)
                 if (DN_CONFIG_ONLY_ATTACK_DAMAGE && FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
                     if(FlagGet(FLAG_DAMAGE_NUMBERS_ACTIVATED)){
                         PlaySE(SE_CONTEST_ICON_CHANGE);
-                        ShowDamageNumbers(battler);
+                        ShowDamageNumbers(battlerDef);
                     }
                 }
             }
