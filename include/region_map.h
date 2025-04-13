@@ -14,6 +14,7 @@ enum
     MAP_INPUT_MOVE_END,
     MAP_INPUT_A_BUTTON,
     MAP_INPUT_B_BUTTON,
+    MAP_INPUT_R_BUTTON
 };
 
 enum {
@@ -117,6 +118,10 @@ void SetRegionMapDataForZoom(void);
 void RegionMap_GetSectionCoordsFromCurrFieldPos(u16 *mapSectionId, u16 *cursorPosX, u16 *cursorPosY, bool8 *playerIsInCave);
 u8 get_flagnr_blue_points(u16 mapSecId);
 u8 GetMapsecType(u16 mapSecId);
+
+//Pokenav Fly funcs
+u32 FilterFlyDestination(struct RegionMap* regionMap);
+void SetFlyDestination(struct RegionMap* regionMap);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 

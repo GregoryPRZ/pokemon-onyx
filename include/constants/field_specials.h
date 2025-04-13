@@ -88,4 +88,14 @@
 
 #define LAST_TALKED_TO_FLYING_TAXI 255 // used for determining if Fly or a flying taxi was used
 
+enum {
+    OPEN_PARTY_SCREEN,
+    NO_PARTY_SCREEN
+};
+
+enum {
+    CURRENT_POSITION,
+    TEMPLATE_POSITION
+};
+
 #endif // GUARD_CONSTANTS_FIELD_SPECIALS_H

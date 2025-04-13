@@ -11,6 +11,7 @@
 #include "rtc.h"
 #include "constants/day_night.h"
 #include "day_night.h"
+#include "test_runner.h"
 
 struct Fanfare
 {
@@ -297,6 +298,13 @@ bool8 IsFanfareTaskInactive(void)
 
 static void Task_Fanfare(u8 taskId)
 {
+    if (gTestRunnerHeadless)
+    {
+        DestroyTask(taskId);
+        sFanfareCounter = 0;
+        return;
+    }
+
     if (sFanfareCounter)
     {
         sFanfareCounter--;

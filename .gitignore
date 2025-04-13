@@ -48,9 +48,12 @@ prefabs.json
 *.sym
 *.js
 /pokeemerald-*.png
-/pokeemerald_agbcc-*.png
 src/data/map_group_count.h
 tools/trainerproc/trainerproc
 tools/poryscript
 tools/poryscript/poryscript
 tools/font_config.json
+*.Identifier
+*.smol
+*.fastSmol
+*.smolTM

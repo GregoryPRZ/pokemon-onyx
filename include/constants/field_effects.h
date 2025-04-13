@@ -72,10 +72,10 @@
 #define FLDEFF_USE_VS_SEEKER             67
 #define FLDEFF_X_ICON                    68
 #define FLDEFF_DOUBLE_EXCL_MARK_ICON     69
-#define FLDEFF_CAVE_DUST                 70
-#define FLDEFF_TRACKS_SLITHER            71
-#define FLDEFF_TRACKS_SPOT               72
-#define FLDEFF_TRACKS_BUG                73
+#define FLDEFF_TRACKS_SLITHER            70
+#define FLDEFF_TRACKS_SPOT               71
+#define FLDEFF_TRACKS_BUG                72
+#define FLDEFF_CAVE_DUST                 73
 #define FLDEFF_RIDE_TAXI                 74
 
 #define FLDEFFOBJ_SHADOW_S              0
@@ -115,10 +115,10 @@
 #define FLDEFFOBJ_BUBBLES               34
 #define FLDEFFOBJ_SMALL_SPARKLE         35
 #define FLDEFFOBJ_RAYQUAZA              36
-#define FLDEFFOBJ_CAVE_DUST             37
-#define FLDEFFOBJ_TRACKS_SLITHER        38
-#define FLDEFFOBJ_TRACKS_SPOT           39
-#define FLDEFFOBJ_TRACKS_BUG            40
+#define FLDEFFOBJ_TRACKS_SLITHER        37
+#define FLDEFFOBJ_TRACKS_SPOT           38
+#define FLDEFFOBJ_TRACKS_BUG            39
+#define FLDEFFOBJ_CAVE_DUST             40
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003
