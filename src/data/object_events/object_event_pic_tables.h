@@ -1117,12 +1117,6 @@ static const struct SpriteFrameImage sPicTable_PokeBall[] = {
     overworld_frame(gObjectEventPic_PokeBall, 2, 4, 0),
 };
 
-const struct SpriteFrameImage gObjectEventPicTable_MegaStone[] = {
-    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 1),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 2),
-};
-
 const struct SpriteFrameImage gObjectEventPicTable_Courtney[] = {
     overworld_frame(gObjectEventPic_Courtney, 2, 4, 0),
     overworld_frame(gObjectEventPic_Courtney, 2, 4, 1),

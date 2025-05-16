@@ -539,7 +539,6 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
     {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
     {gObjectEventPal_BeastBall,             OBJ_EVENT_PAL_TAG_BALL_BEAST},
-    {gObjectEventPalette_MegaStone,         OBJ_EVENT_PAL_MEGA_STONE},
     {gObjectEventPalette_Courtney,          OBJ_EVENT_PAL_COURTNEY},
     {gObjectEventPalette_Tabitha,           OBJ_EVENT_PAL_TABITHA},
     {gObjectEventPalette_Shelly,            OBJ_EVENT_PAL_SHELLY},
@@ -2749,7 +2748,7 @@ static u8 UpdateSpritePalette(const struct SpritePalette *spritePalette, struct 
     sprite->inUse = FALSE;
     FieldEffectFreePaletteIfUnused(sprite->oam.paletteNum);
     sprite->inUse = TRUE;
-    return sprite->oam.paletteNum = LoadSpritePaletteDayNight(spritePalette);
+    return sprite->oam.paletteNum = LoadSpritePalette(spritePalette);
 }
 
 // Find and update based on template's paletteTag
