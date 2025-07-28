@@ -2033,9 +2033,9 @@ static void RotomPhone_OverworldMenu_PrintAdventure(u8 taskId)
 
     switch (messageRotom)
     {
+        u8 location[16];
     default:
     case RP_MESSAGE_ADVENTURE_TO_DO:
-        u8 location[16];
         StringCopy(textBuffer, COMPOUND_STRING("What's there to do in "));
         GetMapName(location, GetCurrentRegionMapSectionId(), 0);
         StringAppend(textBuffer, location);
@@ -2330,7 +2330,7 @@ static void Task_RotomPhone_OverworldMenu_PhoneSlideOpen(u8 taskId)
 
         tPhoneY = ReadComfyAnimValueSmooth(&gComfyAnims[tPhoneComfyAnimId]);
     }
-    else if (GetEasingComfyAnim_CurrentFrame(&gComfyAnims[tPhoneComfyAnimId]) == PHONE_COMFY_SLIDE_DURATION / 2
+    else if (gComfyAnims[tPhoneComfyAnimId].state.easingState.curFrame == PHONE_COMFY_SLIDE_DURATION / 2
         && !RP_CONFIG_USE_ROTOM_PHONE)
     {
         LZDecompressWram(sFlipPhone_OverworldOpenTilemap, GetBgTilemapBuffer(0));
