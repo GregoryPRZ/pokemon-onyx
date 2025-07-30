@@ -217,6 +217,8 @@ void NewGameInitData(void)
     ClearFollowerNPCData();
     FlagSet(FLAG_DN_DEXNAV_GET);
     FlagSet(FLAG_DN_DEXNAV_DETECTOR);
+    FlagSet(FLAG_SYS_B_DASH);
+    gSaveBlock2Ptr->autoRun = FALSE;
 }
 
 static void ResetMiniGamesRecords(void)
