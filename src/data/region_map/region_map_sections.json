@@ -699,11 +699,7 @@
     },
     {
       "id": "MAPSEC_DYNAMIC",
-      "name": "",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "name": ""
     },
     {
       "id": "MAPSEC_PALLET_TOWN",
