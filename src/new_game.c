@@ -48,6 +48,8 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "dexnav.h"
+#include "constants/flags.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -213,6 +215,8 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    FlagSet(FLAG_DN_DEXNAV_GET);
+    FlagSet(FLAG_DN_DEXNAV_DETECTOR);
 }
 
 static void ResetMiniGamesRecords(void)

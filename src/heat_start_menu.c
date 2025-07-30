@@ -48,6 +48,7 @@
 #include "trainer_card.h"
 #include "window.h"
 #include "union_room.h"
+#include "dexnav.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -1416,6 +1417,13 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     PlaySE(SE_SELECT);
     HeatStartMenu_ExitAndClearTilemap();  
     DestroyTask(taskId);
+  } else if (JOY_NEW(L_BUTTON) && sHeatStartMenu->loadState == 0) {
+    if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE){
+      PlaySE(SE_SELECT);
+      HeatStartMenu_ExitAndClearTilemap();
+      CreateTask(Task_OpenDexNavFromStartMenu, 0);
+      DestroyTask(taskId);
+    }
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_HandleInput_DPADDOWN();
   } else if (gMain.newKeys & DPAD_UP && sHeatStartMenu->loadState == 0) {
@@ -1494,6 +1502,14 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
     PlaySE(SE_SELECT);
     HeatStartMenu_ExitAndClearTilemap();  
     DestroyTask(taskId);
+  } else if (JOY_NEW(L_BUTTON) && sHeatStartMenu->loadState == 0) {
+    // Check if player has DexNav
+    if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE) {
+      PlaySE(SE_SELECT);
+      HeatStartMenu_ExitAndClearTilemap();
+      CreateTask(Task_OpenDexNavFromStartMenu, 0);
+      DestroyTask(taskId);
+    }
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_SafariZone_HandleInput_DPADDOWN();
   } else if (gMain.newKeys & DPAD_UP && sHeatStartMenu->loadState == 0) {
