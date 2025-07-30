@@ -79,6 +79,7 @@ static void HeatStartMenu_LoadBgGfx(void);
 static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
+static void HeatStartMenu_UpdateDexNavIndicator(void);
 static u8 RunSaveCallback(void);
 static u8 SaveDoSaveCallback(void);
 static void HideSaveInfoWindow(void);
@@ -136,6 +137,7 @@ struct HeatStartMenu {
   u32 spriteIdSave;
   u32 spriteIdOptions;
   u32 spriteIdFlag;
+  u32 sDexNavIndicatorWindowId;
 };
 
 static EWRAM_DATA struct HeatStartMenu *sHeatStartMenu = NULL;
@@ -214,6 +216,16 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .height = 4,
     .paletteNum = 15,
     .baseBlock = (0x30 + (12*2)) + (7*2)
+};
+
+static const struct WindowTemplate sWindowTemplate_DexNavIndicator = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 8,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = ((0x30 + (12*2)) + (7*2)) + (7*4)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -636,6 +648,7 @@ void HeatStartMenu_Init(void) {
   sHeatStartMenu->savedCallback = CB2_ReturnToFieldWithOpenMenu;
   sHeatStartMenu->loadState = 0;
   sHeatStartMenu->sStartClockWindowId = 0;
+  sHeatStartMenu->sDexNavIndicatorWindowId = 0;
   sHeatStartMenu->flag = 0;
 
   if (GetSafariZoneFlag() == FALSE) { 
@@ -657,6 +670,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
+    HeatStartMenu_UpdateDexNavIndicator();
     CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
   } else {
     if (menuSelected == 255 || menuSelected == MENU_POKETCH || menuSelected == MENU_SAVE) {
@@ -670,6 +684,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
+    HeatStartMenu_UpdateDexNavIndicator();
     CreateTask(Task_HeatStartMenu_SafariZone_HandleMainInput, 0);
   }
 }
@@ -837,6 +852,8 @@ static const u8 gText_Save[]    = _("     Save  ");
 static const u8 gText_Options[] = _("   Options");
 static const u8 gText_Flag[]    = _("   Retire");
 
+static const u8 gText_DexNavIndicator[] = _("{HIGHLIGHT TRANSPARENT}{COLOR WHITE}{SHADOW DARK_GRAY}{L_BUTTON} DexNav");
+
 static void HeatStartMenu_UpdateMenuName(void) {
   
   FillWindowPixelBuffer(sHeatStartMenu->sMenuNameWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
@@ -871,6 +888,26 @@ static void HeatStartMenu_UpdateMenuName(void) {
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);
 }
 
+static void HeatStartMenu_UpdateDexNavIndicator(void) {
+  if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE) {
+    if (sHeatStartMenu->sDexNavIndicatorWindowId == 0) {
+      sHeatStartMenu->sDexNavIndicatorWindowId = AddWindow(&sWindowTemplate_DexNavIndicator);
+      FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+      PutWindowTilemap(sHeatStartMenu->sDexNavIndicatorWindowId);
+      AddTextPrinterParameterized(sHeatStartMenu->sDexNavIndicatorWindowId, FONT_NARROW, gText_DexNavIndicator, 0, 1, TEXT_SKIP_DRAW, NULL);
+      CopyWindowToVram(sHeatStartMenu->sDexNavIndicatorWindowId, COPYWIN_GFX);
+    }
+  } else {
+    if (sHeatStartMenu->sDexNavIndicatorWindowId != 0) {
+      FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+      ClearWindowTilemap(sHeatStartMenu->sDexNavIndicatorWindowId);
+      CopyWindowToVram(sHeatStartMenu->sDexNavIndicatorWindowId, COPYWIN_GFX);
+      RemoveWindow(sHeatStartMenu->sDexNavIndicatorWindowId);
+      sHeatStartMenu->sDexNavIndicatorWindowId = 0;
+    }
+  }
+}
+
 static void HeatStartMenu_ExitAndClearTilemap(void) {
   u32 i;
   u8 *buf = GetBgTilemapBuffer(0);
@@ -886,6 +923,13 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
 
   RemoveWindow(sHeatStartMenu->sStartClockWindowId);
   RemoveWindow(sHeatStartMenu->sMenuNameWindowId);
+
+  if (sHeatStartMenu->sDexNavIndicatorWindowId != 0) {
+    FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    ClearWindowTilemap(sHeatStartMenu->sDexNavIndicatorWindowId);
+    CopyWindowToVram(sHeatStartMenu->sDexNavIndicatorWindowId, COPYWIN_GFX);
+    RemoveWindow(sHeatStartMenu->sDexNavIndicatorWindowId);
+  }
 
   if (GetSafariZoneFlag() == TRUE) {
     FillWindowPixelBuffer(sHeatStartMenu->sSafariBallsWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
