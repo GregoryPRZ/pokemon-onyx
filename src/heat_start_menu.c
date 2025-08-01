@@ -48,6 +48,7 @@
 #include "trainer_card.h"
 #include "window.h"
 #include "union_room.h"
+#include "map_name_popup.h"
 #include "dexnav.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
@@ -628,6 +629,11 @@ static void ShowSafariBallsWindow(void)
 }
 
 void HeatStartMenu_Init(void) {
+  // Hide map name popup if it's currently displayed to prevent conflicts
+  if (GetMapNamePopUpWindowId() != WINDOW_NONE) {
+    HideMapNamePopUpWindow();
+  }
+
   if (!IsOverworldLinkActive()) {
     FreezeObjectEvents();
     PlayerFreeze();
