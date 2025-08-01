@@ -15,6 +15,7 @@
 #include "data.h"
 #include "item.h"
 #include "constants/songs.h"
+#include "comfy_anim.h"
 
 static void Task_DoPokeballSendOutAnim(u8 taskId);
 static inline void DoPokeballSendOutSoundEffect(u32 battler);
@@ -1479,11 +1480,19 @@ static void UNUSED DestroySpriteAndFreeResources_Ball(struct Sprite *sprite)
 
 #define sSpeedX data[0]
 #define sSpeedY data[1]
+#define sAnimId data[2]
 
 #define sDelayTimer data[1]
 
 void StartHealthboxSlideIn(u8 battler)
 {
+    struct ComfyAnimEasingConfig xTranslateConfig = {
+        .durationFrames = 23,
+        .from = Q_24_8(0x73),
+        .to = Q_24_8(0),
+        .easingFunc = ComfyAnimEasing_EaseOutCubic,
+        .delayFrames = 20,
+    };    
     struct Sprite *healthboxSprite = &gSprites[gHealthboxSpriteIds[battler]];
 
     healthboxSprite->sSpeedX = 5;
@@ -1497,10 +1506,14 @@ void StartHealthboxSlideIn(u8 battler)
         healthboxSprite->sSpeedY = -healthboxSprite->sSpeedY;
         healthboxSprite->x2 = -healthboxSprite->x2;
         healthboxSprite->y2 = -healthboxSprite->y2;
+        xTranslateConfig.from = Q_24_8(-0x73); // Use -0x73 directly for enemy side
     }
     gSprites[healthboxSprite->data[5]].callback(&gSprites[healthboxSprite->data[5]]);
+    healthboxSprite->sAnimId = CreateComfyAnim_Easing(&xTranslateConfig);
     if (GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT)
-        healthboxSprite->callback = SpriteCB_HealthboxSlideInDelayed;
+    {
+        healthboxSprite->callback = SpriteCB_HealthboxSlideIn;
+    }
 }
 
 static void SpriteCB_HealthboxSlideInDelayed(struct Sprite *sprite)
@@ -1515,14 +1528,18 @@ static void SpriteCB_HealthboxSlideInDelayed(struct Sprite *sprite)
 
 static void SpriteCB_HealthboxSlideIn(struct Sprite *sprite)
 {
-    sprite->x2 -= sprite->sSpeedX;
-    sprite->y2 -= sprite->sSpeedY;
-    if (sprite->x2 == 0 && sprite->y2 == 0)
+    TryAdvanceComfyAnim(&gComfyAnims[sprite->sAnimId]);
+    sprite->x2 = ReadComfyAnimValueSmooth(&gComfyAnims[sprite->sAnimId]);
+    if (gComfyAnims[sprite->sAnimId].completed)
+    {
+        ReleaseComfyAnim(sprite->sAnimId);
         sprite->callback = SpriteCallbackDummy;
+    }
 }
 
 #undef sSpeedX
 #undef sSpeedY
+#undef sAnimId
 #undef sDelayTimer
 
 void DoHitAnimHealthboxEffect(u8 battler)

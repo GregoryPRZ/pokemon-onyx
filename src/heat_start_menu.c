@@ -56,6 +56,9 @@
 #include "rtc.h"
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
+#include "comfy_anim.h"
+
+#define sAnimId data[7]
 
 /* CALLBACKS */
 static void SpriteCB_IconPoketch(struct Sprite* sprite);
@@ -66,6 +69,8 @@ static void SpriteCB_IconTrainerCard(struct Sprite* sprite);
 static void SpriteCB_IconSave(struct Sprite* sprite);
 static void SpriteCB_IconOptions(struct Sprite* sprite);
 static void SpriteCB_IconFlag(struct Sprite* sprite);
+static void SpriteCB_IconSlideIn(struct Sprite* sprite);
+static void SpriteCB_IconSlideIn(struct Sprite* sprite);
 
 /* TASKs */
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId);
@@ -76,6 +81,7 @@ static void Task_HandleSave(u8 taskId);
 static void HeatStartMenu_LoadSprites(void);
 static void HeatStartMenu_CreateSprites(void);
 static void HeatStartMenu_SafariZone_CreateSprites(void);
+static void HeatStartMenu_AddSlideInAnimation(u8 spriteId, u8 delayFrames);
 static void HeatStartMenu_LoadBgGfx(void);
 static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
@@ -721,6 +727,15 @@ static void HeatStartMenu_CreateSprites(void) {
     sHeatStartMenu->spriteIdTrainerCard = CreateSprite(&gSpriteIconTrainerCard, x, y5, 0);
     sHeatStartMenu->spriteIdSave    = CreateSprite(&gSpriteIconSave, x, y6, 0);
     sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y7, 0);
+    
+    // Add slide-in animations with staggered timing
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdPokedex, 0);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdParty, 8);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdBag, 16);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdPoketch, 24);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdTrainerCard, 32);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdSave, 40);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdOptions, 48);
     return;
   } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
     sHeatStartMenu->spriteIdPokedex = CreateSprite(&gSpriteIconPokedex, x-1, y1, 0);
@@ -729,6 +744,14 @@ static void HeatStartMenu_CreateSprites(void) {
     sHeatStartMenu->spriteIdTrainerCard = CreateSprite(&gSpriteIconTrainerCard, x, y4 + 2, 0);
     sHeatStartMenu->spriteIdSave    = CreateSprite(&gSpriteIconSave, x, y5 - 1, 0);
     sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y6-2, 0);
+    
+    // Add slide-in animations with staggered timing
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdPokedex, 0);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdParty, 8);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdBag, 16);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdTrainerCard, 24);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdSave, 32);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdOptions, 40);
     return;
   } else if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) {
     sHeatStartMenu->spriteIdParty = CreateSprite(&gSpriteIconParty, x, y1, 0);
@@ -736,12 +759,25 @@ static void HeatStartMenu_CreateSprites(void) {
     sHeatStartMenu->spriteIdTrainerCard = CreateSprite(&gSpriteIconTrainerCard, x, y3 + 3, 0);
     sHeatStartMenu->spriteIdSave    = CreateSprite(&gSpriteIconSave, x, y4 + 1, 0);
     sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y5 - 4, 0);
+    
+    // Add slide-in animations with staggered timing
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdParty, 0);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdBag, 8);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdTrainerCard, 16);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdSave, 24);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdOptions, 32);
     return;
   } else {
     sHeatStartMenu->spriteIdBag     = CreateSprite(&gSpriteIconBag, x, y1, 0);
     sHeatStartMenu->spriteIdTrainerCard = CreateSprite(&gSpriteIconTrainerCard, x, y2 + 1, 0);
     sHeatStartMenu->spriteIdSave    = CreateSprite(&gSpriteIconSave, x, y3 + 3, 0);
     sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y4 + 1, 0);
+    
+    // Add slide-in animations with staggered timing
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdBag, 0);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdTrainerCard, 8);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdSave, 16);
+    HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdOptions, 24);
   }
 }
 
@@ -760,6 +796,65 @@ static void HeatStartMenu_SafariZone_CreateSprites(void) {
   sHeatStartMenu->spriteIdBag     = CreateSprite(&gSpriteIconBag, x, y4, 0);
   sHeatStartMenu->spriteIdTrainerCard = CreateSprite(&gSpriteIconTrainerCard, x, y5, 0);
   sHeatStartMenu->spriteIdOptions = CreateSprite(&gSpriteIconOptions, x, y6, 0);
+  
+  // Add slide-in animations with staggered timing
+  HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdFlag, 0);
+  HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdPokedex, 8);
+  HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdParty, 16);
+  HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdBag, 24);
+  HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdTrainerCard, 32);
+  HeatStartMenu_AddSlideInAnimation(sHeatStartMenu->spriteIdOptions, 40);
+}
+
+static void HeatStartMenu_AddSlideInAnimation(u8 spriteId, u8 delayFrames)
+{
+    struct ComfyAnimEasingConfig xTranslateConfig = {
+        .durationFrames = 20,
+        .from = Q_24_8(60), // Start 60 pixels to the right
+        .to = Q_24_8(0),
+        .easingFunc = ComfyAnimEasing_EaseOutCubic,
+        .delayFrames = delayFrames,
+    };
+    struct Sprite *sprite = &gSprites[spriteId];
+
+    // Set initial position off-screen to the right
+    sprite->x2 = 60;
+    sprite->y2 = 0;
+    sprite->callback = SpriteCB_IconSlideIn;
+    
+    // Create comfy animation
+    sprite->sAnimId = CreateComfyAnim_Easing(&xTranslateConfig);
+}
+
+static void SpriteCB_IconSlideIn(struct Sprite *sprite)
+{
+    TryAdvanceComfyAnim(&gComfyAnims[sprite->sAnimId]);
+    sprite->x2 = ReadComfyAnimValueSmooth(&gComfyAnims[sprite->sAnimId]);
+    if (gComfyAnims[sprite->sAnimId].completed)
+    {
+        ReleaseComfyAnim(sprite->sAnimId);
+        sprite->x2 = 0; // Ensure final position
+        
+        // Switch back to the appropriate menu icon callback based on sprite template
+        if (sprite->template == &gSpriteIconPoketch)
+            sprite->callback = SpriteCB_IconPoketch;
+        else if (sprite->template == &gSpriteIconPokedex)
+            sprite->callback = SpriteCB_IconPokedex;
+        else if (sprite->template == &gSpriteIconParty)
+            sprite->callback = SpriteCB_IconParty;
+        else if (sprite->template == &gSpriteIconBag)
+            sprite->callback = SpriteCB_IconBag;
+        else if (sprite->template == &gSpriteIconTrainerCard)
+            sprite->callback = SpriteCB_IconTrainerCard;
+        else if (sprite->template == &gSpriteIconSave)
+            sprite->callback = SpriteCB_IconSave;
+        else if (sprite->template == &gSpriteIconOptions)
+            sprite->callback = SpriteCB_IconOptions;
+        else if (sprite->template == &gSpriteIconFlag)
+            sprite->callback = SpriteCB_IconFlag;
+        else
+            sprite->callback = SpriteCallbackDummy;
+    }
 }
 
 static void HeatStartMenu_LoadBgGfx(void) {
@@ -1449,6 +1544,10 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
 
 static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
   u32 index;
+  
+  // Advance comfy animations every frame
+  AdvanceComfyAnimations();
+  
   if (sHeatStartMenu->loadState == 0 && !gPaletteFade.active) {
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
     LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
@@ -1535,6 +1634,10 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void) {
 
 static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
   u32 index;
+  
+  // Advance comfy animations every frame
+  AdvanceComfyAnimations();
+  
   if (sHeatStartMenu->loadState == 0 && !gPaletteFade.active) {
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
     LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
@@ -1572,3 +1675,5 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
     }
   }
 }
+
+#undef sAnimId
