@@ -1125,7 +1125,7 @@ static void PrintItemDescription(int itemIndex)
 
         if (itemIndex != LIST_CANCEL)
         {
-            str = ItemId_GetDescription(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex));
+            str = GetItemDescription(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex));
         }
         else
         {

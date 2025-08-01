@@ -1704,10 +1704,10 @@ const u32 gSummaryPage_InfoEgg_Tilemap[]      = INCBIN_U32("graphics/summary_scr
 
 const u32 gBagMaleTiles[] = INCBIN_U32("graphics/bag/bag.4bpp.lz");
 const u32 gBagFemaleTiles[] = INCBIN_U32("graphics/bag/bag.4bpp.lz");
-const u32 gBagPalette[] = INCBIN_U32("graphics/bag/bag.gbapal.lz");
+const u16 gBagPalette[] = INCBIN_U16("graphics/bag/bag.gbapal.lz");
 
-const u32 gBagScreenMale_Pal[] = INCBIN_U32("graphics/bag/menu.gbapal.lz");
-const u32 gBagScreenFemale_Pal[] = INCBIN_U32("graphics/bag/menu.gbapal.lz");
+const u16 gBagScreenMale_Pal[] = INCBIN_U16("graphics/bag/menu.gbapal.lz");
+const u16 gBagScreenFemale_Pal[] = INCBIN_U16("graphics/bag/menu.gbapal.lz");
 
 const u32 gBagScreen_Gfx[] = INCBIN_U32("graphics/bag/menu.4bpp.lz");
 const u32 gBagScreen_GfxTileMap[] = INCBIN_U32("graphics/bag/menu.bin.lz");
