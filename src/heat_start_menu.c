@@ -228,7 +228,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
 static const struct WindowTemplate sWindowTemplate_DexNavIndicator = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 1,
+    .tilemapTop = 13,
     .width = 8,
     .height = 2,
     .paletteNum = 15,
@@ -990,7 +990,7 @@ static void HeatStartMenu_UpdateMenuName(void) {
 }
 
 static void HeatStartMenu_UpdateDexNavIndicator(void) {
-  if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE) {
+  if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
     if (sHeatStartMenu->sDexNavIndicatorWindowId == 0) {
       sHeatStartMenu->sDexNavIndicatorWindowId = AddWindow(&sWindowTemplate_DexNavIndicator);
       FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
