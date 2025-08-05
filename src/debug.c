@@ -4641,6 +4641,8 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_PL_OBTAIN_B_POINTS) \
     X(MUS_PL_WIN_MINIGAME) \
     X(MUS_VS_ELITE_TRAINER) \
+    X(SE_DP_START) \
+    X(MUS_LAST_POKEMON) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

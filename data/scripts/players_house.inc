@@ -64,9 +64,6 @@ PlayersHouse_2F_EventScript_WallClock::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_MomComesUpstairsMale
 	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_MomComesUpstairsFemale
-	playse SE_EXIT
-	removeobject VAR_0x8008
-	releaseall
 	end
 
 PlayersHouse_2F_EventScript_MomComesUpstairsMale::
@@ -77,10 +74,16 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
+	call PlayersHouse_EventScript_ChooseStarterMale
+	msgbox PlayersHouse_2F_Text_GreatChoice, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
-	return
+	playse SE_EXIT
+	removeobject VAR_0x8008
+	releaseall
+	end
+
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	setvar VAR_0x8008, LOCALID_PLAYERS_HOUSE_2F_MOM
@@ -90,9 +93,171 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
+	call PlayersHouse_EventScript_ChooseStarterFemale
+	msgbox PlayersHouse_2F_Text_GreatChoice, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
+	playse SE_EXIT
+	removeobject VAR_0x8008
+	releaseall
+	end
+
+
+PlayersHouse_EventScript_ChooseStarterMale::
+	msgbox PlayersHouse_2F_Text_StarterPreference, MSGBOX_DEFAULT
+    dynmultipush Starter_Text_Kanto, 0
+    dynmultipush Starter_Text_Johto, 1
+    dynmultipush Starter_Text_Hoenn, 2
+    dynmultipush Starter_Text_Sinnoh, 3
+    dynmultipush Starter_Text_Unova, 4
+    dynmultipush Starter_Text_Kalos, 5
+    dynmultipush Starter_Text_Alola, 6
+    dynmultipush Starter_Text_Galar, 7
+    dynmultipush Starter_Text_Paldea, 8
+    dynmultipush Starter_Text_Random, 9
+    dynmultipush Starter_Text_No, 10
+    dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+    switch VAR_RESULT
+    case 0, PlayersHouse_EventScript_ChooseStarterKantoMale
+    case 1, PlayersHouse_EventScript_ChooseStarterJohtoMale
+    case 2, PlayersHouse_EventScript_ChooseStarterHoennMale
+    case 3, PlayersHouse_EventScript_ChooseStarterSinnohMale
+    case 4, PlayersHouse_EventScript_ChooseStarterUnovaMale
+    case 5, PlayersHouse_EventScript_ChooseStarterKalosMale
+    case 6, PlayersHouse_EventScript_ChooseStarterAlolaMale
+    case 7, PlayersHouse_EventScript_ChooseStarterGalarMale
+    case 8, PlayersHouse_EventScript_ChooseStarterPaldeaMale
+    case 9, PlayersHouse_EventScript_ChooseStarterRandomMale
+    case 10, PlayersHouse_EventScript_ChooseStarterHoennMale
+	end
+
+PlayersHouse_EventScript_ChooseStarterKantoMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 1
+	return
+
+PlayersHouse_EventScript_ChooseStarterJohtoMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 2
+	return
+
+PlayersHouse_EventScript_ChooseStarterHoennMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 3
+	return
+
+PlayersHouse_EventScript_ChooseStarterSinnohMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 4
+	return
+
+PlayersHouse_EventScript_ChooseStarterUnovaMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 5
+	return
+
+PlayersHouse_EventScript_ChooseStarterKalosMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 6
+	return
+
+PlayersHouse_EventScript_ChooseStarterAlolaMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 7
+	return
+
+PlayersHouse_EventScript_ChooseStarterGalarMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 8
+	return
+
+PlayersHouse_EventScript_ChooseStarterPaldeaMale::
+	setvar VAR_STARTER_GEN_CHOSEN, 9
+	return
+
+PlayersHouse_EventScript_ChooseStarterRandomMale::
+	random 9
+	switch VAR_RESULT
+    case 0, PlayersHouse_EventScript_ChooseStarterKantoMale
+    case 1, PlayersHouse_EventScript_ChooseStarterJohtoMale
+    case 2, PlayersHouse_EventScript_ChooseStarterHoennMale
+    case 3, PlayersHouse_EventScript_ChooseStarterSinnohMale
+    case 4, PlayersHouse_EventScript_ChooseStarterUnovaMale
+    case 5, PlayersHouse_EventScript_ChooseStarterKalosMale
+    case 6, PlayersHouse_EventScript_ChooseStarterAlolaMale
+    case 7, PlayersHouse_EventScript_ChooseStarterGalarMale
+    case 8, PlayersHouse_EventScript_ChooseStarterPaldeaMale
+	return
+
+PlayersHouse_EventScript_ChooseStarterFemale::
+	msgbox PlayersHouse_2F_Text_StarterPreference, MSGBOX_DEFAULT
+    dynmultipush Starter_Text_Kanto, 0
+    dynmultipush Starter_Text_Johto, 1
+    dynmultipush Starter_Text_Hoenn, 2
+    dynmultipush Starter_Text_Sinnoh, 3
+    dynmultipush Starter_Text_Unova, 4
+    dynmultipush Starter_Text_Kalos, 5
+    dynmultipush Starter_Text_Alola, 6
+    dynmultipush Starter_Text_Galar, 7
+    dynmultipush Starter_Text_Paldea, 8
+    dynmultipush Starter_Text_Random, 9
+    dynmultipush Starter_Text_No, 10
+    dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+    switch VAR_RESULT
+    case 0, PlayersHouse_EventScript_ChooseStarterKantoFemale
+    case 1, PlayersHouse_EventScript_ChooseStarterJohtoFemale
+    case 2, PlayersHouse_EventScript_ChooseStarterHoennFemale
+    case 3, PlayersHouse_EventScript_ChooseStarterSinnohFemale
+    case 4, PlayersHouse_EventScript_ChooseStarterUnovaFemale
+    case 5, PlayersHouse_EventScript_ChooseStarterKalosFemale
+    case 6, PlayersHouse_EventScript_ChooseStarterAlolaFemale
+    case 7, PlayersHouse_EventScript_ChooseStarterGalarFemale
+    case 8, PlayersHouse_EventScript_ChooseStarterPaldeaFemale
+    case 9, PlayersHouse_EventScript_ChooseStarterRandomFemale
+    case 10, PlayersHouse_EventScript_ChooseStarterHoennFemale
+	end
+
+PlayersHouse_EventScript_ChooseStarterKantoFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 1
+	return
+
+PlayersHouse_EventScript_ChooseStarterJohtoFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 2
+	return
+
+PlayersHouse_EventScript_ChooseStarterHoennFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 3
+	return
+
+PlayersHouse_EventScript_ChooseStarterSinnohFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 4
+	return
+
+PlayersHouse_EventScript_ChooseStarterUnovaFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 5
+	return
+
+PlayersHouse_EventScript_ChooseStarterKalosFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 6
+	return
+
+PlayersHouse_EventScript_ChooseStarterAlolaFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 7
+	return
+
+PlayersHouse_EventScript_ChooseStarterGalarFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 8
+	return
+
+PlayersHouse_EventScript_ChooseStarterPaldeaFemale::
+	setvar VAR_STARTER_GEN_CHOSEN, 9
+	return
+
+PlayersHouse_EventScript_ChooseStarterRandomFemale::
+	random 9
+	switch VAR_RESULT
+    case 0, PlayersHouse_EventScript_ChooseStarterKantoFemale
+    case 1, PlayersHouse_EventScript_ChooseStarterJohtoFemale
+    case 2, PlayersHouse_EventScript_ChooseStarterHoennFemale
+    case 3, PlayersHouse_EventScript_ChooseStarterSinnohFemale
+    case 4, PlayersHouse_EventScript_ChooseStarterUnovaFemale
+    case 5, PlayersHouse_EventScript_ChooseStarterKalosFemale
+    case 6, PlayersHouse_EventScript_ChooseStarterAlolaFemale
+    case 7, PlayersHouse_EventScript_ChooseStarterGalarFemale
+    case 8, PlayersHouse_EventScript_ChooseStarterPaldeaFemale
 	return
 
 PlayersHouse_2F_EventScript_CheckWallClock::
@@ -673,3 +838,36 @@ PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
 EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
 	end
+
+Starter_Text_Kanto:
+	.string "Kanto$"
+
+Starter_Text_Johto:
+	.string "Johto$"
+
+Starter_Text_Hoenn:
+	.string "Hoenn$"
+
+Starter_Text_Sinnoh:
+	.string "Sinnoh$"
+
+Starter_Text_Unova:
+	.string "Unova$"
+
+Starter_Text_Kalos:
+	.string "Kalos$"
+
+Starter_Text_Alola:
+	.string "Alola$"
+
+Starter_Text_Galar:
+	.string "Galar$"
+
+Starter_Text_Paldea:
+	.string "Paldea$"
+
+Starter_Text_Random:
+	.string "Random$"
+
+Starter_Text_No:
+	.string "No$"

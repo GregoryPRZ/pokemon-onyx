@@ -285,6 +285,15 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "Oh, you should make sure that\n"
 	.string "everything's all there on your desk.$"
 
+PlayersHouse_2F_Text_StarterPreference:
+	.string "MOM: By the way, do you have any\n"
+	.string "preference on the Pokémon you will\l"
+	.string "choose?$"
+
+PlayersHouse_2F_Text_GreatChoice:
+	.string "MOM: Oh, great choice! I'll be happy\n"
+	.string "to see your Pokémon.$"
+
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
 	.string "Adventure Rule No. 1\n"
