@@ -87,6 +87,7 @@ static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
 static void HeatStartMenu_UpdateDexNavIndicator(void);
+static void HeatStartMenu_PlayMenuSound(u8 selectedMenu);
 static u8 RunSaveCallback(void);
 static u8 SaveDoSaveCallback(void);
 static void HideSaveInfoWindow(void);
@@ -228,7 +229,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
 static const struct WindowTemplate sWindowTemplate_DexNavIndicator = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 1,
+    .tilemapTop = 13,
     .width = 8,
     .height = 2,
     .paletteNum = 15,
@@ -1009,6 +1010,38 @@ static void HeatStartMenu_UpdateDexNavIndicator(void) {
   }
 }
 
+static void HeatStartMenu_PlayMenuSound(u8 selectedMenu) {
+  switch (selectedMenu) {
+    case MENU_POKEDEX:
+      PlaySE(SE_DEX_PAGE);
+      break;
+    case MENU_PARTY:
+      PlaySE(SE_BALL);
+      break;
+    case MENU_BAG:
+      PlaySE(SE_RG_BAG_POCKET);
+      break;
+    case MENU_POKETCH:
+      PlaySE(SE_POKENAV_CALL);
+      break;
+    case MENU_TRAINER_CARD:
+      PlaySE(SE_RG_CARD_OPEN);
+      break;
+    case MENU_SAVE:
+      PlaySE(SE_PIN);
+      break;
+    case MENU_OPTIONS:
+      PlaySE(SE_CLICK);
+      break;
+    case MENU_FLAG:
+      PlaySE(SE_EXIT);
+      break;
+    default:
+      PlaySE(SE_SELECT);
+      break;
+  }
+}
+
 static void HeatStartMenu_ExitAndClearTilemap(void) {
   u32 i;
   u8 *buf = GetBgTilemapBuffer(0);
@@ -1509,7 +1542,7 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
       break;
     default:
       menuSelected++;
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
         menuSelected++;
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
@@ -1528,7 +1561,7 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
       menuSelected = MENU_OPTIONS;
       break;
     default:
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
         menuSelected -= 2;
       } else if ((FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) || (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY)) {
@@ -1555,7 +1588,7 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
 
   //HeatStartMenu_UpdateClockDisplay();
   if (JOY_NEW(A_BUTTON)) {
-    PlaySE(SE_SELECT);
+    HeatStartMenu_PlayMenuSound(menuSelected);
     if (sHeatStartMenu->loadState == 0) {
       if (menuSelected != MENU_SAVE) {
         FadeScreen(FADE_TO_BLACK, 0);
@@ -1563,12 +1596,12 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
       sHeatStartMenu->loadState = 1;
     }
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
-    PlaySE(SE_SELECT);
+    PlaySE(SE_PC_OFF);
     HeatStartMenu_ExitAndClearTilemap();  
     DestroyTask(taskId);
   } else if (JOY_NEW(L_BUTTON) && sHeatStartMenu->loadState == 0) {
     if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE){
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_HELP_OPEN);
       HeatStartMenu_ExitAndClearTilemap();
       CreateTask(Task_OpenDexNavFromStartMenu, 0);
       DestroyTask(taskId);
@@ -1594,7 +1627,7 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
       menuSelected = MENU_FLAG;
       break;
     default:
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (menuSelected == MENU_FLAG) {
         menuSelected = MENU_POKEDEX;
       } else if (menuSelected == MENU_BAG) {
@@ -1617,7 +1650,7 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void) {
       menuSelected = MENU_OPTIONS;
       break;
     default:
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (menuSelected == MENU_POKEDEX) {
         menuSelected = MENU_FLAG;
       } else if (menuSelected == MENU_OPTIONS) {
@@ -1645,6 +1678,7 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
 
   //HeatStartMenu_UpdateClockDisplay();
   if (JOY_NEW(A_BUTTON)) {
+    HeatStartMenu_PlayMenuSound(menuSelected);
     if (sHeatStartMenu->loadState == 0) {
       if (menuSelected != MENU_FLAG) {
         FadeScreen(FADE_TO_BLACK, 0);
@@ -1652,13 +1686,13 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
       sHeatStartMenu->loadState = 1;
     }
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
-    PlaySE(SE_SELECT);
+    PlaySE(SE_PC_OFF);
     HeatStartMenu_ExitAndClearTilemap();  
     DestroyTask(taskId);
   } else if (JOY_NEW(L_BUTTON) && sHeatStartMenu->loadState == 0) {
     // Check if player has DexNav
     if (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE) {
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_HELP_OPEN);
       HeatStartMenu_ExitAndClearTilemap();
       CreateTask(Task_OpenDexNavFromStartMenu, 0);
       DestroyTask(taskId);
