@@ -256,6 +256,15 @@ static const struct BgTemplate sBgTemplates_ItemMenu[] =
         .priority = 2,
         .baseTile = 0,
     },
+    {
+        .bg = 3,
+        .charBaseIndex = 2,
+        .mapBaseIndex = 21,
+        .screenSize = 0,
+        .paletteMode = 0,
+        .priority = 2,
+        .baseTile = 0,
+    },
 };
 
 static const struct ListMenuTemplate sItemListMenu =
@@ -272,7 +281,7 @@ static const struct ListMenuTemplate sItemListMenu =
     .upText_Y = 1,
     .cursorPal = 1,
     .fillValue = 0,
-    .cursorShadowPal = 3,
+    .cursorShadowPal = 2,
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -401,11 +410,11 @@ enum {
 };
 static const u8 sFontColorTable[][3] = {
                             // bgColor, textColor, shadowColor
-    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_LIGHT_GRAY},
-    [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_RED},
-    [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_GREEN},
-    [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_LIGHT_GRAY},
-    [COLORID_TMHM_INFO]   = {TEXT_COLOR_TRANSPARENT, TEXT_DYNAMIC_COLOR_5,  TEXT_DYNAMIC_COLOR_1}
+    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_TMHM_INFO]   = {TEXT_COLOR_TRANSPARENT, 15,      14}
 };
 
 static const struct WindowTemplate sDefaultBagWindows[] =
@@ -416,7 +425,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 2,
         .width = 15,
         .height = 16,
-        .paletteNum = 1,
+        .paletteNum = 15,
         .baseBlock = 0x27,
     },
     [WIN_DESCRIPTION] = {
@@ -425,7 +434,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 13,
         .width = 14,
         .height = 6,
-        .paletteNum = 1,
+        .paletteNum = 15,
         .baseBlock = 0x117,
     },
     [WIN_POCKET_NAME] = {
@@ -434,7 +443,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 1,
         .width = 8,
         .height = 2,
-        .paletteNum = 1,
+        .paletteNum = 15,
         .baseBlock = 0x1A1,
     },
     [WIN_TMHM_INFO_ICONS] = {
