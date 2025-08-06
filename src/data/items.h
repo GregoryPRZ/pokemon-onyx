@@ -138,6 +138,12 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+
+static const u8 sInfiniteRepelDesc[] =  _("Repels all wild\n"
+                                          "Pokémon for any\n"
+                                          "number of steps.");
+
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -14140,5 +14146,35 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+
+    [ITEM_ENDLESS_CANDY] =
+    {
+        .name = _("Infinite Candy"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Raises the level\n"
+            "of a Pokémon by\n"
+            "one. Infinite use."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteCandy,
+        .effect = gItemEffect_RareCandy,
+        .iconPic = gItemIcon_InfiniteCandy,
+        .iconPalette = gItemIconPalette_InfiniteCandy,
+    },
+
+    [ITEM_INFINITE_REPEL] =
+    {
+        .name = _("Infinite Repel"),
+        .price = 0,
+        .description = sInfiniteRepelDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
+        .iconPic = gItemIcon_Repel,
+        .iconPalette = gItemIconPalette_InfiniteRepel,
     },
 };
