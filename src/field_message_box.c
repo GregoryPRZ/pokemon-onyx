@@ -7,12 +7,28 @@
 #include "field_message_box.h"
 #include "text_window.h"
 #include "script.h"
+#include "config/general.h"
+#if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+#include "comfy_anim.h"
+#include "bg.h"
+#include "gpu_regs.h"
+#endif
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;
 
+#if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+static EWRAM_DATA u32 sMessageBoxSlideAnimId;
+static EWRAM_DATA bool8 sMessageBoxSlideActive;
+#endif
+
 static void ExpandStringAndStartDrawFieldMessage(const u8 *, bool32);
 static void StartDrawFieldMessage(void);
+
+#if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+static void StartMessageBoxSlideInAnimation(void);
+static void UpdateMessageBoxSlidePosition(void);
+#endif
 
 void InitFieldMessageBox(void)
 {
@@ -21,6 +37,11 @@ void InitFieldMessageBox(void)
     gTextFlags.useAlternateDownArrow = FALSE;
     gTextFlags.autoScroll = FALSE;
     gTextFlags.forceMidTextSpeed = FALSE;
+    
+#if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+    sMessageBoxSlideAnimId = INVALID_COMFY_ANIM;
+    sMessageBoxSlideActive = FALSE;
+#endif
 }
 
 #define tState data[0]
@@ -40,9 +61,17 @@ static void Task_DrawFieldMessage(u8 taskId)
             break;
         case 1:
            DrawDialogueFrame(0, TRUE);
+            #if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+             // Set initial position using GPU register directly
+             SetGpuReg(REG_OFFSET_BG0VOFS, -60); // Start 60 pixels above
+             StartMessageBoxSlideInAnimation();
+             #endif
            task->tState++;
            break;
         case 2:
+            #if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+                UpdateMessageBoxSlidePosition();
+            #endif
             if (RunTextPrintersAndIsPrinter0Active() != TRUE)
             {
                 sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
@@ -165,3 +194,43 @@ void StopFieldMessage(void)
     DestroyTask_DrawFieldMessage();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
 }
+
+#if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
+static void StartMessageBoxSlideInAnimation(void)
+{
+    struct ComfyAnimEasingConfig easingConfig;
+    InitComfyAnimConfig_Easing(&easingConfig);
+    easingConfig.from = Q_24_8(-60);        // Start 60 pixels above
+    easingConfig.to = 0;                    // Target normal position
+    easingConfig.durationFrames = 20;       // 20 frames duration like heat menu
+    easingConfig.easingFunc = ComfyAnimEasing_EaseOutCubic;
+    easingConfig.delayFrames = 0;           // No delay
+    
+    sMessageBoxSlideAnimId = CreateComfyAnim_Easing(&easingConfig);
+    sMessageBoxSlideActive = TRUE;
+}
+
+static void UpdateMessageBoxSlidePosition(void)
+{
+    if (sMessageBoxSlideActive && sMessageBoxSlideAnimId != INVALID_COMFY_ANIM)
+    {
+        struct ComfyAnim *anim = &gComfyAnims[sMessageBoxSlideAnimId];
+        
+        // Manually advance the animation each frame
+        TryAdvanceComfyAnim(anim);
+        
+        s32 yOffset = anim->position;
+        
+        // Convert Q_24_8 to pixels and set GPU register directly like map name popup
+        SetGpuReg(REG_OFFSET_BG0VOFS, yOffset / 256);
+        
+        if (anim->completed)
+        {
+            ReleaseComfyAnim(sMessageBoxSlideAnimId);
+            sMessageBoxSlideAnimId = INVALID_COMFY_ANIM;
+            sMessageBoxSlideActive = FALSE;
+            SetGpuReg(REG_OFFSET_BG0VOFS, 0); // Reset to normal position
+        }
+    }
+}
+#endif

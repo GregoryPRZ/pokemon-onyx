@@ -90,5 +90,8 @@
 #define MUDSKIP_SHOP_UI
 #define MUDSKIP_OUTFIT_SYSTEM
 
+// Message box slide transition
+#define MESSAGE_BOX_SLIDE_TRANSITION     FALSE      // Enable slide transition for NPC message boxes
+
 #endif // GUARD_CONFIG_GENERAL_H
 
