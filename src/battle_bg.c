@@ -695,10 +695,10 @@ const struct BattleBackground sBattleEnvironmentTable[] =
 
     [BATTLE_ENVIRONMENT_PLAIN] =
     {
-        .tileset = gBattleEnvironmentTiles_Building,
-        .tilemap = gBattleEnvironmentTilemap_Building,
-        .entryTileset = gBattleEnvironmentAnimTiles_Building,
-        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .tileset = gBattleEnvironmentTiles_TallGrass,
+        .tilemap = gBattleEnvironmentTilemap_TallGrass,
+        .entryTileset = gBattleEnvironmentAnimTiles_TallGrass,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_TallGrass,
         .palette = gBattleEnvironmentPalette_Plain,
     },
 };
