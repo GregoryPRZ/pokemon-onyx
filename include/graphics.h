@@ -1744,6 +1744,8 @@ extern const u32 gItemIcon_InfiniteCandy[];
 extern const u16 gItemIconPalette_InfiniteCandy[];
 
 extern const u16 gItemIconPalette_InfiniteRepel[];
+extern const u32 gItemIcon_OutfitBox[];
+extern const u16 gItemIconPalette_OutfitBox[];
 
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];
