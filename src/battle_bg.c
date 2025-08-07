@@ -699,7 +699,7 @@ const struct BattleBackground sBattleEnvironmentTable[] =
         .tilemap = gBattleEnvironmentTilemap_TallGrass,
         .entryTileset = gBattleEnvironmentAnimTiles_TallGrass,
         .entryTilemap = gBattleEnvironmentAnimTilemap_TallGrass,
-        .palette = gBattleEnvironmentPalette_Plain,
+        .palette = gBattleEnvironmentPalette_TallGrass,
     },
 };
 
