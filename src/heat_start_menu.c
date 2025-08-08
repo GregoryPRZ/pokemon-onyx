@@ -1016,7 +1016,7 @@ static void HeatStartMenu_PlayMenuSound(u8 selectedMenu) {
       PlaySE(SE_DEX_PAGE);
       break;
     case MENU_PARTY:
-      PlaySE(SE_BALL);
+      PlaySE(SE_BALL_TRADE);
       break;
     case MENU_BAG:
       PlaySE(SE_RG_BAG_POCKET);

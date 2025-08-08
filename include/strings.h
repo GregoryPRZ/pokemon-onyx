@@ -276,6 +276,9 @@ extern const u8 gText_Sound[];
 extern const u8 gText_Frame[];
 extern const u8 gText_OptionMenuCancel[];
 extern const u8 gText_ButtonMode[];
+extern const u8 gText_Gen4Voice[];
+extern const u8 gText_Gen4VoiceClassic[];
+extern const u8 gText_Gen4VoiceModern[];
 
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];

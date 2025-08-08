@@ -583,7 +583,8 @@ struct SaveBlock2
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
              u16 optionsStartMenuPalette:2; // whether the start menu is in the default palette
-             //u16 padding1:4;
+             u16 optionsGen4Voicegroup:1; // whether to use Gen 4 voicegroup for Gen 3 songs
+             //u16 padding1:3;
              //u16 padding2;
              u16 playerBike:1;
              u16 currOutfitId:4;

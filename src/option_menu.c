@@ -7,6 +7,8 @@
 #include "menu.h"
 #include "palette.h"
 #include "scanline_effect.h"
+#include "sound.h"
+#include "constants/songs.h"
 #include "sprite.h"
 #include "strings.h"
 #include "task.h"
@@ -26,6 +28,7 @@
 #define tButtonMode data[5]
 #define tWindowFrameType data[6]
 #define tStartMenuPalette data[7]
+#define tGen4Voicegroup data[8]
 
 // Page 1
 enum
@@ -45,6 +48,7 @@ enum
 enum
 {
     MENUITEM_MENUPAL,
+    MENUITEM_GEN4VOICE,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -65,6 +69,7 @@ enum
 
 // Page 2
 #define YPOS_MENUPAL        (MENUITEM_MENUPAL * 16)
+#define YPOS_GEN4VOICE    (MENUITEM_GEN4VOICE * 16)
 
 #define PAGE_COUNT 2
 
@@ -89,6 +94,8 @@ static u8 MenuPal_ProcessInput(u8 selection);
 static void MenuPal_DrawChoices(u8 selection);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
+static u8 Gen4Voice_ProcessInput(u8 selection);
+static void Gen4Voice_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -114,6 +121,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_MENUPAL]        = gText_MenuPal,
+    [MENUITEM_GEN4VOICE]   = gText_Gen4Voice,
     [MENUITEM_CANCEL_PG2]      = gText_OptionMenuCancel,
 };
 
@@ -189,6 +197,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
     gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
     gTasks[taskId].tStartMenuPalette = gSaveBlock2Ptr->optionsStartMenuPalette;
+    gTasks[taskId].tGen4Voicegroup = gSaveBlock2Ptr->optionsGen4Voicegroup;
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -208,6 +217,7 @@ static void DrawOptionsPg2(u8 taskId)
 {
     ReadAllCurrentSettings(taskId);
     MenuPal_DrawChoices(gTasks[taskId].tStartMenuPalette);
+    Gen4Voice_DrawChoices(gTasks[taskId].tGen4Voicegroup);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -357,6 +367,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 {
     if (JOY_NEW(L_BUTTON) || JOY_NEW(R_BUTTON))
     {
+        PlaySE(SE_CLICK);
         FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
         ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
         sCurrPage = Process_ChangePage(sCurrPage);
@@ -365,26 +376,36 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     else if (JOY_NEW(A_BUTTON))
     {
         if (gTasks[taskId].tMenuSelection == MENUITEM_CANCEL)
+            PlaySE(SE_SUCCESS);
             gTasks[taskId].func = Task_OptionMenuSave;
     }
     else if (JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SUCCESS);
         gTasks[taskId].func = Task_OptionMenuSave;
     }
     else if (JOY_NEW(DPAD_UP))
     {
-        if (gTasks[taskId].tMenuSelection > 0)
+        if (gTasks[taskId].tMenuSelection > 0) {
+            PlaySE(SE_SELECT);
             gTasks[taskId].tMenuSelection--;
+        }
         else
+        {
             gTasks[taskId].tMenuSelection = MENUITEM_CANCEL;
+        }
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
-        if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL)
+        if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL) {
+            PlaySE(SE_SELECT);
             gTasks[taskId].tMenuSelection++;
+        }
         else
+        {
             gTasks[taskId].tMenuSelection = 0;
+        }
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else
@@ -457,6 +478,7 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
 {
     if (JOY_NEW(L_BUTTON) || JOY_NEW(R_BUTTON))
     {
+        PlaySE(SE_CLICK);
         FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
         ClearStdWindowAndFrame(WIN_OPTIONS, FALSE);
         sCurrPage = Process_ChangePage(sCurrPage);
@@ -465,26 +487,38 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
     else if (JOY_NEW(A_BUTTON))
     {
         if (gTasks[taskId].tMenuSelection == MENUITEM_CANCEL_PG2)
+            PlaySE(SE_SUCCESS);
             gTasks[taskId].func = Task_OptionMenuSave;
     }
     else if (JOY_NEW(B_BUTTON))
     {
+        PlaySE(SE_SUCCESS);
         gTasks[taskId].func = Task_OptionMenuSave;
     }
     else if (JOY_NEW(DPAD_UP))
     {
-        if (gTasks[taskId].tMenuSelection > 0)
+        if (gTasks[taskId].tMenuSelection > 0) {
+            PlaySE(SE_SELECT);
             gTasks[taskId].tMenuSelection--;
+        }
         else
+        {
             gTasks[taskId].tMenuSelection = MENUITEM_CANCEL_PG2;
+        }
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
         if (gTasks[taskId].tMenuSelection < MENUITEM_CANCEL_PG2)
+        {
+            PlaySE(SE_SELECT);
             gTasks[taskId].tMenuSelection++;
+        }
         else
+        {
             gTasks[taskId].tMenuSelection = 0;
+        }
+
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     }
     else
@@ -498,7 +532,14 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             gTasks[taskId].tStartMenuPalette = MenuPal_ProcessInput(gTasks[taskId].tStartMenuPalette);
             if (previousOption != gTasks[taskId].tStartMenuPalette)
                 MenuPal_DrawChoices(gTasks[taskId].tStartMenuPalette);
-            break;           
+            break;
+        case MENUITEM_GEN4VOICE:
+            previousOption = gTasks[taskId].tGen4Voicegroup;
+            gTasks[taskId].tGen4Voicegroup = Gen4Voice_ProcessInput(gTasks[taskId].tGen4Voicegroup);
+
+            if (previousOption != gTasks[taskId].tGen4Voicegroup)
+                Gen4Voice_DrawChoices(gTasks[taskId].tGen4Voicegroup);
+            break;
         default:
             return;
         }
@@ -520,6 +561,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsStartMenuPalette = gTasks[taskId].tStartMenuPalette;
+    gSaveBlock2Ptr->optionsGen4Voicegroup = gTasks[taskId].tGen4Voicegroup;
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -777,6 +819,29 @@ static void ButtonMode_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gText_ButtonTypeLR, xLR, YPOS_BUTTONMODE, styles[1]);
 
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
+}
+
+static u8 Gen4Voice_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    {
+        selection ^= 1;
+        sArrowPressed = TRUE;
+    }
+
+    return selection;
+}
+
+static void Gen4Voice_DrawChoices(u8 selection)
+{
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_Gen4VoiceClassic, 104, YPOS_GEN4VOICE, styles[0]);
+    DrawOptionMenuChoice(gText_Gen4VoiceModern, GetStringRightAlignXOffset(FONT_NORMAL, gText_Gen4VoiceModern, 198), YPOS_GEN4VOICE, styles[1]);
 }
 
 static u8 MenuPal_ProcessInput(u8 selection)
