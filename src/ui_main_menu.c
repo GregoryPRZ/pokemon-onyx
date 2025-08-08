@@ -43,6 +43,8 @@
 #include "mystery_event_menu.h"
 #include "mystery_gift_menu.h"
 #include "link.h"
+#include "trainer_pokemon_sprites.h"
+#include "outfit_menu.h"
 
 /*
  * 
@@ -649,16 +651,12 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
             LoadSpritePalette(&sSpritePal_IconBox);
-            LoadCompressedSpriteSheet(&sSpriteSheet_BrendanMugshot);
-            LoadSpritePalette(&sSpritePal_BrendanMugshot);
             LoadPalette(sMainBgPalette, 0, 32);
         }
         else
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
             LoadSpritePalette(&sSpritePal_IconBoxFem);
-            LoadCompressedSpriteSheet(&sSpriteSheet_MayMugshot);
-            LoadSpritePalette(&sSpritePal_MayMugshot);
             LoadPalette(sMainBgPaletteFem, 0, 32);
         }
         LoadPalette(sScrollBgPalette, 16, 32);
@@ -695,17 +693,23 @@ static void MainMenu_InitWindows(void) // Init Text Windows
 //
 static void CreateMugshot()
 {
-    sMainMenuDataPtr->mugshotSpriteId = CreateSprite(&sSpriteTemplate_Mugshot, 48, 56, 1);
+    // Get the current player's front trainer sprite based on outfit and gender
+    u32 trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
+    
+    // Create trainer pic sprite at the same position as the old mugshot
+    sMainMenuDataPtr->mugshotSpriteId = CreateTrainerPicSprite(trainerPicId, TRUE, 48, 56, 14, TAG_NONE);
     gSprites[sMainMenuDataPtr->mugshotSpriteId].invisible = FALSE;
-    StartSpriteAnim(&gSprites[sMainMenuDataPtr->mugshotSpriteId], 0);
     gSprites[sMainMenuDataPtr->mugshotSpriteId].oam.priority = 0;
     return;
 }
 
 static void DestroyMugshot()
 {
-    DestroySprite(&gSprites[sMainMenuDataPtr->mugshotSpriteId]);
-    sMainMenuDataPtr->mugshotSpriteId = SPRITE_NONE;
+    if (sMainMenuDataPtr->mugshotSpriteId != SPRITE_NONE)
+    {
+        DestroySprite(&gSprites[sMainMenuDataPtr->mugshotSpriteId]);
+        sMainMenuDataPtr->mugshotSpriteId = SPRITE_NONE;
+    }
 }
 
 //
@@ -766,7 +770,6 @@ static void CreatePartyMonIcons()
     u8 i = 0;
     s16 x = ICON_BOX_1_START_X;
     s16 y = ICON_BOX_1_START_Y;
-    struct Pokemon *mon;
     LoadMonIconPalettes();
     for(i = 0; i < gPlayerPartyCount; i++)
     {   
