@@ -50,6 +50,7 @@
 #include "union_room.h"
 #include "map_name_popup.h"
 #include "dexnav.h"
+#include "outfit_menu.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -87,6 +88,7 @@ static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
 static void HeatStartMenu_UpdateDexNavIndicator(void);
+static void HeatStartMenu_UpdateIndicators(void);
 static void HeatStartMenu_PlayMenuSound(u8 selectedMenu);
 static u8 RunSaveCallback(void);
 static u8 SaveDoSaveCallback(void);
@@ -230,7 +232,7 @@ static const struct WindowTemplate sWindowTemplate_DexNavIndicator = {
     .bg = 0,
     .tilemapLeft = 1,
     .tilemapTop = 13,
-    .width = 8,
+    .width = 16,
     .height = 2,
     .paletteNum = 15,
     .baseBlock = ((0x30 + (12*2)) + (7*2)) + (7*4)
@@ -683,7 +685,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
-    HeatStartMenu_UpdateDexNavIndicator();
+    HeatStartMenu_UpdateIndicators();
     CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
   } else {
     if (menuSelected == 255 || menuSelected == MENU_POKETCH || menuSelected == MENU_SAVE) {
@@ -697,7 +699,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
-    HeatStartMenu_UpdateDexNavIndicator();
+    HeatStartMenu_UpdateIndicators();
     CreateTask(Task_HeatStartMenu_SafariZone_HandleMainInput, 0);
   }
 }
@@ -955,6 +957,8 @@ static const u8 gText_Options[] = _("   Options");
 static const u8 gText_Flag[]    = _("   Retire");
 
 static const u8 gText_DexNavIndicator[] = _("{HIGHLIGHT TRANSPARENT}{COLOR WHITE}{SHADOW DARK_GRAY}{L_BUTTON} DexNav");
+static const u8 gText_OutfitIndicator[] = _("{HIGHLIGHT TRANSPARENT}{COLOR WHITE}{SHADOW DARK_GRAY}{R_BUTTON} Outfits");
+static const u8 gText_BothIndicators[] = _("{HIGHLIGHT TRANSPARENT}{COLOR WHITE}{SHADOW DARK_GRAY}{L_BUTTON} DexNav {R_BUTTON} Outfits");
 
 static void HeatStartMenu_UpdateMenuName(void) {
   
@@ -997,6 +1001,38 @@ static void HeatStartMenu_UpdateDexNavIndicator(void) {
       FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
       PutWindowTilemap(sHeatStartMenu->sDexNavIndicatorWindowId);
       AddTextPrinterParameterized(sHeatStartMenu->sDexNavIndicatorWindowId, FONT_NARROW, gText_DexNavIndicator, 0, 1, TEXT_SKIP_DRAW, NULL);
+      CopyWindowToVram(sHeatStartMenu->sDexNavIndicatorWindowId, COPYWIN_GFX);
+    }
+  } else {
+    if (sHeatStartMenu->sDexNavIndicatorWindowId != 0) {
+      FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+      ClearWindowTilemap(sHeatStartMenu->sDexNavIndicatorWindowId);
+      CopyWindowToVram(sHeatStartMenu->sDexNavIndicatorWindowId, COPYWIN_GFX);
+      RemoveWindow(sHeatStartMenu->sDexNavIndicatorWindowId);
+      sHeatStartMenu->sDexNavIndicatorWindowId = 0;
+    }
+  }
+}
+
+static void HeatStartMenu_UpdateIndicators(void) {
+  bool8 hasDexNav = (FlagGet(FLAG_DN_DEXNAV_GET) == TRUE && FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE);
+  bool8 hasOutfitBox = CheckBagHasItem(ITEM_OUTFIT_BOX, 1);
+  
+  if (hasDexNav || hasOutfitBox) {
+    if (sHeatStartMenu->sDexNavIndicatorWindowId == 0) {
+      sHeatStartMenu->sDexNavIndicatorWindowId = AddWindow(&sWindowTemplate_DexNavIndicator);
+      FillWindowPixelBuffer(sHeatStartMenu->sDexNavIndicatorWindowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+      PutWindowTilemap(sHeatStartMenu->sDexNavIndicatorWindowId);
+      
+      // Display appropriate text based on what the player has
+      if (hasDexNav && hasOutfitBox) {
+        AddTextPrinterParameterized(sHeatStartMenu->sDexNavIndicatorWindowId, FONT_NARROW, gText_BothIndicators, 0, 1, TEXT_SKIP_DRAW, NULL);
+      } else if (hasDexNav) {
+        AddTextPrinterParameterized(sHeatStartMenu->sDexNavIndicatorWindowId, FONT_NARROW, gText_DexNavIndicator, 0, 1, TEXT_SKIP_DRAW, NULL);
+      } else {
+        AddTextPrinterParameterized(sHeatStartMenu->sDexNavIndicatorWindowId, FONT_NARROW, gText_OutfitIndicator, 0, 1, TEXT_SKIP_DRAW, NULL);
+      }
+      
       CopyWindowToVram(sHeatStartMenu->sDexNavIndicatorWindowId, COPYWIN_GFX);
     }
   } else {
@@ -1123,6 +1159,26 @@ static void DoCleanUpAndChangeCallback(MainCallback callback) {
     CleanupOverworldWindowsAndTilemaps();
     SetMainCallback2(callback);
     gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
+  }
+}
+
+static void DoCleanUpAndOpenOutfitMenu(void) {
+  if (!gPaletteFade.active) {
+    PlaySE(SE_RG_CARD_OPEN);
+    HeatStartMenu_ExitAndClearTilemap();
+    CleanupOverworldWindowsAndTilemaps();
+    DestroyTask(FindTaskIdByFunc(Task_HeatStartMenu_HandleMainInput));
+    OpenOutfitMenu(CB2_ReturnToFieldWithOpenMenu);
+  }
+}
+
+static void DoCleanUpAndOpenOutfitMenuSafari(void) {
+  if (!gPaletteFade.active) {
+    PlaySE(SE_RG_CARD_OPEN);
+    HeatStartMenu_ExitAndClearTilemap();
+    CleanupOverworldWindowsAndTilemaps();
+    DestroyTask(FindTaskIdByFunc(Task_HeatStartMenu_SafariZone_HandleMainInput));
+    OpenOutfitMenu(CB2_ReturnToFieldWithOpenMenu);
   }
 }
 
@@ -1606,6 +1662,12 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
       CreateTask(Task_OpenDexNavFromStartMenu, 0);
       DestroyTask(taskId);
     }
+  } else if (JOY_NEW(R_BUTTON) && sHeatStartMenu->loadState == 0) {
+    // Open outfit menu with R button (only if player has outfit box)
+    if (CheckBagHasItem(ITEM_OUTFIT_BOX, 1)) {
+      FadeScreen(FADE_TO_BLACK, 0);
+      sHeatStartMenu->loadState = 2; // Special state for outfit menu
+    }
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_HandleInput_DPADDOWN();
   } else if (gMain.newKeys & DPAD_UP && sHeatStartMenu->loadState == 0) {
@@ -1616,6 +1678,9 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     } else {
       DoCleanUpAndStartSaveMenu();
     }
+  } else if (sHeatStartMenu->loadState == 2) {
+    // Open outfit menu
+    DoCleanUpAndOpenOutfitMenu();
   }
 }
 
@@ -1697,6 +1762,12 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
       CreateTask(Task_OpenDexNavFromStartMenu, 0);
       DestroyTask(taskId);
     }
+  } else if (JOY_NEW(R_BUTTON) && sHeatStartMenu->loadState == 0) {
+    // Open outfit menu with R button (only if player has outfit box)
+    if (CheckBagHasItem(ITEM_OUTFIT_BOX, 1)) {
+      FadeScreen(FADE_TO_BLACK, 0);
+      sHeatStartMenu->loadState = 2; // Special state for outfit menu
+    }
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_SafariZone_HandleInput_DPADDOWN();
   } else if (gMain.newKeys & DPAD_UP && sHeatStartMenu->loadState == 0) {
@@ -1707,6 +1778,9 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
     } else {
       DoCleanUpAndStartSafariZoneRetire();
     }
+  } else if (sHeatStartMenu->loadState == 2) {
+    // Open outfit menu
+    DoCleanUpAndOpenOutfitMenuSafari();
   }
 }
 
