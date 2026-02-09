@@ -14597,7 +14597,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ENDLESS_CANDY] =
     {
-        .name = _("Infinite Candy"),
+        .name = ITEM_NAME("Infinite Candy"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Raises the level\n"
@@ -14614,7 +14614,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_INFINITE_REPEL] =
     {
-        .name = _("Infinite Repel"),
+        .name = ITEM_NAME("Infinite Repel"),
         .price = 0,
         .description = sInfiniteRepelDesc,
         .importance = 1,
@@ -14627,7 +14627,7 @@ const struct Item gItemsInfo[] =
     
     [ITEM_OUTFIT_BOX] =
     {
-        .name = _("Outfit Box"),
+        .name = ITEM_NAME("Outfit Box"),
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(

@@ -461,8 +461,8 @@ static bool32 SetupOutfitMenu_Graphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
-            LZDecompressWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
+            LZ77UnCompWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
+            LZ77UnCompWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
             sOutfitMenu->gfxState++;
         }
         break;

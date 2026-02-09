@@ -624,11 +624,11 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         {
             if (gSaveBlock2Ptr->playerGender == MALE)
             {
-                LZDecompressWram(sMainBgTilemap, sBg1TilemapBuffer);
+                LZ77UnCompWram(sMainBgTilemap, sBg1TilemapBuffer);
             }
             else
             {
-                LZDecompressWram(sMainBgTilemapFem, sBg1TilemapBuffer);
+                LZ77UnCompWram(sMainBgTilemapFem, sBg1TilemapBuffer);
             }
             sMainMenuDataPtr->gfxLoadState++;
         }
@@ -641,7 +641,7 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
     case 3:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sScrollBgTilemap, sBg2TilemapBuffer);
+            LZ77UnCompWram(sScrollBgTilemap, sBg2TilemapBuffer);
             sMainMenuDataPtr->gfxLoadState++;
         }
         break;

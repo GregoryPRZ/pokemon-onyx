@@ -870,7 +870,7 @@ static bool8 SetupBagMenu(void)
     case 15:
         AddBagVisualSprite(gBagPosition.pocket);
 
-        if(gBagPosition.pocket == TMHM_POCKET)
+        if(gBagPosition.pocket == POCKET_TM_HM)
         {
             SetBagSpriteVisible(FALSE);
         }
@@ -1061,7 +1061,7 @@ static void BagMenu_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListM
     {
         RemoveBagItemIconSprite(gBagMenu->itemIconSlot ^ 1);
         // Don't use icon on TM's page as it will overlap the party preview
-        if(gBagPosition.pocket != TMHM_POCKET)
+        if(gBagPosition.pocket != POCKET_TM_HM)
         {
             if (itemIndex != LIST_CANCEL)
                 AddBagItemIconSprite(GetBagItemId(gBagPosition.pocket, itemIndex), gBagMenu->itemIconSlot);
@@ -1114,15 +1114,14 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
 
 static void PrintItemDescription(int itemIndex)
 {
+    const u8 *str;
 
-    if(gBagPosition.pocket == TMHM_POCKET)
+    if(gBagPosition.pocket == POCKET_TM_HM)
     {
         str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
     }
     else
     {
-        const u8 *str;
-
         SetBagSpriteVisible(TRUE);
         ClearWindowTilemap(WIN_MON_ICON_0);
         ClearWindowTilemap(WIN_MON_ICON_1);
@@ -1133,7 +1132,7 @@ static void PrintItemDescription(int itemIndex)
 
         if (itemIndex != LIST_CANCEL)
         {
-            str = GetItemDescription(BagGetItemIdByPocketPosition(gBagPosition.pocket + 1, itemIndex));
+            str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
         }
         else
         {
@@ -1459,7 +1458,7 @@ static void ReturnToItemList(u8 taskId)
 {
     CreatePocketScrollArrowPair();
     CreatePocketSwitchArrowPair();
-    if(gBagPosition.pocket == TMHM_POCKET)
+    if(gBagPosition.pocket == POCKET_TM_HM)
     {
         ClearWindowTilemap(WIN_DESCRIPTION);
         PutWindowTilemap(WIN_TMHM_INFO_ICONS);
@@ -1595,7 +1594,7 @@ static void Task_SwitchBagPocket(u8 taskId)
         tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, gBagPosition.scrollPosition[gBagPosition.pocket], gBagPosition.cursorPosition[gBagPosition.pocket]);
         PutWindowTilemap(WIN_POCKET_NAME);
 
-        if(gBagPosition.pocket == TMHM_POCKET)
+        if(gBagPosition.pocket == POCKET_TM_HM)
         {
             PutWindowTilemap(WIN_TMHM_INFO_ICONS);
             PutWindowTilemap(WIN_TMHM_INFO);
