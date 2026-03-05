@@ -29,6 +29,7 @@
 #define tWindowFrameType data[6]
 #define tStartMenuPalette data[7]
 #define tGen4Voicegroup data[8]
+#define tDPPtMusic data[9]
 
 // Page 1
 enum
@@ -49,6 +50,7 @@ enum
 {
     MENUITEM_MENUPAL,
     MENUITEM_GEN4VOICE,
+    MENUITEM_DPPTMUSIC,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -69,6 +71,7 @@ enum
 
 // Page 2
 #define YPOS_MENUPAL        (MENUITEM_MENUPAL * 16)
+#define YPOS_DPPTMUSIC    (MENUITEM_DPPTMUSIC * 16)
 #define YPOS_GEN4VOICE    (MENUITEM_GEN4VOICE * 16)
 
 #define PAGE_COUNT 2
@@ -96,6 +99,8 @@ static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
 static u8 Gen4Voice_ProcessInput(u8 selection);
 static void Gen4Voice_DrawChoices(u8 selection);
+static u8 DPPtMusic_ProcessInput(u8 selection);
+static void DPPtMusic_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -122,6 +127,7 @@ static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_MENUPAL]        = gText_MenuPal,
     [MENUITEM_GEN4VOICE]   = gText_Gen4Voice,
+    [MENUITEM_DPPTMUSIC]   = gText_DPPtMusic,
     [MENUITEM_CANCEL_PG2]      = gText_OptionMenuCancel,
 };
 
@@ -198,6 +204,7 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
     gTasks[taskId].tStartMenuPalette = gSaveBlock2Ptr->optionsStartMenuPalette;
     gTasks[taskId].tGen4Voicegroup = gSaveBlock2Ptr->optionsGen4Voicegroup;
+    gTasks[taskId].tDPPtMusic = gSaveBlock2Ptr->optionsDPPtMusic;
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -218,6 +225,7 @@ static void DrawOptionsPg2(u8 taskId)
     ReadAllCurrentSettings(taskId);
     MenuPal_DrawChoices(gTasks[taskId].tStartMenuPalette);
     Gen4Voice_DrawChoices(gTasks[taskId].tGen4Voicegroup);
+    DPPtMusic_DrawChoices(gTasks[taskId].tDPPtMusic);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -540,6 +548,13 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             if (previousOption != gTasks[taskId].tGen4Voicegroup)
                 Gen4Voice_DrawChoices(gTasks[taskId].tGen4Voicegroup);
             break;
+        case MENUITEM_DPPTMUSIC:
+            previousOption = gTasks[taskId].tDPPtMusic;
+            gTasks[taskId].tDPPtMusic = DPPtMusic_ProcessInput(gTasks[taskId].tDPPtMusic);
+
+            if (previousOption != gTasks[taskId].tDPPtMusic)
+                DPPtMusic_DrawChoices(gTasks[taskId].tDPPtMusic);
+            break;
         default:
             return;
         }
@@ -562,6 +577,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsStartMenuPalette = gTasks[taskId].tStartMenuPalette;
     gSaveBlock2Ptr->optionsGen4Voicegroup = gTasks[taskId].tGen4Voicegroup;
+    gSaveBlock2Ptr->optionsDPPtMusic = gTasks[taskId].tDPPtMusic;
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -842,6 +858,29 @@ static void Gen4Voice_DrawChoices(u8 selection)
 
     DrawOptionMenuChoice(gText_Gen4VoiceClassic, 104, YPOS_GEN4VOICE, styles[0]);
     DrawOptionMenuChoice(gText_Gen4VoiceModern, GetStringRightAlignXOffset(FONT_NORMAL, gText_Gen4VoiceModern, 198), YPOS_GEN4VOICE, styles[1]);
+}
+
+static u8 DPPtMusic_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    {
+        selection ^= 1;
+        sArrowPressed = TRUE;
+    }
+
+    return selection;
+}
+
+static void DPPtMusic_DrawChoices(u8 selection)
+{
+    u8 styles[2];
+
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_DPPtMusicRSE, 104, YPOS_DPPTMUSIC, styles[0]);
+    DrawOptionMenuChoice(gText_DPPtMusicDPPt, GetStringRightAlignXOffset(FONT_NORMAL, gText_DPPtMusicDPPt, 198), YPOS_DPPTMUSIC, styles[1]);
 }
 
 static u8 MenuPal_ProcessInput(u8 selection)

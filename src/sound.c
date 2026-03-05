@@ -16,6 +16,13 @@ struct Fanfare
     u16 duration;
 };
 
+// Song remapping table for DPPt music option
+struct SongRemap
+{
+    u16 rseOriginal;
+    u16 dpptReplacement;
+};
+
 EWRAM_DATA struct MusicPlayerInfo *gMPlay_PokemonCry = NULL;
 EWRAM_DATA u8 gPokemonCryBGMDuckingCounter = 0;
 
@@ -33,6 +40,7 @@ extern struct ToneData gCryTable_Reverse[];
 static void Task_Fanfare(u8 taskId);
 static void CreateFanfareTask(void);
 static void RestoreBGMVolumeAfterPokemonCry(void);
+static u16 RemapSongIfDPPtEnabled(u16 songNum);
 
 static const struct Fanfare sFanfares[] = {
     [FANFARE_LEVEL_UP]            = { MUS_LEVEL_UP,             80 },
@@ -53,6 +61,92 @@ static const struct Fanfare sFanfares[] = {
     [FANFARE_OBTAIN_B_POINTS]     = { MUS_OBTAIN_B_POINTS,     313 },
     [FANFARE_OBTAIN_SYMBOL]       = { MUS_OBTAIN_SYMBOL,       318 },
     [FANFARE_REGISTER_MATCH_CALL] = { MUS_REGISTER_MATCH_CALL, 135 },
+};
+
+// Song remapping table: RSE/FRLG to DPPt equivalents
+static const struct SongRemap sSongRemapTable[] = {
+    // Routes
+    { MUS_ROUTE101, MUS_DP_ROUTE201_DAY },
+    { MUS_ROUTE110, MUS_DP_ROUTE205_DAY },
+    { MUS_ROUTE120, MUS_DP_ROUTE209_DAY },
+    { MUS_ROUTE122, MUS_DP_ROUTE210_DAY },
+    { MUS_ROUTE104, MUS_DP_ROUTE203_NIGHT },
+    { MUS_ROUTE119, MUS_DP_ROUTE206_DAY },
+    { MUS_ROUTE113, MUS_DP_ROUTE216_DAY },
+    
+    // Towns/Cities
+    { MUS_LITTLEROOT, MUS_DP_TWINLEAF_DAY },
+    { MUS_OLDALE, MUS_DP_SANDGEM_DAY },
+    { MUS_PETALBURG, MUS_DP_JUBILIFE_DAY },
+    { MUS_RUSTBORO, MUS_DP_OREBURGH_DAY },
+    { MUS_DEWFORD, MUS_DP_CANALAVE_DAY },
+    { MUS_SLATEPORT, MUS_DP_JUBILIFE_DAY },
+    { MUS_VERDANTURF, MUS_DP_FLOAROMA_DAY },
+    { MUS_FALLARBOR, MUS_DP_SOLACEON_DAY },
+    { MUS_FORTREE, MUS_DP_ETERNA_DAY },
+    { MUS_LILYCOVE, MUS_DP_SUNYSHORE_DAY },
+    { MUS_SOOTOPOLIS, MUS_DP_SNOWPOINT_DAY },
+    { MUS_EVER_GRANDE, MUS_DP_POKEMON_LEAGUE_DAY },
+    
+    // Poke Center / Mart / Gym
+    { MUS_POKE_CENTER, MUS_DP_POKE_CENTER_DAY },
+    { MUS_POKE_MART, MUS_DP_POKE_MART },
+    { MUS_GYM, MUS_DP_GYM },
+    
+    // Battle Music
+    { MUS_ENCOUNTER_GIRL, MUS_DP_ENCOUNTER_GIRL },
+    { MUS_ENCOUNTER_MALE, MUS_DP_ENCOUNTER_BOY },
+    { MUS_ENCOUNTER_INTENSE, MUS_DP_ENCOUNTER_INTENSE },
+    { MUS_ENCOUNTER_COOL, MUS_DP_ENCOUNTER_CYCLIST },
+    { MUS_ENCOUNTER_AQUA, MUS_DP_ENCOUNTER_GALACTIC },
+    { MUS_ENCOUNTER_MAGMA, MUS_DP_ENCOUNTER_GALACTIC },
+    { MUS_ENCOUNTER_SWIMMER, MUS_DP_ENCOUNTER_SAILOR },
+    { MUS_ENCOUNTER_ELITE_FOUR, MUS_DP_ENCOUNTER_ELITE_FOUR },
+    { MUS_ENCOUNTER_HIKER, MUS_DP_ENCOUNTER_HIKER },
+    { MUS_ENCOUNTER_INTERVIEWER, MUS_DP_ENCOUNTER_LADY },
+    { MUS_ENCOUNTER_RICH, MUS_DP_ENCOUNTER_RICH },
+    
+    // Battle themes
+    { MUS_VS_WILD, MUS_DP_VS_WILD },
+    { MUS_VS_AQUA_MAGMA, MUS_DP_VS_GALACTIC },
+    { MUS_VS_TRAINER, MUS_DP_VS_TRAINER },
+    { MUS_VS_GYM_LEADER, MUS_DP_VS_GYM_LEADER },
+    { MUS_VS_CHAMPION, MUS_DP_VS_CHAMPION },
+    { MUS_VS_REGI, MUS_DP_VS_LEGEND },
+    { MUS_VS_KYOGRE_GROUDON, MUS_DP_VS_DIALGA_PALKIA },
+    { MUS_VS_RIVAL, MUS_DP_VS_RIVAL },
+    { MUS_VS_ELITE_FOUR, MUS_DP_VS_ELITE_FOUR },
+    { MUS_VS_AQUA_MAGMA_LEADER, MUS_DP_VS_GALACTIC_BOSS },
+    
+    // Victory themes
+    { MUS_VICTORY_WILD, MUS_DP_VICTORY_WILD },
+    { MUS_VICTORY_TRAINER, MUS_DP_VICTORY_TRAINER },
+    { MUS_VICTORY_GYM_LEADER, MUS_DP_VICTORY_GYM_LEADER },
+    { MUS_VICTORY_LEAGUE, MUS_DP_VICTORY_CHAMPION },
+    { MUS_VICTORY_AQUA_MAGMA, MUS_DP_VICTORY_GALACTIC },
+    
+    // Special locations
+    { MUS_SURF, MUS_DP_SURF },
+    { MUS_CYCLING, MUS_DP_CYCLING },
+    { MUS_ABANDONED_SHIP, MUS_DP_OLD_CHATEAU },
+    { MUS_CONTEST_LOBBY, MUS_DP_CONTEST_LOBBY },
+    { MUS_CONTEST, MUS_DP_CONTEST },
+    { MUS_VICTORY_ROAD, MUS_DP_VICTORY_ROAD },
+    { MUS_GAME_CORNER, MUS_DP_GAME_CORNER },
+    { MUS_MT_PYRE, MUS_DP_LAKE },
+    { MUS_MT_CHIMNEY, MUS_DP_STARK_MOUNTAIN },
+    { MUS_HALL_OF_FAME, MUS_DP_HALL_OF_FAME },
+    { MUS_EVOLUTION, MUS_DP_EVOLUTION },
+    
+    // Fanfares
+    { MUS_LEVEL_UP, MUS_DP_LEVEL_UP },
+    { MUS_OBTAIN_ITEM, MUS_DP_OBTAIN_ITEM },
+    { MUS_EVOLVED, MUS_DP_EVOLVED },
+    { MUS_OBTAIN_TMHM, MUS_DP_OBTAIN_TMHM },
+    { MUS_HEAL, MUS_DP_HEAL },
+    { MUS_OBTAIN_BADGE, MUS_DP_OBTAIN_BADGE },
+    { MUS_MOVE_DELETED, MUS_DP_MOVE_DELETED },
+    { MUS_OBTAIN_BERRY, MUS_DP_OBTAIN_BERRY },
 };
 
 void InitMapMusic(void)
@@ -555,12 +649,36 @@ static void RestoreBGMVolumeAfterPokemonCry(void)
         CreateTask(Task_DuckBGMForPokemonCry, 80);
 }
 
+// Remap songs from RSE/FRLG to DPPt if option is enabled
+static u16 RemapSongIfDPPtEnabled(u16 songNum)
+{
+    u32 i;
+    
+    // Only remap if DPPt music option is enabled
+    if (!gSaveBlock2Ptr->optionsDPPtMusic)
+        return songNum;
+    
+    // Search for the song in the remap table
+    for (i = 0; i < ARRAY_COUNT(sSongRemapTable); i++)
+    {
+        if (sSongRemapTable[i].rseOriginal == songNum)
+            return sSongRemapTable[i].dpptReplacement;
+    }
+    
+    // If no mapping found, return original song
+    return songNum;
+}
+
 void PlayBGM(u16 songNum)
 {
     if (gDisableMusic)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
+    
+    // Apply DPPt song remapping if enabled
+    songNum = RemapSongIfDPPtEnabled(songNum);
+    
     m4aSongNumStart(songNum);
 }
 

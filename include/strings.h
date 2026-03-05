@@ -279,6 +279,9 @@ extern const u8 gText_ButtonMode[];
 extern const u8 gText_Gen4Voice[];
 extern const u8 gText_Gen4VoiceClassic[];
 extern const u8 gText_Gen4VoiceModern[];
+extern const u8 gText_DPPtMusic[];
+extern const u8 gText_DPPtMusicRSE[];
+extern const u8 gText_DPPtMusicDPPt[];
 
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];

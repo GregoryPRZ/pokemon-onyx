@@ -585,7 +585,8 @@ struct SaveBlock2
              u16 regionMapZoom:1; // whether the map is zoomed in
              u16 optionsStartMenuPalette:2; // whether the start menu is in the default palette
              u16 optionsGen4Voicegroup:1; // whether to use Gen 4 voicegroup for Gen 3 songs
-             //u16 padding1:3;
+             u16 optionsDPPtMusic:1; // whether to use DPPt songs instead of RSE/FRLG songs
+             //u16 padding1:2;
              //u16 padding2;
              u16 playerBike:1;
              u16 currOutfitId:4;
