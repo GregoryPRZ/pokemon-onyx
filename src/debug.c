@@ -3677,7 +3677,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_DP_POKEMON_LEAGUE_DAY) \
     X(MUS_DP_FIGHT_AREA_DAY) \
     X(MUS_DP_ROUTE201_DAY) \
-    X(MUS_DP_ROAD_B_D) \
+    X(MUS_DP_ROUTE203_DAY) \
     X(MUS_DP_ROUTE205_DAY) \
     X(MUS_DP_ROUTE206_DAY) \
     X(MUS_DP_ROUTE209_DAY) \
