@@ -19,7 +19,8 @@ SINGLE_BATTLE_TEST("Electromorphosis sets up Charge when hit by any move")
 
         PLAYER(SPECIES_BELLIBOLT) { Ability(ABILITY_ELECTROMORPHOSIS); Speed(10); }
         OPPONENT(SPECIES_WOBBUFFET) {Ability(ABILITY_LIMBER); Speed(5) ;} // Limber, so it doesn't get paralyzed.
-    } WHEN {
+    }
+    WHEN {
         TURN { MOVE(player, MOVE_THUNDER_SHOCK), MOVE(opponent, move); }
         TURN { MOVE(player, MOVE_THUNDER_SHOCK), MOVE(opponent, move); }
     } SCENE {
@@ -48,7 +49,8 @@ SINGLE_BATTLE_TEST("Electromorphosis sets up Charge when hit by any move")
         else {
             MESSAGE("Being hit by Gust charged Bellibolt with power!");
         }
-    } THEN {
+    }
+    THEN {
         EXPECT_MUL_EQ(dmgBefore, Q_4_12(2.0), dmgAfter);
     }
 }
