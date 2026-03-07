@@ -48,7 +48,7 @@ FallarborTown_MoveRelearnersHouse_EventScript_AskTeachMove::
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon::
 # 25 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon, MSGBOX_DEFAULT
-# 26 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
+	setmoverelearnerstate MOVE_RELEARNER_LEVEL_UP_MOVES @ Specifically supposed to teach level up moves
 	special ChooseMonForMoveRelearner
 # 27 "data/maps/FallarborTown_MoveRelearnersHouse/scripts.pory"
 	waitstate

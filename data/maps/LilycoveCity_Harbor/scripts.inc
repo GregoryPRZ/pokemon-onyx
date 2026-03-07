@@ -670,9 +670,7 @@ LilycoveCity_Harbor_EventScript_BoardFerryWithSailor::
 	call_if_eq VAR_FACING, DIR_EAST, LilycoveCity_Harbor_EventScript_PlayerBoardFerryEast
 # 336 "data/maps/LilycoveCity_Harbor/scripts.pory"
 	delay 30
-# 337 "data/maps/LilycoveCity_Harbor/scripts.pory"
-	hideobjectat LOCALID_PLAYER, 0
-# 338 "data/maps/LilycoveCity_Harbor/scripts.pory"
+	hideplayer
 	setvar VAR_0x8004, LOCALID_LILYCOVE_HARBOR_SS_TIDAL
 # 339 "data/maps/LilycoveCity_Harbor/scripts.pory"
 	call Common_EventScript_FerryDepart
@@ -790,9 +788,7 @@ LilycoveCity_Harbor_EventScript_BoardFerry::
 	call_if_eq VAR_FACING, DIR_EAST, LilycoveCity_Harbor_EventScript_PlayerBoardFerryEast
 # 396 "data/maps/LilycoveCity_Harbor/scripts.pory"
 	delay 30
-# 397 "data/maps/LilycoveCity_Harbor/scripts.pory"
-	hideobjectat LOCALID_PLAYER, 0
-# 398 "data/maps/LilycoveCity_Harbor/scripts.pory"
+	hideplayer
 	setvar VAR_0x8004, LOCALID_LILYCOVE_HARBOR_SS_TIDAL
 # 399 "data/maps/LilycoveCity_Harbor/scripts.pory"
 	call Common_EventScript_FerryDepart

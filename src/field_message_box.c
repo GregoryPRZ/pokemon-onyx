@@ -13,6 +13,7 @@
 #include "bg.h"
 #include "gpu_regs.h"
 #endif
+#include "field_name_box.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;
@@ -60,14 +61,19 @@ static void Task_DrawFieldMessage(u8 taskId)
             task->tState++;
             break;
         case 1:
-           DrawDialogueFrame(0, TRUE);
+        {
+            u32 nameboxWinId = GetNameboxWindowId();
+            DrawDialogueFrame(0, TRUE);
             #if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
              // Set initial position using GPU register directly
              SetGpuReg(REG_OFFSET_BG0VOFS, -60); // Start 60 pixels above
              StartMessageBoxSlideInAnimation();
-             #endif
-           task->tState++;
-           break;
+            #endif
+            if (nameboxWinId != WINDOW_NONE)
+                DrawNamebox(nameboxWinId, NAME_BOX_BASE_TILE_NUM - NAME_BOX_BASE_TILES_TOTAL, TRUE);
+            task->tState++;
+            break;
+        }
         case 2:
             #if MESSAGE_BOX_SLIDE_TRANSITION == TRUE
                 UpdateMessageBoxSlidePosition();
@@ -152,6 +158,7 @@ bool8 ShowFieldMessageFromBuffer(void)
 
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
+    TrySpawnNamebox(NAME_BOX_BASE_TILE_NUM);
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
@@ -167,6 +174,7 @@ void HideFieldMessageBox(void)
 {
     DestroyTask_DrawFieldMessage();
     ClearDialogWindowAndFrame(0, TRUE);
+    DestroyNamebox();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
 }
 
