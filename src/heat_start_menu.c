@@ -1365,7 +1365,7 @@ static u8 SaveConfirmOverwriteCallback(void)
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void)) {
     StringExpandPlaceholders(gStringVar4, message);
     LoadMessageBoxAndFrameGfx(0, TRUE);
-    AddTextPrinterForMessage_2(TRUE);
+    AddTextPrinterForMessage(TRUE);
     sSaveDialogCallback = saveCallback;
 }
 

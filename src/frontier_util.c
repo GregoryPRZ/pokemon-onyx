@@ -1976,6 +1976,24 @@ static void GiveBattlePoints(void)
     gSaveBlock2Ptr->frontier.cardBattlePoints = points;
 }
 
+u16 GetBattlePoints(void)
+{
+    return gSaveBlock2Ptr->frontier.battlePoints;
+}
+
+bool8 IsEnoughBattlePoints(u16 cost)
+{
+    return gSaveBlock2Ptr->frontier.battlePoints >= cost;
+}
+
+bool8 RemoveBattlePoints(u16 toSub)
+{
+    if (gSaveBlock2Ptr->frontier.battlePoints < toSub)
+        return FALSE;
+    gSaveBlock2Ptr->frontier.battlePoints -= toSub;
+    return TRUE;
+}
+
 static void GetFacilitySymbolCount(void)
 {
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
